@@ -1,6 +1,6 @@
 # Liquipedia API — Başvuru ve Soru Metni
 
-> Taslak. **Gönderilmedi.** Eksik tek alan: iletişim adresi `{{EPOSTA}}`.
+> **Hazır — gönderilebilir.** Tüm alanlar dolu; sadece gönderme adımı kaldı.
 > Kanal: `liquipedia.net/api` formu; yedek: Discord `#api-help`.
 
 ## 0. Göndermeden önce tamamlanması gerekenler
@@ -10,7 +10,7 @@
 | 1 | GitHub kullanıcı adı | ✅ `@metenyu` |
 | 2 | Public depo + URL | ✅ `github.com/metenyu/BanPhase` (yayında) |
 | 3 | Kod lisansı dosyası (MIT) + `data/` için CC BY-SA 3.0 notu | ✅ `LICENSE`, `README.md` |
-| 4 | İletişim e-postası (kişisel değil, proje adresi) | ⬜ son iş |
+| 4 | İletişim e-postası (kişisel değil, proje adresi) | ✅ `banphaseapp@duck.com` |
 | 5 | User-Agent dizesi | ✅ aşağıda hazır |
 | 6 | Uygulamanın yayın adresi | ✅ `https://metenyu.github.io/BanPhase/` |
 | 7 | API şartları (limitler, önbellek ilkesi) | ✅ 24.10.2026'da okundu: 60 istek/saat (LPDB), 1/2 sn (MediaWiki), `action=parse` 1/30 sn |
@@ -18,7 +18,7 @@
 Hazır User-Agent:
 
 ```
-BanPhase/0.1 (+https://github.com/metenyu/BanPhase; {{EPOSTA}})
+BanPhase/0.1 (+https://github.com/metenyu/BanPhase; banphaseapp@duck.com)
 ```
 
 ---
@@ -36,8 +36,8 @@ Project: BanPhase — "Master the Draft"
 Repository: https://github.com/metenyu/BanPhase (license: MIT for code; Liquipedia-derived data will be
 published under CC BY-SA 3.0)
 Live app: https://metenyu.github.io/BanPhase/ (static, GitHub Pages)
-Contact: {{EPOSTA}}
-User-Agent: BanPhase/0.1 (+https://github.com/metenyu/BanPhase; {{EPOSTA}})
+Contact: banphaseapp@duck.com
+User-Agent: BanPhase/0.1 (+https://github.com/metenyu/BanPhase; banphaseapp@duck.com)
 
 What it does
 BanPhase is a free, ad-free, Turkish-language web app that helps Mobile Legends:
@@ -82,7 +82,7 @@ Questions
 Thank you for your time and for maintaining the wiki.
 
 Best regards,
-{{AD}}
+Metenyu
 BanPhase
 ```
 
@@ -122,8 +122,8 @@ redistribution? (2) what are the current LPDB rate limits (per hour/day)?
    → kendi e-postanı doğrula → `banphase` önekli bir `@duck.com` adresi üret.
    Alternatif: Firefox Relay (`@mozmail.com`) veya SimpleLogin.
    Kişisel adresi kullanma; başvuru herkese açık bir projeye ait olmalı.
-2. Aşağıdaki iki alanı doldur: `{{EPOSTA}}` ve `{{AD}}` (imzada görünecek ad).
-   `{{EPOSTA}}` üç yerde geçiyor: iletişim, User-Agent ve imza altı.
+2. Aşağıdaki iki alanı doldur: `banphaseapp@duck.com` ve `Metenyu` (imzada görünecek ad).
+   `banphaseapp@duck.com` üç yerde geçiyor: iletişim, User-Agent ve imza altı.
 3. **Kanal:** önce <https://liquipedia.net/api> formu. Form yoksa/çalışmazsa
    Discord `#api-help` kanalında Bölüm 2'deki kısa metni gönder.
 4. Gönderdikten sonra `docs/` altına tek satır not düş: tarih + kanal + kopya.
@@ -138,7 +138,7 @@ redistribution? (2) what are the current LPDB rate limits (per hour/day)?
 
 ## 6. Göndermeden önce son kontrol
 
-- [ ] `{{EPOSTA}}` ve `{{AD}}` kalmadı
+- [ ] `banphaseapp@duck.com` ve `Metenyu` kalmadı
 - [ ] Depo public, lisans dosyası yerinde
 - [ ] Site canlı ve açılıyor (`metenyu.github.io/BanPhase`)
 - [ ] Metinde "ham veri yayımlamayacağız" cümlesi duruyor
