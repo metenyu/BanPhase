@@ -1,6 +1,8 @@
 # Liquipedia API — Başvuru ve Soru Metni
 
-> **Hazır — gönderilebilir.** Tüm alanlar dolu; sadece gönderme adımı kaldı.
+> **GÖNDERİLDİ — 24.10.2026 19:20.** Kanal: `liquipedia.net/api/api-site-contact`
+> formu ("Your message has been successfully delivered!" onayı alındı).
+> Yanıt `banphaseapp@duck.com` adresine gelecek.
 > Kanal: `liquipedia.net/api` formu; yedek: Discord `#api-help`.
 
 ## 0. Göndermeden önce tamamlanması gerekenler
@@ -14,6 +16,7 @@
 | 5 | User-Agent dizesi | ✅ aşağıda hazır |
 | 6 | Uygulamanın yayın adresi | ✅ `https://metenyu.github.io/BanPhase/` |
 | 7 | API şartları (limitler, önbellek ilkesi) | ✅ 24.10.2026'da okundu: 60 istek/saat (LPDB), 1/2 sn (MediaWiki), `action=parse` 1/30 sn |
+| 8 | Başvuru gönderimi | ✅ 24.10.2026 19:20 — `api-site-contact` formu, onay ekranı alındı |
 
 Hazır User-Agent:
 

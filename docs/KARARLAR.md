@@ -124,7 +124,7 @@ Sonuçları ölçüm/rapor olarak getir, onayımı bekle.
 | Faz 3 — iskelet | ✅ `index.html` + `assets/` + PWA; Edge (CDP) ile uçtan uca doğrulandı |
 | Kahraman listesi | ✅ 133 kahraman → `data/heroes.json` (`tools/build-heroes.mjs` üretir) |
 | Yayın | ✅ `main` → otomatik Pages; canlı adres ölçüldü |
-| Liquipedia başvurusu | ⏳ metin hazır → `docs/LIQUIPEDIA-BASVURU.md`, tek eksik: iletişim adresi |
+| Liquipedia başvurusu | ✅ **Gönderildi** 24.10.2026 19:20 (`api-site-contact` formu, `banphaseapp@duck.com`); yanıt bekleniyor |
 
 **Açık girdiler:** Liquipedia başvurusu için iletişim adresi.
 **Sonraki işler:** ban sırası varyantları, pick aşaması, turnuva istatistiği ekranı.
