@@ -56,6 +56,9 @@ How we would use the API
   static app. The app never calls Liquipedia directly from the browser.
 - We publish only derived aggregates (e.g. "hero X banned in N% of games in
   tournament Y"), not raw page dumps or full database exports.
+- A planned statistics view will show pick/ban frequency and win rates per hero,
+  and how often a given five-hero composition was picked and how it performed,
+  computed from your match records. Only aggregates would be published.
 - Every view that uses your data carries the attribution line required by
   CC BY-SA 3.0, linking to the specific Liquipedia article and the access date.
 
@@ -110,3 +113,33 @@ redistribution? (2) what are the current LPDB rate limits (per hour/day)?
 - **Atıf görünür olsun.** Footer'da tek satır yetmez; her turnuva sayfasında
   makale bağlantısı + erişim tarihi.
 - Onay gelmeden hiçbir LPDB çağrısı yapılmayacak (Cue'nun notu da bunu söylüyor).
+
+---
+
+## 4. Gönderim adımları
+
+1. **Proje adresi** (2 dakika, telefonsuz): <https://duckduckgo.com/email> → *Get Started*
+   → kendi e-postanı doğrula → `banphase` önekli bir `@duck.com` adresi üret.
+   Alternatif: Firefox Relay (`@mozmail.com`) veya SimpleLogin.
+   Kişisel adresi kullanma; başvuru herkese açık bir projeye ait olmalı.
+2. Aşağıdaki iki alanı doldur: `{{EPOSTA}}` ve `{{AD}}` (imzada görünecek ad).
+   `{{EPOSTA}}` üç yerde geçiyor: iletişim, User-Agent ve imza altı.
+3. **Kanal:** önce <https://liquipedia.net/api> formu. Form yoksa/çalışmazsa
+   Discord `#api-help` kanalında Bölüm 2'deki kısa metni gönder.
+4. Gönderdikten sonra `docs/` altına tek satır not düş: tarih + kanal + kopya.
+
+## 5. Gönderim sonrası
+
+- **7 gün** yanıt yoksa Discord'da kibarca hatırlat (aynı metni tekrar yapıştırma,
+  "hâlâ bekliyorum" de).
+- Onay gelirse: API anahtarını **depoya koymayın**; GitHub Actions secret olarak ekle.
+- Red gelirse: istatistik sekmesi "veri yok" hâlinde kalır; Rone arşivine dönmeyiz
+  (Eylül 2025 verisi, hak belirsiz).
+
+## 6. Göndermeden önce son kontrol
+
+- [ ] `{{EPOSTA}}` ve `{{AD}}` kalmadı
+- [ ] Depo public, lisans dosyası yerinde
+- [ ] Site canlı ve açılıyor (`metenyu.github.io/BanPhase`)
+- [ ] Metinde "ham veri yayımlamayacağız" cümlesi duruyor
+- [ ] Rate limit değerleri teyit sorusu olarak yazılı (iddia olarak değil)
