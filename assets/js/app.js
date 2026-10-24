@@ -798,6 +798,7 @@ const CAT_TR = { attack: 'Saldırı', magic: 'Büyü', defense: 'Savunma', movem
 function renderItems() {
   if (!els.itemList) return;
   els.itemCount.textContent = state.items.length ? `${state.items.length}` : '';
+  if (els.introItems) els.introItems.textContent = String(state.items.length);
 
   const q = fold(state.itemQuery.trim());
   const list = state.items.filter((item) => {
@@ -838,6 +839,7 @@ function itemById(id) {
 function renderBuilds() {
   if (!els.buildList) return;
   els.buildsCount.textContent = state.builds.length ? `${state.builds.length}` : '';
+  if (els.introBuilds) els.introBuilds.textContent = String(state.builds.length);
   els.buildsEmpty.hidden = state.builds.length > 0;
 
   els.buildList.innerHTML = state.builds.map((build) => {
@@ -983,7 +985,7 @@ function cacheElements() {
     'format-toggle', 'firstpick-toggle', 'settings-hint',
     'btn-save-comp', 'comp-list', 'comps-count', 'comps-empty',
     'item-search', 'item-list', 'item-count', 'items-empty',
-    'build-list', 'builds-count', 'builds-empty'];
+    'build-list', 'builds-count', 'builds-empty', 'intro-items', 'intro-builds'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
