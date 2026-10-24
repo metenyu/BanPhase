@@ -1,7 +1,7 @@
 /* BanPhase service worker — kabuk önbelleği.
    Şablon dosyalar önce önbellekten, JSON verisi önce ağdan (çevrimdışıysa önbellek). */
 
-const VERSION = 'banphase-v14';
+const VERSION = 'banphase-v15';
 const SHELL = [
   './',
   './index.html',
