@@ -118,3 +118,75 @@ Kurallar:
 - **5 kayıtta `style` boş** (angela, valir, kimmy, baxia, xavier) — medium güven.
   Bunlar için tek tek karar ver; boş bırakma.
 - **Engage tahmini:** kabul edildi, arayüzde "tahmin" olarak etiketlendi.
+
+---
+
+## 5. Birleşik görev listesi (24.10.2026 — güncel, öncekilerin yerine geçer)
+
+Öncelik sırası: **A → B → C → D**. Her teslimde dosya + kaynak + erişim zamanı.
+Kod yazma, Liquipedia'ya istek atma.
+
+### A. Kahraman etiketleri — düzeltme (dosya: `data/source/hero_tags.json`)
+
+1. **`style: pickoff` fazla.** 133 kaydın 68'inde var; gerçekten tek hedef avlayan
+   setler dışında çıkar. Örnek yanlışlar: `miya`, `hanabi` (gold lane marksman),
+   `chang'e` (mid poke büyücü). "Finisher" uzmanlığını doğrudan pickoff'a çevirme.
+2. **`style` boş 5 kayıt:** `angela`, `valir`, `kimmy`, `baxia`, `xavier`.
+   Her biri için tek tek karar ver; boş bırakma.
+3. **`heroId` bizim `id` ile birebir aynı olacak** (`data/heroes.json`):
+   `chang'e` → `change`, `x.borg` → `x-borg`. Kural: küçük harf, boşluk yerine `-`,
+   kesme işareti ve nokta yok.
+4. **`power_spike` gönderme** — şemadan çıkarıldı, kaynakta veri yok.
+5. Şema aynı kalsın: `heroId, lanes[], style[], damage, engage, confidence, evidence`.
+   `count: 133` ve her kayıtta `evidence` zorunlu.
+
+### B. Eşyalar (dosya: `data/source/items.json`)
+
+Gerçek bir build örneği denendi (Claude): 6 eşyanın 4'ü katalogda bulundu,
+**2'si hiç yok**. Katalog şu an build yazmaya yetmiyor.
+
+1. **Jungle kategorisi tamamen eksik.** 92 kaydın **0'ı** jungle. `Raptor Machete`
+   ve yükseltmeleri, `Retribution` yükseltmeleri (Bloody/Flame/Ice), `Hunter's Knife`
+   hattı eklenmeli. Kategori adı: `jungle`.
+2. **92 kaydın 34'ünde `passive` boş.** Liste hâlinde bildir: hangisi gerçekten
+   pasifsiz (saf stat eşyası), hangisi çıkarımda atlanmış. Atlananları doldur.
+   Örnek: `winter-crown` — pasifi boş görünüyor, muhtemelen eksik.
+3. **Yeni/eksik eşya kontrolü:** "Kaotik Silah" (TR) adlı eşya katalogda yok.
+   Son yamalarda eklenen eşyaların tam listesini kontrol et; eksik olanları ekle.
+   (Katalog 92'de kalmış olabilir.)
+4. **`winter-crown` doğrulaması:** Türkçe "kış tacı" mı, yoksa `Winter Truncheon`
+   (kendini dondurma) mi? İkisi karışmış olabilir; doğru kaydı ayır.
+5. **`stats` anahtar sözlüğü:** kullandığın her anahtar için tek satır: ne demek,
+   birimi ne (`_pct` = yüzde, düz sayı = puan). Ör. `physical_attack: düz puan`,
+   `crit_chance_pct: yüzde`.
+6. **(Opsiyonel) Türkçe ad:** eşyanın oyun içi resmî Türkçe adı varsa `name_tr`
+   alanı ekle. Yoksa boş bırak, uydurma.
+7. Teslim: güncel `items.json` + `docs/items-passive-gap.md` + `docs/items-missing.md`.
+
+### C. Build önerileri (yeni, düşük öncelik)
+
+Fandom kahraman sayfalarında "Build" / "Recommended items" bölümü var mı? Varsa
+**10 popüler kahraman** için çıkar:
+
+```json
+{ "heroId": "fanny", "role": "jungle", "items": ["raptor-machete", "..."], "note": "tek cümle", "sourceUrl": "..." }
+```
+
+Eşya adlarını B'deki `items.json` id'leriyle eşle. Yoksa "Fandom'da build bölümü yok"
+de, uydurma.
+
+### D. Liquipedia hazırlığı (istek yok, yalnızca şema)
+
+Onay gelmeden hiçbir API çağrısı yapma. Sadece:
+
+- LPDB `match2` kayıtlarında pick/ban ve sonuç alanlarının **adlarını** derle
+  (public doküman/örnek JSON üzerinden).
+- Bize iki dosya şeması öner: `data/tournaments/<turnuva>/matches.json` ve
+  `stats.json` — hangi alanlar, hangi tipler.
+
+### Yapma
+
+- `index.html`, `assets/`, `sw.js`, `data/heroes.json` dosyalarına dokunma.
+- Liquipedia'ya istek atma, API anahtarı isteme.
+- Rone istatistik/build yayımlama.
+- Uydurma build/etiket/istatistik üretme; emin değilsen `confidence: low` + gerekçe.
