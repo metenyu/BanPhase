@@ -113,9 +113,9 @@ artırın**, aksi hâlde dönen ziyaretçi eski dosyayı önbellekten alır.
 
 ## Bilinen sınırlar
 
-- **Comp analizi kısmen etiketli.** Koridor/stil/hasar etiketleri 133 kahramanın
-  yalnızca **30'unda** var (`data/source/hero_tags.json`); kalanı gelince analiz tamamlanır.
-  `power_spike` alanı kaynakta boş geldi (kullanılmıyor).
+- **Comp analizi 133/133 etiketli.** Koridor/stil/hasar/engage etiketleri
+  Fandom'dan (`data/source/hero_tags.json`). **Engage değeri uzmanlık alanından
+  türetilmiş tahmindir**, ölçüm değil; arayüzde de böyle yazıyor.
 - "A comp'u B comp'u yener" iddiası **yok**; bunun için turnuva maç verisi gerekiyor
   (Liquipedia onayı).
 

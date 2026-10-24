@@ -43,7 +43,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -56,7 +55,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 2,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "exp"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "saber",
@@ -76,7 +86,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "high",
         "confidence": "high"
       }
@@ -90,7 +99,19 @@
       ],
       "primaryRole": "Tank",
       "roneId": 4,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp",
+          "jungle"
+        ],
+        "style": [
+          "engage",
+          "sustain"
+        ],
+        "damage": "magic",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "nana",
@@ -109,7 +130,6 @@
           "pickoff"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -130,7 +150,6 @@
           "engage"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "medium",
         "confidence": "high"
       }
@@ -144,7 +163,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 7,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "karina",
@@ -154,7 +183,17 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 8,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "akai",
@@ -164,7 +203,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 9,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "franco",
@@ -174,7 +223,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 10,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "bane",
@@ -185,7 +244,19 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 11,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "exp"
+        ],
+        "style": [
+          "split-push",
+          "pickoff"
+        ],
+        "damage": "mixed",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "bruno",
@@ -195,7 +266,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 12,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "clint",
@@ -205,7 +286,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 13,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "rafaela",
@@ -223,7 +314,6 @@
           "sustain"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -245,7 +335,6 @@
           "pickoff"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "medium",
         "confidence": "high"
       }
@@ -259,7 +348,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 16,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "fanny",
@@ -269,7 +368,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 17,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "layla",
@@ -287,7 +397,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -309,7 +418,6 @@
           "engage"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "medium",
         "confidence": "high"
       }
@@ -323,7 +431,17 @@
       ],
       "primaryRole": "Destek",
       "roneId": 20,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "hayabusa",
@@ -333,7 +451,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 21,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "freya",
@@ -343,7 +472,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 22,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp",
+          "jungle"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "gord",
@@ -353,7 +493,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 23,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "poke",
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "natalia",
@@ -363,7 +514,19 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 24,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "roam"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "kagura",
@@ -373,7 +536,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 25,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "poke",
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "chou",
@@ -393,7 +567,6 @@
           "engage"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "medium",
         "confidence": "high"
       }
@@ -415,7 +588,6 @@
           "split-push"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -437,7 +609,6 @@
           "engage"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "high",
         "confidence": "high"
       }
@@ -450,7 +621,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 29,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "engage",
+          "sustain"
+        ],
+        "damage": "physical",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "yi-sun-shin",
@@ -470,7 +652,6 @@
           "dive"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -483,7 +664,18 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 31,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff",
+          "dive"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "johnson",
@@ -494,7 +686,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 32,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "cyclops",
@@ -504,7 +706,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 33,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "poke",
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "estes",
@@ -514,7 +727,17 @@
       ],
       "primaryRole": "Destek",
       "roneId": 34,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "hilda",
@@ -525,7 +748,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 35,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam",
+          "exp"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "aurora",
@@ -535,7 +769,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 36,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "engage",
+          "poke"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "lapu-lapu",
@@ -545,7 +790,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 37,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "vexana",
@@ -564,7 +820,6 @@
           "engage"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "medium",
         "confidence": "high"
       }
@@ -578,7 +833,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 39,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "karrie",
@@ -588,7 +853,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 40,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "gatotkaca",
@@ -599,7 +874,19 @@
       ],
       "primaryRole": "Tank",
       "roneId": 41,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam",
+          "exp"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "harley",
@@ -610,7 +897,19 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 42,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "mid"
+        ],
+        "style": [
+          "pickoff",
+          "poke"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "irithel",
@@ -620,7 +919,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 43,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "grock",
@@ -631,7 +940,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 44,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "argus",
@@ -641,7 +960,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 45,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "odette",
@@ -651,7 +981,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 46,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "pickoff",
+          "poke"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "lancelot",
@@ -661,7 +1002,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 47,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "diggie",
@@ -671,7 +1023,17 @@
       ],
       "primaryRole": "Destek",
       "roneId": 48,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "poke"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "hylos",
@@ -681,7 +1043,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 49,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "zhask",
@@ -691,7 +1063,17 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 50,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "helcurt",
@@ -701,7 +1083,19 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 51,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "roam"
+        ],
+        "style": [
+          "split-push",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "pharsa",
@@ -711,7 +1105,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 52,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "pickoff",
+          "poke"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "lesley",
@@ -730,7 +1135,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -743,7 +1147,19 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 54,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam",
+          "exp"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "angela",
@@ -759,7 +1175,6 @@
         ],
         "style": [],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "medium"
       }
@@ -781,7 +1196,6 @@
           "pickoff"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -800,7 +1214,6 @@
         ],
         "style": [],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "medium"
       }
@@ -813,7 +1226,19 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 58,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "exp"
+        ],
+        "style": [
+          "pickoff",
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "uranus",
@@ -823,7 +1248,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 59,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "hanabi",
@@ -841,7 +1276,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -854,7 +1288,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 61,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "poke",
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "kaja",
@@ -864,7 +1309,17 @@
       ],
       "primaryRole": "Destek",
       "roneId": 62,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "selena",
@@ -885,7 +1340,6 @@
           "pickoff"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "high",
         "confidence": "high"
       }
@@ -898,7 +1352,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 64,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "claude",
@@ -908,7 +1372,18 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 65,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff",
+          "dive"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "vale",
@@ -918,7 +1393,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 66,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "pickoff",
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "leomord",
@@ -928,7 +1414,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 67,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "lunox",
@@ -938,7 +1435,17 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 68,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "hanzo",
@@ -948,7 +1455,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 69,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "pickoff",
+          "poke"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "belerick",
@@ -967,7 +1485,6 @@
           "sustain"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "medium",
         "confidence": "high"
       }
@@ -981,7 +1498,16 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 71,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid",
+          "gold"
+        ],
+        "style": [],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "medium"
+      }
     },
     {
       "id": "thamuz",
@@ -991,7 +1517,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 72,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "harith",
@@ -1001,7 +1537,17 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 73,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "minsitthar",
@@ -1011,7 +1557,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 74,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp",
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "kadita",
@@ -1022,7 +1579,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 75,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "pickoff",
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "faramis",
@@ -1033,7 +1601,18 @@
       ],
       "primaryRole": "Destek",
       "roneId": 76,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid",
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "badang",
@@ -1053,7 +1632,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "high",
         "confidence": "high"
       }
@@ -1066,7 +1644,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 78,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "mixed",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "granger",
@@ -1084,7 +1672,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -1097,7 +1684,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 80,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "esmeralda",
@@ -1108,7 +1705,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 81,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "mixed",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "terizla",
@@ -1119,7 +1726,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 82,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "pickoff",
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "x-borg",
@@ -1129,7 +1747,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 83,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "sustain",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "ling",
@@ -1139,7 +1768,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 84,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "dyrroth",
@@ -1159,7 +1799,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "high",
         "confidence": "high"
       }
@@ -1172,7 +1811,17 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 86,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "split-push"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "baxia",
@@ -1182,7 +1831,16 @@
       ],
       "primaryRole": "Tank",
       "roneId": 87,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "roam"
+        ],
+        "style": [],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "medium"
+      }
     },
     {
       "id": "masha",
@@ -1193,7 +1851,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 88,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "split-push"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "wanwan",
@@ -1203,7 +1871,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 89,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "silvanna",
@@ -1221,7 +1899,6 @@
           "engage"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "high",
         "confidence": "high"
       }
@@ -1234,7 +1911,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 91,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "poke",
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "carmilla",
@@ -1253,7 +1941,6 @@
           "engage"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "medium",
         "confidence": "high"
       }
@@ -1266,7 +1953,17 @@
       ],
       "primaryRole": "Tank",
       "roneId": 93,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "popol-and-kupa",
@@ -1276,7 +1973,19 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 94,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "gold"
+        ],
+        "style": [
+          "split-push",
+          "pickoff"
+        ],
+        "damage": "mixed",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "yu-zhong",
@@ -1286,7 +1995,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 95,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "luo-yi",
@@ -1296,7 +2015,17 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 96,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "benedetta",
@@ -1307,7 +2036,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 97,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "khaleed",
@@ -1317,7 +2057,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 98,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam",
+          "exp"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "barats",
@@ -1328,7 +2079,18 @@
       ],
       "primaryRole": "Tank",
       "roneId": 99,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp",
+          "jungle"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "brody",
@@ -1338,7 +2100,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 100,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "yve",
@@ -1348,7 +2120,18 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 101,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "pickoff",
+          "poke"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "mathilda",
@@ -1359,7 +2142,17 @@
       ],
       "primaryRole": "Destek",
       "roneId": 102,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "paquito",
@@ -1378,7 +2171,6 @@
           "dive"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -1391,7 +2183,19 @@
       ],
       "primaryRole": "Tank",
       "roneId": 104,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam",
+          "exp"
+        ],
+        "style": [
+          "sustain",
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "beatrix",
@@ -1401,7 +2205,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 105,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "phoveus",
@@ -1411,7 +2225,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 106,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "mixed",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "natan",
@@ -1421,7 +2245,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 107,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "aulus",
@@ -1431,7 +2265,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 108,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "exp"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "aamon",
@@ -1441,7 +2286,17 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 109,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "valentina",
@@ -1451,7 +2306,17 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 110,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "edith",
@@ -1462,7 +2327,19 @@
       ],
       "primaryRole": "Tank",
       "roneId": 111,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp",
+          "roam"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "mixed",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "floryn",
@@ -1472,7 +2349,17 @@
       ],
       "primaryRole": "Destek",
       "roneId": 112,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "poke"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "yin",
@@ -1483,7 +2370,19 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 113,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "exp"
+        ],
+        "style": [
+          "pickoff",
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "melissa",
@@ -1493,7 +2392,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 114,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "mixed",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "xavier",
@@ -1503,7 +2412,15 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 115,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "medium"
+      }
     },
     {
       "id": "julian",
@@ -1514,7 +2431,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 116,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle",
+          "exp"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "fredrinn",
@@ -1525,7 +2453,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 117,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "joy",
@@ -1535,7 +2473,17 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 118,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "magic",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "novaria",
@@ -1554,7 +2502,6 @@
           "poke"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -1568,7 +2515,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 120,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "ixia",
@@ -1578,7 +2536,17 @@
       ],
       "primaryRole": "Nişancı",
       "roneId": 121,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "nolan",
@@ -1597,7 +2565,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -1610,7 +2577,17 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 123,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "chip",
@@ -1621,7 +2598,17 @@
       ],
       "primaryRole": "Destek",
       "roneId": 124,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "zhuxin",
@@ -1631,7 +2618,17 @@
       ],
       "primaryRole": "Büyücü",
       "roneId": 125,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "suyou",
@@ -1642,7 +2639,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 126,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "lukas",
@@ -1652,7 +2660,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 127,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp",
+          "jungle"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "kalea",
@@ -1663,7 +2682,18 @@
       ],
       "primaryRole": "Destek",
       "roneId": 128,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage",
+          "sustain"
+        ],
+        "damage": "physical",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "zetian",
@@ -1681,7 +2711,6 @@
           "engage"
         ],
         "damage": "magic",
-        "powerSpike": null,
         "engage": "medium",
         "confidence": "high"
       }
@@ -1702,7 +2731,6 @@
           "pickoff"
         ],
         "damage": "physical",
-        "powerSpike": null,
         "engage": "low",
         "confidence": "high"
       }
@@ -1716,7 +2744,18 @@
       ],
       "primaryRole": "Savaşçı",
       "roneId": 131,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "marcel",
@@ -1726,7 +2765,17 @@
       ],
       "primaryRole": "Destek",
       "roneId": 132,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "hirara",
@@ -1736,7 +2785,18 @@
       ],
       "primaryRole": "Suikastçı",
       "roneId": 133,
-      "tags": null
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "engage": "low",
+        "confidence": "high"
+      }
     }
   ]
 }

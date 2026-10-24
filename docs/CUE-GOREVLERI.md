@@ -101,3 +101,20 @@ Kurallar:
    hangisi hangi sebeple boş, yaz.
 5. **`items_excluded.json` iyi olmuş.** Aynı mantıkla: çıkarılan 21 kaydın
    "Removed" olanları doğru; "kişiye özel kit öğesi" olanlar da doğru ayrım.
+
+### Üçüncü tur (24.10.2026, akşam)
+
+133 kayıtlık etiket dosyası alındı. Durum:
+
+- **Kimlik yazımı uyuşmadı:** dosyada `chang'e` ve `x.borg`, bizde `change` ve `x-borg`.
+  Biz kendi tarafımızda slug ile eşitledik (artık 133/133 eşleşiyor). Bundan sonra
+  `heroId` alanını `data/heroes.json` içindeki `id` ile **birebir** aynı yaz.
+- **`power_spike` alanı kaldırıldı:** kaynakta veri yok, bizde de kullanılmıyor.
+  Bir daha doldurma; şemadan çıkarıldı.
+- **`style: pickoff` hâlâ fazla:** 133 kaydın **68'inde** var. Örnek: `miya`,
+  `hanabi`, `chang'e` (mid poke büyücü) — bunlarda pickoff ana profil değil.
+  `Finisher` uzmanlığını doğrudan pickoff'a çevirmek yanlış. Kiti olan kahramanlarda
+  `pickoff` sadece gerçekten tek hedef avlayan sette kalsın.
+- **5 kayıtta `style` boş** (angela, valir, kimmy, baxia, xavier) — medium güven.
+  Bunlar için tek tek karar ver; boş bırakma.
+- **Engage tahmini:** kabul edildi, arayüzde "tahmin" olarak etiketlendi.
