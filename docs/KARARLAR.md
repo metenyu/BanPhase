@@ -19,7 +19,7 @@
 | Hosting | GitHub Pages (statik) | Ücretsiz, PWA uyumlu |
 | Hesaplar | Kullanıcı kendisi açacak | Ücretli hizmete geçiş yok |
 | Moonton izni | **E-posta gönderilmeyecek** | Hobi projesine yanıt gelmez; haftalar kaybettirir |
-| Depo | `github.com/metenyu/banphase` (@metenyu) | GitHub Pages adresi buna bağlı |
+| Depo | `github.com/metenyu/BanPhase` (@metenyu) | GitHub Pages adresi buna bağlı |
 | **Veri duruşu (V1)** | Rone istatistik/build **yok**; yalnızca kahraman kimliği. Turnuva verisi Liquipedia'dan | Hak belirsiz + veri 98 yama eski (24.10.2026 kararı) |
 | **Önbellek yayını** | Depoda yayımlanır | Sunucu yok; yayımlanmazsa uygulamanın veri kaynağı kalmaz |
 | **Kod lisansı** | MIT (kod) + CC BY-SA 3.0 (Liquipedia türevi `data/`) | CC BY-SA şartı; iki lisans ayrı tutulur |

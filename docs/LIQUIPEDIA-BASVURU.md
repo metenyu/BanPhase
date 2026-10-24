@@ -12,12 +12,12 @@
 | 3 | Kod lisansı dosyası (MIT) + `data/` için CC BY-SA 3.0 notu | ✅ `LICENSE`, `README.md` |
 | 4 | İletişim e-postası (kişisel değil, proje adresi) | ⬜ |
 | 5 | User-Agent dizesi | ✅ aşağıda hazır |
-| 6 | Uygulamanın yayın adresi | ⏳ `https://metenyu.github.io/banphase/` (depo yayımlanınca aktif) |
+| 6 | Uygulamanın yayın adresi | ⏳ `https://metenyu.github.io/BanPhase/` (depo yayımlanınca aktif) |
 
 Hazır User-Agent:
 
 ```
-BanPhase/0.1 (+https://github.com/metenyu/banphase; {{EPOSTA}})
+BanPhase/0.1 (+https://github.com/metenyu/BanPhase; {{EPOSTA}})
 ```
 
 ---
@@ -32,11 +32,11 @@ Hello Liquipedia team,
 I would like to request API access for a small, non-commercial open-source project.
 
 Project: BanPhase — "Master the Draft"
-Repository: https://github.com/metenyu/banphase (license: MIT for code; Liquipedia-derived data will be
+Repository: https://github.com/metenyu/BanPhase (license: MIT for code; Liquipedia-derived data will be
 published under CC BY-SA 3.0)
-Live app: https://metenyu.github.io/banphase/ (static, GitHub Pages)
+Live app: https://metenyu.github.io/BanPhase/ (static, GitHub Pages)
 Contact: {{EPOSTA}}
-User-Agent: BanPhase/0.1 (+https://github.com/metenyu/banphase; {{EPOSTA}})
+User-Agent: BanPhase/0.1 (+https://github.com/metenyu/BanPhase; {{EPOSTA}})
 
 What it does
 BanPhase is a free, ad-free, Turkish-language web app that helps Mobile Legends:
@@ -85,7 +85,7 @@ BanPhase
 
 ```
 Hi — building BanPhase, a free non-commercial open-source MLBB draft helper
-(https://github.com/metenyu/banphase). Plan: one GitHub Actions job per day, LPDB only, publish
+(https://github.com/metenyu/BanPhase). Plan: one GitHub Actions job per day, LPDB only, publish
 aggregated pick/ban stats as CC BY-SA 3.0 JSON with per-article attribution.
 Two things I could not confirm from the docs (they return 403 to my client):
 (1) is publishing derived aggregates in a public repo OK, or is that considered
