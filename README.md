@@ -18,7 +18,7 @@ build veya sıralama iddia etmiyor — yalnızca kimlik (ad, rol).
 Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 
 - 133 kahraman, 20 slot (10 ban + 10 seçim), 390 px ve 1300 px'te yatay taşma yok
-- **Turnuva sırası** ölçüldü: `ban M,M,M,K,K,K → seçim M,K,K,M,M,K → ban K,K,M,M → seçim K,M,M,K`
+- **Turnuva sırası** ölçüldü: `ban M×3, K×3 → seçim M×3, K×3 → ban K×2, M×2 → seçim K×2, M×2`
 - **Ranked sırası**: 5+5 ban aynı anda, sonra `seçim M,K,K,M,M,K,K,M,M,K`
 - Ranked'da herhangi bir boş ban slotu seçilip doldurulabiliyor; geri alınca slot boşalıp yeniden aktif oluyor
 - 20 hamlede tahta doluyor, özet diyaloğu ban + seçim satırlarını gösteriyor
@@ -30,7 +30,8 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 
 ## Ne yapar (V1)
 
-- **Turnuva** formatı: 3 ban → 3+3 seçim (1-2-2-1) → 2 ban → 2+2 seçim (1-2-1)
+- **Turnuva** formatı: 3+3 ban → 3+3 seçim → 2+2 ban → 2+2 seçim (fazları sırayla
+  diğer takım başlatır)
 - **Ranked** formatı: 10 ban aynı anda (serbest sıra) → 1-2-2-2-2-1 seçim
 - İlk seçim hakkı Mavi/Kırmızı seçilebilir; format ve seçim `localStorage`'da kalıcı
 - 30 saniyelik sıra süresi (turnuvada; ranked ban fazında sayaç yok)
@@ -105,10 +106,9 @@ artırın**, aksi hâlde dönen ziyaretçi eski dosyayı önbellekten alır.
 
 ## Bilinen sınırlar
 
-- **Turnuva 2. ban fazına kimin başladığı doğrulanmadı.** Şu an ikinci seçim takımı
-  başlıyor (blok 2+2). Resmî kaynak bulunamadı; kullanıcı teyidi bekliyor.
-- Seçim sıraları (1-2-2-1 ve 1-2-1) Fandom'daki toplam `1-2-2-2-2-1` dizisinden
-  türetildi; resmî kural kitabı sıra vermiyor.
+- **Faz başlangıçları kullanıcı bilgisine dayanıyor:** turnuvada her fazı sırayla
+  diğer takım başlatıyor (ban1 mavi → seçim1 mavi → ban2 kırmızı → seçim2 kırmızı).
+  "Eşit başlanır" ifadesinin yorumu bu; resmî kural kitabı sıra vermiyor.
 - Roller Fandom verisine dayanıyor; Moonton'un resmî listesiyle karşılaştırılmadı.
 - Yeni sürüm yayına girdiğinde dönen ziyaretçi bir sonraki açılışta güncel sürümü alır.
 - Sesli/animasyonlu geri bildirim yok; `prefers-reduced-motion` yalnızca geçişleri kapatıyor.

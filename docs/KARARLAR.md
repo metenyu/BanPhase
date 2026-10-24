@@ -24,7 +24,7 @@
 | **Önbellek yayını** | Depoda yayımlanır | Sunucu yok; yayımlanmazsa uygulamanın veri kaynağı kalmaz |
 | **Kod lisansı** | MIT (kod) + CC BY-SA 3.0 (Liquipedia türevi `data/`) | CC BY-SA şartı; iki lisans ayrı tutulur |
 | **Kahraman kimliği** | Fandom MLBB Wiki (CC BY-SA 3.0) + Rone eşlemesi; yalnızca id/ad/rol | İstatistik yok. "Esper Assassin" → Hirara düzeltildi, yayımlanmamış Dori dışarıda (24.10.2026) |
-| **Draft formatı (V1)** | Turnuva: 3 ban → 1-2-2-1 seçim → 2 ban → 1-2-1 seçim. Ranked: 10 ban aynı anda → 1-2-2-2-2-1 seçim | Kullanıcı bilgisi (24.10.2026). 2. ban fazının kiminle başladığı doğrulanmadı |
+| **Draft formatı (V1)** | Turnuva: 3+3 ban → 3+3 seçim → 2+2 ban → 2+2 seçim (fazları sırayla diğer takım başlatır). Ranked: 10 ban aynı anda → 1-2-2-2-2-1 seçim | Kullanıcı bilgisi (24.10.2026): turnuvada blok blok, "eşit başlanır" |
 
 ---
 

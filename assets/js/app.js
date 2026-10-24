@@ -11,7 +11,7 @@ const CONFIG = {
   storageKey: 'banphase.draft.v2',
   dataUrl: './data/heroes.json',
   formats: {
-    tournament: { label: 'Turnuva', hint: '3 ban · 3+3 seçim · 2 ban · 2+2 seçim', freeBans: false },
+    tournament: { label: 'Turnuva', hint: '3+3 ban · 3+3 seçim · 2+2 ban · 2+2 seçim', freeBans: false },
     ranked: { label: 'Ranked', hint: '10 ban aynı anda · 1-2-2-2-2-1 seçim', freeBans: true },
   },
 };
@@ -93,15 +93,12 @@ function sequence(format) {
 
   add('ban', 'fp', 3);
   add('ban', 'sp', 3);
-  add('pick', 'fp', 1);
-  add('pick', 'sp', 2);
-  add('pick', 'fp', 2);
-  add('pick', 'sp', 1);
+  add('pick', 'fp', 3);
+  add('pick', 'sp', 3);
   add('ban', 'sp', 2);
   add('ban', 'fp', 2);
-  add('pick', 'sp', 1);
+  add('pick', 'sp', 2);
   add('pick', 'fp', 2);
-  add('pick', 'sp', 1);
   return steps;
 }
 
