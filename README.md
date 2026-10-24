@@ -3,6 +3,8 @@
 **Master the Draft.** — Mobil öncelikli, ücretsiz, reklamsız ban aşaması yardımcısı.
 V1 Türkçe. Hesap yok, sunucu yok, veri cihazda.
 
+**Canlı:** <https://metenyu.github.io/BanPhase/>
+
 ## Durum
 
 Faz 3 iskeleti. Çalışan ban tahtası var; turnuva verisi **henüz yok** (Liquipedia
