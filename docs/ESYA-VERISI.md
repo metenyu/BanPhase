@@ -15,9 +15,18 @@ işlendi. Hiçbir görüntü buluta gönderilmedi, hiçbir görüntü depoya ekl
 
 ## Sonuç
 
-- **34 eşya**: Türkçe ad + stat + pasif metni (`data/source/items_tr_ocr.json`)
-- 32'sinde 100+ karakter pasif metni var
-- Örnek (doğruluğu İngilizce aslıyla teyit edildi):
+- **62 eşya**: Türkçe ad + stat + pasif (`data/items.json`)
+- 7'si **Pençe Kutsaması** (Alev/Buz/Kanlı Pençe, Gizle, Cesaretlendir, Dehşet Darbesi, İyilik)
+- Pasifi olmayan eşyalar `null` — botlar gibi, yalnızca stat verirler
+
+## Düzeltme (kullanıcı, 24.10.2026)
+
+- **`Raptor Machete` / eski jungle hattı 2020'de oyundan kaldırıldı.** "Jungle kategorisi
+  eksik" tespiti yanlıştı; bugün orman için **Pençe Kutsaması** kullanılıyor. Kaldırılmış
+  eşyalar kataloğa alınmaz.
+- Her eşyanın pasifi olmak zorunda değil (botlar yalnızca stat verir).
+- **Kaotik Silah** pasifi kullanıcı tarafından yazıldı, `data/source/items-fixes.json`
+  üzerinden uygulanıyor (OCR kesik bırakmıştı).
 
 ```
 Bozulma Tırpanı (Corrosion Scythe)
@@ -30,18 +39,13 @@ ekstra 6% Saldırı Hızı kazandırır. Bu etki 5 yüke kadar birikebilir.
 
 ## Bilinen kusurlar
 
-1. **Kapsam 34/92.** 134 görüntünün çoğu ızgara (mağaza listesi); detay paneli
-   açık olanlar sınırlı sayıda.
-2. **Sıra karışması.** Bazı eşyalarda devam parçaları yanlış sırada birleşiyor
-   (örn. Avcı Darbesi). İngilizce aslıyla karşılaştırıp düzeltilmeli.
-3. **OCR artıkları.** `(8 şema` gibi parçalar, `+4400 can` gibi hatalı sayılar.
+1. **Kapsam 62.** Izgarada görünüp detay paneli hiç açılmamış eşya kalmış olabilir.
+2. **Birkaç kayıtta OCR artığı** (örn. Avcı Darbesi'nde cümle sırası).
+3. **Kategori tahmini** stat imzasından yapılıyor; birkaç eşya "Diğer"e düşüyor.
 4. **Pasifler oyun metni** — Moonton'a ait; yalnızca atıflı, ticari olmayan kullanım.
 
 ## Sıradaki adım
 
-1. 34 eşyanın pasifini **İngilizce aslıyla karşılaştırıp** düzelt (metin oyun metni
-   kalır, hatalar giderilir).
-2. Kalan ~58 eşya için: ızgara görüntülerinden ad çıkarımı + İngilizce pasifin
-   Türkçeye çevrilmesi.
-3. Sonra eşya sayfası: kategoriye göre liste, arama, "hangi kahraman alır" bağlantısı.
-4. Build şeması bu katalog üzerine kurulur (`heroId, role, items[], note`).
+1. Kalan eşya detayları varsa aynı boru hattından geçir (görüntü → OCR → birleştirme).
+2. **Build şeması**: `heroId, role, items[], note` — eşya id'leri hazır.
+3. Eşya sayfasına kahraman bağlantısı ("bu eşyayı kim alır").

@@ -1,10 +1,19 @@
 // data/source/items_tr_ocr.json -> data/items.json
-// OCR çıktısını temizler, statları yapılandırır, kategori tahmini ekler.
+// OCR çıktısını temizler, statları yapılandırır, kategori tahmini ekler,
+// elle düzeltmeleri (items-fixes.json) uygular.
 import { readFile, writeFile } from 'node:fs/promises';
 
 const raw = JSON.parse(await readFile('data/source/items_tr_ocr.json', 'utf8'));
 
-const JUNK = /^Ekipman Kutsaması|^Anti Fırlatıcı|^Fırlatıcı|^Of3\(/i;
+let fixes = { items: {} };
+try {
+  fixes = JSON.parse(await readFile('data/source/items-fixes.json', 'utf8'));
+} catch {
+  fixes = { items: {} };
+}
+
+const JUNK = /^Anti Fırlatıcı|^Fırlatıcı iksir|^Of3\(/i;
+const BLESSING = /^Ekipman Kutsaması/i;
 
 const STAT_KEYS = {
   'Fiziksel Saldırı': 'physical_attack',
@@ -40,6 +49,7 @@ function parseStats(lines) {
 }
 
 function categoryOf(name, stats) {
+  if (BLESSING.test(name)) return 'kutsama';
   const keys = new Set(stats.map((s) => s.key));
   if (keys.has('movement_speed') && /bot/i.test(name)) return 'movement';
   if (keys.has('magic_power') || keys.has('magic_penetration')) return 'magic';
@@ -52,34 +62,50 @@ const items = [];
 for (const item of raw.items) {
   if (JUNK.test(item.nameTr)) continue;
   const stats = parseStats(item.statsText);
-  const passive = (item.passiveTr ?? '')
+  let passive = (item.passiveTr ?? '')
     .replace(/\b(\d{1,3})96\b/g, (full, n) => (Number(n) <= 100 ? `${n}%` : full))
     .replace(/\s+/g, ' ')
     .trim();
 
+  let nameTr = item.nameTr;
+  if (BLESSING.test(nameTr)) {
+    nameTr = nameTr
+      .replace(/^Ekipman Kutsaması\s*-\s*/i, '')
+      .replace(/^(Aktif|Pasif)\s*-\s*/i, '')
+      .trim();
+    nameTr = nameTr.charAt(0).toLocaleUpperCase('tr') + nameTr.slice(1);
+  }
+
+  const fix = fixes.items?.[item.id];
+  if (fix?.passiveTr) passive = fix.passiveTr;
+  if (fix?.nameTr) nameTr = fix.nameTr;
+
   items.push({
     id: item.id,
-    nameTr: item.nameTr,
+    nameTr,
     category: categoryOf(item.nameTr, stats),
     stats,
-    passiveTr: passive,
+    passiveTr: passive.length > 5 ? passive : null,
     evidence: item.imageCount ? `${item.imageCount} ekran görüntüsü` : null,
   });
 }
 
 items.sort((a, b) => a.nameTr.localeCompare(b.nameTr, 'tr'));
 
+const byCat = {};
+for (const item of items) byCat[item.category] = (byCat[item.category] ?? 0) + 1;
+
 await writeFile('data/items.json', JSON.stringify({
   schema: 1,
   kind: 'items',
   generatedAt: new Date().toISOString().slice(0, 10),
   count: items.length,
-  source: 'Oyun içi eşya ekran görüntüleri (kullanıcı), OCR',
+  source: 'Oyun içi eşya ekran görüntüleri (kullanıcı), OCR + elle düzeltmeler',
   licenseNote: 'Eşya adları ve açıklamaları Moonton\'a aittir; yalnızca atıflı, ticari olmayan kullanım.',
-  categories: ['attack', 'magic', 'defense', 'movement', 'other'],
+  note: 'Her eşyanın pasifi olmak zorunda değil (ör. botlar). Pasif yoksa null.',
+  categories: ['attack', 'magic', 'defense', 'movement', 'kutsama', 'other'],
+  counts: byCat,
   items,
 }, null, 2), 'utf8');
 
-const byCat = {};
-for (const i of items) byCat[i.category] = (byCat[i.category] ?? 0) + 1;
-console.log(JSON.stringify({ count: items.length, byCat, withPassive: items.filter((i) => i.passiveTr.length > 30).length, sample: items.slice(0, 3) }, null, 2));
+console.log(JSON.stringify({ count: items.length, byCat, withPassive: items.filter((i) => i.passiveTr).length }, null, 2));

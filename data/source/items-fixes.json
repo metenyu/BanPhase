@@ -1,0 +1,10 @@
+{
+  "note": "Elle düzeltmeler. OCR'ın okuyamadığı/yanlış okuduğu alanlar buradan uygulanır; build-items.mjs bunları üzerine yazar.",
+  "updatedAt": "2026-10-24",
+  "items": {
+    "kaotik-silah": {
+      "passiveTr": "Eşsiz Pasif - Zırh Savar: Fiziksel Zırh Delmeyi 30% arttırır. Eşsiz Pasif - Kaotik Enerji: Temel Saldırı menzilini 12% arttırır ve bir rakip kahramana hasar verdikten sonra 10% Hareket Hızı kazanılır.",
+      "source": "kullanıcı (oyun içi metin)"
+    }
+  }
+}

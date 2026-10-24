@@ -792,7 +792,7 @@ function deleteComp(id) {
 
 /* ---------- eşyalar ---------- */
 
-const CAT_TR = { attack: 'Saldırı', magic: 'Büyü', defense: 'Savunma', movement: 'Hareket', other: 'Diğer' };
+const CAT_TR = { attack: 'Saldırı', magic: 'Büyü', defense: 'Savunma', movement: 'Hareket', kutsama: 'Kutsama', other: 'Diğer' };
 
 function renderItems() {
   if (!els.itemList) return;
@@ -818,7 +818,7 @@ function renderItems() {
         <span class="item-cat">${CAT_TR[item.category] ?? ''}</span>
       </div>
       <div class="item-stats">${stats || '<span class="item-stat">stat yok</span>'}</div>
-      <p class="item-passive">${escapeHtml(item.passiveTr || 'Açıklama yok')}</p>
+      <p class="item-passive">${item.passiveTr ? escapeHtml(item.passiveTr) : '<span class="muted">Pasif yok — yalnızca stat verir.</span>'}</p>
     </article>`;
   }).join('');
 }

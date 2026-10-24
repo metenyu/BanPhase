@@ -2,16 +2,26 @@
   "schema": 1,
   "kind": "items",
   "generatedAt": "2026-10-24",
-  "count": 55,
-  "source": "Oyun içi eşya ekran görüntüleri (kullanıcı), OCR",
+  "count": 62,
+  "source": "Oyun içi eşya ekran görüntüleri (kullanıcı), OCR + elle düzeltmeler",
   "licenseNote": "Eşya adları ve açıklamaları Moonton'a aittir; yalnızca atıflı, ticari olmayan kullanım.",
+  "note": "Her eşyanın pasifi olmak zorunda değil (ör. botlar). Pasif yoksa null.",
   "categories": [
     "attack",
     "magic",
     "defense",
     "movement",
+    "kutsama",
     "other"
   ],
+  "counts": {
+    "other": 9,
+    "magic": 11,
+    "kutsama": 7,
+    "attack": 14,
+    "defense": 14,
+    "movement": 7
+  },
   "items": [
     {
       "id": "adalet-kilici",
@@ -41,6 +51,14 @@
       ],
       "passiveTr": "Eşsiz özellik: +10 Büyü Nüfuzu Eşsiz Pasif - Büyü: Büyü Hasarı verilen rakibin Büyü Direncini 2 saniyeliğine 2.5(+0.5*Kahraman Seviyesi) azaltır. Bu etki 3 yükle sınırlıdır.",
       "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "ekipman-kutsamasi-alev-pencesi",
+      "nameTr": "Alev Pençesi",
+      "category": "kutsama",
+      "stats": [],
+      "passiveTr": "toplamda 5 orman Ona la",
+      "evidence": "1 ekran görüntüsü"
     },
     {
       "id": "altin-asa",
@@ -262,6 +280,14 @@
       "evidence": "2 ekran görüntüsü"
     },
     {
+      "id": "ekipman-kutsamasi-buz-pencesi",
+      "nameTr": "Buz Pençesi",
+      "category": "kutsama",
+      "stats": [],
+      "passiveTr": "toplamda 5 orman Ona la",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
       "id": "buyulu-tilsim",
       "nameTr": "Büyülü Tılsım",
       "category": "magic",
@@ -307,6 +333,22 @@
         }
       ],
       "passiveTr": "Eşsiz Pasif - Çarpma: Her Temel Saldırı ekstra 50 (+300% Toplam Büyü Gücü) Büyü Hasarı verir. Eşsiz Pasif - Dürtü: Temel Saldırılar 3 saniyeliğine ekstra 6% Saldırı Hızı kazandırır. Bu etki 5 yüke kadar birikebilir.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "ekipman-kutsamasi-pasif-cesaretlendir",
+      "nameTr": "Cesaretlendir",
+      "category": "kutsama",
+      "stats": [],
+      "passiveTr": "Ona la",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "ekipman-kutsamasi-pasif-dehset-darbesi",
+      "nameTr": "Dehşet Darbesi",
+      "category": "kutsama",
+      "stats": [],
+      "passiveTr": "Ona la",
       "evidence": "2 ekran görüntüsü"
     },
     {
@@ -417,7 +459,7 @@
           "percent": false
         }
       ],
-      "passiveTr": "",
+      "passiveTr": null,
       "evidence": "1 ekran görüntüsü"
     },
     {
@@ -488,6 +530,14 @@
       ],
       "passiveTr": "Eşsiz Pasif - Kurtarma: Savaştan 5 saniye uzak kaldıktan sonra her saniye (2.5% Maksimum Can) Can yeniler. Eşsiz Pasif - Koruyucu: Tek seferde 5(X) üzerinde hasar alındığında, bu miktarı aşan hasarın 30 (+0.3% Maksimum Can)% kadarı Can yenilenir.",
       "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "ekipman-kutsamasi-aktif-gizle",
+      "nameTr": "Gizle",
+      "category": "kutsama",
+      "stats": [],
+      "passiveTr": "Ona la",
+      "evidence": "1 ekran görüntüsü"
     },
     {
       "id": "gok-gurultusu-kemeri",
@@ -588,7 +638,7 @@
           "percent": true
         }
       ],
-      "passiveTr": "",
+      "passiveTr": null,
       "evidence": "1 ekran görüntüsü"
     },
     {
@@ -610,6 +660,14 @@
         }
       ],
       "passiveTr": "Eşsiz Pasif - Mistisizm: Rakip Minyon kesmek veya Minyon Asisti almak 4% Mana yeniler. (Hasar verdiğin minyon 2 saniye içerisinde ölürse Minyon Asisti sayılır).",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "ekipman-kutsamasi-pasif-iyilik",
+      "nameTr": "İyilik",
+      "category": "kutsama",
+      "stats": [],
+      "passiveTr": "Ona la",
       "evidence": "2 ekran görüntüsü"
     },
     {
@@ -696,6 +754,14 @@
       "evidence": "2 ekran görüntüsü"
     },
     {
+      "id": "ekipman-kutsamasi-kanli-pence",
+      "nameTr": "Kanlı Pençe",
+      "category": "kutsama",
+      "stats": [],
+      "passiveTr": "toplamda 5 orman Ona la",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
       "id": "kaotik-silah",
       "nameTr": "Kaotik Silah",
       "category": "attack",
@@ -707,7 +773,7 @@
           "percent": false
         }
       ],
-      "passiveTr": "Eşsiz Pasif - Zırh Savar: Fiziksel Zırh Delmeyi 30% arttırır. Eşsiz Pasif - Kaotik Enerji: Temel Saldırı menzilini 12% arttırır ve bir",
+      "passiveTr": "Eşsiz Pasif - Zırh Savar: Fiziksel Zırh Delmeyi 30% arttırır. Eşsiz Pasif - Kaotik Enerji: Temel Saldırı menzilini 12% arttırır ve bir rakip kahramana hasar verdikten sonra 10% Hareket Hızı kazanılır.",
       "evidence": "1 ekran görüntüsü"
     },
     {
@@ -988,7 +1054,7 @@
           "percent": true
         }
       ],
-      "passiveTr": "",
+      "passiveTr": null,
       "evidence": "1 ekran görüntüsü"
     },
     {
@@ -1036,7 +1102,7 @@
           "percent": false
         }
       ],
-      "passiveTr": "",
+      "passiveTr": null,
       "evidence": "1 ekran görüntüsü"
     },
     {

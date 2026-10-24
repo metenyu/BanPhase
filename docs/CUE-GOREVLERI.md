@@ -142,26 +142,26 @@ Kod yazma, Liquipedia'ya istek atma.
 
 ### B. Eşyalar (dosya: `data/source/items.json`)
 
-Gerçek bir build örneği denendi (Claude): 6 eşyanın 4'ü katalogda bulundu,
-**2'si hiç yok**. Katalog şu an build yazmaya yetmiyor.
+> **Düzeltme (24.10.2026, akşam):** "Jungle kategorisi eksik" tespiti **yanlıştı**.
+> `Raptor Machete` ve eski jungle hattı oyundan 2020'de kaldırıldı. Bugün "ormancı
+> eşyası" diye ayrı bir katalog kategorisi yok; orman için **Pençe Kutsaması**
+> (Retribution blessing) kullanılıyor. Katalogda o eşyalar ayrı kategori (`kutsama`).
+> Aşağıdaki 1. madde iptal.
 
-1. **Jungle kategorisi tamamen eksik.** 92 kaydın **0'ı** jungle. `Raptor Machete`
-   ve yükseltmeleri, `Retribution` yükseltmeleri (Bloody/Flame/Ice), `Hunter's Knife`
-   hattı eklenmeli. Kategori adı: `jungle`.
-2. **92 kaydın 34'ünde `passive` boş.** Liste hâlinde bildir: hangisi gerçekten
-   pasifsiz (saf stat eşyası), hangisi çıkarımda atlanmış. Atlananları doldur.
-   Örnek: `winter-crown` — pasifi boş görünüyor, muhtemelen eksik.
-3. **Yeni/eksik eşya kontrolü:** "Kaotik Silah" (TR) adlı eşya katalogda yok.
-   Son yamalarda eklenen eşyaların tam listesini kontrol et; eksik olanları ekle.
-   (Katalog 92'de kalmış olabilir.)
+1. ~~Jungle kategorisi eksik~~ — **iptal.** Kaldırılmış eşyalar (`availability=Removed`)
+   katalogda yer almamalı; `items_excluded.json` doğru davranmış.
+2. **92 kaydın 34'ünde `passive` boş.** Ama her eşyanın pasifi olmak zorunda değil
+   (ör. botlar yalnızca stat verir). Yine de listele: hangisi gerçekten pasifsiz,
+   hangisi çıkarımda atlanmış. Atlananları doldur.
+3. **Yeni/eksik eşya kontrolü:** "Kaotik Silah" (TR) katalogda yoktu; kullanıcı metni
+   verdi, işlendi. Son yamalarda eklenen eşyaların tam listesini kontrol et.
 4. **`winter-crown` doğrulaması:** Türkçe "kış tacı" mı, yoksa `Winter Truncheon`
    (kendini dondurma) mi? İkisi karışmış olabilir; doğru kaydı ayır.
 5. **`stats` anahtar sözlüğü:** kullandığın her anahtar için tek satır: ne demek,
-   birimi ne (`_pct` = yüzde, düz sayı = puan). Ör. `physical_attack: düz puan`,
-   `crit_chance_pct: yüzde`.
+   birimi ne (`_pct` = yüzde, düz sayı = puan).
 6. **(Opsiyonel) Türkçe ad:** eşyanın oyun içi resmî Türkçe adı varsa `name_tr`
    alanı ekle. Yoksa boş bırak, uydurma.
-7. Teslim: güncel `items.json` + `docs/items-passive-gap.md` + `docs/items-missing.md`.
+7. Teslim: güncel `items.json` + `docs/items-passive-gap.md`.
 
 ### C. Build önerileri (yeni, düşük öncelik)
 
