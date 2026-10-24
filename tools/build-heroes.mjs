@@ -67,6 +67,7 @@ const heroes = rows.map((row) => {
     id,
     name: row.name,
     roles: ROLE_ORDER.filter((role) => roles.includes(role)),
+    primaryRole: ROLE_TR[row.role1] ?? null,
     roneId: row.rone_hero_id,
   };
 });

@@ -606,6 +606,108 @@ button { font: inherit; color: inherit; }
 
 .sheet-actions { display: flex; gap: 8px; justify-content: flex-end; }
 
+/* ---------- comp'lar ---------- */
+
+.comps { margin-top: 26px; }
+
+.comps-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.comps-head h2 { font-size: 1rem; }
+
+.comp-list {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.comp-card {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.comp-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.comp-card strong { font-size: .86rem; }
+
+.comp-del {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+.comp-del:hover { color: var(--red); }
+
+.comp-team { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px; }
+
+.comp-team-body { min-width: 0; }
+
+.team-dot {
+  width: 8px;
+  height: 8px;
+  margin-top: 13px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.team-dot.blue { background: var(--blue); }
+.team-dot.red { background: var(--red); }
+
+.comp-heroes { display: flex; gap: 4px; margin-bottom: 8px; }
+
+.comp-hero {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tone) 60%, #0b1220), #0b1220);
+  color: #f2f6ff;
+  font-size: .68rem;
+  font-weight: 700;
+}
+
+.comp-meta { font-size: .68rem; color: var(--muted); }
+
+.analysis {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.analysis h3 {
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.analysis.blue h3 { color: var(--blue); }
+.analysis.red h3 { color: var(--red); }
+
+.analysis ul { margin: 6px 0 0; padding-left: 18px; list-style: disc; font-size: .82rem; }
+.analysis li { margin-bottom: 4px; }
+
 /* ---------- bildirim ---------- */
 
 .toast {

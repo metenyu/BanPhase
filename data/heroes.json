@@ -33,6 +33,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 1
     },
     {
@@ -41,6 +42,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 2
     },
     {
@@ -49,6 +51,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 3
     },
     {
@@ -58,6 +61,7 @@
         "Tank",
         "Büyücü"
       ],
+      "primaryRole": "Tank",
       "roneId": 4
     },
     {
@@ -66,6 +70,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 5
     },
     {
@@ -74,6 +79,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 6
     },
     {
@@ -83,6 +89,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 7
     },
     {
@@ -91,6 +98,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 8
     },
     {
@@ -99,6 +107,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 9
     },
     {
@@ -107,6 +116,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 10
     },
     {
@@ -116,6 +126,7 @@
         "Savaşçı",
         "Büyücü"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 11
     },
     {
@@ -124,6 +135,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 12
     },
     {
@@ -132,6 +144,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 13
     },
     {
@@ -140,6 +153,7 @@
       "roles": [
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 14
     },
     {
@@ -148,6 +162,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 15
     },
     {
@@ -157,6 +172,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 16
     },
     {
@@ -165,6 +181,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 17
     },
     {
@@ -173,6 +190,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 18
     },
     {
@@ -182,6 +200,7 @@
         "Tank",
         "Destek"
       ],
+      "primaryRole": "Tank",
       "roneId": 19
     },
     {
@@ -191,6 +210,7 @@
         "Tank",
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 20
     },
     {
@@ -199,6 +219,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 21
     },
     {
@@ -207,6 +228,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 22
     },
     {
@@ -215,6 +237,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 23
     },
     {
@@ -223,6 +246,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 24
     },
     {
@@ -231,6 +255,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 25
     },
     {
@@ -239,6 +264,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 26
     },
     {
@@ -247,6 +273,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 27
     },
     {
@@ -255,6 +282,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 28
     },
     {
@@ -263,6 +291,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 29
     },
     {
@@ -272,6 +301,7 @@
         "Suikastçı",
         "Nişancı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 30
     },
     {
@@ -280,6 +310,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 31
     },
     {
@@ -289,6 +320,7 @@
         "Tank",
         "Destek"
       ],
+      "primaryRole": "Tank",
       "roneId": 32
     },
     {
@@ -297,6 +329,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 33
     },
     {
@@ -305,6 +338,7 @@
       "roles": [
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 34
     },
     {
@@ -314,6 +348,7 @@
         "Tank",
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 35
     },
     {
@@ -322,6 +357,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 36
     },
     {
@@ -330,6 +366,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 37
     },
     {
@@ -338,6 +375,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 38
     },
     {
@@ -347,6 +385,7 @@
         "Savaşçı",
         "Nişancı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 39
     },
     {
@@ -355,6 +394,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 40
     },
     {
@@ -364,6 +404,7 @@
         "Tank",
         "Savaşçı"
       ],
+      "primaryRole": "Tank",
       "roneId": 41
     },
     {
@@ -373,6 +414,7 @@
         "Suikastçı",
         "Büyücü"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 42
     },
     {
@@ -381,6 +423,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 43
     },
     {
@@ -390,6 +433,7 @@
         "Tank",
         "Savaşçı"
       ],
+      "primaryRole": "Tank",
       "roneId": 44
     },
     {
@@ -398,6 +442,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 45
     },
     {
@@ -406,6 +451,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 46
     },
     {
@@ -414,6 +460,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 47
     },
     {
@@ -422,6 +469,7 @@
       "roles": [
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 48
     },
     {
@@ -430,6 +478,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 49
     },
     {
@@ -438,6 +487,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 50
     },
     {
@@ -446,6 +496,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 51
     },
     {
@@ -454,6 +505,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 52
     },
     {
@@ -463,6 +515,7 @@
         "Suikastçı",
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 53
     },
     {
@@ -471,6 +524,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 54
     },
     {
@@ -479,6 +533,7 @@
       "roles": [
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 55
     },
     {
@@ -487,6 +542,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 56
     },
     {
@@ -495,6 +551,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 57
     },
     {
@@ -503,6 +560,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 58
     },
     {
@@ -511,6 +569,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 59
     },
     {
@@ -519,6 +578,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 60
     },
     {
@@ -527,6 +587,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 61
     },
     {
@@ -535,6 +596,7 @@
       "roles": [
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 62
     },
     {
@@ -544,6 +606,7 @@
         "Suikastçı",
         "Büyücü"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 63
     },
     {
@@ -552,6 +615,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 64
     },
     {
@@ -560,6 +624,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 65
     },
     {
@@ -568,6 +633,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 66
     },
     {
@@ -576,6 +642,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 67
     },
     {
@@ -584,6 +651,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 68
     },
     {
@@ -592,6 +660,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 69
     },
     {
@@ -600,6 +669,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 70
     },
     {
@@ -609,6 +679,7 @@
         "Büyücü",
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 71
     },
     {
@@ -617,6 +688,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 72
     },
     {
@@ -625,6 +697,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 73
     },
     {
@@ -633,6 +706,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 74
     },
     {
@@ -642,6 +716,7 @@
         "Suikastçı",
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 75
     },
     {
@@ -651,6 +726,7 @@
         "Büyücü",
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 76
     },
     {
@@ -659,6 +735,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 77
     },
     {
@@ -667,6 +744,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 78
     },
     {
@@ -675,6 +753,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 79
     },
     {
@@ -683,6 +762,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 80
     },
     {
@@ -692,6 +772,7 @@
         "Tank",
         "Büyücü"
       ],
+      "primaryRole": "Tank",
       "roneId": 81
     },
     {
@@ -701,6 +782,7 @@
         "Tank",
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 82
     },
     {
@@ -709,6 +791,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 83
     },
     {
@@ -717,6 +800,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 84
     },
     {
@@ -725,6 +809,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 85
     },
     {
@@ -733,6 +818,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 86
     },
     {
@@ -741,6 +827,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 87
     },
     {
@@ -750,6 +837,7 @@
         "Tank",
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 88
     },
     {
@@ -758,6 +846,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 89
     },
     {
@@ -766,6 +855,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 90
     },
     {
@@ -774,6 +864,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 91
     },
     {
@@ -783,6 +874,7 @@
         "Tank",
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 92
     },
     {
@@ -791,6 +883,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 93
     },
     {
@@ -799,6 +892,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 94
     },
     {
@@ -807,6 +901,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 95
     },
     {
@@ -815,6 +910,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 96
     },
     {
@@ -824,6 +920,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 97
     },
     {
@@ -832,6 +929,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 98
     },
     {
@@ -841,6 +939,7 @@
         "Tank",
         "Savaşçı"
       ],
+      "primaryRole": "Tank",
       "roneId": 99
     },
     {
@@ -849,6 +948,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 100
     },
     {
@@ -857,6 +957,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 101
     },
     {
@@ -866,6 +967,7 @@
         "Suikastçı",
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 102
     },
     {
@@ -875,6 +977,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 103
     },
     {
@@ -883,6 +986,7 @@
       "roles": [
         "Tank"
       ],
+      "primaryRole": "Tank",
       "roneId": 104
     },
     {
@@ -891,6 +995,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 105
     },
     {
@@ -899,6 +1004,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 106
     },
     {
@@ -907,6 +1013,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 107
     },
     {
@@ -915,6 +1022,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 108
     },
     {
@@ -923,6 +1031,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 109
     },
     {
@@ -931,6 +1040,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 110
     },
     {
@@ -940,6 +1050,7 @@
         "Tank",
         "Nişancı"
       ],
+      "primaryRole": "Tank",
       "roneId": 111
     },
     {
@@ -948,6 +1059,7 @@
       "roles": [
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 112
     },
     {
@@ -957,6 +1069,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 113
     },
     {
@@ -965,6 +1078,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 114
     },
     {
@@ -973,6 +1087,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 115
     },
     {
@@ -982,6 +1097,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 116
     },
     {
@@ -991,6 +1107,7 @@
         "Tank",
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 117
     },
     {
@@ -999,6 +1116,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 118
     },
     {
@@ -1007,6 +1125,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 119
     },
     {
@@ -1016,6 +1135,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 120
     },
     {
@@ -1024,6 +1144,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 121
     },
     {
@@ -1032,6 +1153,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 122
     },
     {
@@ -1040,6 +1162,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 123
     },
     {
@@ -1049,6 +1172,7 @@
         "Tank",
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 124
     },
     {
@@ -1057,6 +1181,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 125
     },
     {
@@ -1066,6 +1191,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 126
     },
     {
@@ -1074,6 +1200,7 @@
       "roles": [
         "Savaşçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 127
     },
     {
@@ -1083,6 +1210,7 @@
         "Savaşçı",
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 128
     },
     {
@@ -1091,6 +1219,7 @@
       "roles": [
         "Büyücü"
       ],
+      "primaryRole": "Büyücü",
       "roneId": 129
     },
     {
@@ -1099,6 +1228,7 @@
       "roles": [
         "Nişancı"
       ],
+      "primaryRole": "Nişancı",
       "roneId": 130
     },
     {
@@ -1108,6 +1238,7 @@
         "Savaşçı",
         "Suikastçı"
       ],
+      "primaryRole": "Savaşçı",
       "roneId": 131
     },
     {
@@ -1116,6 +1247,7 @@
       "roles": [
         "Destek"
       ],
+      "primaryRole": "Destek",
       "roneId": 132
     },
     {
@@ -1124,6 +1256,7 @@
       "roles": [
         "Suikastçı"
       ],
+      "primaryRole": "Suikastçı",
       "roneId": 133
     }
   ]

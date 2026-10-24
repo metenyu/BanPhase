@@ -18,6 +18,8 @@ const CONFIG = {
 
 const TEAM_LABEL = { blue: 'Mavi Takım', red: 'Kırmızı Takım' };
 const TYPE_LABEL = { ban: 'ban', pick: 'seçim' };
+const COMPS_KEY = 'banphase.comps.v2';
+const COMP_ROLES = ['Tank', 'Savaşçı', 'Suikastçı', 'Büyücü', 'Nişancı', 'Destek'];
 
 const state = {
   heroes: [],
@@ -31,6 +33,7 @@ const state = {
   freeSlot: null,
   query: '',
   role: 'all',
+  comps: [],
   finished: false,
   timer: { remaining: CONFIG.banSeconds, running: false, deadline: 0, handle: 0, armed: false },
 };
@@ -69,6 +72,67 @@ function initials(name) {
 
 function pad2(n) {
   return String(n).padStart(2, '0');
+}
+
+function escapeHtml(text) {
+  return String(text).replace(/[&<>"']/g, (ch) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[ch]));
+}
+
+/* ---------- comp analizi ---------- */
+
+function compAnalysis(picks) {
+  const coverage = {};
+  const primary = {};
+
+  for (const id of picks) {
+    const hero = state.heroById.get(id);
+    if (!hero) continue;
+    for (const role of hero.roles) coverage[role] = (coverage[role] ?? 0) + 1;
+    if (hero.primaryRole) primary[hero.primaryRole] = (primary[hero.primaryRole] ?? 0) + 1;
+  }
+
+  const notes = [];
+  const has = (role) => (coverage[role] ?? 0) > 0;
+
+  if (picks.length < 5) notes.push(`Eksik comp: ${picks.length}/5 seçim.`);
+  if (!has('Tank')) notes.push('Ön saf yok: takımda Tank bulunmuyor.');
+  if (!has('Destek')) notes.push('Destek yok: sürdürülebilirlik ve koruma zayıf.');
+  if (!has('Nişancı')) notes.push('Nişancı yok: menzilli sürekli hasar eksik.');
+  if (!has('Suikastçı')) notes.push('Suikastçı yok: arka hat tehdidi zayıf.');
+
+  const max = Math.max(0, ...Object.values(primary));
+  if (max >= 3) {
+    const role = Object.keys(primary).find((r) => primary[r] === max);
+    notes.push(`${max} ${role}: aynı ana rolde yığılma var.`);
+  }
+
+  if (!notes.length && picks.length === 5) notes.push('Rol dağılımı dengeli görünüyor.');
+
+  return { counts: coverage, primary, notes };
+}
+
+function loadComps() {
+  try {
+    const raw = localStorage.getItem(COMPS_KEY);
+    const list = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(list)) return [];
+    return list.filter((comp) => comp
+      && typeof comp.name === 'string'
+      && comp.blue && Array.isArray(comp.blue.picks)
+      && comp.red && Array.isArray(comp.red.picks));
+  } catch {
+    return [];
+  }
+}
+
+function persistComps() {
+  try {
+    localStorage.setItem(COMPS_KEY, JSON.stringify(state.comps));
+  } catch {
+    /* kota */
+  }
 }
 
 /* ---------- format motoru ---------- */
@@ -562,12 +626,27 @@ function summaryRows() {
 
 function showSummary() {
   const rows = summaryRows();
-  els.summaryBody.innerHTML = rows.map((row) => `
+
+  const blocks = ['blue', 'red'].map((team) => {
+    const picks = state.slots
+      .filter((s) => s.team === team && s.type === 'pick' && s.heroId)
+      .map((s) => s.heroId);
+    const analysis = compAnalysis(picks);
+    const roleLine = COMP_ROLES.filter((role) => analysis.primary[role])
+      .map((role) => `${role} ${analysis.primary[role]}`).join(' · ');
+    return `<div class="analysis ${team}">
+      <h3>${TEAM_LABEL[team]} kompozisyonu</h3>
+      <p class="muted">${roleLine ? `Ana roller: ${roleLine}` : 'Henüz seçim yok'}</p>
+      <ul>${analysis.notes.map((note) => `<li>${escapeHtml(note)}</li>`).join('')}</ul>
+    </div>`;
+  }).join('');
+
+  els.summaryBody.innerHTML = `${rows.map((row) => `
     <div class="${row.team}">
       <h3>${row.label}</h3>
       <p><strong>Ban:</strong> ${row.bans.join(', ')}</p>
       <p><strong>Seçim:</strong> ${row.picks.join(', ')}</p>
-    </div>`).join('');
+    </div>`).join('')}${blocks}`;
 
   if (typeof els.summary.showModal === 'function') {
     if (!els.summary.open) els.summary.showModal();
@@ -607,6 +686,78 @@ async function copySummary() {
   }
 }
 
+/* ---------- comp kaydı ---------- */
+
+function saveComp() {
+  const teamData = (team) => ({
+    picks: state.slots.filter((s) => s.team === team && s.type === 'pick' && s.heroId).map((s) => s.heroId),
+    bans: state.slots.filter((s) => s.team === team && s.type === 'ban' && s.heroId).map((s) => s.heroId),
+  });
+
+  const blue = teamData('blue');
+  const red = teamData('red');
+  if (blue.picks.length < 5 || red.picks.length < 5) {
+    return toast('Kaydetmek için iki takımın da 5 seçimi olmalı.');
+  }
+
+  const name = window.prompt('Draft adı', `Draft ${state.comps.length + 1}`);
+  if (!name || !name.trim()) return;
+
+  state.comps.unshift({
+    id: `c${Date.now()}`,
+    name: name.trim().slice(0, 60),
+    at: new Date().toISOString().slice(0, 10),
+    format: state.format,
+    firstPick: state.firstPick,
+    blue,
+    red,
+  });
+
+  persistComps();
+  renderComps();
+  toast('Draft kaydedildi.');
+}
+
+function renderComps() {
+  if (!els.compList) return;
+  els.compsCount.textContent = state.comps.length ? `${state.comps.length}` : '';
+  els.compsEmpty.hidden = state.comps.length > 0;
+
+  const teamRow = (team, data) => {
+    const avatars = data.picks.map((id) => {
+      const hero = state.heroById.get(id);
+      return `<span class="comp-hero" style="--tone:${hero ? hue(hero.id) : '#243049'}" title="${hero ? escapeHtml(hero.name) : id}">${hero ? initials(hero.name) : '?'}</span>`;
+    }).join('');
+    const analysis = compAnalysis(data.picks);
+    const roles = COMP_ROLES.filter((role) => analysis.primary[role])
+      .map((role) => `${role} ${analysis.primary[role]}`).join(' · ');
+    return `<div class="comp-team">
+      <span class="team-dot ${team}" aria-hidden="true"></span>
+      <div class="comp-team-body">
+        <div class="comp-heroes">${avatars}</div>
+        <p class="comp-meta">${roles || '—'}</p>
+      </div>
+    </div>`;
+  };
+
+  els.compList.innerHTML = state.comps.map((comp) => `<article class="comp-card">
+    <header>
+      <strong>${escapeHtml(comp.name)}</strong>
+      <button class="comp-del" type="button" data-del="${comp.id}" aria-label="${escapeHtml(comp.name)} kaydını sil">×</button>
+    </header>
+    ${teamRow('blue', comp.blue)}
+    ${teamRow('red', comp.red)}
+    <p class="comp-meta">${comp.format === 'ranked' ? 'Ranked' : 'Turnuva'} · ${comp.at}</p>
+  </article>`).join('');
+}
+
+function deleteComp(id) {
+  state.comps = state.comps.filter((comp) => comp.id !== id);
+  persistComps();
+  renderComps();
+  toast('Comp silindi.');
+}
+
 /* ---------- bildirim ---------- */
 
 function toast(message) {
@@ -637,6 +788,12 @@ function bindEvents() {
   els.btnSummary.addEventListener('click', showSummary);
   els.btnCopy.addEventListener('click', copySummary);
   els.btnClose.addEventListener('click', closeSummary);
+  els.btnSaveComp.addEventListener('click', saveComp);
+
+  els.compList.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-del]');
+    if (button) deleteComp(button.dataset.del);
+  });
 
   els.formatToggle.addEventListener('click', (event) => {
     const button = event.target.closest('[data-format]');
@@ -702,7 +859,8 @@ function cacheElements() {
   const ids = ['turn-team', 'turn-slot', 'timer', 'btn-timer', 'btn-undo', 'btn-skip',
     'btn-summary', 'btn-reset', 'search', 'roles', 'hero-grid', 'hero-count', 'empty',
     'summary', 'summary-body', 'btn-copy', 'btn-close', 'toast', 'data-badge',
-    'format-toggle', 'firstpick-toggle', 'settings-hint'];
+    'format-toggle', 'firstpick-toggle', 'settings-hint',
+    'btn-save-comp', 'comp-list', 'comps-count', 'comps-empty'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
@@ -739,7 +897,9 @@ async function boot() {
 
   if (!saved && state.format === 'ranked') state.freeSlot = 0;
 
+  state.comps = loadComps();
   renderRoles();
+  renderComps();
   renderTimer();
   render();
 

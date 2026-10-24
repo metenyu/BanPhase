@@ -7,7 +7,7 @@
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#070b14">
-  <meta name="build" content="2026-10-24.5">
+  <meta name="build" content="2026-10-24.6">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
@@ -93,6 +93,15 @@
       <p class="empty" id="empty" hidden>Bu filtreye uyan kahraman yok.</p>
     </section>
 
+    <section class="comps" id="comps">
+      <div class="comps-head">
+        <h2>Kayıtlı draftlar <span class="muted" id="comps-count"></span></h2>
+        <p class="muted">Draft bitince “Draft'ı kaydet” ile buraya eklenir.</p>
+      </div>
+      <div class="comp-list" id="comp-list"></div>
+      <p class="empty" id="comps-empty" hidden>Henüz kayıtlı comp yok.</p>
+    </section>
+
     <details class="howto">
       <summary>Nasıl çalışır?</summary>
       <ol>
@@ -117,6 +126,7 @@
     <h2 id="summary-title">Draft tamam</h2>
     <div class="summary-cols" id="summary-body"></div>
     <div class="sheet-actions">
+      <button class="btn btn-ghost" id="btn-save-comp" type="button">Draft'ı kaydet</button>
       <button class="btn btn-solid" id="btn-copy" type="button">Metni kopyala</button>
       <button class="btn btn-ghost" id="btn-close" type="button">Kapat</button>
     </div>

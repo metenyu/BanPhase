@@ -22,6 +22,9 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 - **Ranked sırası**: 5+5 ban aynı anda, sonra `seçim M,K,K,M,M,K,K,M,M,K`
 - Ranked'da herhangi bir boş ban slotu seçilip doldurulabiliyor; geri alınca slot boşalıp yeniden aktif oluyor
 - 20 hamlede tahta doluyor, özet diyaloğu ban + seçim satırlarını gösteriyor
+- **Kompozisyon analizi** takım bazında: "Mavi: Tank 2 · Savaşçı 1 · Suikastçı 1 · Destek 1 /
+  Nişancı yok" — iki takımın seçimleri karışmıyor
+- Draft kaydı iki takımın compunu birlikte saklıyor, yenilemede duruyor, silinebiliyor
 - Formattaki kullanılmış kahramanlar listede kilitleniyor (20/133)
 - konsol hatası ya da yakalanmamış istisna yok
 - service worker `banphase-v4` kayıtlı; ağ kapalıyken sayfa açılıyor
@@ -37,6 +40,8 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 - 30 saniyelik sıra süresi (turnuvada; ranked ban fazında sayaç yok)
 - 133 kahraman içinde arama + rol filtresi (Türkçe karakter duyarsız)
 - Geri al, tahtayı sıfırla, özeti panoya kopyala
+- **Draft sonrası kompozisyon analizi:** her takım için ana rol dağılımı + eksik rol uyarıları
+- **Kayıtlı draftlar:** iki takımın compunu birlikte kaydet, galeride tut (cihazda)
 - PWA: çevrimdışı açılır, ana ekrana eklenebilir
 
 ## Çalıştırma
@@ -105,6 +110,12 @@ artırın**, aksi hâlde dönen ziyaretçi eski dosyayı önbellekten alır.
 - [ ] Özet metnine turnuva adı / maç bilgisi ekleme
 
 ## Bilinen sınırlar
+
+- **Comp analizi şimdilik yalnızca rol bazlı.** Koridor (gold/exp/mid/jungle/roam),
+  oyun stili (engage/poke/split), hasar tipi ve güç eğrisi etiketleri yok — bunlar
+  `docs/CUE-GOREVLERI.md` ile Cue'dan isteniyor.
+- "A comp'u B comp'u yener" iddiası **yok**; bunun için turnuva maç verisi gerekiyor
+  (Liquipedia onayı).
 
 - **Faz başlangıçları kullanıcı bilgisine dayanıyor:** turnuvada her fazı sırayla
   diğer takım başlatıyor (ban1 mavi → seçim1 mavi → ban2 kırmızı → seçim2 kırmızı).
