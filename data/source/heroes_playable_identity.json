@@ -1,0 +1,1114 @@
+{
+ "generated_at_utc": "2026-10-24T12:46:33Z",
+ "purpose": "Oynanabilir kahraman kimlik listesi (id, ad, rol). İstatistik ve build içermez.",
+ "sources": [
+  {
+   "name": "Fandom MLBB Wiki, Module:Hero/data",
+   "url": "https://mobile-legends.fandom.com/wiki/Module:Hero/data",
+   "local_file": "fandom_hero_data.lua",
+   "retrieved_at_utc": "2026-10-24T01:56:00Z (yaklaşık; dosya zaman damgasından, yerel 04:56 +03)",
+   "note": "Kayıt zamanı dosya zaman damgasından türetildi; birebir indirme kaydı bu oturumda yok."
+  },
+  {
+   "name": "Rone Arena API, /academy/heroes/catalog?size=200",
+   "url": "https://arena.fastapicloud.dev/api/academy/heroes/catalog?size=200",
+   "local_file": "data/cache/rone/2026-10-24/heroes_catalog.json",
+   "retrieved_at_utc": "2026-10-24T10:51:38Z"
+  }
+ ],
+ "counts": {
+  "fandom_entries_with_role1": 135,
+  "playable_listed": 133,
+  "excluded_placeholder": 1,
+  "unreleased_tba": 1,
+  "rone_catalog_entries": 133
+ },
+ "heroes": [
+  {
+   "fandom_id": "011",
+   "name": "Miya",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 1
+  },
+  {
+   "fandom_id": "021",
+   "name": "Balmond",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 2
+  },
+  {
+   "fandom_id": "031",
+   "name": "Saber",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 3
+  },
+  {
+   "fandom_id": "041",
+   "name": "Alice",
+   "role1": "Tank",
+   "role2": "Mage",
+   "release_date": "2016",
+   "rone_hero_id": 4
+  },
+  {
+   "fandom_id": "051",
+   "name": "Nana",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 5
+  },
+  {
+   "fandom_id": "061",
+   "name": "Tigreal",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 6
+  },
+  {
+   "fandom_id": "071",
+   "name": "Alucard",
+   "role1": "Fighter",
+   "role2": "Assassin",
+   "release_date": "2016",
+   "rone_hero_id": 7
+  },
+  {
+   "fandom_id": "081",
+   "name": "Karina",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 8
+  },
+  {
+   "fandom_id": "091",
+   "name": "Akai",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 9
+  },
+  {
+   "fandom_id": "101",
+   "name": "Franco",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 10
+  },
+  {
+   "fandom_id": "111",
+   "name": "Bane",
+   "role1": "Fighter",
+   "role2": "Mage",
+   "release_date": "2016",
+   "rone_hero_id": 11
+  },
+  {
+   "fandom_id": "121",
+   "name": "Bruno",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 12
+  },
+  {
+   "fandom_id": "131",
+   "name": "Clint",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 13
+  },
+  {
+   "fandom_id": "141",
+   "name": "Rafaela",
+   "role1": "Support",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 14
+  },
+  {
+   "fandom_id": "151",
+   "name": "Eudora",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "2016",
+   "rone_hero_id": 15
+  },
+  {
+   "fandom_id": "161",
+   "name": "Zilong",
+   "role1": "Fighter",
+   "role2": "Assassin",
+   "release_date": "9 September 2016",
+   "rone_hero_id": 16
+  },
+  {
+   "fandom_id": "171",
+   "name": "Fanny",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "30 September 2016",
+   "rone_hero_id": 17
+  },
+  {
+   "fandom_id": "181",
+   "name": "Layla",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "23 September 2016",
+   "rone_hero_id": 18
+  },
+  {
+   "fandom_id": "191",
+   "name": "Minotaur",
+   "role1": "Tank",
+   "role2": "Support",
+   "release_date": "14 October 2016",
+   "rone_hero_id": 19
+  },
+  {
+   "fandom_id": "201",
+   "name": "Lolita",
+   "role1": "Support",
+   "role2": "Tank",
+   "release_date": "28 October 2016",
+   "rone_hero_id": 20
+  },
+  {
+   "fandom_id": "211",
+   "name": "Hayabusa",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "4 November 2016",
+   "rone_hero_id": 21
+  },
+  {
+   "fandom_id": "221",
+   "name": "Freya",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "November 2016",
+   "rone_hero_id": 22
+  },
+  {
+   "fandom_id": "231",
+   "name": "Gord",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "November 2016",
+   "rone_hero_id": 23
+  },
+  {
+   "fandom_id": "241",
+   "name": "Natalia",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "December 2016",
+   "rone_hero_id": 24
+  },
+  {
+   "fandom_id": "251",
+   "name": "Kagura",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "December 2016",
+   "rone_hero_id": 25
+  },
+  {
+   "fandom_id": "261",
+   "name": "Chou",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "December 2016",
+   "rone_hero_id": 26
+  },
+  {
+   "fandom_id": "271",
+   "name": "Sun",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "December 2016",
+   "rone_hero_id": 27
+  },
+  {
+   "fandom_id": "281",
+   "name": "Alpha",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "January 2017",
+   "rone_hero_id": 28
+  },
+  {
+   "fandom_id": "291",
+   "name": "Ruby",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 29
+  },
+  {
+   "fandom_id": "301",
+   "name": "Yi Sun-shin",
+   "role1": "Assassin",
+   "role2": "Marksman",
+   "release_date": "2017",
+   "rone_hero_id": 30
+  },
+  {
+   "fandom_id": "311",
+   "name": "Moskov",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 31
+  },
+  {
+   "fandom_id": "321",
+   "name": "Johnson",
+   "role1": "Tank",
+   "role2": "Support",
+   "release_date": "14 March 2017",
+   "rone_hero_id": 32
+  },
+  {
+   "fandom_id": "331",
+   "name": "Cyclops",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 33
+  },
+  {
+   "fandom_id": "341",
+   "name": "Estes",
+   "role1": "Support",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 34
+  },
+  {
+   "fandom_id": "351",
+   "name": "Hilda",
+   "role1": "Fighter",
+   "role2": "Tank",
+   "release_date": "2017",
+   "rone_hero_id": 35
+  },
+  {
+   "fandom_id": "361",
+   "name": "Aurora",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 36
+  },
+  {
+   "fandom_id": "371",
+   "name": "Lapu-Lapu",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 37
+  },
+  {
+   "fandom_id": "381",
+   "name": "Vexana",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 38
+  },
+  {
+   "fandom_id": "391",
+   "name": "Roger",
+   "role1": "Fighter",
+   "role2": "Marksman",
+   "release_date": "25 June 2017",
+   "rone_hero_id": 39
+  },
+  {
+   "fandom_id": "401",
+   "name": "Karrie",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 40
+  },
+  {
+   "fandom_id": "411",
+   "name": "Gatotkaca",
+   "role1": "Tank",
+   "role2": "Fighter",
+   "release_date": "July 2017",
+   "rone_hero_id": 41
+  },
+  {
+   "fandom_id": "421",
+   "name": "Harley",
+   "role1": "Assassin",
+   "role2": "Mage",
+   "release_date": "29 July 2017",
+   "rone_hero_id": 42
+  },
+  {
+   "fandom_id": "431",
+   "name": "Irithel",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "15 August 2017",
+   "rone_hero_id": 43
+  },
+  {
+   "fandom_id": "441",
+   "name": "Grock",
+   "role1": "Tank",
+   "role2": "Fighter",
+   "release_date": "2017",
+   "rone_hero_id": 44
+  },
+  {
+   "fandom_id": "451",
+   "name": "Argus",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 45
+  },
+  {
+   "fandom_id": "461",
+   "name": "Odette",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "29 September 2017",
+   "rone_hero_id": 46
+  },
+  {
+   "fandom_id": "471",
+   "name": "Lancelot",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 47
+  },
+  {
+   "fandom_id": "481",
+   "name": "Diggie",
+   "role1": "Support",
+   "role2": null,
+   "release_date": "19 November 2017",
+   "rone_hero_id": 48
+  },
+  {
+   "fandom_id": "491",
+   "name": "Hylos",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 49
+  },
+  {
+   "fandom_id": "501",
+   "name": "Zhask",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "2017",
+   "rone_hero_id": 50
+  },
+  {
+   "fandom_id": "511",
+   "name": "Helcurt",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "24 November 2017",
+   "rone_hero_id": 51
+  },
+  {
+   "fandom_id": "521",
+   "name": "Pharsa",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "27 December 2017",
+   "rone_hero_id": 52
+  },
+  {
+   "fandom_id": "531",
+   "name": "Lesley",
+   "role1": "Marksman",
+   "role2": "Assassin",
+   "release_date": "January 2018",
+   "rone_hero_id": 53
+  },
+  {
+   "fandom_id": "541",
+   "name": "Jawhead",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "January 2018",
+   "rone_hero_id": 54
+  },
+  {
+   "fandom_id": "551",
+   "name": "Angela",
+   "role1": "Support",
+   "role2": null,
+   "release_date": "6 February 2018",
+   "rone_hero_id": 55
+  },
+  {
+   "fandom_id": "561",
+   "name": "Gusion",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "2018",
+   "rone_hero_id": 56
+  },
+  {
+   "fandom_id": "571",
+   "name": "Valir",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "2018",
+   "rone_hero_id": 57
+  },
+  {
+   "fandom_id": "581",
+   "name": "Martis",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "2018",
+   "rone_hero_id": 58
+  },
+  {
+   "fandom_id": "591",
+   "name": "Uranus",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "2018",
+   "rone_hero_id": 59
+  },
+  {
+   "fandom_id": "601",
+   "name": "Hanabi",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "17 April 2018",
+   "rone_hero_id": 60
+  },
+  {
+   "fandom_id": "611",
+   "name": "Chang'e",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "30 May 2018",
+   "rone_hero_id": 61
+  },
+  {
+   "fandom_id": "621",
+   "name": "Kaja",
+   "role1": "Support",
+   "role2": null,
+   "release_date": "25 April 2018",
+   "rone_hero_id": 62
+  },
+  {
+   "fandom_id": "631",
+   "name": "Selena",
+   "role1": "Assassin",
+   "role2": "Mage",
+   "release_date": "10 July 2018",
+   "rone_hero_id": 63
+  },
+  {
+   "fandom_id": "641",
+   "name": "Aldous",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "24 July 2018",
+   "rone_hero_id": 64
+  },
+  {
+   "fandom_id": "651",
+   "name": "Claude",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "7 August 2018",
+   "rone_hero_id": 65
+  },
+  {
+   "fandom_id": "661",
+   "name": "Vale",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "29 January 2019",
+   "rone_hero_id": 66
+  },
+  {
+   "fandom_id": "671",
+   "name": "Leomord",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "3 October 2018",
+   "rone_hero_id": 67
+  },
+  {
+   "fandom_id": "681",
+   "name": "Lunox",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "4 September 2018",
+   "rone_hero_id": 68
+  },
+  {
+   "fandom_id": "691",
+   "name": "Hanzo",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "4 December 2018",
+   "rone_hero_id": 69
+  },
+  {
+   "fandom_id": "701",
+   "name": "Belerick",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "17 August 2018",
+   "rone_hero_id": 70
+  },
+  {
+   "fandom_id": "711",
+   "name": "Kimmy",
+   "role1": "Marksman",
+   "role2": "Mage",
+   "release_date": "23 October 2018",
+   "rone_hero_id": 71
+  },
+  {
+   "fandom_id": "721",
+   "name": "Thamuz",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "18 September 2018",
+   "rone_hero_id": 72
+  },
+  {
+   "fandom_id": "731",
+   "name": "Harith",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "6 November 2018",
+   "rone_hero_id": 73
+  },
+  {
+   "fandom_id": "741",
+   "name": "Minsitthar",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "20 November 2018",
+   "rone_hero_id": 74
+  },
+  {
+   "fandom_id": "751",
+   "name": "Kadita",
+   "role1": "Mage",
+   "role2": "Assassin",
+   "release_date": "18 December 2018",
+   "rone_hero_id": 75
+  },
+  {
+   "fandom_id": "761",
+   "name": "Faramis",
+   "role1": "Support",
+   "role2": "Mage",
+   "release_date": "18 May 2019",
+   "rone_hero_id": 76
+  },
+  {
+   "fandom_id": "771",
+   "name": "Badang",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "15 January 2019",
+   "rone_hero_id": 77
+  },
+  {
+   "fandom_id": "781",
+   "name": "Khufra",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "12 March 2019",
+   "rone_hero_id": 78
+  },
+  {
+   "fandom_id": "791",
+   "name": "Granger",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "23 April 2019",
+   "rone_hero_id": 79
+  },
+  {
+   "fandom_id": "801",
+   "name": "Guinevere",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "21 February 2019",
+   "rone_hero_id": 80
+  },
+  {
+   "fandom_id": "811",
+   "name": "Esmeralda",
+   "role1": "Tank",
+   "role2": "Mage",
+   "release_date": "3 April 2019",
+   "rone_hero_id": 81
+  },
+  {
+   "fandom_id": "821",
+   "name": "Terizla",
+   "role1": "Fighter",
+   "role2": "Tank",
+   "release_date": "4 June 2019",
+   "rone_hero_id": 82
+  },
+  {
+   "fandom_id": "831",
+   "name": "X.Borg",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "9 August 2019",
+   "rone_hero_id": 83
+  },
+  {
+   "fandom_id": "841",
+   "name": "Ling",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "24 November 2019",
+   "rone_hero_id": 84
+  },
+  {
+   "fandom_id": "851",
+   "name": "Dyrroth",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "25 June 2019",
+   "rone_hero_id": 85
+  },
+  {
+   "fandom_id": "861",
+   "name": "Lylia",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "23 July 2019",
+   "rone_hero_id": 86
+  },
+  {
+   "fandom_id": "871",
+   "name": "Baxia",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "8 October 2019",
+   "rone_hero_id": 87
+  },
+  {
+   "fandom_id": "881",
+   "name": "Masha",
+   "role1": "Fighter",
+   "role2": "Tank",
+   "release_date": "17 September 2019",
+   "rone_hero_id": 88
+  },
+  {
+   "fandom_id": "891",
+   "name": "Wanwan",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "26 November 2019",
+   "rone_hero_id": 89
+  },
+  {
+   "fandom_id": "901",
+   "name": "Silvanna",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "17 December 2019",
+   "rone_hero_id": 90
+  },
+  {
+   "fandom_id": "911",
+   "name": "Cecilion",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "12 February 2020",
+   "rone_hero_id": 91
+  },
+  {
+   "fandom_id": "921",
+   "name": "Carmilla",
+   "role1": "Support",
+   "role2": "Tank",
+   "release_date": "17 January 2020",
+   "rone_hero_id": 92
+  },
+  {
+   "fandom_id": "931",
+   "name": "Atlas",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "20 March 2020",
+   "rone_hero_id": 93
+  },
+  {
+   "fandom_id": "941",
+   "name": "Popol and Kupa",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "21 April 2020",
+   "rone_hero_id": 94
+  },
+  {
+   "fandom_id": "951",
+   "name": "Yu Zhong",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "16 June 2020",
+   "rone_hero_id": 95
+  },
+  {
+   "fandom_id": "961",
+   "name": "Luo Yi",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "16 May 2020",
+   "rone_hero_id": 96
+  },
+  {
+   "fandom_id": "971",
+   "name": "Benedetta",
+   "role1": "Assassin",
+   "role2": "Fighter",
+   "release_date": "7 November 2020",
+   "rone_hero_id": 97
+  },
+  {
+   "fandom_id": "981",
+   "name": "Khaleed",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "7 August 2020",
+   "rone_hero_id": 98
+  },
+  {
+   "fandom_id": "991",
+   "name": "Barats",
+   "role1": "Tank",
+   "role2": "Fighter",
+   "release_date": "18 September 2020",
+   "rone_hero_id": 99
+  },
+  {
+   "fandom_id": "1001",
+   "name": "Brody",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "16 October 2020",
+   "rone_hero_id": 100
+  },
+  {
+   "fandom_id": "1011",
+   "name": "Yve",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "12 February 2021",
+   "rone_hero_id": 101
+  },
+  {
+   "fandom_id": "1021",
+   "name": "Mathilda",
+   "role1": "Support",
+   "role2": "Assassin",
+   "release_date": "12 December 2020",
+   "rone_hero_id": 102
+  },
+  {
+   "fandom_id": "1031",
+   "name": "Paquito",
+   "role1": "Fighter",
+   "role2": "Assassin",
+   "release_date": "15 January 2021",
+   "rone_hero_id": 103
+  },
+  {
+   "fandom_id": "1041",
+   "name": "Gloo",
+   "role1": "Tank",
+   "role2": null,
+   "release_date": "16 April 2021",
+   "rone_hero_id": 104
+  },
+  {
+   "fandom_id": "1051",
+   "name": "Beatrix",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "19 March 2021",
+   "rone_hero_id": 105
+  },
+  {
+   "fandom_id": "1061",
+   "name": "Phoveus",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "11 May 2021",
+   "rone_hero_id": 106
+  },
+  {
+   "fandom_id": "1071",
+   "name": "Natan",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "23 July 2021",
+   "rone_hero_id": 107
+  },
+  {
+   "fandom_id": "1081",
+   "name": "Aulus",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "31 August 2021",
+   "rone_hero_id": 108
+  },
+  {
+   "fandom_id": "1091",
+   "name": "Aamon",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "26 October 2021",
+   "rone_hero_id": 109
+  },
+  {
+   "fandom_id": "1101",
+   "name": "Valentina",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "25 November 2021",
+   "rone_hero_id": 110
+  },
+  {
+   "fandom_id": "1111",
+   "name": "Edith",
+   "role1": "Tank",
+   "role2": "Marksman",
+   "release_date": "24 December 2021",
+   "rone_hero_id": 111
+  },
+  {
+   "fandom_id": "1121",
+   "name": "Floryn",
+   "role1": "Support",
+   "role2": null,
+   "release_date": "22 September 2021",
+   "rone_hero_id": 112
+  },
+  {
+   "fandom_id": "1131",
+   "name": "Yin",
+   "role1": "Fighter",
+   "role2": "Assassin",
+   "release_date": "18 January 2022",
+   "rone_hero_id": 113
+  },
+  {
+   "fandom_id": "1141",
+   "name": "Melissa",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "22 February 2022",
+   "rone_hero_id": 114
+  },
+  {
+   "fandom_id": "1151",
+   "name": "Xavier",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "[[Patch Notes/1.6.66|22 March 2022]]",
+   "rone_hero_id": 115
+  },
+  {
+   "fandom_id": "1161",
+   "name": "Julian",
+   "role1": "Assassin",
+   "role2": "Fighter",
+   "release_date": "24 May 2022",
+   "rone_hero_id": 116
+  },
+  {
+   "fandom_id": "1171",
+   "name": "Fredrinn",
+   "role1": "Fighter",
+   "role2": "Tank",
+   "release_date": "12 August 2022",
+   "rone_hero_id": 117
+  },
+  {
+   "fandom_id": "1181",
+   "name": "Joy",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "18 November 2022",
+   "rone_hero_id": 118
+  },
+  {
+   "fandom_id": "1191",
+   "name": "Novaria",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "16 May 2023",
+   "rone_hero_id": 119
+  },
+  {
+   "fandom_id": "1201",
+   "name": "Arlott",
+   "role1": "Fighter",
+   "role2": "Assassin",
+   "release_date": "14 February 2023",
+   "rone_hero_id": 120
+  },
+  {
+   "fandom_id": "1211",
+   "name": "Ixia",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "8 July 2023",
+   "rone_hero_id": 121
+  },
+  {
+   "fandom_id": "1221",
+   "name": "Nolan",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "30 September 2023",
+   "rone_hero_id": 122
+  },
+  {
+   "fandom_id": "1231",
+   "name": "Cici",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "27 December 2023",
+   "rone_hero_id": 123
+  },
+  {
+   "fandom_id": "1241",
+   "name": "Chip",
+   "role1": "Support",
+   "role2": "Tank",
+   "release_date": "16 March 2024",
+   "rone_hero_id": 124
+  },
+  {
+   "fandom_id": "1251",
+   "name": "Zhuxin",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "29 June 2024",
+   "rone_hero_id": 125
+  },
+  {
+   "fandom_id": "1261",
+   "name": "Suyou",
+   "role1": "Assassin",
+   "role2": "Fighter",
+   "release_date": "21 September 2024",
+   "rone_hero_id": 126
+  },
+  {
+   "fandom_id": "1271",
+   "name": "Lukas",
+   "role1": "Fighter",
+   "role2": null,
+   "release_date": "21 December 2024",
+   "rone_hero_id": 127
+  },
+  {
+   "fandom_id": "1281",
+   "name": "Kalea",
+   "role1": "Support",
+   "role2": "Fighter",
+   "release_date": "19 March 2025",
+   "rone_hero_id": 128
+  },
+  {
+   "fandom_id": "1291",
+   "name": "Zetian",
+   "role1": "Mage",
+   "role2": null,
+   "release_date": "18 June 2025",
+   "rone_hero_id": 129
+  },
+  {
+   "fandom_id": "1301",
+   "name": "Obsidia",
+   "role1": "Marksman",
+   "role2": null,
+   "release_date": "17 September 2025",
+   "rone_hero_id": 130
+  },
+  {
+   "fandom_id": "1311",
+   "name": "Sora",
+   "role1": "Fighter",
+   "role2": "Assassin",
+   "release_date": "18 December 2025 ",
+   "rone_hero_id": 131
+  },
+  {
+   "fandom_id": "1321",
+   "name": "Marcel",
+   "role1": "Support",
+   "role2": null,
+   "release_date": "11 March 2026",
+   "rone_hero_id": 132
+  },
+  {
+   "fandom_id": "1331",
+   "name": "Hirara",
+   "role1": "Assassin",
+   "role2": null,
+   "release_date": "17 June 2026",
+   "rone_hero_id": 133
+  }
+ ],
+ "excluded": [
+  {
+   "name": "Mystery Hero",
+   "reason": "Fandom şablon girdisi (placeholder)"
+  }
+ ],
+ "unreleased": [
+  {
+   "name": "Dori",
+   "fandom_id": "1341",
+   "reason": "release_date TBA"
+  }
+ ],
+ "rone_conflicts": [
+  {
+   "rone_hero_id": 133,
+   "catalog_name": "Esper Assassin",
+   "resolved_name": "Hirara",
+   "evidence": "stats main_hero=Hirara; build hero_name=彼良良; Fandom Hirara sayfası (Season 41, 17 Haziran 2026 çıkış)"
+  }
+ ],
+ "rone_names_not_in_fandom_list": []
+}

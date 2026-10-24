@@ -117,3 +117,27 @@ YAPMAYACAKLARIN:
 
 Teslim biçimi: dosya ya da ham kayıt. Özet mesaj teslim sayılmaz.
 ```
+
+---
+
+## 6. Çözüm (24.10.2026, akşam)
+
+Cue'nun kanıt raporu ve kimlik dosyası geldi; itirazların durumu:
+
+| Konu | Sonuç |
+|---|---|
+| 665 build | Açıklandı: `builds/` altında 665 dosya (133 kahraman × 5 lane). Günlükte görünmemesinin sebebi betiğin yalnızca hataları loglamasıymış; betik düzeltilmiş. V1 build kullanmadığı için risk düşük. |
+| "Esper Assassin" | Yanlış katalog etiketi. Kimlik 133 = **Hirara** (17.06.2026, Suikastçı). Dori yayımlanmamış, listede yok. |
+| 60 istek/saat + "1/2 sn" | Cue geri çekti; kaynağı yok. E-postadan sayılar çıkarıldı, Liquipedia'ya yazılı soruluyor. |
+| "Yeniden dağıtım yok" | Geçersiz. Telif sayfası CC BY-SA 3.0: paylaşım serbest, atıf + aynı lisans şart. |
+| M7 şampiyonu | **Doğrulandı** — dış kaynaklar: RRI (*Aurora PH 4-0 Alter Ego, 25.01.2026*), Bernama, GAB. Cue yalnızca kendi markdown çıkarımına bakmıştı. |
+| MSC 2026 | Cue'nun kaydıyla doğrulandı (Team Spirit 4-3 Yangon Galacticos, Paris). |
+
+**Uygulamaya alınan veri:** `data/heroes.json` — 133 kahraman, Türkçe roller,
+`roneId` eşlemesi. Üretimi: `tools/build-heroes.mjs`, kaynağı
+`data/source/heroes_playable_identity.json`. Çıkış tarihleri bilinçli olarak
+dışarıda (kaynakta serbest metin: `"2016"`, `"18 December 2025 "`,
+`"[[Patch Notes/1.6.66|22 March 2022]]"`).
+
+**Hâlâ açık:** e-spor sezon etiketi (S14 mü S18 mi), playoff verisinin eksikliği,
+Liquipedia başvurusu için iletişim adresi.

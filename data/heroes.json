@@ -1,21 +1,1130 @@
 {
-  "schema": 1,
-  "kind": "seed",
+  "schema": 2,
+  "kind": "identity",
   "generatedAt": "2026-10-24",
-  "note": "TOHUM VERİ. Yalnızca kimlik alanları (id, ad, rol) vardır; istatistik, build veya sıralama içermez. Gerçek turnuva verisi Liquipedia onayı sonrası data/liquipedia/ altına gelecek. Bu dosyadaki roller genel bilgi amaçlıdır ve doğrulanmamıştır.",
-  "roles": ["Tank", "Savaşçı", "Suikastçı", "Büyücü", "Nişancı", "Destek"],
+  "count": 133,
+  "roles": [
+    "Tank",
+    "Savaşçı",
+    "Suikastçı",
+    "Büyücü",
+    "Nişancı",
+    "Destek"
+  ],
+  "sources": [
+    {
+      "name": "Fandom MLBB Wiki — Module:Hero/data",
+      "url": "https://mobile-legends.fandom.com/wiki/Module:Hero/data",
+      "license": "CC BY-SA 3.0",
+      "usedFor": "ad, rol, çıkış tarihi"
+    },
+    {
+      "name": "Rone Arena API — /academy/heroes/catalog",
+      "url": "https://arena.fastapicloud.dev/api/academy/heroes/catalog?size=200",
+      "license": "BSD-3 (kod); oyun verisi hakkı belirsiz",
+      "usedFor": "yalnızca kimlik eşlemesi (roneId)"
+    }
+  ],
+  "note": "Yalnızca kimlik: istatistik, build, sıralama yok. Çıkış tarihleri bilinçli olarak dışarıda bırakıldı (kaynakta serbest metin ve biçim tutarsız). \"Esper Assassin\" etiketi Hirara olarak düzeltildi; yayımlanmamış Dori dışarıda.",
   "heroes": [
-    { "id": "tigreal", "name": "Tigreal", "roles": ["Tank"] },
-    { "id": "atlas", "name": "Atlas", "roles": ["Tank"] },
-    { "id": "lolita", "name": "Lolita", "roles": ["Tank", "Destek"] },
-    { "id": "chou", "name": "Chou", "roles": ["Savaşçı"] },
-    { "id": "fanny", "name": "Fanny", "roles": ["Suikastçı"] },
-    { "id": "gusion", "name": "Gusion", "roles": ["Suikastçı"] },
-    { "id": "ling", "name": "Ling", "roles": ["Suikastçı"] },
-    { "id": "kagura", "name": "Kagura", "roles": ["Büyücü"] },
-    { "id": "pharsa", "name": "Pharsa", "roles": ["Büyücü"] },
-    { "id": "bruno", "name": "Bruno", "roles": ["Nişancı"] },
-    { "id": "beatrix", "name": "Beatrix", "roles": ["Nişancı"] },
-    { "id": "estes", "name": "Estes", "roles": ["Destek"] }
+    {
+      "id": "miya",
+      "name": "Miya",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 1
+    },
+    {
+      "id": "balmond",
+      "name": "Balmond",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 2
+    },
+    {
+      "id": "saber",
+      "name": "Saber",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 3
+    },
+    {
+      "id": "alice",
+      "name": "Alice",
+      "roles": [
+        "Tank",
+        "Büyücü"
+      ],
+      "roneId": 4
+    },
+    {
+      "id": "nana",
+      "name": "Nana",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 5
+    },
+    {
+      "id": "tigreal",
+      "name": "Tigreal",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 6
+    },
+    {
+      "id": "alucard",
+      "name": "Alucard",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 7
+    },
+    {
+      "id": "karina",
+      "name": "Karina",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 8
+    },
+    {
+      "id": "akai",
+      "name": "Akai",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 9
+    },
+    {
+      "id": "franco",
+      "name": "Franco",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 10
+    },
+    {
+      "id": "bane",
+      "name": "Bane",
+      "roles": [
+        "Savaşçı",
+        "Büyücü"
+      ],
+      "roneId": 11
+    },
+    {
+      "id": "bruno",
+      "name": "Bruno",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 12
+    },
+    {
+      "id": "clint",
+      "name": "Clint",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 13
+    },
+    {
+      "id": "rafaela",
+      "name": "Rafaela",
+      "roles": [
+        "Destek"
+      ],
+      "roneId": 14
+    },
+    {
+      "id": "eudora",
+      "name": "Eudora",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 15
+    },
+    {
+      "id": "zilong",
+      "name": "Zilong",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 16
+    },
+    {
+      "id": "fanny",
+      "name": "Fanny",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 17
+    },
+    {
+      "id": "layla",
+      "name": "Layla",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 18
+    },
+    {
+      "id": "minotaur",
+      "name": "Minotaur",
+      "roles": [
+        "Tank",
+        "Destek"
+      ],
+      "roneId": 19
+    },
+    {
+      "id": "lolita",
+      "name": "Lolita",
+      "roles": [
+        "Tank",
+        "Destek"
+      ],
+      "roneId": 20
+    },
+    {
+      "id": "hayabusa",
+      "name": "Hayabusa",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 21
+    },
+    {
+      "id": "freya",
+      "name": "Freya",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 22
+    },
+    {
+      "id": "gord",
+      "name": "Gord",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 23
+    },
+    {
+      "id": "natalia",
+      "name": "Natalia",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 24
+    },
+    {
+      "id": "kagura",
+      "name": "Kagura",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 25
+    },
+    {
+      "id": "chou",
+      "name": "Chou",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 26
+    },
+    {
+      "id": "sun",
+      "name": "Sun",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 27
+    },
+    {
+      "id": "alpha",
+      "name": "Alpha",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 28
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 29
+    },
+    {
+      "id": "yi-sun-shin",
+      "name": "Yi Sun-shin",
+      "roles": [
+        "Suikastçı",
+        "Nişancı"
+      ],
+      "roneId": 30
+    },
+    {
+      "id": "moskov",
+      "name": "Moskov",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 31
+    },
+    {
+      "id": "johnson",
+      "name": "Johnson",
+      "roles": [
+        "Tank",
+        "Destek"
+      ],
+      "roneId": 32
+    },
+    {
+      "id": "cyclops",
+      "name": "Cyclops",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 33
+    },
+    {
+      "id": "estes",
+      "name": "Estes",
+      "roles": [
+        "Destek"
+      ],
+      "roneId": 34
+    },
+    {
+      "id": "hilda",
+      "name": "Hilda",
+      "roles": [
+        "Tank",
+        "Savaşçı"
+      ],
+      "roneId": 35
+    },
+    {
+      "id": "aurora",
+      "name": "Aurora",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 36
+    },
+    {
+      "id": "lapu-lapu",
+      "name": "Lapu-Lapu",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 37
+    },
+    {
+      "id": "vexana",
+      "name": "Vexana",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 38
+    },
+    {
+      "id": "roger",
+      "name": "Roger",
+      "roles": [
+        "Savaşçı",
+        "Nişancı"
+      ],
+      "roneId": 39
+    },
+    {
+      "id": "karrie",
+      "name": "Karrie",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 40
+    },
+    {
+      "id": "gatotkaca",
+      "name": "Gatotkaca",
+      "roles": [
+        "Tank",
+        "Savaşçı"
+      ],
+      "roneId": 41
+    },
+    {
+      "id": "harley",
+      "name": "Harley",
+      "roles": [
+        "Suikastçı",
+        "Büyücü"
+      ],
+      "roneId": 42
+    },
+    {
+      "id": "irithel",
+      "name": "Irithel",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 43
+    },
+    {
+      "id": "grock",
+      "name": "Grock",
+      "roles": [
+        "Tank",
+        "Savaşçı"
+      ],
+      "roneId": 44
+    },
+    {
+      "id": "argus",
+      "name": "Argus",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 45
+    },
+    {
+      "id": "odette",
+      "name": "Odette",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 46
+    },
+    {
+      "id": "lancelot",
+      "name": "Lancelot",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 47
+    },
+    {
+      "id": "diggie",
+      "name": "Diggie",
+      "roles": [
+        "Destek"
+      ],
+      "roneId": 48
+    },
+    {
+      "id": "hylos",
+      "name": "Hylos",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 49
+    },
+    {
+      "id": "zhask",
+      "name": "Zhask",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 50
+    },
+    {
+      "id": "helcurt",
+      "name": "Helcurt",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 51
+    },
+    {
+      "id": "pharsa",
+      "name": "Pharsa",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 52
+    },
+    {
+      "id": "lesley",
+      "name": "Lesley",
+      "roles": [
+        "Suikastçı",
+        "Nişancı"
+      ],
+      "roneId": 53
+    },
+    {
+      "id": "jawhead",
+      "name": "Jawhead",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 54
+    },
+    {
+      "id": "angela",
+      "name": "Angela",
+      "roles": [
+        "Destek"
+      ],
+      "roneId": 55
+    },
+    {
+      "id": "gusion",
+      "name": "Gusion",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 56
+    },
+    {
+      "id": "valir",
+      "name": "Valir",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 57
+    },
+    {
+      "id": "martis",
+      "name": "Martis",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 58
+    },
+    {
+      "id": "uranus",
+      "name": "Uranus",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 59
+    },
+    {
+      "id": "hanabi",
+      "name": "Hanabi",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 60
+    },
+    {
+      "id": "change",
+      "name": "Chang'e",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 61
+    },
+    {
+      "id": "kaja",
+      "name": "Kaja",
+      "roles": [
+        "Destek"
+      ],
+      "roneId": 62
+    },
+    {
+      "id": "selena",
+      "name": "Selena",
+      "roles": [
+        "Suikastçı",
+        "Büyücü"
+      ],
+      "roneId": 63
+    },
+    {
+      "id": "aldous",
+      "name": "Aldous",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 64
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 65
+    },
+    {
+      "id": "vale",
+      "name": "Vale",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 66
+    },
+    {
+      "id": "leomord",
+      "name": "Leomord",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 67
+    },
+    {
+      "id": "lunox",
+      "name": "Lunox",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 68
+    },
+    {
+      "id": "hanzo",
+      "name": "Hanzo",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 69
+    },
+    {
+      "id": "belerick",
+      "name": "Belerick",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 70
+    },
+    {
+      "id": "kimmy",
+      "name": "Kimmy",
+      "roles": [
+        "Büyücü",
+        "Nişancı"
+      ],
+      "roneId": 71
+    },
+    {
+      "id": "thamuz",
+      "name": "Thamuz",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 72
+    },
+    {
+      "id": "harith",
+      "name": "Harith",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 73
+    },
+    {
+      "id": "minsitthar",
+      "name": "Minsitthar",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 74
+    },
+    {
+      "id": "kadita",
+      "name": "Kadita",
+      "roles": [
+        "Suikastçı",
+        "Büyücü"
+      ],
+      "roneId": 75
+    },
+    {
+      "id": "faramis",
+      "name": "Faramis",
+      "roles": [
+        "Büyücü",
+        "Destek"
+      ],
+      "roneId": 76
+    },
+    {
+      "id": "badang",
+      "name": "Badang",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 77
+    },
+    {
+      "id": "khufra",
+      "name": "Khufra",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 78
+    },
+    {
+      "id": "granger",
+      "name": "Granger",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 79
+    },
+    {
+      "id": "guinevere",
+      "name": "Guinevere",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 80
+    },
+    {
+      "id": "esmeralda",
+      "name": "Esmeralda",
+      "roles": [
+        "Tank",
+        "Büyücü"
+      ],
+      "roneId": 81
+    },
+    {
+      "id": "terizla",
+      "name": "Terizla",
+      "roles": [
+        "Tank",
+        "Savaşçı"
+      ],
+      "roneId": 82
+    },
+    {
+      "id": "x-borg",
+      "name": "X.Borg",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 83
+    },
+    {
+      "id": "ling",
+      "name": "Ling",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 84
+    },
+    {
+      "id": "dyrroth",
+      "name": "Dyrroth",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 85
+    },
+    {
+      "id": "lylia",
+      "name": "Lylia",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 86
+    },
+    {
+      "id": "baxia",
+      "name": "Baxia",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 87
+    },
+    {
+      "id": "masha",
+      "name": "Masha",
+      "roles": [
+        "Tank",
+        "Savaşçı"
+      ],
+      "roneId": 88
+    },
+    {
+      "id": "wanwan",
+      "name": "Wanwan",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 89
+    },
+    {
+      "id": "silvanna",
+      "name": "Silvanna",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 90
+    },
+    {
+      "id": "cecilion",
+      "name": "Cecilion",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 91
+    },
+    {
+      "id": "carmilla",
+      "name": "Carmilla",
+      "roles": [
+        "Tank",
+        "Destek"
+      ],
+      "roneId": 92
+    },
+    {
+      "id": "atlas",
+      "name": "Atlas",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 93
+    },
+    {
+      "id": "popol-and-kupa",
+      "name": "Popol and Kupa",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 94
+    },
+    {
+      "id": "yu-zhong",
+      "name": "Yu Zhong",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 95
+    },
+    {
+      "id": "luo-yi",
+      "name": "Luo Yi",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 96
+    },
+    {
+      "id": "benedetta",
+      "name": "Benedetta",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 97
+    },
+    {
+      "id": "khaleed",
+      "name": "Khaleed",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 98
+    },
+    {
+      "id": "barats",
+      "name": "Barats",
+      "roles": [
+        "Tank",
+        "Savaşçı"
+      ],
+      "roneId": 99
+    },
+    {
+      "id": "brody",
+      "name": "Brody",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 100
+    },
+    {
+      "id": "yve",
+      "name": "Yve",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 101
+    },
+    {
+      "id": "mathilda",
+      "name": "Mathilda",
+      "roles": [
+        "Suikastçı",
+        "Destek"
+      ],
+      "roneId": 102
+    },
+    {
+      "id": "paquito",
+      "name": "Paquito",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 103
+    },
+    {
+      "id": "gloo",
+      "name": "Gloo",
+      "roles": [
+        "Tank"
+      ],
+      "roneId": 104
+    },
+    {
+      "id": "beatrix",
+      "name": "Beatrix",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 105
+    },
+    {
+      "id": "phoveus",
+      "name": "Phoveus",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 106
+    },
+    {
+      "id": "natan",
+      "name": "Natan",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 107
+    },
+    {
+      "id": "aulus",
+      "name": "Aulus",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 108
+    },
+    {
+      "id": "aamon",
+      "name": "Aamon",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 109
+    },
+    {
+      "id": "valentina",
+      "name": "Valentina",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 110
+    },
+    {
+      "id": "edith",
+      "name": "Edith",
+      "roles": [
+        "Tank",
+        "Nişancı"
+      ],
+      "roneId": 111
+    },
+    {
+      "id": "floryn",
+      "name": "Floryn",
+      "roles": [
+        "Destek"
+      ],
+      "roneId": 112
+    },
+    {
+      "id": "yin",
+      "name": "Yin",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 113
+    },
+    {
+      "id": "melissa",
+      "name": "Melissa",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 114
+    },
+    {
+      "id": "xavier",
+      "name": "Xavier",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 115
+    },
+    {
+      "id": "julian",
+      "name": "Julian",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 116
+    },
+    {
+      "id": "fredrinn",
+      "name": "Fredrinn",
+      "roles": [
+        "Tank",
+        "Savaşçı"
+      ],
+      "roneId": 117
+    },
+    {
+      "id": "joy",
+      "name": "Joy",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 118
+    },
+    {
+      "id": "novaria",
+      "name": "Novaria",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 119
+    },
+    {
+      "id": "arlott",
+      "name": "Arlott",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 120
+    },
+    {
+      "id": "ixia",
+      "name": "Ixia",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 121
+    },
+    {
+      "id": "nolan",
+      "name": "Nolan",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 122
+    },
+    {
+      "id": "cici",
+      "name": "Cici",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 123
+    },
+    {
+      "id": "chip",
+      "name": "Chip",
+      "roles": [
+        "Tank",
+        "Destek"
+      ],
+      "roneId": 124
+    },
+    {
+      "id": "zhuxin",
+      "name": "Zhuxin",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 125
+    },
+    {
+      "id": "suyou",
+      "name": "Suyou",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 126
+    },
+    {
+      "id": "lukas",
+      "name": "Lukas",
+      "roles": [
+        "Savaşçı"
+      ],
+      "roneId": 127
+    },
+    {
+      "id": "kalea",
+      "name": "Kalea",
+      "roles": [
+        "Savaşçı",
+        "Destek"
+      ],
+      "roneId": 128
+    },
+    {
+      "id": "zetian",
+      "name": "Zetian",
+      "roles": [
+        "Büyücü"
+      ],
+      "roneId": 129
+    },
+    {
+      "id": "obsidia",
+      "name": "Obsidia",
+      "roles": [
+        "Nişancı"
+      ],
+      "roneId": 130
+    },
+    {
+      "id": "sora",
+      "name": "Sora",
+      "roles": [
+        "Savaşçı",
+        "Suikastçı"
+      ],
+      "roneId": 131
+    },
+    {
+      "id": "marcel",
+      "name": "Marcel",
+      "roles": [
+        "Destek"
+      ],
+      "roneId": 132
+    },
+    {
+      "id": "hirara",
+      "name": "Hirara",
+      "roles": [
+        "Suikastçı"
+      ],
+      "roneId": 133
+    }
   ]
 }

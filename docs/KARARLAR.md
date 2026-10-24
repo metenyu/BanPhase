@@ -23,6 +23,7 @@
 | **Veri duruşu (V1)** | Rone istatistik/build **yok**; yalnızca kahraman kimliği. Turnuva verisi Liquipedia'dan | Hak belirsiz + veri 98 yama eski (24.10.2026 kararı) |
 | **Önbellek yayını** | Depoda yayımlanır | Sunucu yok; yayımlanmazsa uygulamanın veri kaynağı kalmaz |
 | **Kod lisansı** | MIT (kod) + CC BY-SA 3.0 (Liquipedia türevi `data/`) | CC BY-SA şartı; iki lisans ayrı tutulur |
+| **Kahraman kimliği** | Fandom MLBB Wiki (CC BY-SA 3.0) + Rone eşlemesi; yalnızca id/ad/rol | İstatistik yok. "Esper Assassin" → Hirara düzeltildi, yayımlanmamış Dori dışarıda (24.10.2026) |
 
 ---
 
@@ -120,9 +121,11 @@ Sonuçları ölçüm/rapor olarak getir, onayımı bekle.
 |---|---|
 | Faz 2 — veri hattı | ✅ Cue teslim etti, denetlendi → `docs/FAZ2-RAPORU.md` |
 | Faz 3 — iskelet | ✅ `index.html` + `assets/` + PWA; Edge (CDP) ile uçtan uca doğrulandı |
-| Liquipedia başvurusu | ⏳ metin hazır → `docs/LIQUIPEDIA-BASVURU.md`, 3 alan bekliyor |
-| Yayın | ⬜ GitHub deposu + Pages |
+| Kahraman listesi | ✅ 133 kahraman → `data/heroes.json` (`tools/build-heroes.mjs` üretir) |
+| Yayın | ✅ `main` → otomatik Pages; canlı adres ölçüldü |
+| Liquipedia başvurusu | ⏳ metin hazır → `docs/LIQUIPEDIA-BASVURU.md`, tek eksik: iletişim adresi |
 
-**Açık girdiler:** GitHub kullanıcı adı, iletişim e-postası, veri duruşunun onayı.
+**Açık girdiler:** Liquipedia başvurusu için iletişim adresi.
+**Sonraki işler:** ban sırası varyantları, pick aşaması, turnuva istatistiği ekranı.
 
 **Klasör:** `C:\Users\Cozum\Desktop\BanPhase` — eski `MetaCore` klasörü boş kaldı.

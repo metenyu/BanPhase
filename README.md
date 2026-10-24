@@ -7,9 +7,9 @@ V1 Türkçe. Hesap yok, sunucu yok, veri cihazda.
 
 ## Durum
 
-Faz 3 iskeleti. Çalışan ban tahtası var; turnuva verisi **henüz yok** (Liquipedia
-onayı bekleniyor). Arayüz şu an `data/heroes.json` içindeki 12 kahramanlık tohum
-veriyle çalışıyor — kimlik alanları dışında bir şey iddia etmiyor.
+Faz 3 tamam: çalışan ban tahtası + **133 kahramanlık gerçek kimlik listesi**.
+Turnuva verisi **henüz yok** (Liquipedia başvurusu bekliyor); uygulama istatistik,
+build veya sıralama iddia etmiyor — yalnızca kimlik (ad, rol).
 
 ![Mobil ban tahtası](docs/ekran-mobil.png)
 
@@ -17,13 +17,15 @@ veriyle çalışıyor — kimlik alanları dışında bir şey iddia etmiyor.
 
 Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 
-- 12 kahraman, 10 ban slotu, 7 rol çipi yüklendi; 430 px ve 1300 px'te yatay taşma yok
+- 133 kahraman, 10 ban slotu, 7 rol çipi; 390 px ve 1300 px'te yatay taşma yok
+- arama: `hirara` → 1, `suikast` → 29, `destek` → 15, `chang` → 1, `zzzz` → 0
+  (Türkçe karakter katlaması çalışıyor)
+- baş harfler: `Popol and Kupa` → PK, `X.Borg` → XB, `Chang'e` → CH, `Yi Sun-shin` → YS
 - ban → sıra ilerleme → takım sayacı (5/5) → `localStorage`'a yazım
-- geri al, sıfırla, arama ("fanny" → 1, "suikast" → 3, "destek" → 2)
-- 10 ban dolunca özet diyaloğu açılıyor, metin doğru, sayaç duruyor
+- geri al, sıfırla, 10 ban dolunca özet diyaloğu
 - konsol hatası ya da yakalanmamış istisna yok
-- service worker kayıtlı (`banphase-v1`), kabuk önbellekte; ağ kapalıyken sayfa
-  12 kahraman ve 10 slotla açılıyor
+- service worker `banphase-v2` kayıtlı; **ağ kapalıyken** sayfa 133 kahraman ve
+  10 slotla açılıyor
 
 ![Ban özeti](docs/ekran-ozet.png)
 
@@ -31,7 +33,7 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 
 - 5'e 5 ban tahtası, sırayla mavi/kırmızı
 - 30 saniyelik ban süresi (başlat/duraklat, süre dolunca atlama)
-- Kahraman araması + rol filtresi (Türkçe karakter duyarsız)
+- 133 kahraman içinde arama + rol filtresi (Türkçe karakter duyarsız)
 - Geri al, tahtayı sıfırla, özeti panoya kopyala
 - Durum `localStorage`'da; sayfa yenilenince kaldığın yerden devam
 - PWA: çevrimdışı açılır, ana ekrana eklenebilir
@@ -41,60 +43,72 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 Statik dosyalar; ama `fetch()` ve service worker için sunucu gerekir.
 
 ```powershell
-# Node varsa
-npx --yes serve . -l 4321
-# sonra: http://localhost:4321
+npx --yes serve . -l 4321     # sonra: http://localhost:4321
 ```
 
-VS Code kullanıyorsan Live Server eklentisi de yeterli.
+Kahraman listesini yeniden üretmek için (kaynak dosya değiştiyse):
+
+```powershell
+node tools/build-heroes.mjs
+```
 
 ## Yapı
 
 ```
-index.html                 tek sayfa
-assets/css/style.css       tema + yerleşim
-assets/js/app.js           durum, ban mantığı, zamanlayıcı
-data/heroes.json           tohum veri (kimlik: id, ad, rol)
-manifest.webmanifest       PWA tanımı
-sw.js                      kabuk önbelleği
-icons/                     yer tutucu ikon (svg + 192/512 png)
-docs/                      kararlar, Faz 2 denetimi, Liquipedia başvurusu
+index.html                     tek sayfa
+assets/css/style.css           tema + yerleşim
+assets/js/app.js               durum, ban mantığı, zamanlayıcı
+data/heroes.json               üretilen kimlik listesi (133 kahraman)
+data/source/                   ham kaynak (Fandom + Rone eşlemesi)
+tools/build-heroes.mjs         kaynaktan data/heroes.json üretir
+manifest.webmanifest           PWA tanımı
+sw.js                          kabuk önbelleği
+icons/                         yer tutucu ikon (svg + 192/512 png)
+docs/                          kararlar, Faz 2 denetimi, Liquipedia başvurusu
 ```
 
 ## Veri politikası
 
-1. **Rone Arena API'si V1'de kullanılmaz.** Verisi ~13 ay eski damgalı
-   (`2.1.18`, Eylül 2025 kaydı) ve oyun verisi üzerindeki hak belirsiz.
-   Arşivi yalnızca araştırma içindir, yayımlanmaz. Ayrıntı: `docs/FAZ2-RAPORU.md`.
-2. **Turnuva verisi Liquipedia'dan** gelecek, onay sonrası, günde en fazla bir kez
+1. **Rone istatistik ve build'leri V1'de kullanılmaz.** Verisi Eylül 2025 damgalı
+   (`2.1.18`) ve oyun verisi üzerindeki hak belirsiz. Arşiv yalnızca araştırma
+   içindir, yayımlanmaz. Ayrıntı: `docs/FAZ2-RAPORU.md`.
+2. **Kahraman kimliği** Fandom MLBB Wiki'den (CC BY-SA 3.0) alınır; `roneId`
+   yalnızca eşleme içindir. Yayımlanan dosya id + ad + rol içerir; istatistik yok.
+3. **Turnuva verisi Liquipedia'dan** gelecek, onay sonrası, günde en fazla bir kez
    çekilip depoda JSON olarak yayımlanacak (statik uygulamanın başka veri kaynağı yok).
-3. **Ham veri dökümü yayımlanmaz**; yalnızca türetilmiş özet istatistik.
-4. Her turnuva görünümünde makale bağlantısı + erişim tarihi bulunur.
-5. Moonton'a ait görsel kullanılmaz; kahraman görselleri renk + baş harf yer tutucusudur.
+4. **Ham veri dökümü yayımlanmaz**; yalnızca türetilmiş özet istatistik.
+5. Her turnuva görünümünde makale bağlantısı + erişim tarihi bulunur.
+6. Moonton'a ait görsel kullanılmaz; kahraman görselleri renk + baş harf yer tutucusudur.
 
 ## Lisans
 
 | Kapsam | Lisans |
 |---|---|
-| Kod (`index.html`, `assets/`, `sw.js`) | MIT — bkz. `LICENSE` |
-| `data/liquipedia/` (türetilmiş turnuva verisi) | CC BY-SA 3.0, atıf: Liquipedia |
-| `data/heroes.json` (tohum kimlik listesi) | MIT |
+| Kod (`index.html`, `assets/`, `sw.js`, `tools/`) | MIT — bkz. `LICENSE` |
+| `data/heroes.json`, `data/source/` | CC BY-SA 3.0 — atıf: [Fandom MLBB Wiki](https://mobile-legends.fandom.com/) |
+| `data/liquipedia/` (gelecek) | CC BY-SA 3.0 — atıf: Liquipedia |
 
-Veriyi JS paketine gömmeyin; ayrı JSON kalsın ki iki lisans ayrışsın.
+Veriyi JS paketine gömmeyin; ayrı JSON kalsın ki lisanslar ayrışsın.
+
+## Yayın
+
+`main`'e push otomatik yayına girer (Pages → Deploy from a branch, `/ (root)`).
+Tarayıcı tarafında dosya güncellediyseniz **`sw.js` içindeki `VERSION` değerini
+artırın**, aksi hâlde dönen ziyaretçi eski dosyayı önbellekten alır.
 
 ## Sıradaki adımlar
 
-- [ ] GitHub deposu + Pages yayını
-- [ ] Liquipedia başvurusu (`docs/LIQUIPEDIA-BASVURU.md`, 3 alan doldurulacak)
+- [ ] Liquipedia başvurusu (`docs/LIQUIPEDIA-BASVURU.md`, tek eksik: iletişim adresi)
 - [ ] Ban sırası varyantları (turnuva formatına göre yapılandırma)
 - [ ] Pick aşaması
-- [ ] Gerçek kahraman listesi (yer tutucu kayıtlar ayıklanmış)
-- [ ] `prefers-reduced-motion`, ekran okuyucu turu
+- [ ] Turnuva/ban istatistiği ekranı (Liquipedia onayı sonrası)
+- [ ] Erişilebilirlik turu (ekran okuyucu, klavye ile tam gezinme)
 
 ## Bilinen sınırlar
 
-- Ban sırası şu an düz almaşık (mavi başlar); MLBB turnuva formatındaki
-  3+3 / 5+5 varyantları `CONFIG` içinden ayarlanacak.
-- 12 kahraman tohum veri; arama/filtre davranışını denemek için var.
+- Ban sırası düz almaşık (mavi başlar); MLBB formatındaki 3+3 / 5+5 varyantları
+  `CONFIG` içinden ayarlanacak.
+- Roller Fandom verisine dayanıyor; Moonton'un resmî listesiyle karşılaştırılmadı.
 - Sayaç durumu sayfa yenilemede sıfırlanır (tahta korunur, süre korunmaz).
+- Yeni sürüm yayına girdiğinde dönen ziyaretçi bir sonraki açılışta güncel sürümü alır.
 - Sesli/animasyonlu geri bildirim yok; `prefers-reduced-motion` yalnızca geçişleri kapatıyor.

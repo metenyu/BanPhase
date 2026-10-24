@@ -124,6 +124,8 @@ button { font: inherit; color: inherit; }
 
 .chip.is-live { color: var(--gold); border-color: #4a3c1c; }
 
+.chip[hidden] { display: none; }
+
 /* ---------- düğmeler ---------- */
 
 .btn {

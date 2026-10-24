@@ -47,9 +47,13 @@ function hue(seed) {
   return `hsl(${h} 62% 38%)`;
 }
 
+const NAME_STOPWORDS = new Set(['and', 'of', 'the', 'de', 'van']);
+
 function initials(name) {
-  const parts = String(name).trim().split(/\s+/);
-  const raw = parts.length > 1 ? parts[0][0] + parts[1][0] : String(name).slice(0, 2);
+  const words = String(name).split(/[\s.\-]+/).filter(Boolean)
+    .filter((word) => !NAME_STOPWORDS.has(word.toLowerCase()));
+  if (!words.length) return String(name).slice(0, 2).toUpperCase();
+  const raw = words.length > 1 ? words[0][0] + words[1][0] : words[0].slice(0, 2);
   return raw.toUpperCase();
 }
 
@@ -503,8 +507,9 @@ async function boot() {
     state.roles = Array.isArray(data.roles) && data.roles.length
       ? data.roles
       : [...new Set(state.heroes.flatMap((hero) => hero.roles))];
-    els.dataBadge.textContent = data.kind === 'seed' ? 'tohum veri' : `${state.heroes.length} kahraman`;
+    els.dataBadge.hidden = true;
   } catch (error) {
+    els.dataBadge.hidden = false;
     els.dataBadge.textContent = 'veri yok';
     toast('Kahraman verisi yüklenemedi.');
     console.error(error);
@@ -525,5 +530,8 @@ async function boot() {
 boot().catch((error) => {
   console.error(error);
   const badge = document.getElementById('data-badge');
-  if (badge) badge.textContent = 'hata';
+  if (badge) {
+    badge.hidden = false;
+    badge.textContent = 'hata';
+  }
 });

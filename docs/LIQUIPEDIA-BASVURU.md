@@ -60,10 +60,10 @@ Questions
    a public GitHub repository under CC BY-SA 3.0) acceptable under the API terms
    of use? We want to be certain that publishing derived data this way is not
    considered redistribution that you disallow.
-2. Could you confirm the current rate limits? We have noted 60 requests/hour for
-   the LiquipediaDB API and 1 request per 2 seconds for the MediaWiki API
-   (1 per 30 seconds for action=parse). Are short bursts acceptable within those
-   limits?
+2. Could you confirm the current rate limits for the LiquipediaDB API — requests
+   per hour and per day, and whether short bursts are acceptable? Our notes on
+   this were out of date, and we would rather follow your published terms than
+   guess at the numbers.
 3. Is attribution in the form "Data from Liquipedia Mobile Legends: Bang Bang
    Wiki, CC BY-SA 3.0, <article link>, accessed <date>" sufficient?
 4. Is an API key required for this scope, and does free access expire? If so, what
@@ -89,7 +89,7 @@ Hi — building BanPhase, a free non-commercial open-source MLBB draft helper
 aggregated pick/ban stats as CC BY-SA 3.0 JSON with per-article attribution.
 Two things I could not confirm from the docs (they return 403 to my client):
 (1) is publishing derived aggregates in a public repo OK, or is that considered
-redistribution? (2) current LPDB rate limit — 60/hour correct?
+redistribution? (2) what are the current LPDB rate limits (per hour/day)?
 ```
 
 ---
