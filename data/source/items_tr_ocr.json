@@ -1,0 +1,475 @@
+{
+  "generatedAt": "2026-10-24",
+  "source": "Oyun içi eşya ekran görüntüleri (kullanıcı), Windows OCR + koordinat + devam görüntüsü birleştirme",
+  "note": "Pasif metinleri oyun içi metindir (Moonton). Yüzdeler OCR düzeltmesinden geçti; elle doğrulanmalı.",
+  "count": 34,
+  "items": [
+    {
+      "id": "akilli-asa",
+      "nameTr": "Akıllı Asa",
+      "statsText": [
+        "+75 Büyü Gücü",
+        "+5% Hareket Hızı"
+      ],
+      "passiveTr": "Eşsiz özellik: +10 Büyü Nüfuzu Eşsiz Pasif - Büyü: Büyü Hasarı verilen rakibin Büyü Direncini 2 saniyeliğine 2.5(+0.5*Kahraman Seviyesi) azaltır. Bu etki 3 yükle sınırlıdır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.20.json",
+        "WhatsApp Image 2026-10-24 at 21.43.21.json"
+      ]
+    },
+    {
+      "id": "altin-asa",
+      "nameTr": "Altın Asa",
+      "statsText": [
+        "+55 Fiziksel Saldırı",
+        "+15% Saldırı Hızı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Sürat: Sahip olunan her 1% Kritik Şansı, kahramana ekstra 1% Saldırı Hızı kazandırır. Eşsiz Pasif - Sonsuz Saldırı: Kritik (8 şema Hızı üst limiti 500% değerine yükseltilir) ve Saldırı Etkilerini fazladan 2 kez tetikler. (8 olmayan her 2 Temel Saldırıdan sonraki ilk Temel Saldırı ekstra 80% Saldırı Hızı kazanır (Saldırı Hızı üst limiti 500% değerine (8",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.27 (6).json",
+        "WhatsApp Image 2026-10-24 at 21.42.28 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.42.28.json"
+      ]
+    },
+    {
+      "id": "avci-darbesi",
+      "nameTr": "Avcı Darbesi",
+      "statsText": [
+        "+80 Fiziksel Saldırı",
+        "+10% BS Düşürme"
+      ],
+      "passiveTr": "Eşsiz özellik: +15 Fiziksel Zırh Delme Eşsiz Pasif - Süratli Yargı: Bir rakip kahramana veya orman saniye içerisinde azalır ve bu etkinin 8 saniye bekleme süresi vardır. canavarına art arda 5 defa hasar vermek ekstra 50% Hareket Hızı kazandırır. Hareket Hızı artışı 3 saniye içerisinde azalır ve bu",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.22 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.42.23 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.42.23.json"
+      ]
+    },
+    {
+      "id": "ayaz",
+      "nameTr": "Ayaz",
+      "statsText": [
+        "+40 Fiziksel Savunma",
+        "+40 Büyü Direnci",
+        "+5% Hareket Hızı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Hisar Kalkanı: 5 birim içerisindeki her rakip kahraman başna 8 Fiziksel Savunma ve Büyü Direnci kazandırır. Bu etki 40 ile sınırlıdır. Eşsiz Pasif - Can Laneti: 5 birim yakındaki rakiplerin kalkanını ve Can Yenilemesini I saniye Can Yenilemesini 1 saniye tuunca normalin 60% kadarına düşürür.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.40 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.43.40 (4).json",
+        "WhatsApp Image 2026-10-24 at 21.43.40 (5).json"
+      ]
+    },
+    {
+      "id": "azapdar-omuzlugu",
+      "nameTr": "Azapdar Omuzluğu",
+      "statsText": [
+        "+900 Can",
+        "+40 Fiziksel Savunma"
+      ],
+      "passiveTr": "Eşsiz Pasif - Azapdar: Hasar almak, saldırganın Saldırı Hızını ve Saldırı Hızı sınırını 2 saniyeliğine 75% seviyesine düşürür. Eşsiz Pasif - Kefaret: Alınan hasar Canı 30% altına düşürdüğünde, sonraki 2 saniye boyunca Maksimum Canın 20% kadarını yeniler. Bu etki 60 saniye bekleme süresine sahiptir.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.39 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.43.39 (4).json",
+        "WhatsApp Image 2026-10-24 at 21.43.39 (5).json"
+      ]
+    },
+    {
+      "id": "bitmeyen-savas",
+      "nameTr": "Bitmeyen Savaş",
+      "statsText": [
+        "+5 Mana Yenileme"
+      ],
+      "passiveTr": "Fiziksel Saldırı) Gerçek Hasar verir ve 80 (+40% Toplam Fiziksel Saldırı) Can yeniler (Bekleme Süresi: 1.5 saniye). Eşsiz Pasif - İlahi Adalet: Bir beceri kullandıktan sonraki 3 saniye içinde yapılan ilk Temel Saldırı ekstra (60% Toplam",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.25 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.42.25.json"
+      ]
+    },
+    {
+      "id": "bozulma-tirpani",
+      "nameTr": "Bozulma Tırpanı",
+      "statsText": [
+        "+30 Fiziksel Saldırı",
+        "+5% Hareket Hızı",
+        "+30% Saldırı Hızı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Yozlaşım: Temel Saldırılar ekstra 80 Fiziksel Hasar kazanır ve hedefi 1.5 saniyeliğine 8% yavaşlatır (menzilli Temel Saldırılar için yarıya iner). Bu etki 5 yükle sınırlıdır. Eşsiz Pasif - Dürtü: Temel Saldırılar 3 saniyeliğine ekstra 6% Saldırı Hızı kazandırır. Bu etki 5 yüke kadar birikebilir.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.28 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.42.28 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.42.28 (4).json"
+      ]
+    },
+    {
+      "id": "buz-kralicesinin-degnegi",
+      "nameTr": "Buz Kraliçesinin Değneği",
+      "statsText": [
+        "+300 Can",
+        "+7% Hareket Hızı"
+      ],
+      "passiveTr": "2 saniyeliğine 10% yavaşlatır (3 yükle sınırlıdır). Bu etkinin 0.4 saniye bekleme süresi vardır. 460 Büyü Gücü Eşsiz Pasif - Buz Bağı: Bir rakip kahramana txxerilerle vurmak onu 2 saniyeliğine 10% yavaşlatır (3 yükle sınırlıdır). Bu etkinin 0.4",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.37 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.43.37.json"
+      ]
+    },
+    {
+      "id": "buyulu-tilsim",
+      "nameTr": "Büyülü Tılsım",
+      "statsText": [
+        "+75 Büyü Gücü",
+        "+300 can",
+        "+15% BS Düşürme"
+      ],
+      "passiveTr": "Eşsiz Pasif - Mana Baharı: Her 10 saniyede bir Maksimum Mananın 15% kadarını yeniler. Eşsiz Pasif - Büyü Ustalığı: Eşsiz Pasif - Büyü Ustalığı: Maksimum Bekleme Süresi Düşürme limitini 5% arttırır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.38 (6).json",
+        "WhatsApp Image 2026-10-24 at 21.43.39.json"
+      ]
+    },
+    {
+      "id": "cennet-tuyu",
+      "nameTr": "Cennet Tüyü",
+      "statsText": [
+        "+60 Büyü Gücü",
+        "+20% Saldırı Hızı",
+        "+10% Can çalma",
+        "+5% BS Düşürme"
+      ],
+      "passiveTr": "Eşsiz Pasif - Çarpma: Her Temel Saldırı ekstra 50 (+300% Toplam Büyü Gücü) Büyü Hasarı verir. Eşsiz Pasif - Dürtü: Temel Saldırılar 3 saniyeliğine ekstra 6% Saldırı Hızı kazandırır. Bu etki 5 yüke kadar birikebilir.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.38 (4).json",
+        "WhatsApp Image 2026-10-24 at 21.43.38 (5).json"
+      ]
+    },
+    {
+      "id": "dikenli-gulle",
+      "nameTr": "Dikenli Gülle",
+      "statsText": [
+        "+35 Fiziksel Saldırı"
+      ],
+      "passiveTr": "Eşsiz özellik: +12 Fiziksel Zırh Delme",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.24.json"
+      ]
+    },
+    {
+      "id": "dilek-feneri",
+      "nameTr": "Dilek Feneri",
+      "statsText": [
+        "+75 Büyü Gücü",
+        "+400 Mana",
+        "+10% BS Düşürme"
+      ],
+      "passiveTr": "Eşsiz Pasif - Kelebek Tanrıçası: Bir rakip kahramana her 9W Büyü Hasarı verildiğinde (rakibin üzerindeki hasar azaltma görmezden gelinir) bir Kelebek Tanrıçası saldırıya geçer ve hedefin Mevcut Canının 8% kadarı Büyü Hasarı verin",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.28 (5).json",
+        "WhatsApp Image 2026-10-24 at 21.42.28 (6).json"
+      ]
+    },
+    {
+      "id": "doga-ruzg-ri",
+      "nameTr": "Doğa Rüzgârı",
+      "statsText": [
+        "+30 Fiziksel Saldırı",
+        "+20% Saldırı Hızı",
+        "+10% Can Çalma"
+      ],
+      "passiveTr": "Aktif Beceri - Rüzgâr Ezgisi: 2 saniyeliğine tüm Fiziksel Hasarlara karşı bağışıklık kazandırır. (Ana Rolü Nişancı olmayan (8 şema kahramanlarda bağışıklık süresi yarıya düşer). Bu etkinin 90 saniye bekleme süresi vardır. (8",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.27 (4).json",
+        "WhatsApp Image 2026-10-24 at 21.42.27 (5).json"
+      ]
+    },
+    {
+      "id": "f-ni-zaman",
+      "nameTr": "Fâni Zaman",
+      "statsText": [
+        "+30 Uyarlanabilir Saldırı",
+        "+600 can",
+        "+15% BS Düşürme"
+      ],
+      "passiveTr": "Eşsiz Pasif - Zaman Akıntısı: Kahraman öldürmek veya asist almak Ultinin mevcut bekleme süresini 30% azaltır. (8 şema",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.26 (4).json"
+      ]
+    },
+    {
+      "id": "firtina",
+      "nameTr": "Fırtına",
+      "statsText": [
+        "+35% Saldırı Hızı",
+        "+20% Kritik Şansı",
+        "+20 Hareket Hızı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Tayfun: Her 5-2 saniyede bir (her Temel Saldırıda bu süre 0.2 saniye azalır), sonraki Temel Saldırı en fazla 3 rakip birime sekip 150-362 Büyü Hasarı verir (bu hasar kritik olabilir ve minyonlara 20096 vurur).",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.24 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.42.24 (4).json"
+      ]
+    },
+    {
+      "id": "gok-kiran",
+      "nameTr": "Gök Kıran",
+      "statsText": [
+        "+60 Uyarlanabilir Saldırı",
+        "+15 Hareket Hızı"
+      ],
+      "passiveTr": "Eşsiz Pasif - idam: Hasar verilen rakip kahramanın Canı 4% değerinin altındaysa onu anında infaz eder. Her skor alındığında 10 (8 şema infaz eder. Her skor alındığında 10 idam yükü kazanılır ve her ölümden sonra yüklerin 30% kadarı kaybedilir. Her idam yükü, (8 kadarı kaybedilir. Her idam yükü, infaz etkisinin Can değeri eşiğini 0.1% arttırır. idam yükü en fazla 80 olabilir. (8",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.26 (5).json",
+        "WhatsApp Image 2026-10-24 at 21.42.26 (6).json",
+        "WhatsApp Image 2026-10-24 at 21.42.27.json"
+      ]
+    },
+    {
+      "id": "haasin-penceleri",
+      "nameTr": "Haas'ın Pençeleri",
+      "statsText": [
+        "+40 Fiziksel Saldırı",
+        "+15% Saldırı Hızı",
+        "+20% Kritik şansı"
+      ],
+      "passiveTr": "Eşsiz özellik: +20% Can Çalma Eşsiz Pasif - Çılgınlık: Kritik hasar vermek 2 saniyeliğine 20% Saldırı Hızı kazandırır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.25 (4).json"
+      ]
+    },
+    {
+      "id": "kader-saati",
+      "nameTr": "Kader Saati",
+      "statsText": [
+        "+45 Büyü Gücü",
+        "+400 can",
+        "+400 Mana",
+        "+10% BS Düşürme"
+      ],
+      "passiveTr": "kazandırır. (Bu etki 6 yüke kadar birikebilir ve her 0.4 saniyede 1 yük kazanılır.) Eşsiz Pasif - Hediye: Can 50% altına düştüğünde sonraki 3 saniye içerisinde 15% Can yeniler. Mana 50% altına düştüğünde sonraki 3 saniye içerisinde 15% Mana 50% altına düştüğünde sonraki 3 saniye içerisinde 15% Mana yeniler. Bekleme süresi: 60 saniye. Eşsiz Pasif - Kader: Rakip kahramanlara Büyü Hasarı vermek 5 saniyeliğine 4.5(+0.5*Kahraman Seviyesi) Hibrit Savunma",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.38 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.43.38 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.43.38 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.43.38.json"
+      ]
+    },
+    {
+      "id": "kan-kanatlari",
+      "nameTr": "Kan Kanatları",
+      "statsText": [
+        "+90 Büyü Gücü"
+      ],
+      "passiveTr": "Eşsiz Pasif - Muhafız: 800 (+10% Toplam Büyü Gücü) kalkan kazandırır ve bu kalkan hasar aldıktan 20 saniye sonra kendini yeniler. Kalkan kırılmadığı sürece 30 Hareket Hızı, kırıldıktan sonra ise 1 saniyeliğine 150 Hareket Hızı kazandırır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.21 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.43.36.json"
+      ]
+    },
+    {
+      "id": "kaotik-silah",
+      "nameTr": "Kaotik Silah",
+      "statsText": [
+        "+40 Fiziksel Saldırı",
+        "+20% saldırı Hızı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Zırh Savar: Fiziksel Zırh Delmeyi 30% arttırır. Eşsiz Pasif - Kaotik Enerji: Temel Saldırı menzilini 12% arttırır ve bir",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.13.json"
+      ]
+    },
+    {
+      "id": "kis-taci",
+      "nameTr": "Kış Tacı",
+      "statsText": [
+        "+45 Uyarlanabilir Saldırı"
+      ],
+      "passiveTr": "Aktif Beceri - Dondur: Kahramanı 4400 can 2 saniye boyunca dondurup hedef alınamaz yapar ve hasar bağışıklığı kazandırır (100 saniye bekleme süresi vardır). Donmuş hâldeyken hareket edilemez veya beceri kullanılamaz ancak kullanımda olan beceriler de kesintiye uğramaz.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.26 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.42.26 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.42.26 (3).json"
+      ]
+    },
+    {
+      "id": "kinci-balta",
+      "nameTr": "Kinci Balta",
+      "statsText": [
+        "+35 Fiziksel Saldırı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Savaş Ruhu: Hasar vermek 4 saniye boyunca her 4400 can saniye ekstra 12 Fiziksel Saldırı kazandırır (6 yükle sınırlıdır). Tam (8 şema kazandırır (6 yükle sınırlıdır). Tam yüke ulaşıldığında verilen hasara oranla ekstra 10% Gerçek Hasar verir (rakibin üzerindeki hasar (8 azaltmayı görmezden gelir). Nişancılar, Büyücüler ve Destekler bu etkilerin yalnızca 50% kadarından faydalanabilir. (8",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.27 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.42.27 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.42.27 (3).json"
+      ]
+    },
+    {
+      "id": "konsantre-enerji",
+      "nameTr": "Konsantre Enerji",
+      "statsText": [
+        "+75 Büyü Gücü",
+        "+400 Can"
+      ],
+      "passiveTr": "Eşsiz özellik: +20% Hibrit Can Çalma Eşsiz Pasif - öfkeli Dolum: Büyü Hasarı verdikten sonra Büyü Gücünü 5 arttırır (bu etki Ğ yüke kadar birikebilir ve her saniye 0.4 yük kazanılır). Tam yüke ulaşıldığında kahramanın Büyü Hasarını 5 saniyeliğine 12% arttırır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.37 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.43.37 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.43.37 (4).json"
+      ]
+    },
+    {
+      "id": "korkunc-silah",
+      "nameTr": "Korkunç Silah",
+      "statsText": [
+        "+60 Fiziksel Saldırı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Zırh Savar: Fiziksel Zırh Delmeyi 30% arttırır. Eşsiz Pasif - Delici: Rakibin sahip olduğu her Fiziksel Savunma, o rakibe saldırırken sahip olunan Fiziksel Zırh Delmeyi 0.1% arttırır. Bu etki 30% ile sınırlıdır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.25 (5).json",
+        "WhatsApp Image 2026-10-24 at 21.42.26.json"
+      ]
+    },
+    {
+      "id": "kutsal-kristal",
+      "nameTr": "Kutsal Kristal",
+      "statsText": [
+        "+165 Büyü Gücü"
+      ],
+      "passiveTr": "Eşsiz Pasif - Gizem: Ekstra 21-35% Büyü Gücü kazandırır (seviyeyle orantılıdır).",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.37 (5).json"
+      ]
+    },
+    {
+      "id": "midasin-kilici",
+      "nameTr": "Midas'ın Kılıcı",
+      "statsText": [
+        "+30 Fiziksel Saldırı",
+        "+20% Saldırı Hızı",
+        "+10% Can Çalma"
+      ],
+      "passiveTr": "Eşsiz Pasif - Ejder Pulu: Sahip olunan her 4 ekstra Fiziksel Saldırı, Hibrit Savunmayı 1 arttırır (50 ile sınırlıdır ve Ana Rolü alındığında (120*Kahraman Seviyesi) kalkan ve 3 saniye içerisinde hızla azalan ekstra 50% Hareket Hızı kazandırır. Bu etkinin içerisinde hızla azalan ekstra 50% Hareket Hızı kazandırır. Bu etkinin 60 saniye bekleme süresi vardır. Savaşçı olmayan kahramanlarda bu etki yarıya düşer). Eşsiz Pasif - Hayat Çizgisi: Canı 30% altına düşürecek bir hasar Eşsiz Pasif - Ejder Pulu: Sahip olunan her 4 ekstra Fiziksel Saldırı, Hibrit Savunmayı 1 arttırır (50 ile sınırlıdır ve Ana Rolü",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.14 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.42.22 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.42.22 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.42.22.json",
+        "WhatsApp Image 2026-10-24 at 21.42.23 (4).json"
+      ]
+    },
+    {
+      "id": "parlak-zirh",
+      "nameTr": "Parlak Zırh",
+      "statsText": [
+        "+950 Can",
+        "+40 Büyü Direnci",
+        "+12 Can Yenileme"
+      ],
+      "passiveTr": "Eşsiz Pasif - İlahi Kutsama: Büyü Hasarı almak 5 saniyeliğine 5(+1*Kahraman Seviyesi) Büyü Direnci sağlar. Bu etki 6 yükle Direnci sağlar. Bu etki 6 yükle sınırlıdır (her 0.4 saniyede bir 1 yük kazanılabilir).",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.39 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.43.39 (2).json"
+      ]
+    },
+    {
+      "id": "starlium-tirpani",
+      "nameTr": "Starlium Tırpanı",
+      "statsText": [
+        "+75 Büyü Gücü",
+        "+10% BS Düşürme",
+        "+8% Hibrit Can Çalma",
+        "+6 Mana Yenileme"
+      ],
+      "passiveTr": "Eşsiz Pasif - Kriz: Bir beceri kullandıktan sonraki 3 saniye içinde yapılan ilk Temel Saldırı ekstra 90 (+60% Toplam Büyü Gücü) Gerçek Hasar verir ve hedefin Hareket Hızını 1.5 saniyeliğine 15% azaltır (Bekleme Süresi: 1.5 saniye).",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.36 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.43.36 (2).json"
+      ]
+    },
+    {
+      "id": "ulu-ejder-mizragi",
+      "nameTr": "Ulu Ejder Mızrağı",
+      "statsText": [
+        "+70 Fiziksel Saldırı",
+        "+100% BS Düşürme",
+        "+20% Kritik Şansı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Yüce Savaşçı: Ulti kullanmak 7.5 saniyeliğine 309% Hareket Hızı kazandırır. Bu etkinin 15 saniye bekleme süresi vardır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.13 (1).json"
+      ]
+    },
+    {
+      "id": "umutsuzluk-kilici",
+      "nameTr": "Umutsuzluk Kılıcı",
+      "statsText": [
+        "+160 Fiziksel Saldırı",
+        "+5% Hareket Hızı"
+      ],
+      "passiveTr": "Eşsiz Pasif - Umutsuzluk: Canı 50% altındaki minyon olmayan rakiplere hasar vermek Fiziksel Saldırıyı 2 saniyeliğine 25% arttırır rakiplere hasar vermek Fiziksel Saldırıyı 2 saniyeliğine 25% arttırır (hasar verilmeden önce etkili olur).",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.23 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.42.23 (3).json"
+      ]
+    },
+    {
+      "id": "vaha-matarasi",
+      "nameTr": "Vaha Matarası",
+      "statsText": [
+        "+60 Büyü Gücü",
+        "+300 Can",
+        "+10% BS Düşürme"
+      ],
+      "passiveTr": "veya 3 saniye içerisinde 35% altına düşerse o dost kahraman 3 saniyeliğine (100*Kahraman Seviyesi) kalkan kazanır. Bu etki Seviyesi) kalkan kazanır. Bu etki tetiklendiğinde, kullanıcının becerilerinin bekleme süreleri de 2 saniye azalır. Bu etki aynı dost kahraman üzerinde 60 saniyelik aralıklarla tetiklenebilir. Yalnızca kahramanın kendisini etkileyen iyileştirme ve tetiklenebilir. Yalnızca kahramanın kendisini etkileyen iyileştirme ve kalkan becerilerinde tetiklenmez. Eşsiz özellik: +12% şifa Etkisi Eşsiz Pasif - Kutsama: Can basılan veya kalkan verilen bir dost kahramanın Canı 35% altındaysa",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.29 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.42.29 (2).json",
+        "WhatsApp Image 2026-10-24 at 21.42.29 (3).json",
+        "WhatsApp Image 2026-10-24 at 21.42.29 (4).json",
+        "WhatsApp Image 2026-10-24 at 21.42.29.json"
+      ]
+    },
+    {
+      "id": "vahsi-guc-zirhi",
+      "nameTr": "Vahşi Güç Zırhı",
+      "statsText": [
+        "+800 Can",
+        "+20 Fiziksel Savunma",
+        "+10% BS Düşürme"
+      ],
+      "passiveTr": "Eşsiz Pasif - Hayvan Gücü: Hasar verdikten sonraki 4 saniye boyunca her saniye 1 yük kazanılır (6 yükle sınırlıdır). Her yük 8 Uyarlanabilir Saldırı ve 2% Hareket Hızı sağlar. Tam yüke ulaşıldığında ekstra 25% Kontrol Süresi Azaltma kazanılır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.39 (6).json",
+        "WhatsApp Image 2026-10-24 at 21.43.40.json"
+      ]
+    },
+    {
+      "id": "yedi-denizin-kilici",
+      "nameTr": "Yedi Deniz'in Kılıcı",
+      "statsText": [
+        "+70 Fiziksel Saldırı",
+        "+250 Can"
+      ],
+      "passiveTr": "Eşsiz özellik: +15 Fiziksel Zırh Delme Eşsiz Pasif - Pusu: 5 saniye boyunca hasar alınmazsa veya verilmezse (minyonlar veya orman canavarları hariç) bir sonraki Temel Saldırı gelişerek ek 160 (+40% Toplam Fiziksel Saldırı) Fiziksel Hasar verir ve hedefi 1.5 saniyeliğine 409% yavaşlatır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.42.23 (5).json",
+        "WhatsApp Image 2026-10-24 at 21.42.24 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.42.24 (2).json"
+      ]
+    },
+    {
+      "id": "yildirim-copu",
+      "nameTr": "Yıldırım Copu",
+      "statsText": [
+        "+75 Büyü Gücü",
+        "+400 Mana",
+        "+10% BS Düşürme"
+      ],
+      "passiveTr": "Eşsiz Pasif - Yankı: Her 6 saniyede bir yapılan beceri kullanımı yankılanarak menzildeki tüm rakiplere ekstra 255 (+85% Toplam Büyü Gücü) Büyü Hasarı verır.",
+      "images": [
+        "WhatsApp Image 2026-10-24 at 21.43.21 (1).json",
+        "WhatsApp Image 2026-10-24 at 21.43.21 (2).json"
+      ]
+    }
+  ]
+}
