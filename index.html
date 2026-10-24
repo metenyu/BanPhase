@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BanPhase — Master the Draft</title>
+  <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#070b14">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#heroes">Kahraman listesine geç</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 2.5 27.5 7v9.2c0 6.3-4.6 11.1-11.5 13.3C9.1 27.3 4.5 22.5 4.5 16.2V7L16 2.5Z"
+                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M11 11h7.2a3.4 3.4 0 0 1 0 6.8H11V11Zm0 6.8h7.6a3.4 3.4 0 0 1 0 6.8H11v-6.8Z"
+                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M6 26 26 6" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-text">
+          <h1>BanPhase</h1>
+          <p class="tagline">Master the Draft.</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <span class="chip" id="data-badge" title="Veri kaynağı durumu">tohum veri</span>
+        <button class="btn btn-ghost" id="btn-reset" type="button">Sıfırla</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="turnbar" aria-live="polite">
+      <div class="turnbar-info">
+        <p class="turn-team" id="turn-team">Mavi Takım</p>
+        <p class="turn-slot" id="turn-slot">1. ban</p>
+      </div>
+      <div class="timer" id="timer" role="timer" aria-live="off">30</div>
+      <div class="turnbar-actions">
+        <button class="btn btn-solid" id="btn-timer" type="button">Başlat</button>
+        <button class="btn btn-ghost" id="btn-undo" type="button">Geri al</button>
+        <button class="btn btn-ghost" id="btn-skip" type="button">Atla</button>
+        <button class="btn btn-solid" id="btn-summary" type="button" hidden>Özet</button>
+      </div>
+    </section>
+
+    <section class="draft" aria-label="Ban tahtası">
+      <article class="team team-blue" data-team="blue">
+        <header class="team-head">
+          <h2>Mavi Takım</h2>
+          <span class="team-count" data-count="blue">0/5</span>
+        </header>
+        <ul class="slots" id="slots-blue" aria-label="Mavi takım banları"></ul>
+      </article>
+      <article class="team team-red" data-team="red">
+        <header class="team-head">
+          <h2>Kırmızı Takım</h2>
+          <span class="team-count" data-count="red">0/5</span>
+        </header>
+        <ul class="slots" id="slots-red" aria-label="Kırmızı takım banları"></ul>
+      </article>
+    </section>
+
+    <section class="heroes" id="heroes">
+      <div class="heroes-head">
+        <h2>Kahramanlar <span class="muted" id="hero-count"></span></h2>
+        <input id="search" type="search" placeholder="Ara: Fanny, tank, destek…"
+               autocomplete="off" spellcheck="false" aria-label="Kahraman ara">
+      </div>
+      <div class="roles" id="roles" role="group" aria-label="Rol filtresi"></div>
+      <div class="grid" id="hero-grid"></div>
+      <p class="empty" id="empty" hidden>Bu filtreye uyan kahraman yok.</p>
+    </section>
+
+    <details class="howto">
+      <summary>Nasıl çalışır?</summary>
+      <ol>
+        <li>Sıradaki takım üstte görünür. Süreyi başlatın ya da kahramana dokunarak doğrudan banlayın.</li>
+        <li>Banlanan kahraman listede soluklaşır; yanlış dokunduysan <em>Geri al</em>.</li>
+        <li>Süre dolarsa o ban atlanır — gerçek draftta olduğu gibi.</li>
+        <li>Aşama bitince özeti kopyalayıp takımına yapıştırabilirsin.</li>
+      </ol>
+    </details>
+
+    <footer class="footer">
+      <p>V1 · Türkçe · ücretsiz, reklamsız · hesap yok, veri cihazında (localStorage).</p>
+      <p class="muted">
+        Kahraman görselleri yer tutucudur; Moonton'a ait görsel kullanılmaz.
+        Turnuva verisi geldiğinde kaynak: Liquipedia (CC BY-SA 3.0) — her sayfada
+        makale bağlantısı ve erişim tarihi gösterilecek.
+      </p>
+    </footer>
+  </main>
+
+  <dialog class="sheet" id="summary" aria-labelledby="summary-title">
+    <h2 id="summary-title">Ban aşaması tamam</h2>
+    <div class="summary-cols" id="summary-body"></div>
+    <div class="sheet-actions">
+      <button class="btn btn-solid" id="btn-copy" type="button">Metni kopyala</button>
+      <button class="btn btn-ghost" id="btn-close" type="button">Kapat</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p class="wrap">BanPhase'i kullanmak için tarayıcında JavaScript'i açman gerekiyor.</p>
+  </noscript>
+
+  <script src="./assets/js/app.js" defer></script>
+</body>
+</html>

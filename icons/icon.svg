@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="BanPhase">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1a30"/>
+      <stop offset="1" stop-color="#06090f"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6fd0ff"/>
+      <stop offset="1" stop-color="#2b8fd0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <path d="M256 64 424 128v132c0 96-70 168-168 196-98-28-168-100-168-196V128L256 64Z"
+        fill="none" stroke="url(#edge)" stroke-width="26" stroke-linejoin="round"/>
+
+  <text x="252" y="356" text-anchor="middle"
+        font-family="Segoe UI, Inter, Arial, sans-serif" font-size="248" font-weight="800"
+        fill="#eef3fb">B</text>
+
+  <path d="M112 404 404 108" stroke="#ff6b6b" stroke-width="30" stroke-linecap="round"/>
+</svg>

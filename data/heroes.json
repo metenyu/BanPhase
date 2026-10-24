@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "kind": "seed",
+  "generatedAt": "2026-10-24",
+  "note": "TOHUM VERİ. Yalnızca kimlik alanları (id, ad, rol) vardır; istatistik, build veya sıralama içermez. Gerçek turnuva verisi Liquipedia onayı sonrası data/liquipedia/ altına gelecek. Bu dosyadaki roller genel bilgi amaçlıdır ve doğrulanmamıştır.",
+  "roles": ["Tank", "Savaşçı", "Suikastçı", "Büyücü", "Nişancı", "Destek"],
+  "heroes": [
+    { "id": "tigreal", "name": "Tigreal", "roles": ["Tank"] },
+    { "id": "atlas", "name": "Atlas", "roles": ["Tank"] },
+    { "id": "lolita", "name": "Lolita", "roles": ["Tank", "Destek"] },
+    { "id": "chou", "name": "Chou", "roles": ["Savaşçı"] },
+    { "id": "fanny", "name": "Fanny", "roles": ["Suikastçı"] },
+    { "id": "gusion", "name": "Gusion", "roles": ["Suikastçı"] },
+    { "id": "ling", "name": "Ling", "roles": ["Suikastçı"] },
+    { "id": "kagura", "name": "Kagura", "roles": ["Büyücü"] },
+    { "id": "pharsa", "name": "Pharsa", "roles": ["Büyücü"] },
+    { "id": "bruno", "name": "Bruno", "roles": ["Nişancı"] },
+    { "id": "beatrix", "name": "Beatrix", "roles": ["Nişancı"] },
+    { "id": "estes", "name": "Estes", "roles": ["Destek"] }
+  ]
+}
