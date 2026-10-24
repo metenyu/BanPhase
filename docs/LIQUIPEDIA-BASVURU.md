@@ -8,11 +8,12 @@
 | # | Gereken | Durum |
 |---|---|---|
 | 1 | GitHub kullanıcı adı | ✅ `@metenyu` |
-| 2 | Public depo + URL | ⏳ yerel depo hazır; GitHub Desktop'tan yayımlanacak |
+| 2 | Public depo + URL | ✅ `github.com/metenyu/BanPhase` (yayında) |
 | 3 | Kod lisansı dosyası (MIT) + `data/` için CC BY-SA 3.0 notu | ✅ `LICENSE`, `README.md` |
-| 4 | İletişim e-postası (kişisel değil, proje adresi) | ⬜ |
+| 4 | İletişim e-postası (kişisel değil, proje adresi) | ⬜ son iş |
 | 5 | User-Agent dizesi | ✅ aşağıda hazır |
-| 6 | Uygulamanın yayın adresi | ⏳ `https://metenyu.github.io/BanPhase/` (depo yayımlanınca aktif) |
+| 6 | Uygulamanın yayın adresi | ✅ `https://metenyu.github.io/BanPhase/` |
+| 7 | API şartları (limitler, önbellek ilkesi) | ✅ 24.10.2026'da okundu: 60 istek/saat (LPDB), 1/2 sn (MediaWiki), `action=parse` 1/30 sn |
 
 Hazır User-Agent:
 
@@ -48,6 +49,9 @@ paid tier, and no user tracking.
 How we would use the API
 - A scheduled job (GitHub Actions) runs at most once per day and pulls a small,
   fixed set of tournament/pick-ban data for MLBB.
+- We cache aggressively and re-use stored responses instead of re-fetching the
+  same data, as your terms ask ("re-use / cache your API results for as long as
+  possible"). Only the API is used; we do not scrape non-API endpoints.
 - Aggregated results are stored as JSON in the public repository and read by the
   static app. The app never calls Liquipedia directly from the browser.
 - We publish only derived aggregates (e.g. "hero X banned in N% of games in
@@ -60,10 +64,10 @@ Questions
    a public GitHub repository under CC BY-SA 3.0) acceptable under the API terms
    of use? We want to be certain that publishing derived data this way is not
    considered redistribution that you disallow.
-2. Could you confirm the current rate limits for the LiquipediaDB API — requests
-   per hour and per day, and whether short bursts are acceptable? Our notes on
-   this were out of date, and we would rather follow your published terms than
-   guess at the numbers.
+2. Our reading of the current API terms is: no more than 60 requests per hour for
+   the LiquipediaDB API, 1 request per 2 seconds for the MediaWiki API, and 1 per
+   30 seconds for action=parse. Could you confirm these are still current, and
+   whether short bursts within them are acceptable?
 3. Is attribution in the form "Data from Liquipedia Mobile Legends: Bang Bang
    Wiki, CC BY-SA 3.0, <article link>, accessed <date>" sufficient?
 4. Is an API key required for this scope, and does free access expire? If so, what
@@ -87,7 +91,7 @@ BanPhase
 Hi — building BanPhase, a free non-commercial open-source MLBB draft helper
 (https://github.com/metenyu/BanPhase). Plan: one GitHub Actions job per day, LPDB only, publish
 aggregated pick/ban stats as CC BY-SA 3.0 JSON with per-article attribution.
-Two things I could not confirm from the docs (they return 403 to my client):
+Two things I could not confirm from the docs (they returned 403 to my client):
 (1) is publishing derived aggregates in a public repo OK, or is that considered
 redistribution? (2) what are the current LPDB rate limits (per hour/day)?
 ```

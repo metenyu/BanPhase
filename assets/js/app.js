@@ -4,7 +4,7 @@
    Bağımlılık yok. Durum localStorage'da; sunucuya hiçbir şey gönderilmez. */
 
 const CONFIG = {
-  bansPerTeam: 5,
+  banOptions: [3, 5],
   banSeconds: 30,
   storageKey: 'banphase.draft.v1',
   dataUrl: './data/heroes.json',
@@ -18,6 +18,7 @@ const state = {
   roles: [],
   dataLoaded: false,
   slots: [],
+  bansPerTeam: 5,
   cursor: 0,
   query: '',
   role: 'all',
@@ -63,8 +64,8 @@ function pad2(n) {
 
 /* ---------- durum ---------- */
 
-function makeSlots() {
-  const total = CONFIG.bansPerTeam * 2;
+function makeSlots(bansPerTeam = state.bansPerTeam) {
+  const total = bansPerTeam * 2;
   let blue = 0;
   let red = 0;
   return Array.from({ length: total }, (_, i) => {
@@ -80,7 +81,9 @@ function restore() {
     if (!raw) return null;
     const data = JSON.parse(raw);
     if (data.v !== 1 || !Array.isArray(data.slots)) return null;
-    if (data.slots.length !== CONFIG.bansPerTeam * 2) return null;
+
+    const bansPerTeam = CONFIG.banOptions.includes(data.bansPerTeam) ? data.bansPerTeam : 5;
+    if (data.slots.length !== bansPerTeam * 2) return null;
 
     const slots = data.slots.map((slot, i) => {
       const team = i % 2 === 0 ? 'blue' : 'red';
@@ -96,7 +99,7 @@ function restore() {
     });
 
     const cursor = Math.min(Math.max(Number(data.cursor) || 0, 0), slots.length);
-    return { slots, cursor, finished: Boolean(data.finished) };
+    return { slots, cursor, finished: Boolean(data.finished), bansPerTeam };
   } catch {
     return null;
   }
@@ -107,6 +110,7 @@ function save() {
   try {
     localStorage.setItem(CONFIG.storageKey, JSON.stringify({
       v: 1,
+      bansPerTeam: state.bansPerTeam,
       slots: state.slots.map((s) => ({ teamIndex: s.teamIndex, heroId: s.heroId, skipped: s.skipped })),
       cursor: state.cursor,
       finished: state.finished,
@@ -133,9 +137,17 @@ function renderTurn() {
     els.turnSlot.textContent = 'Özeti açıp takımına yapıştırabilirsin.';
   } else {
     const slot = state.slots[state.cursor];
+    const next = state.slots.slice(state.cursor + 1, state.cursor + 3)
+      .map((s) => (s.team === 'blue' ? 'Mavi' : 'Kırmızı'));
+    const nextText = next.length ? ` · sırada ${next.join(', ')}` : '';
     els.turnTeam.textContent = TEAM_LABEL[slot.team];
-    els.turnSlot.textContent = `${slot.teamIndex + 1}. ban · ${state.cursor + 1}/${state.slots.length}`;
+    els.turnSlot.textContent = `${slot.teamIndex + 1}. ban · ${state.cursor + 1}/${state.slots.length}${nextText}`;
   }
+
+  els.bansToggle?.querySelectorAll('[data-bans]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(Number(button.dataset.bans) === state.bansPerTeam));
+  });
+  if (els.settingsHint) els.settingsHint.textContent = `${state.bansPerTeam * 2} ban`;
 
   els.btnTimer.textContent = state.timer.running ? 'Duraklat' : 'Başlat';
   els.btnTimer.disabled = done;
@@ -155,6 +167,7 @@ function renderBoard() {
     if (!list) continue;
 
     const teamSlots = state.slots.filter((s) => s.team === team);
+    list.style.setProperty('--cols', teamSlots.length);
     list.innerHTML = teamSlots.map((slot) => {
       const hero = slot.heroId ? state.heroById.get(slot.heroId) : null;
       const isActive = !state.finished && state.cursor === slot.index;
@@ -165,7 +178,7 @@ function renderBoard() {
 
       const tone = hero ? hue(hero.id) : 'transparent';
       const face = hero ? initials(hero.name) : (slot.heroId ? '?' : '—');
-      return `<li class="${classes.join(' ')}" style="--tone:${tone}">
+      return `<li class="${classes.join(' ')}"${isActive ? ' aria-current="true"' : ''} style="--tone:${tone}">
         <span class="slot-no">${slot.teamIndex + 1}</span>
         <span class="slot-face">${face}</span>
       </li>`;
@@ -345,7 +358,7 @@ function finishDraft() {
 
 function resetDraft() {
   if (!window.confirm('Ban tahtası sıfırlanacak. Emin misin?')) return;
-  state.slots = makeSlots();
+  state.slots = makeSlots(state.bansPerTeam);
   state.cursor = 0;
   state.finished = false;
   state.timer.armed = false;
@@ -354,6 +367,25 @@ function resetDraft() {
   save();
   render();
   toast('Tahta sıfırlandı.');
+}
+
+function setBansPerTeam(value) {
+  const count = Number(value);
+  if (!CONFIG.banOptions.includes(count) || count === state.bansPerTeam) return;
+
+  const touched = state.slots.some((slot) => slot.heroId || slot.skipped);
+  if (touched && !window.confirm(`Tahta ${count} + ${count} için sıfırlanacak. Devam?`)) return;
+
+  state.bansPerTeam = count;
+  state.slots = makeSlots(count);
+  state.cursor = 0;
+  state.finished = false;
+  state.timer.armed = false;
+  resetTimer(false);
+  closeSummary();
+  save();
+  render();
+  toast(`Takım başına ${count} ban.`);
 }
 
 /* ---------- özet ---------- */
@@ -439,6 +471,12 @@ function bindEvents() {
   els.btnSkip.addEventListener('click', skipSlot);
   els.btnUndo.addEventListener('click', undo);
   els.btnReset.addEventListener('click', resetDraft);
+
+  els.bansToggle.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-bans]');
+    if (!button) return;
+    setBansPerTeam(button.dataset.bans);
+  });
   els.btnSummary.addEventListener('click', showSummary);
   els.btnCopy.addEventListener('click', copySummary);
   els.btnClose.addEventListener('click', closeSummary);
@@ -488,7 +526,8 @@ function registerServiceWorker() {
 function cacheElements() {
   const ids = ['turn-team', 'turn-slot', 'timer', 'btn-timer', 'btn-undo', 'btn-skip',
     'btn-summary', 'btn-reset', 'search', 'roles', 'hero-grid', 'hero-count', 'empty',
-    'summary', 'summary-body', 'btn-copy', 'btn-close', 'toast', 'data-badge'];
+    'summary', 'summary-body', 'btn-copy', 'btn-close', 'toast', 'data-badge',
+    'bans-toggle', 'settings-hint'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
@@ -516,7 +555,8 @@ async function boot() {
   }
 
   const saved = restore();
-  state.slots = saved ? saved.slots : makeSlots();
+  state.bansPerTeam = saved ? saved.bansPerTeam : 5;
+  state.slots = saved ? saved.slots : makeSlots(state.bansPerTeam);
   state.cursor = saved ? saved.cursor : 0;
   state.finished = saved ? saved.finished : false;
 

@@ -7,7 +7,7 @@
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#070b14">
-  <meta name="build" content="2026-10-24.2">
+  <meta name="build" content="2026-10-24.3">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
@@ -39,6 +39,15 @@
   </header>
 
   <main class="wrap">
+    <div class="settings-row">
+      <span class="settings-label">Takım başına ban</span>
+      <div class="segmented" id="bans-toggle" role="group" aria-label="Takım başına ban sayısı">
+        <button class="seg" type="button" data-bans="3" aria-pressed="false">3</button>
+        <button class="seg" type="button" data-bans="5" aria-pressed="true">5</button>
+      </div>
+      <span class="settings-hint" id="settings-hint">5 + 5</span>
+    </div>
+
     <section class="turnbar" aria-live="polite">
       <div class="turnbar-info">
         <p class="turn-team" id="turn-team">Mavi Takım</p>

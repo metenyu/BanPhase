@@ -141,3 +141,19 @@ dışarıda (kaynakta serbest metin: `"2016"`, `"18 December 2025 "`,
 
 **Hâlâ açık:** e-spor sezon etiketi (S14 mü S18 mi), playoff verisinin eksikliği,
 Liquipedia başvurusu için iletişim adresi.
+
+---
+
+## 7. İkinci tur doğrulama (24.10.2026, 16:20)
+
+| Konu | Sonuç |
+|---|---|
+| **API şartları** | Okundu. 60 istek/saat (LPDB), 1 istek/2 sn (MediaWiki), `action=parse` 1/30 sn doğrulandı. Şartlar "sonuçları mümkün olduğunca uzun önbellekle" diyor ve API dışı uç noktalardan çekimi yasaklıyor. E-postaya önbellek taahhüdü eklendi, limitler teyit sorusu olarak yazıldı. |
+| **M7** | Aurora Gaming PH, 25.01.2026'da Alter Ego'yu 4-0 yendi (RRI, 26.01.2026: ikramiye dağılımı dahil). Ödül havuzu 1.000.000 USD, 22 takım, MVP Dylan "Light" Catipon. |
+| **Bernama düzeltmesi** | Ben yalnızca arama sonucu **başlığını** görmüştüm; sayfayı hiç açamadım. Kanıt olarak sayılmamalı. Şampiyonluk RRI + GMA/Inquirer/GosuGamers özetleriyle destekli. |
+| **E-spor sezonu** | 72 maç = **MPL ID S18 normal sezonu** (14 Ağustos – 18 Ekim 2026); resmî takvimle maç maç eşleşiyor. "s14" yalnızca CDN klasör adı. Playoff 4–8 Kasım, Surabaya. 2–18 Ekim arası 25 maçın skoru resmî sitede yok, yalnızca Rone'da. |
+| **Kahraman sayısı** | 133. Fandom'a dayanıyor; Moonton'un resmî listesi yok. |
+
+**Uygulama tarafı:** ban sayısı artık kullanıcı seçimli (takım başına 3 veya 5) ve
+seçim `localStorage`'da kalıcı. Sıra hâlâ düz almaşık; resmî faz düzeni
+(ban → pick → ban) doğrulanmadığı için eklenmedi.

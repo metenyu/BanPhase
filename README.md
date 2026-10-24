@@ -18,6 +18,8 @@ build veya sıralama iddia etmiyor — yalnızca kimlik (ad, rol).
 Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 
 - 133 kahraman, 10 ban slotu, 7 rol çipi; 390 px ve 1300 px'te yatay taşma yok
+- **ban sayısı 3'e alınınca** 6 slot, sayaçlar `0/3`, seçim `localStorage`'da kalıcı;
+  yenilemede 3+3 ve atılan ban korunuyor; 5'e dönünce tahta sıfırlanıyor
 - arama: `hirara` → 1, `suikast` → 29, `destek` → 15, `chang` → 1, `zzzz` → 0
   (Türkçe karakter katlaması çalışıyor)
 - baş harfler: `Popol and Kupa` → PK, `X.Borg` → XB, `Chang'e` → CH, `Yi Sun-shin` → YS
@@ -31,7 +33,8 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 
 ## Ne yapar (V1)
 
-- 5'e 5 ban tahtası, sırayla mavi/kırmızı
+- Ban tahtası, sırayla mavi/kırmızı (sırada kim olduğu üstte yazar)
+- **Takım başına 3 veya 5 ban** seçimi (seçim kalıcı; değiştirirken tahta sıfırlanır)
 - 30 saniyelik ban süresi (başlat/duraklat, süre dolunca atlama)
 - 133 kahraman içinde arama + rol filtresi (Türkçe karakter duyarsız)
 - Geri al, tahtayı sıfırla, özeti panoya kopyala
@@ -106,8 +109,8 @@ artırın**, aksi hâlde dönen ziyaretçi eski dosyayı önbellekten alır.
 
 ## Bilinen sınırlar
 
-- Ban sırası düz almaşık (mavi başlar); MLBB formatındaki 3+3 / 5+5 varyantları
-  `CONFIG` içinden ayarlanacak.
+- Ban sırası düz almaşık (mavi başlar); MLBB turnuvasındaki 3+3 / 5+5 faz düzeni
+  (ban → pick → ban) henüz uygulanmadı, sıra resmî format doğrulanınca eklenecek.
 - Roller Fandom verisine dayanıyor; Moonton'un resmî listesiyle karşılaştırılmadı.
 - Sayaç durumu sayfa yenilemede sıfırlanır (tahta korunur, süre korunmaz).
 - Yeni sürüm yayına girdiğinde dönen ziyaretçi bir sonraki açılışta güncel sürümü alır.
