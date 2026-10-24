@@ -17,28 +17,25 @@ build veya sıralama iddia etmiyor — yalnızca kimlik (ad, rol).
 
 Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 
-- 133 kahraman, 10 ban slotu, 7 rol çipi; 390 px ve 1300 px'te yatay taşma yok
-- **ban sayısı 3'e alınınca** 6 slot, sayaçlar `0/3`, seçim `localStorage`'da kalıcı;
-  yenilemede 3+3 ve atılan ban korunuyor; 5'e dönünce tahta sıfırlanıyor
-- arama: `hirara` → 1, `suikast` → 29, `destek` → 15, `chang` → 1, `zzzz` → 0
-  (Türkçe karakter katlaması çalışıyor)
-- baş harfler: `Popol and Kupa` → PK, `X.Borg` → XB, `Chang'e` → CH, `Yi Sun-shin` → YS
-- ban → sıra ilerleme → takım sayacı (5/5) → `localStorage`'a yazım
-- geri al, sıfırla, 10 ban dolunca özet diyaloğu
+- 133 kahraman, 20 slot (10 ban + 10 seçim), 390 px ve 1300 px'te yatay taşma yok
+- **Turnuva sırası** ölçüldü: `ban M,M,M,K,K,K → seçim M,K,K,M,M,K → ban K,K,M,M → seçim K,M,M,K`
+- **Ranked sırası**: 5+5 ban aynı anda, sonra `seçim M,K,K,M,M,K,K,M,M,K`
+- Ranked'da herhangi bir boş ban slotu seçilip doldurulabiliyor; geri alınca slot boşalıp yeniden aktif oluyor
+- 20 hamlede tahta doluyor, özet diyaloğu ban + seçim satırlarını gösteriyor
+- Formattaki kullanılmış kahramanlar listede kilitleniyor (20/133)
 - konsol hatası ya da yakalanmamış istisna yok
-- service worker `banphase-v2` kayıtlı; **ağ kapalıyken** sayfa 133 kahraman ve
-  10 slotla açılıyor
+- service worker `banphase-v4` kayıtlı; ağ kapalıyken sayfa açılıyor
 
 ![Ban özeti](docs/ekran-ozet.png)
 
 ## Ne yapar (V1)
 
-- Ban tahtası, sırayla mavi/kırmızı (sırada kim olduğu üstte yazar)
-- **Takım başına 3 veya 5 ban** seçimi (seçim kalıcı; değiştirirken tahta sıfırlanır)
-- 30 saniyelik ban süresi (başlat/duraklat, süre dolunca atlama)
+- **Turnuva** formatı: 3 ban → 3+3 seçim (1-2-2-1) → 2 ban → 2+2 seçim (1-2-1)
+- **Ranked** formatı: 10 ban aynı anda (serbest sıra) → 1-2-2-2-2-1 seçim
+- İlk seçim hakkı Mavi/Kırmızı seçilebilir; format ve seçim `localStorage`'da kalıcı
+- 30 saniyelik sıra süresi (turnuvada; ranked ban fazında sayaç yok)
 - 133 kahraman içinde arama + rol filtresi (Türkçe karakter duyarsız)
 - Geri al, tahtayı sıfırla, özeti panoya kopyala
-- Durum `localStorage`'da; sayfa yenilenince kaldığın yerden devam
 - PWA: çevrimdışı açılır, ana ekrana eklenebilir
 
 ## Çalıştırma
@@ -102,16 +99,16 @@ artırın**, aksi hâlde dönen ziyaretçi eski dosyayı önbellekten alır.
 ## Sıradaki adımlar
 
 - [ ] Liquipedia başvurusu (`docs/LIQUIPEDIA-BASVURU.md`, tek eksik: iletişim adresi)
-- [ ] Ban sırası varyantları (turnuva formatına göre yapılandırma)
-- [ ] Pick aşaması
 - [ ] Turnuva/ban istatistiği ekranı (Liquipedia onayı sonrası)
 - [ ] Erişilebilirlik turu (ekran okuyucu, klavye ile tam gezinme)
+- [ ] Özet metnine turnuva adı / maç bilgisi ekleme
 
 ## Bilinen sınırlar
 
-- Ban sırası düz almaşık (mavi başlar); MLBB turnuvasındaki 3+3 / 5+5 faz düzeni
-  (ban → pick → ban) henüz uygulanmadı, sıra resmî format doğrulanınca eklenecek.
+- **Turnuva 2. ban fazına kimin başladığı doğrulanmadı.** Şu an ikinci seçim takımı
+  başlıyor (blok 2+2). Resmî kaynak bulunamadı; kullanıcı teyidi bekliyor.
+- Seçim sıraları (1-2-2-1 ve 1-2-1) Fandom'daki toplam `1-2-2-2-2-1` dizisinden
+  türetildi; resmî kural kitabı sıra vermiyor.
 - Roller Fandom verisine dayanıyor; Moonton'un resmî listesiyle karşılaştırılmadı.
-- Sayaç durumu sayfa yenilemede sıfırlanır (tahta korunur, süre korunmaz).
 - Yeni sürüm yayına girdiğinde dönen ziyaretçi bir sonraki açılışta güncel sürümü alır.
 - Sesli/animasyonlu geri bildirim yok; `prefers-reduced-motion` yalnızca geçişleri kapatıyor.

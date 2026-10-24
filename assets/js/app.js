@@ -1,16 +1,23 @@
 'use strict';
 
-/* BanPhase — V1 iskelet
-   Bağımlılık yok. Durum localStorage'da; sunucuya hiçbir şey gönderilmez. */
+/* BanPhase — draft tahtası
+   Formatlar:
+     turnuva: 3 ban → 3+3 seçim → 2 ban → 2+2 seçim
+     ranked : 10 ban (aynı anda) → 1-2-2-2-2-1 seçim
+   Veri cihazda; sunucuya hiçbir şey gönderilmez. */
 
 const CONFIG = {
-  banOptions: [3, 5],
   banSeconds: 30,
-  storageKey: 'banphase.draft.v1',
+  storageKey: 'banphase.draft.v2',
   dataUrl: './data/heroes.json',
+  formats: {
+    tournament: { label: 'Turnuva', hint: '3 ban · 3+3 seçim · 2 ban · 2+2 seçim', freeBans: false },
+    ranked: { label: 'Ranked', hint: '10 ban aynı anda · 1-2-2-2-2-1 seçim', freeBans: true },
+  },
 };
 
 const TEAM_LABEL = { blue: 'Mavi Takım', red: 'Kırmızı Takım' };
+const TYPE_LABEL = { ban: 'ban', pick: 'seçim' };
 
 const state = {
   heroes: [],
@@ -18,8 +25,10 @@ const state = {
   roles: [],
   dataLoaded: false,
   slots: [],
-  bansPerTeam: 5,
+  format: 'tournament',
+  firstPick: 'blue',
   cursor: 0,
+  freeSlot: null,
   query: '',
   role: 'all',
   finished: false,
@@ -62,36 +71,89 @@ function pad2(n) {
   return String(n).padStart(2, '0');
 }
 
-/* ---------- durum ---------- */
+/* ---------- format motoru ---------- */
 
-function makeSlots(bansPerTeam = state.bansPerTeam) {
-  const total = bansPerTeam * 2;
-  let blue = 0;
-  let red = 0;
-  return Array.from({ length: total }, (_, i) => {
-    const team = i % 2 === 0 ? 'blue' : 'red';
-    const teamIndex = team === 'blue' ? blue++ : red++;
-    return { index: i, team, teamIndex, heroId: null, skipped: false };
+function sequence(format) {
+  const steps = [];
+  const add = (type, side, count = 1) => {
+    for (let i = 0; i < count; i += 1) steps.push({ type, side });
+  };
+
+  if (format === 'ranked') {
+    add('ban', 'fp', 5);
+    add('ban', 'sp', 5);
+    add('pick', 'fp', 1);
+    add('pick', 'sp', 2);
+    add('pick', 'fp', 2);
+    add('pick', 'sp', 2);
+    add('pick', 'fp', 2);
+    add('pick', 'sp', 1);
+    return steps;
+  }
+
+  add('ban', 'fp', 3);
+  add('ban', 'sp', 3);
+  add('pick', 'fp', 1);
+  add('pick', 'sp', 2);
+  add('pick', 'fp', 2);
+  add('pick', 'sp', 1);
+  add('ban', 'sp', 2);
+  add('ban', 'fp', 2);
+  add('pick', 'sp', 1);
+  add('pick', 'fp', 2);
+  add('pick', 'sp', 1);
+  return steps;
+}
+
+function buildSlots(format, firstPick) {
+  const fpTeam = firstPick === 'red' ? 'red' : 'blue';
+  const spTeam = fpTeam === 'blue' ? 'red' : 'blue';
+  const counters = {
+    blue: { ban: 0, pick: 0 },
+    red: { ban: 0, pick: 0 },
+  };
+
+  return sequence(format).map((step, index) => {
+    const team = step.side === 'fp' ? fpTeam : spTeam;
+    const teamIndex = counters[team][step.type];
+    counters[team][step.type] += 1;
+    return { index, type: step.type, team, teamIndex, heroId: null, skipped: false };
   });
 }
+
+function banCount() {
+  return state.slots.filter((slot) => slot.type === 'ban').length;
+}
+
+function isFreePhase() {
+  return Boolean(CONFIG.formats[state.format].freeBans) && !state.finished && state.cursor < banCount();
+}
+
+function currentIndex() {
+  return isFreePhase() && state.freeSlot != null ? state.freeSlot : state.cursor;
+}
+
+/* ---------- durum ---------- */
 
 function restore() {
   try {
     const raw = localStorage.getItem(CONFIG.storageKey);
     if (!raw) return null;
     const data = JSON.parse(raw);
-    if (data.v !== 1 || !Array.isArray(data.slots)) return null;
+    if (data.v !== 2 || !Array.isArray(data.slots)) return null;
 
-    const bansPerTeam = CONFIG.banOptions.includes(data.bansPerTeam) ? data.bansPerTeam : 5;
-    if (data.slots.length !== bansPerTeam * 2) return null;
+    const format = CONFIG.formats[data.format] ? data.format : 'tournament';
+    const firstPick = data.firstPick === 'red' ? 'red' : 'blue';
+    const expected = sequence(format).length;
+    if (data.slots.length !== expected) return null;
 
     const slots = data.slots.map((slot, i) => {
-      const team = i % 2 === 0 ? 'blue' : 'red';
       const known = !state.dataLoaded || state.heroById.has(slot.heroId);
       const heroId = slot.heroId && known ? slot.heroId : null;
       return {
         index: i,
-        team,
+        type: slot.type === 'pick' ? 'pick' : 'ban',
+        team: slot.team === 'red' ? 'red' : 'blue',
         teamIndex: Number.isInteger(slot.teamIndex) ? slot.teamIndex : 0,
         heroId,
         skipped: Boolean(slot.skipped),
@@ -99,7 +161,8 @@ function restore() {
     });
 
     const cursor = Math.min(Math.max(Number(data.cursor) || 0, 0), slots.length);
-    return { slots, cursor, finished: Boolean(data.finished), bansPerTeam };
+    const finished = Boolean(data.finished);
+    return { slots, cursor, finished, format, firstPick, freeSlot: null };
   } catch {
     return null;
   }
@@ -109,14 +172,17 @@ function save() {
   if (!state.dataLoaded) return;
   try {
     localStorage.setItem(CONFIG.storageKey, JSON.stringify({
-      v: 1,
-      bansPerTeam: state.bansPerTeam,
-      slots: state.slots.map((s) => ({ teamIndex: s.teamIndex, heroId: s.heroId, skipped: s.skipped })),
+      v: 2,
+      format: state.format,
+      firstPick: state.firstPick,
+      slots: state.slots.map((s) => ({
+        type: s.type, team: s.team, teamIndex: s.teamIndex, heroId: s.heroId, skipped: s.skipped,
+      })),
       cursor: state.cursor,
       finished: state.finished,
     }));
   } catch {
-    /* gizli mod / kota dolu: sessizce devam */
+    /* gizli mod / kota dolu */
   }
 }
 
@@ -130,63 +196,89 @@ function render() {
 
 function renderTurn() {
   const done = state.finished;
-  els.turnTeam.dataset.team = done ? 'done' : state.slots[state.cursor].team;
+  const slot = done ? null : state.slots[currentIndex()];
+
+  els.turnTeam.dataset.team = done ? 'done' : slot.team;
 
   if (done) {
-    els.turnTeam.textContent = 'Ban aşaması tamam';
+    els.turnTeam.textContent = 'Draft tamam';
     els.turnSlot.textContent = 'Özeti açıp takımına yapıştırabilirsin.';
+  } else if (isFreePhase()) {
+    const filled = state.slots.filter((s) => s.type === 'ban' && s.heroId).length;
+    els.turnTeam.textContent = `${TEAM_LABEL[slot.team]} · serbest ban`;
+    els.turnSlot.textContent = `${filled}/${banCount()} ban · sırayı sen seç`;
   } else {
-    const slot = state.slots[state.cursor];
     const next = state.slots.slice(state.cursor + 1, state.cursor + 3)
       .map((s) => (s.team === 'blue' ? 'Mavi' : 'Kırmızı'));
     const nextText = next.length ? ` · sırada ${next.join(', ')}` : '';
     els.turnTeam.textContent = TEAM_LABEL[slot.team];
-    els.turnSlot.textContent = `${slot.teamIndex + 1}. ban · ${state.cursor + 1}/${state.slots.length}${nextText}`;
+    els.turnSlot.textContent = `${slot.teamIndex + 1}. ${TYPE_LABEL[slot.type]} · ${state.cursor + 1}/${state.slots.length}${nextText}`;
   }
 
-  els.bansToggle?.querySelectorAll('[data-bans]').forEach((button) => {
-    button.setAttribute('aria-pressed', String(Number(button.dataset.bans) === state.bansPerTeam));
+  els.formatToggle?.querySelectorAll('[data-format]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(button.dataset.format === state.format));
   });
-  if (els.settingsHint) els.settingsHint.textContent = `${state.bansPerTeam * 2} ban`;
+  els.firstpickToggle?.querySelectorAll('[data-firstpick]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(button.dataset.firstpick === state.firstPick));
+  });
+  if (els.settingsHint) els.settingsHint.textContent = CONFIG.formats[state.format].hint;
 
   els.btnTimer.textContent = state.timer.running ? 'Duraklat' : 'Başlat';
-  els.btnTimer.disabled = done;
+  els.btnTimer.disabled = done || isFreePhase();
+  els.btnTimer.hidden = isFreePhase();
+  els.timer.hidden = isFreePhase();
   els.btnSkip.disabled = done;
-  els.btnUndo.disabled = state.cursor === 0 && !done;
+  els.btnUndo.disabled = !hasHistory();
   els.btnSummary.hidden = !done;
 
   document.querySelectorAll('.team').forEach((card) => {
     const team = card.dataset.team;
-    card.classList.toggle('is-turn', !done && state.slots[state.cursor].team === team);
+    card.classList.toggle('is-turn', !done && slot.team === team);
   });
+
+  const draft = document.querySelector('.draft');
+  if (draft) draft.classList.toggle('is-free', isFreePhase());
+}
+
+function slotMarkup(slot) {
+  const hero = slot.heroId ? state.heroById.get(slot.heroId) : null;
+  const isActive = slot.index === (state.finished ? -1 : currentIndex());
+  const classes = ['slot'];
+  if (slot.type === 'pick') classes.push('is-pick');
+  if (slot.heroId) classes.push('is-filled');
+  if (slot.skipped) classes.push('is-skipped');
+  if (isActive) classes.push('is-active');
+
+  const tone = hero ? hue(hero.id) : 'transparent';
+  const face = hero ? initials(hero.name) : (slot.heroId ? '?' : '—');
+  return `<li class="${classes.join(' ')}" data-index="${slot.index}"${isActive ? ' aria-current="true"' : ''} style="--tone:${tone}">
+    <span class="slot-no">${slot.teamIndex + 1}</span>
+    <span class="slot-face">${face}</span>
+  </li>`;
 }
 
 function renderBoard() {
   for (const team of ['blue', 'red']) {
-    const list = document.getElementById(`slots-${team}`);
-    if (!list) continue;
+    const host = document.getElementById(`slots-${team}`);
+    if (!host) continue;
 
-    const teamSlots = state.slots.filter((s) => s.team === team);
-    list.style.setProperty('--cols', teamSlots.length);
-    list.innerHTML = teamSlots.map((slot) => {
-      const hero = slot.heroId ? state.heroById.get(slot.heroId) : null;
-      const isActive = !state.finished && state.cursor === slot.index;
-      const classes = ['slot'];
-      if (slot.heroId) classes.push('is-filled');
-      if (slot.skipped) classes.push('is-skipped');
-      if (isActive) classes.push('is-active');
-
-      const tone = hero ? hue(hero.id) : 'transparent';
-      const face = hero ? initials(hero.name) : (slot.heroId ? '?' : '—');
-      return `<li class="${classes.join(' ')}"${isActive ? ' aria-current="true"' : ''} style="--tone:${tone}">
-        <span class="slot-no">${slot.teamIndex + 1}</span>
-        <span class="slot-face">${face}</span>
-      </li>`;
+    const teamSlots = state.slots.filter((slot) => slot.team === team);
+    host.innerHTML = ['ban', 'pick'].map((type) => {
+      const group = teamSlots.filter((slot) => slot.type === type);
+      if (!group.length) return '';
+      const label = type === 'ban' ? 'Ban' : 'Seçim';
+      return `<div class="slot-row">
+        <span class="row-label">${label}</span>
+        <ul class="slots" style="--cols:${group.length}">${group.map(slotMarkup).join('')}</ul>
+      </div>`;
     }).join('');
 
-    const count = teamSlots.filter((s) => s.heroId).length;
+    const bans = teamSlots.filter((s) => s.type === 'ban');
+    const picks = teamSlots.filter((s) => s.type === 'pick');
     const chip = document.querySelector(`[data-count="${team}"]`);
-    if (chip) chip.textContent = `${count}/${teamSlots.length}`;
+    if (chip) {
+      chip.textContent = `${bans.filter((s) => s.heroId).length}/${bans.length} ban · ${picks.filter((s) => s.heroId).length}/${picks.length} seçim`;
+    }
   }
 }
 
@@ -200,8 +292,16 @@ function visibleHeroes() {
   });
 }
 
+function heroUsage() {
+  const map = new Map();
+  for (const slot of state.slots) {
+    if (slot.heroId) map.set(slot.heroId, slot.type);
+  }
+  return map;
+}
+
 function renderHeroes() {
-  const banned = new Set(state.slots.filter((s) => s.heroId).map((s) => s.heroId));
+  const used = heroUsage();
   const list = visibleHeroes();
 
   els.heroCount.textContent = list.length === state.heroes.length
@@ -210,11 +310,15 @@ function renderHeroes() {
   els.empty.hidden = list.length > 0 || state.heroes.length === 0;
 
   els.heroGrid.innerHTML = list.map((hero) => {
-    const isBanned = banned.has(hero.id);
+    const usage = used.get(hero.id);
+    const classes = ['hero'];
+    if (usage === 'ban') classes.push('is-banned');
+    if (usage === 'pick') classes.push('is-picked');
     const roleText = hero.roles.join(' · ');
-    return `<button class="hero${isBanned ? ' is-banned' : ''}" type="button"
-      data-hero-id="${hero.id}" ${isBanned ? 'disabled' : ''}
-      aria-label="${hero.name}, ${roleText}${isBanned ? ', banlandı' : ''}">
+    const stateText = usage === 'ban' ? ', banlandı' : (usage === 'pick' ? ', seçildi' : '');
+    return `<button class="${classes.join(' ')}" type="button"
+      data-hero-id="${hero.id}" ${usage ? 'disabled' : ''}
+      aria-label="${hero.name}, ${roleText}${stateText}">
       <span class="hero-art" style="--tone:${hue(hero.id)}">${initials(hero.name)}</span>
       <span class="hero-name">${hero.name}</span>
       <span class="hero-role">${roleText}</span>
@@ -245,7 +349,7 @@ function renderTimerButton() {
 }
 
 function startTimer() {
-  if (state.finished || state.timer.running) return;
+  if (state.finished || state.timer.running || isFreePhase()) return;
   if (state.timer.remaining <= 0) state.timer.remaining = CONFIG.banSeconds;
 
   state.timer.armed = true;
@@ -285,61 +389,104 @@ function resetTimer(autoStart) {
 }
 
 function handleTimeout() {
-  if (state.finished) return;
+  if (state.finished || isFreePhase()) return;
   state.slots[state.cursor].skipped = true;
-  toast('Süre doldu — bu ban atlandı.');
+  toast('Süre doldu — bu sıra atlandı.');
   state.timer.armed = false;
   advance({ autoStart: false });
 }
 
-/* ---------- eylemler ---------- */
+/* ---------- hamleler ---------- */
+
+function hasHistory() {
+  return state.slots.some((slot) => slot.heroId || slot.skipped);
+}
 
 function advance(options = {}) {
   const autoStart = options.autoStart ?? state.timer.armed;
-  state.cursor += 1;
 
-  if (state.cursor >= state.slots.length) {
-    finishDraft();
-    return;
+  if (isFreePhase()) {
+    const nextEmpty = state.slots.findIndex((s) => s.type === 'ban' && !s.heroId && !s.skipped);
+    if (nextEmpty === -1) {
+      state.cursor = banCount();
+      state.freeSlot = null;
+      resetTimer(autoStart);
+    } else {
+      state.freeSlot = nextEmpty;
+    }
+  } else {
+    state.cursor += 1;
+    if (state.cursor >= state.slots.length) {
+      finishDraft();
+      return;
+    }
+    resetTimer(autoStart);
   }
 
-  resetTimer(autoStart);
   save();
   render();
 }
 
-function banHero(heroId) {
-  if (state.finished) return toast('Ban aşaması bitti.');
+function placeHero(heroId) {
+  if (state.finished) return toast('Draft bitti.');
   const hero = state.heroById.get(heroId);
   if (!hero) return;
 
-  const already = state.slots.some((s) => s.heroId === heroId);
-  if (already) return toast(`${hero.name} zaten banlı.`);
+  if (state.slots.some((s) => s.heroId === heroId)) return toast(`${hero.name} zaten kullanıldı.`);
 
-  state.slots[state.cursor].heroId = heroId;
-  toast(`${hero.name} banlandı.`);
+  const idx = currentIndex();
+  const slot = state.slots[idx];
+  slot.heroId = heroId;
+
+  const verb = slot.type === 'ban' ? 'banlandı' : 'seçildi';
+  toast(`${hero.name} ${verb}.`);
+
+  if (isFreePhase()) {
+    const nextEmpty = state.slots.findIndex((s) => s.type === 'ban' && !s.heroId && !s.skipped && s.index !== idx);
+    state.freeSlot = nextEmpty === -1 ? idx : nextEmpty;
+    if (nextEmpty === -1) {
+      state.cursor = banCount();
+      state.freeSlot = null;
+      save();
+      render();
+      return;
+    }
+    save();
+    render();
+    return;
+  }
+
   advance();
 }
 
 function skipSlot() {
-  if (state.finished) return toast('Ban aşaması bitti.');
-  state.slots[state.cursor].skipped = true;
+  if (state.finished) return toast('Draft bitti.');
+  const idx = currentIndex();
+  state.slots[idx].skipped = true;
   advance();
 }
 
 function undo() {
-  const idx = Math.min(state.cursor, state.slots.length) - 1;
+  let idx = -1;
+  for (let i = state.slots.length - 1; i >= 0; i -= 1) {
+    if (state.slots[i].heroId || state.slots[i].skipped) { idx = i; break; }
+  }
   if (idx < 0) return toast('Geri alınacak hamle yok.');
 
   const slot = state.slots[idx];
-  if (!slot.heroId && !slot.skipped) return toast('Geri alınacak hamle yok.');
-
   slot.heroId = null;
   slot.skipped = false;
   state.finished = false;
-  state.cursor = idx;
-  state.timer.armed = false;
 
+  if (CONFIG.formats[state.format].freeBans && slot.type === 'ban') {
+    state.cursor = 0;
+    state.freeSlot = idx;
+  } else {
+    state.freeSlot = null;
+    state.cursor = idx;
+  }
+
+  state.timer.armed = false;
   closeSummary();
   resetTimer(false);
   save();
@@ -357,9 +504,10 @@ function finishDraft() {
 }
 
 function resetDraft() {
-  if (!window.confirm('Ban tahtası sıfırlanacak. Emin misin?')) return;
-  state.slots = makeSlots(state.bansPerTeam);
+  if (!window.confirm('Tahta sıfırlanacak. Emin misin?')) return;
+  state.slots = buildSlots(state.format, state.firstPick);
   state.cursor = 0;
+  state.freeSlot = null;
   state.finished = false;
   state.timer.armed = false;
   resetTimer(false);
@@ -369,45 +517,59 @@ function resetDraft() {
   toast('Tahta sıfırlandı.');
 }
 
-function setBansPerTeam(value) {
-  const count = Number(value);
-  if (!CONFIG.banOptions.includes(count) || count === state.bansPerTeam) return;
-
-  const touched = state.slots.some((slot) => slot.heroId || slot.skipped);
-  if (touched && !window.confirm(`Tahta ${count} + ${count} için sıfırlanacak. Devam?`)) return;
-
-  state.bansPerTeam = count;
-  state.slots = makeSlots(count);
+function setFormat(format) {
+  if (!CONFIG.formats[format] || format === state.format) return;
+  if (hasHistory() && !window.confirm('Format değişince tahta sıfırlanır. Devam?')) return;
+  state.format = format;
+  state.slots = buildSlots(format, state.firstPick);
   state.cursor = 0;
+  state.freeSlot = null;
   state.finished = false;
   state.timer.armed = false;
   resetTimer(false);
   closeSummary();
   save();
   render();
-  toast(`Takım başına ${count} ban.`);
+  toast(`${CONFIG.formats[format].label}: ${CONFIG.formats[format].hint}`);
+}
+
+function setFirstPick(team) {
+  if (!['blue', 'red'].includes(team) || team === state.firstPick) return;
+  if (hasHistory() && !window.confirm('İlk seçim değişince tahta sıfırlanır. Devam?')) return;
+  state.firstPick = team;
+  state.slots = buildSlots(state.format, team);
+  state.cursor = 0;
+  state.freeSlot = null;
+  state.finished = false;
+  state.timer.armed = false;
+  resetTimer(false);
+  closeSummary();
+  save();
+  render();
+  toast(`İlk seçim: ${TEAM_LABEL[team]}.`);
 }
 
 /* ---------- özet ---------- */
 
-function summaryLines() {
+function summaryRows() {
   return ['blue', 'red'].map((team) => {
-    const items = state.slots
-      .filter((s) => s.team === team)
+    const pick = (type) => state.slots
+      .filter((s) => s.team === team && s.type === type)
       .map((slot) => {
         if (slot.heroId) return state.heroById.get(slot.heroId)?.name ?? slot.heroId;
         return slot.skipped ? '(atlandı)' : '—';
       });
-    return { team, label: TEAM_LABEL[team], items };
+    return { team, label: TEAM_LABEL[team], bans: pick('ban'), picks: pick('pick') };
   });
 }
 
 function showSummary() {
-  const lines = summaryLines();
-  els.summaryBody.innerHTML = lines.map((line) => `
-    <div class="${line.team}">
-      <h3>${line.label}</h3>
-      <p>${line.items.join(', ')}</p>
+  const rows = summaryRows();
+  els.summaryBody.innerHTML = rows.map((row) => `
+    <div class="${row.team}">
+      <h3>${row.label}</h3>
+      <p><strong>Ban:</strong> ${row.bans.join(', ')}</p>
+      <p><strong>Seçim:</strong> ${row.picks.join(', ')}</p>
     </div>`).join('');
 
   if (typeof els.summary.showModal === 'function') {
@@ -423,8 +585,12 @@ function closeSummary() {
 }
 
 async function copySummary() {
-  const text = ['BanPhase — ban aşaması', ...summaryLines()
-    .map((line) => `${line.label}: ${line.items.join(', ')}`)].join('\n');
+  const rows = summaryRows();
+  const head = `BanPhase — ${CONFIG.formats[state.format].label} · İlk seçim: ${state.firstPick === 'blue' ? 'Mavi' : 'Kırmızı'}`;
+  const text = [head, ...rows.flatMap((row) => [
+    `${row.label} — Ban: ${row.bans.join(', ')}`,
+    `${row.label} — Seçim: ${row.picks.join(', ')}`,
+  ])].join('\n');
 
   try {
     await navigator.clipboard.writeText(text);
@@ -471,15 +637,19 @@ function bindEvents() {
   els.btnSkip.addEventListener('click', skipSlot);
   els.btnUndo.addEventListener('click', undo);
   els.btnReset.addEventListener('click', resetDraft);
-
-  els.bansToggle.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-bans]');
-    if (!button) return;
-    setBansPerTeam(button.dataset.bans);
-  });
   els.btnSummary.addEventListener('click', showSummary);
   els.btnCopy.addEventListener('click', copySummary);
   els.btnClose.addEventListener('click', closeSummary);
+
+  els.formatToggle.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-format]');
+    if (button) setFormat(button.dataset.format);
+  });
+
+  els.firstpickToggle.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-firstpick]');
+    if (button) setFirstPick(button.dataset.firstpick);
+  });
 
   els.search.addEventListener('input', (event) => {
     state.query = event.target.value;
@@ -496,8 +666,18 @@ function bindEvents() {
 
   els.heroGrid.addEventListener('click', (event) => {
     const button = event.target.closest('[data-hero-id]');
-    if (!button) return;
-    banHero(button.dataset.heroId);
+    if (button) placeHero(button.dataset.heroId);
+  });
+
+  document.querySelector('.draft')?.addEventListener('click', (event) => {
+    if (!isFreePhase()) return;
+    const el = event.target.closest('.slot');
+    if (!el) return;
+    const idx = Number(el.dataset.index);
+    const slot = state.slots[idx];
+    if (!slot || slot.type !== 'ban' || slot.heroId) return;
+    state.freeSlot = idx;
+    render();
   });
 
   document.addEventListener('keydown', (event) => {
@@ -512,13 +692,11 @@ function bindEvents() {
 
 function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
-
   const start = () => {
     navigator.serviceWorker.register('./sw.js').catch((error) => {
       console.warn('Service worker kaydı başarısız:', error.message);
     });
   };
-
   if (document.readyState === 'complete') start();
   else window.addEventListener('load', start, { once: true });
 }
@@ -527,7 +705,7 @@ function cacheElements() {
   const ids = ['turn-team', 'turn-slot', 'timer', 'btn-timer', 'btn-undo', 'btn-skip',
     'btn-summary', 'btn-reset', 'search', 'roles', 'hero-grid', 'hero-count', 'empty',
     'summary', 'summary-body', 'btn-copy', 'btn-close', 'toast', 'data-badge',
-    'bans-toggle', 'settings-hint'];
+    'format-toggle', 'firstpick-toggle', 'settings-hint'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
@@ -555,10 +733,14 @@ async function boot() {
   }
 
   const saved = restore();
-  state.bansPerTeam = saved ? saved.bansPerTeam : 5;
-  state.slots = saved ? saved.slots : makeSlots(state.bansPerTeam);
+  state.format = saved ? saved.format : 'tournament';
+  state.firstPick = saved ? saved.firstPick : 'blue';
+  state.slots = saved ? saved.slots : buildSlots(state.format, state.firstPick);
   state.cursor = saved ? saved.cursor : 0;
   state.finished = saved ? saved.finished : false;
+  state.freeSlot = null;
+
+  if (!saved && state.format === 'ranked') state.freeSlot = 0;
 
   renderRoles();
   renderTimer();
