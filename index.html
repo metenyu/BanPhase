@@ -7,7 +7,7 @@
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#070b14">
-  <meta name="build" content="2026-10-24.8">
+  <meta name="build" content="2026-10-24.9">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
@@ -92,6 +92,14 @@
       <div class="grid" id="hero-grid"></div>
       <p class="empty" id="empty" hidden>Bu filtreye uyan kahraman yok.</p>
     </section>
+
+    <details class="items-block" id="items">
+      <summary>Eşyalar <span class="muted" id="item-count"></span></summary>
+      <input id="item-search" type="search" placeholder="Eşya ara: tırpan, bot, zırh…"
+             autocomplete="off" spellcheck="false" aria-label="Eşya ara">
+      <div class="item-list" id="item-list"></div>
+      <p class="empty" id="items-empty" hidden>Bu aramaya uyan eşya yok.</p>
+    </details>
 
     <section class="comps" id="comps">
       <div class="comps-head">

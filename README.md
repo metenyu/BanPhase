@@ -44,6 +44,8 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 - **Draft sonrası kompozisyon analizi:** takım bazında ana rol dağılımı, eksik rol uyarıları
   ve etiketli kahramanlarda engage/hasar/koridor özeti
 - **Kayıtlı draftlar:** iki takımın compunu birlikte kaydet, galeride tut (cihazda)
+- **Eşyalar:** 55 eşya, Türkçe ad + stat + pasif, arama ile filtrelenir
+  (oyun içi ekran görüntülerinden OCR ile çıkarıldı)
 - PWA: çevrimdışı açılır, ana ekrana eklenebilir
 
 ## Çalıştırma

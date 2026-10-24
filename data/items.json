@@ -1,0 +1,1229 @@
+{
+  "schema": 1,
+  "kind": "items",
+  "generatedAt": "2026-10-24",
+  "count": 55,
+  "source": "Oyun içi eşya ekran görüntüleri (kullanıcı), OCR",
+  "licenseNote": "Eşya adları ve açıklamaları Moonton'a aittir; yalnızca atıflı, ticari olmayan kullanım.",
+  "categories": [
+    "attack",
+    "magic",
+    "defense",
+    "movement",
+    "other"
+  ],
+  "items": [
+    {
+      "id": "adalet-kilici",
+      "nameTr": "Adalet Kılıcı",
+      "category": "other",
+      "stats": [],
+      "passiveTr": "Eşsiz özellik: +40% Büyü Nüfuzu Eşsiz Pasif - Büyü Bozucu: Rakibin sahip olduğu her Büyü Direnci, o rakibe saldırırken sahip olunan Büyü Nüfuzunu 0.1% arttırır. Bu etki 20% ile sınırlıdır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "akilli-asa",
+      "nameTr": "Akıllı Asa",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 75,
+          "percent": false
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 5,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz özellik: +10 Büyü Nüfuzu Eşsiz Pasif - Büyü: Büyü Hasarı verilen rakibin Büyü Direncini 2 saniyeliğine 2.5(+0.5*Kahraman Seviyesi) azaltır. Bu etki 3 yükle sınırlıdır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "altin-asa",
+      "nameTr": "Altın Asa",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 55,
+          "percent": false
+        },
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 15,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Sürat: Sahip olunan her 1% Kritik Şansı, kahramana ekstra 1% Saldırı Hızı kazandırır. Eşsiz Pasif - Sonsuz Saldırı: Kritik olmayan her 2 Temel Saldırıdan sonraki ilk Temel Saldırı ekstra 80% Saldırı Hızı kazanır (Saldırı Hızı üst limiti 500% değerine yükseltilir) ve Saldırı Etkilerini fazladan 2 kez tetikler.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "antik-zirh",
+      "nameTr": "Antik Zırh",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 920,
+          "percent": false
+        },
+        {
+          "key": "physical_defense",
+          "labelTr": "Fiziksel Savunma",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "hp_regen",
+          "labelTr": "Can Yenileme",
+          "value": 4,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Yıldırma: Beceri hasarı alındığında saldırganın Fiziksel Hasarını 2 saniyeliğine 6% azaltır (bu etki 3 defaya kadar birikebilir).",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "atlantis-kargisi",
+      "nameTr": "Atlantis Kargısı",
+      "category": "other",
+      "stats": [
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 20,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Can Laneti: Hasar verilen hedefin üzerindeki mevcut Kalkan ve Can Yenileme etkilerini 3 saniyeliğine 60% seviyesine auşurur. Eşsiz Pasif - Ceza: Ekstra Canı seninkinden yüksek olan rakip kahramanlara verilen hasarı 8%",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "avci-darbesi",
+      "nameTr": "Avcı Darbesi",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 80,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz özellik: +15 Fiziksel Zırh Delme Eşsiz Pasif - Süratli Yargı: Bir rakip kahramana veya orman canavarına art arda 5 defa hasar vermek ekstra 50% Hareket Hızı kazandırır. Hareket Hızı artışı 3 saniye içerisinde azalır ve bu etkinin 8 saniye bekleme süresi vardır.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "ayaz",
+      "nameTr": "Ayaz",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "physical_defense",
+          "labelTr": "Fiziksel Savunma",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "magic_defense",
+          "labelTr": "Büyü Direnci",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 5,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Hisar Kalkanı: 5 birim içerisindeki her rakip kahraman başna 8 Fiziksel Savunma ve Büyü Direnci kazandırır. Bu etki 40 ile sınırlıdır. Eşsiz Pasif - Can Laneti: 5 birim yakındaki rakiplerin kalkanını ve Can Yenilemesini I saniye Can Yenilemesini 1 saniye tuunca normalin 60% kadarına düşürür.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "azapdar-omuzlugu",
+      "nameTr": "Azapdar Omuzluğu",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 900,
+          "percent": false
+        },
+        {
+          "key": "physical_defense",
+          "labelTr": "Fiziksel Savunma",
+          "value": 40,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Azapdar: Hasar almak, saldırganın Saldırı Hızını ve Saldırı Hızı sınırını 2 saniyeliğine 75% seviyesine düşürür. Eşsiz Pasif - Kefaret: Alınan hasar Canı 30% altına düşürdüğünde, sonraki 2 saniye boyunca Maksimum Canın 20% kadarını yeniler. Bu etki 60 saniye bekleme süresine sahiptir.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "bitmeyen-savas",
+      "nameTr": "Bitmeyen Savaş",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 60,
+          "percent": false
+        },
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 250,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 100,
+          "percent": true
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 5,
+          "percent": true
+        },
+        {
+          "key": "mana_regen",
+          "labelTr": "Mana Yenileme",
+          "value": 5,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - İlahi Adalet: Bir beceri kullandıktan sonraki 3 saniye içinde yapılan ilk Temel Saldırı ekstra (60% Toplam Fiziksel Saldırı) Gerçek Hasar verir ve 80 (+40% Toplam Fiziksel Saldırı) Can yeniler (Bekleme Süresi: 1.5 saniye).",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "bozulma-tirpani",
+      "nameTr": "Bozulma Tırpanı",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 30,
+          "percent": false
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 5,
+          "percent": true
+        },
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 30,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Yozlaşım: Temel Saldırılar ekstra 80 Fiziksel Hasar kazanır ve hedefi 1.5 saniyeliğine 8% yavaşlatır (menzilli Temel Saldırılar için yarıya iner). Bu etki 5 yükle sınırlıdır. Eşsiz Pasif - Dürtü: Temel Saldırılar 3 saniyeliğine ekstra 6% Saldırı Hızı kazandırır. Bu etki 5 yüke kadar birikebilir.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "buz-kralicesinin-degnegi",
+      "nameTr": "Buz Kraliçesinin Değneği",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 300,
+          "percent": false
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 7,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Buz Bağı: Bir rakip kahramana txxerilerle vurmak onu 2 saniyeliğine 10% yavaşlatır (3 yükle sınırlıdır). Bu etkinin 0.4 saniye bekleme süresi vardır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "buyulu-tilsim",
+      "nameTr": "Büyülü Tılsım",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 75,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 15,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Mana Baharı: Her 10 saniyede bir Maksimum Mananın 15% kadarını yeniler. Eşsiz Pasif - Büyü Ustalığı: Maksimum Bekleme Süresi Düşürme limitini 5% arttırır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "cennet-tuyu",
+      "nameTr": "Cennet Tüyü",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 60,
+          "percent": false
+        },
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 20,
+          "percent": true
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 5,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Çarpma: Her Temel Saldırı ekstra 50 (+300% Toplam Büyü Gücü) Büyü Hasarı verir. Eşsiz Pasif - Dürtü: Temel Saldırılar 3 saniyeliğine ekstra 6% Saldırı Hızı kazandırır. Bu etki 5 yüke kadar birikebilir.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "dikenli-gulle",
+      "nameTr": "Dikenli Gülle",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 35,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz özellik: +12 Fiziksel Zırh Delme",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "dilek-feneri",
+      "nameTr": "Dilek Feneri",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 75,
+          "percent": false
+        },
+        {
+          "key": "mana",
+          "labelTr": "Mana",
+          "value": 400,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Kelebek Tanrıçası: Bir rakip kahramana her 9W Büyü Hasarı verildiğinde (rakibin üzerindeki hasar azaltma görmezden gelinir) bir Kelebek Tanrıçası saldırıya geçer ve hedefin Mevcut Canının 8% kadarı Büyü Hasarı verin",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "direnc-botu",
+      "nameTr": "Direnç Botu",
+      "category": "movement",
+      "stats": [
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "magic_defense",
+          "labelTr": "Büyü Direnci",
+          "value": 18,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Dayanıklılık: Kitle Kontrol ve Yavaşlatma Süresini 25% azaltır.",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "doga-ruzg-ri",
+      "nameTr": "Doğa Rüzgârı",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 30,
+          "percent": false
+        },
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 20,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Aktif Beceri - Rüzgâr Ezgisi: 2 saniyeliğine tüm Fiziksel Hasarlara karşı bağışıklık kazandırır. (Ana Rolü Nişancı olmayan kahramanlarda bağışıklık süresi yarıya düşer). Bu etkinin 90 saniye bekleme süresi vardır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "efsunlu-bot",
+      "nameTr": "Efsunlu Bot",
+      "category": "movement",
+      "stats": [
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 15,
+          "percent": false
+        },
+        {
+          "key": "magic_penetration",
+          "labelTr": "Büyü Nüfuzu",
+          "value": 10,
+          "percent": false
+        }
+      ],
+      "passiveTr": "",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "f-ni-zaman",
+      "nameTr": "Fâni Zaman",
+      "category": "other",
+      "stats": [
+        {
+          "key": "adaptive_attack",
+          "labelTr": "Uyarlanabilir Saldırı",
+          "value": 30,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 15,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Zaman Akıntısı: Kahraman öldürmek veya asist almak Ultinin mevcut bekleme süresini 30% azaltır.",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "firtina",
+      "nameTr": "Fırtına",
+      "category": "other",
+      "stats": [
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 35,
+          "percent": true
+        },
+        {
+          "key": "crit_chance",
+          "labelTr": "Kritik Şansı",
+          "value": 20,
+          "percent": true
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 20,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Tayfun: Her 5-2 saniyede bir (her Temel Saldırıda bu süre 0.2 saniye azalır), sonraki Temel Saldırı en fazla 3 rakip birime sekip 150-362 Büyü Hasarı verir (bu hasar kritik olabilir ve minyonlara 20096 vurur).",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "gardiyan-migferi",
+      "nameTr": "Gardiyan Miğferi",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 1800,
+          "percent": false
+        },
+        {
+          "key": "hp_regen",
+          "labelTr": "Can Yenileme",
+          "value": 20,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Kurtarma: Savaştan 5 saniye uzak kaldıktan sonra her saniye (2.5% Maksimum Can) Can yeniler. Eşsiz Pasif - Koruyucu: Tek seferde 5(X) üzerinde hasar alındığında, bu miktarı aşan hasarın 30 (+0.3% Maksimum Can)% kadarı Can yenilenir.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "gok-gurultusu-kemeri",
+      "nameTr": "Gök Gürültüsü Kemeri",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 600,
+          "percent": false
+        },
+        {
+          "key": "physical_defense",
+          "labelTr": "Fiziksel Savunma",
+          "value": 15,
+          "percent": false
+        },
+        {
+          "key": "magic_defense",
+          "labelTr": "Büyü Direnci",
+          "value": 15,
+          "percent": false
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 20,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Yıldırım Oku: Her 4 saniyede bir yapılan ilk Temel Saldırı, hedefe ve hedefin etrafındaki rakiplere fazladan 50 (+10% Ekstra Fiziksel Savunma) (+100% Ekstra Büyü Direnci) Gerçek Hasar verir ve onları kısa süreliğine %99 yavaşlatır. Bu saldırı bır rakıp kahramana her isabet ettiğinde Hibrit Savunma kalıcı olarak 1 artar. Nişancılar, Büyücüler ve Suikastçılar bu etkilerin yalnızca 50% kadarından faydalanabilir.",
+      "evidence": "4 ekran görüntüsü"
+    },
+    {
+      "id": "gok-kiran",
+      "nameTr": "Gök Kıran",
+      "category": "other",
+      "stats": [
+        {
+          "key": "adaptive_attack",
+          "labelTr": "Uyarlanabilir Saldırı",
+          "value": 60,
+          "percent": false
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 15,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - idam: Hasar verilen rakip kahramanın Canı 4% değerinin altındaysa onu anında infaz eder. Her skor alındığında 10 idam yükü kazanılır ve her ölümden sonra yüklerin 30% kadarı kaybedilir. Her idam yükü, infaz etkisinin Can değeri eşiğini 0.1% arttırır. idam yükü en fazla 80 olabilir.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "haasin-penceleri",
+      "nameTr": "Haas'ın Pençeleri",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 15,
+          "percent": true
+        },
+        {
+          "key": "crit_chance",
+          "labelTr": "Kritik şansı",
+          "value": 20,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz özellik: +20% Can Çalma Eşsiz Pasif - Çılgınlık: Kritik hasar vermek 2 saniyeliğine 20% Saldırı Hızı kazandırır.",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "hiz-botu",
+      "nameTr": "Hız Botu",
+      "category": "movement",
+      "stats": [
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 15,
+          "percent": true
+        }
+      ],
+      "passiveTr": "",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "iblis-botu",
+      "nameTr": "iblis Botu",
+      "category": "movement",
+      "stats": [
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "mana_regen",
+          "labelTr": "Mana Yenileme",
+          "value": 10,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Mistisizm: Rakip Minyon kesmek veya Minyon Asisti almak 4% Mana yeniler. (Hasar verdiğin minyon 2 saniye içerisinde ölürse Minyon Asisti sayılır).",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "kader-saati",
+      "nameTr": "Kader Saati",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 45,
+          "percent": false
+        },
+        {
+          "key": "mana",
+          "labelTr": "Mana",
+          "value": 400,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Kader: Rakip kahramanlara Büyü Hasarı vermek 5 saniyeliğine 4.5(+0.5*Kahraman Seviyesi) Hibrit Savunma kazandırır. (Bu etki 6 yüke kadar birikebilir ve her 0.4 saniyede 1 yük kazanılır.) Eşsiz Pasif - Hediye: Can 50% altına düştüğünde sonraki 3 saniye içerisinde 15% Can yeniler. Mana 50% altına düştüğünde sonraki 3 saniye içerisinde 15% Mana yeniler. Bekleme süresi: 60 saniye.",
+      "evidence": "4 ekran görüntüsü"
+    },
+    {
+      "id": "k-hin",
+      "nameTr": "Kâhin",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 850,
+          "percent": false
+        },
+        {
+          "key": "physical_defense",
+          "labelTr": "Fiziksel Savunma",
+          "value": 20,
+          "percent": false
+        },
+        {
+          "key": "magic_defense",
+          "labelTr": "Büyü Direnci",
+          "value": 20,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Kutsama: Alınan Kalkan ve Can Yenileme etkilerini 25% arttırır.",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "kalp-rezonansi",
+      "nameTr": "Kalp Rezonansı",
+      "category": "other",
+      "stats": [],
+      "passiveTr": "Eşsiz Pasif - Sıfırla: Takımdaki Cecilion, bu ekipmanın kullanıcısı üzerinde Ay Işığında Kanlı Dans kullanabilir.",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "kan-kanatlari",
+      "nameTr": "Kan Kanatları",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 90,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Muhafız: 800 (+10% Toplam Büyü Gücü) kalkan kazandırır ve bu kalkan hasar aldıktan 20 saniye sonra kendini yeniler. Kalkan kırılmadığı sürece 30 Hareket Hızı, kırıldıktan sonra ise 1 saniyeliğine 150 Hareket Hızı kazandırır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "kaotik-silah",
+      "nameTr": "Kaotik Silah",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 40,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Zırh Savar: Fiziksel Zırh Delmeyi 30% arttırır. Eşsiz Pasif - Kaotik Enerji: Temel Saldırı menzilini 12% arttırır ve bir",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "kirik-kalp",
+      "nameTr": "Kırık Kalp",
+      "category": "other",
+      "stats": [],
+      "passiveTr": "Eşsiz Pasif - Kırık Kalp: Takımındaki Cecilion'un senin üzerinde Ay Işığında Kanlı Dans kullanmasını engeller.",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "kis-taci",
+      "nameTr": "Kış Tacı",
+      "category": "other",
+      "stats": [
+        {
+          "key": "adaptive_attack",
+          "labelTr": "Uyarlanabilir Saldırı",
+          "value": 45,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 5,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Aktif Beceri - Dondur: Kahramanı 2 saniye boyunca dondurup hedef alınamaz yapar ve hasar bağışıklığı kazandırır (100 saniye bekleme süresi vardır). Donmuş hâldeyken hareket edilemez veya beceri kullanılamaz ancak kullanımda olan beceriler de kesintiye uğramaz.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "kiyamet-kanatlari",
+      "nameTr": "Kıyamet Kanatları",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 750,
+          "percent": false
+        },
+        {
+          "key": "adaptive_attack",
+          "labelTr": "Uyarlanabilir Saldırı",
+          "value": 30,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 100,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - iblisin Uyanışı: Can 40% altına düştüğünde 3 saniyeliğine 30% Hasar Azaltma kazandırır ve tüm becerilerin bekleme süresini 2 saniye azaltır. Bu etkinin 60 saniyelik bir bekleme süresi vardır. Eşsiz Pasif - Meydan Okuma: Kaybedilen her 1% Can başına 0.25% Hasar Artışı kazanılır. Bu etki 15% ile sınırlıdır.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "kinci-balta",
+      "nameTr": "Kinci Balta",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 35,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 100,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Savaş Ruhu: Hasar vermek 4 saniye boyunca her saniye ekstra 12 Fiziksel Saldırı kazandırır (6 yükle sınırlıdır). Tam yüke ulaşıldığında verilen hasara oranla ekstra 10% Gerçek Hasar verir (rakibin üzerindeki hasar azaltmayı görmezden gelir). Nişancılar, Büyücüler ve Destekler bu etkilerin yalnızca 50% kadarından faydalanabilir.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "konsantre-enerji",
+      "nameTr": "Konsantre Enerji",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 75,
+          "percent": false
+        },
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 400,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz özellik: +20% Hibrit Can Çalma Eşsiz Pasif - öfkeli Dolum: Büyü Hasarı verdikten sonra Büyü Gücünü 5 arttırır (bu etki Ğ yüke kadar birikebilir ve her saniye 0.4 yük kazanılır). Tam yüke ulaşıldığında kahramanın Büyü Hasarını 5 saniyeliğine 12% arttırır.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "korkunc-silah",
+      "nameTr": "Korkunç Silah",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 60,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Zırh Savar: Fiziksel Zırh Delmeyi 30% arttırır. Eşsiz Pasif - Delici: Rakibin sahip olduğu her Fiziksel Savunma, o rakibe saldırırken sahip olunan Fiziksel Zırh Delmeyi 0.1% arttırır. Bu etki 30% ile sınırlıdır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "kutsal-kristal",
+      "nameTr": "Kutsal Kristal",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 165,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Gizem: Ekstra 21-35% Büyü Gücü kazandırır (seviyeyle orantılıdır).",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "lanetli-migfer",
+      "nameTr": "Lanetli Miğfer",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 1200,
+          "percent": false
+        },
+        {
+          "key": "magic_defense",
+          "labelTr": "Büyü Direnci",
+          "value": 20,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Kızgın Ruh: Yakındaki rakiplere her saniye (1.2% Maksimum Can) Büyü Hasarı verir. Orman canavarları ve minyonlar bundan 125(+15*Kahraman Seviyesi)% daha fazla hasar alır. Eşsiz Pasif - Lanet: Kızgın Ruh ile hasar vermek hedefin Hibrit Savunmasını 3 saniyeliğine 3 azaltır. Bu etki 3 defaya kadar birikebilir.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "midasin-kilici",
+      "nameTr": "Midas'ın Kılıcı",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 30,
+          "percent": false
+        },
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 20,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Ejder Pulu: Sahip olunan her 4 ekstra Fiziksel Saldırı, Hibrit Savunmayı 1 arttırır (50 ile sınırlıdır ve Ana Rolü Savaşçı olmayan kahramanlarda bu etki yarıya düşer). Eşsiz Pasif - Hayat Çizgisi: Canı 30% altına düşürecek bir hasar alındığında (120*Kahraman Seviyesi) kalkan ve 3 saniye içerisinde hızla azalan ekstra 50% Hareket Hızı kazandırır. Bu etkinin 60 saniye bekleme süresi vardır. Eşsiz Pasif - Ejder Pulu: Sahip olunan her 4 ekstra Fiziksel Saldırı, Hibrit Savunmayı 1 arttırır (50 ile sınırlıdır ve Ana Rolü",
+      "evidence": "5 ekran görüntüsü"
+    },
+    {
+      "id": "olumsuzluk",
+      "nameTr": "Ölümsüzlük",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 850,
+          "percent": false
+        },
+        {
+          "key": "physical_defense",
+          "labelTr": "Fiziksel Savunma",
+          "value": 15,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - ölümsüz: öldükten 2.5 saniye sonra 16% Can ve 150(+70*Kahraman Seviyesi) hasar emebilen bir kalkan ile diriltir. Kalkan 3 saniye sürer. Bu etkinin 210 saniyelik bir bekleme süresi vardır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "parlak-zirh",
+      "nameTr": "Parlak Zırh",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 950,
+          "percent": false
+        },
+        {
+          "key": "magic_defense",
+          "labelTr": "Büyü Direnci",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "hp_regen",
+          "labelTr": "Can Yenileme",
+          "value": 12,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - İlahi Kutsama: Büyü Hasarı almak 5 saniyeliğine 5(+1*Kahraman Seviyesi) Büyü Direnci sağlar. Bu etki 6 yükle sınırlıdır (her 0.4 saniyede bir 1 yük kazanılabilir).",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "parlayan-asa",
+      "nameTr": "Parlayan Asa",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 300,
+          "percent": false
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 5,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Yakma: Büyü Hasarı vermek hedefleri 3 saniye boyunca yakar ve aynı zamanda her saniye hedefin Maksimum Canının 1% kadarı ekstra Büyü Hasarı verir. Eşsiz Pasif - Can Laneti: Hasar verilen hedefin üzerindeki mevcut Kalkan ve Can Yenileme etkilerini 3 saniyeliğine 60% seviyesine düşürür.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "savasci-botu",
+      "nameTr": "Savaşçı Botu",
+      "category": "movement",
+      "stats": [
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "physical_defense",
+          "labelTr": "Fiziksel Savunma",
+          "value": 18,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Cesaret: Fiziksel Hasar alındığında 3 saniyeliğine ekstra 4 Fiziksel Savunma kazandırır (20 ile sınırlıdır).",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "sihirli-bot",
+      "nameTr": "Sihirli Bot",
+      "category": "movement",
+      "stats": [
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 40,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        }
+      ],
+      "passiveTr": "",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "starlium-tirpani",
+      "nameTr": "Starlium Tırpanı",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 75,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        },
+        {
+          "key": "mana_regen",
+          "labelTr": "Mana Yenileme",
+          "value": 6,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Kriz: Bir beceri kullandıktan sonraki 3 saniye içinde yapılan ilk Temel Saldırı ekstra 90 (+60% Toplam Büyü Gücü) Gerçek Hasar verir ve hedefin Hareket Hızını 1.5 saniyeliğine 15% azaltır (Bekleme Süresi: 1.5 saniye).",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "surat-botu",
+      "nameTr": "Sürat Botu",
+      "category": "movement",
+      "stats": [
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 55,
+          "percent": false
+        },
+        {
+          "key": "hp_regen",
+          "labelTr": "Can Yenileme",
+          "value": 12,
+          "percent": false
+        }
+      ],
+      "passiveTr": "",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "ulu-ejder-mizragi",
+      "nameTr": "Ulu Ejder Mızrağı",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 70,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 100,
+          "percent": true
+        },
+        {
+          "key": "crit_chance",
+          "labelTr": "Kritik Şansı",
+          "value": 20,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Yüce Savaşçı: Ulti kullanmak 7.5 saniyeliğine 309% Hareket Hızı kazandırır. Bu etkinin 15 saniye bekleme süresi vardır.",
+      "evidence": "1 ekran görüntüsü"
+    },
+    {
+      "id": "umutsuzluk-kilici",
+      "nameTr": "Umutsuzluk Kılıcı",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 160,
+          "percent": false
+        },
+        {
+          "key": "movement_speed",
+          "labelTr": "Hareket Hızı",
+          "value": 5,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Umutsuzluk: Canı 50% altındaki minyon olmayan rakiplere hasar vermek Fiziksel Saldırıyı 2 saniyeliğine 25% arttırır (hasar verilmeden önce etkili olur).",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "vaha-matarasi",
+      "nameTr": "Vaha Matarası",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 60,
+          "percent": false
+        },
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 300,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz özellik: +12% şifa Etkisi Eşsiz Pasif - Kutsama: Can basılan veya kalkan verilen bir dost kahramanın Canı 35% altındaysa veya 3 saniye içerisinde 35% altına düşerse o dost kahraman 3 saniyeliğine (100*Kahraman Seviyesi) kalkan kazanır. Bu etki tetiklendiğinde, kullanıcının becerilerinin bekleme süreleri de 2 saniye azalır. Bu etki aynı dost kahraman üzerinde 60 saniyelik aralıklarla tetiklenebilir. Yalnızca kahramanın kendisini etkileyen iyileştirme ve kalkan becerilerinde tetiklenmez.",
+      "evidence": "5 ekran görüntüsü"
+    },
+    {
+      "id": "vahsi-guc-zirhi",
+      "nameTr": "Vahşi Güç Zırhı",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 800,
+          "percent": false
+        },
+        {
+          "key": "physical_defense",
+          "labelTr": "Fiziksel Savunma",
+          "value": 20,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Hayvan Gücü: Hasar verdikten sonraki 4 saniye boyunca her saniye 1 yük kazanılır (6 yükle sınırlıdır). Her yük 8 Uyarlanabilir Saldırı ve 2% Hareket Hızı sağlar. Tam yüke ulaşıldığında ekstra 25% Kontrol Süresi Azaltma kazanılır.",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "vahsi-savascinin-ofkesi",
+      "nameTr": "Vahşi Savaşçının Ofkesi",
+      "category": "other",
+      "stats": [
+        {
+          "key": "crit_chance",
+          "labelTr": "Kritik şansı",
+          "value": 25,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz özellik: +30% Kritik Hasar Eşsiz Pasif - Mukadderat: Temel Saldırılar kritik vurduğunda, bu hasarın 12% kadarı ekstra Gerçek Hasar verir. (Rakibin üzerindeki hasar azaltma görmezden gelinir.)",
+      "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "valkurun-kalkani",
+      "nameTr": "Valkür'ün Kalkanı",
+      "category": "defense",
+      "stats": [
+        {
+          "key": "magic_defense",
+          "labelTr": "Büyü Direnci",
+          "value": 48,
+          "percent": false
+        },
+        {
+          "key": "hp_regen",
+          "labelTr": "Can Yenileme",
+          "value": 2,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Kalkan: Rakip kahramanların becerilerinden ya da Temel Saldırılarından Büyü Hasarı alındıktan sonra tetiklenir ve 3 saniye boyunca alınan Büyü Hasarını 25% azaltır (bu etkiyi tetikleyen hasar da dâhil). Savaştan 5 saniye ayrı kalındığında bu etki yeniden kazanılır.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "yedi-denizin-kilici",
+      "nameTr": "Yedi Deniz'in Kılıcı",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 70,
+          "percent": false
+        },
+        {
+          "key": "hp",
+          "labelTr": "Can",
+          "value": 250,
+          "percent": false
+        }
+      ],
+      "passiveTr": "Eşsiz özellik: +15 Fiziksel Zırh Delme Eşsiz Pasif - Pusu: 5 saniye boyunca hasar alınmazsa veya verilmezse (minyonlar veya orman canavarları hariç) bir sonraki Temel Saldırı gelişerek ek 160 (+40% Toplam Fiziksel Saldırı) Fiziksel Hasar verir ve hedefi 1.5 saniyeliğine 409% yavaşlatır.",
+      "evidence": "3 ekran görüntüsü"
+    },
+    {
+      "id": "yildirim-copu",
+      "nameTr": "Yıldırım Copu",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 75,
+          "percent": false
+        },
+        {
+          "key": "mana",
+          "labelTr": "Mana",
+          "value": 400,
+          "percent": false
+        },
+        {
+          "key": "physical_penetration",
+          "labelTr": "BS Düşürme",
+          "value": 10,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Yankı: Her 6 saniyede bir yapılan beceri kullanımı yankılanarak menzildeki tüm rakiplere ekstra 255 (+85% Toplam Büyü Gücü) Büyü Hasarı verır.",
+      "evidence": "2 ekran görüntüsü"
+    }
+  ]
+}

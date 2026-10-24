@@ -1,7 +1,7 @@
 /* BanPhase service worker — kabuk önbelleği.
    Şablon dosyalar önce önbellekten, JSON verisi önce ağdan (çevrimdışıysa önbellek). */
 
-const VERSION = 'banphase-v8';
+const VERSION = 'banphase-v9';
 const SHELL = [
   './',
   './index.html',
@@ -12,6 +12,7 @@ const SHELL = [
   './icons/icon-192.png',
   './icons/icon-512.png',
   './data/heroes.json',
+  './data/items.json',
 ];
 
 self.addEventListener('install', (event) => {

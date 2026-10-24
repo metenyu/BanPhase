@@ -34,6 +34,8 @@ const state = {
   query: '',
   role: 'all',
   comps: [],
+  items: [],
+  itemQuery: '',
   finished: false,
   timer: { remaining: CONFIG.banSeconds, running: false, deadline: 0, handle: 0, armed: false },
 };
@@ -788,6 +790,39 @@ function deleteComp(id) {
   toast('Comp silindi.');
 }
 
+/* ---------- eşyalar ---------- */
+
+const CAT_TR = { attack: 'Saldırı', magic: 'Büyü', defense: 'Savunma', movement: 'Hareket', other: 'Diğer' };
+
+function renderItems() {
+  if (!els.itemList) return;
+  els.itemCount.textContent = state.items.length ? `${state.items.length}` : '';
+
+  const q = fold(state.itemQuery.trim());
+  const list = state.items.filter((item) => {
+    if (!q) return true;
+    if (fold(item.nameTr).includes(q)) return true;
+    if (fold(item.passiveTr ?? '').includes(q)) return true;
+    return (item.stats ?? []).some((stat) => fold(stat.labelTr).includes(q));
+  });
+
+  els.itemsEmpty.hidden = list.length > 0 || state.items.length === 0;
+
+  els.itemList.innerHTML = list.map((item) => {
+    const stats = (item.stats ?? [])
+      .map((stat) => `<span class="item-stat">+${stat.value}${stat.percent ? '%' : ''} ${escapeHtml(stat.labelTr)}</span>`)
+      .join('');
+    return `<article class="item-card">
+      <div class="item-head">
+        <span class="item-name">${escapeHtml(item.nameTr)}</span>
+        <span class="item-cat">${CAT_TR[item.category] ?? ''}</span>
+      </div>
+      <div class="item-stats">${stats || '<span class="item-stat">stat yok</span>'}</div>
+      <p class="item-passive">${escapeHtml(item.passiveTr || 'Açıklama yok')}</p>
+    </article>`;
+  }).join('');
+}
+
 /* ---------- bildirim ---------- */
 
 function toast(message) {
@@ -840,6 +875,11 @@ function bindEvents() {
     renderHeroes();
   });
 
+  els.itemSearch?.addEventListener('input', (event) => {
+    state.itemQuery = event.target.value;
+    renderItems();
+  });
+
   els.roles.addEventListener('click', (event) => {
     const button = event.target.closest('[data-role]');
     if (!button) return;
@@ -890,7 +930,8 @@ function cacheElements() {
     'btn-summary', 'btn-reset', 'search', 'roles', 'hero-grid', 'hero-count', 'empty',
     'summary', 'summary-body', 'btn-copy', 'btn-close', 'toast', 'data-badge',
     'format-toggle', 'firstpick-toggle', 'settings-hint',
-    'btn-save-comp', 'comp-list', 'comps-count', 'comps-empty'];
+    'btn-save-comp', 'comp-list', 'comps-count', 'comps-empty',
+    'item-search', 'item-list', 'item-count', 'items-empty'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
@@ -917,6 +958,16 @@ async function boot() {
     console.error(error);
   }
 
+  try {
+    const response = await fetch('./data/items.json', { cache: 'no-cache' });
+    if (response.ok) {
+      const data = await response.json();
+      state.items = Array.isArray(data.items) ? data.items : [];
+    }
+  } catch {
+    state.items = [];
+  }
+
   const saved = restore();
   state.format = saved ? saved.format : 'tournament';
   state.firstPick = saved ? saved.firstPick : 'blue';
@@ -930,6 +981,7 @@ async function boot() {
   state.comps = loadComps();
   renderRoles();
   renderComps();
+  renderItems();
   renderTimer();
   render();
 
