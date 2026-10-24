@@ -23,40 +23,52 @@ BanPhase/0.1 (+https://github.com/metenyu/BanPhase; banphaseapp@duck.com)
 
 ---
 
-## 1. E-posta / form metni — kısa sürüm (önerilen, ~1.050 karakter)
+## 1. Form metni — önerilen (1.557 karakter, sınır 2.000)
+
+Formdaki dört soruyu (proje kimin için / hangi veri nasıl / nerede yayımlanacak /
+nasıl para kazanılacak) doğrudan cevaplar.
 
 **Subject:** API access request — BanPhase (non-commercial, open-source MLBB draft tool)
 
 ```
 Hello Liquipedia team,
 
-Requesting API access for BanPhase, a free non-commercial open-source MLBB draft
-tool (Turkish UI, no ads, no accounts, no tracking).
+Project: BanPhase is a free, open-source, Turkish-language web app that helps
+Mobile Legends: Bang Bang players plan the ban/pick phase of a draft. It is for
+amateur players and small teams who want tournament context next to a simple
+draft board. No accounts, no tracking, no ads.
 
-App: https://metenyu.github.io/BanPhase/
-Repo: https://github.com/metenyu/BanPhase (MIT code; derived data CC BY-SA 3.0)
-Contact: banphaseapp@duck.com
-User-Agent: BanPhase/0.1 (+repo; contact)
+Data and usage: MLBB tournament match records from LiquipediaDB (heroes
+picked/banned, match results) for M-Series, MSC and MPL. One scheduled GitHub
+Actions job per day, API only (no scraping of non-API endpoints), responses
+cached as long as possible.
 
-Usage: one GitHub Actions job per day, API only, responses cached as long as
-possible. We publish only derived aggregates (hero pick/ban rates, win rates,
-comp results) as JSON with per-article attribution — no raw dumps, no browser
-calls.
+Publication: only derived aggregates as JSON in the public repo — pick/ban
+frequency, win rates, and how often a five-hero composition was picked and how
+it performed. No raw dumps, no full exports. Attribution: CC BY-SA 3.0 with a
+link to the article and the access date.
+
+Where: https://metenyu.github.io/BanPhase/ - source:
+https://github.com/metenyu/BanPhase (code MIT, derived data CC BY-SA 3.0).
+
+Monetization: none - free, ad-free, no paid tier.
 
 Questions:
 1. Is publishing such derived aggregates in a public repo acceptable?
-2. Are the limits still 60 req/hour (LPDB), 1 req/2s (MediaWiki), 1/30s (parse)?
-3. Is attribution "Data from Liquipedia MLBB Wiki, CC BY-SA 3.0, <link>,
-   accessed <date>" sufficient?
+2. Are limits still 60 req/hour (LPDB), 1 req/2s (MediaWiki), 1/30s (parse)?
+3. Is the attribution described above sufficient?
 4. Is an API key required, and does free access expire?
 5. Which MLBB competitions does LPDB cover (M-Series, MSC, MPL only, or more)?
 6. Do you require a specific User-Agent format?
 
+Contact: banphaseapp@duck.com
+User-Agent: BanPhase/0.1 (+https://github.com/metenyu/BanPhase; banphaseapp@duck.com)
+
 Thank you,
-Metenyu — BanPhase
+Metenyu - BanPhase
 ```
 
-## 1b. E-posta / form metni — uzun sürüm (arşiv)
+## 1b. Uzun sürüm (arşiv — formda kullanma)
 
 **Subject:** API access request — BanPhase (non-commercial, open-source MLBB draft tool)
 
