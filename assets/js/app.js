@@ -108,9 +108,35 @@ function compAnalysis(picks) {
     notes.push(`${max} ${role}: aynı ana rolde yığılma var.`);
   }
 
+  // etiketler (yalnızca etiketli kahramanlar üzerinden)
+  const tagInfo = { tagged: 0, engage: 0, physical: 0, magic: 0, lanes: new Set(), styles: new Set() };
+  for (const id of picks) {
+    const hero = state.heroById.get(id);
+    if (!hero?.tags) continue;
+    const tags = hero.tags;
+    tagInfo.tagged += 1;
+    if (tags.engage === 'high' || tags.engage === 'medium') tagInfo.engage += 1;
+    if (tags.damage === 'physical') tagInfo.physical += 1;
+    if (tags.damage === 'magic') tagInfo.magic += 1;
+    for (const lane of tags.lanes) tagInfo.lanes.add(lane);
+    for (const style of tags.style) tagInfo.styles.add(style);
+  }
+
+  if (tagInfo.tagged >= 3) {
+    if (!tagInfo.engage) notes.push('Engage yok: etiketli kahramanlar arasında savaşı açan yok.');
+    if (!tagInfo.physical) notes.push('Fiziksel hasar yok: tek zırh yığını yeter.');
+    if (!tagInfo.magic) notes.push('Büyü hasarı yok: tek büyü direnci yeter.');
+  }
+  if (tagInfo.tagged > 0 && tagInfo.tagged < picks.length) {
+    notes.push(`${picks.length - tagInfo.tagged} kahramanın etiketi yok; analiz kısmi.`);
+  }
+  if (tagInfo.tagged === 0 && picks.length > 0) {
+    notes.push('Bu takımda etiketli kahraman yok; analiz yalnızca rol bazlı.');
+  }
+
   if (!notes.length && picks.length === 5) notes.push('Rol dağılımı dengeli görünüyor.');
 
-  return { counts: coverage, primary, notes };
+  return { counts: coverage, primary, notes, tagInfo, picksCount: picks.length };
 }
 
 function loadComps() {
@@ -634,9 +660,13 @@ function showSummary() {
     const analysis = compAnalysis(picks);
     const roleLine = COMP_ROLES.filter((role) => analysis.primary[role])
       .map((role) => `${role} ${analysis.primary[role]}`).join(' · ');
+    const tagLine = analysis.tagInfo.tagged
+      ? `Etiket ${analysis.tagInfo.tagged}/${analysis.picksCount} · engage ${analysis.tagInfo.engage} · fiziksel ${analysis.tagInfo.physical} / büyü ${analysis.tagInfo.magic} · koridor: ${[...analysis.tagInfo.lanes].join(', ') || '—'}`
+      : null;
     return `<div class="analysis ${team}">
       <h3>${TEAM_LABEL[team]} kompozisyonu</h3>
       <p class="muted">${roleLine ? `Ana roller: ${roleLine}` : 'Henüz seçim yok'}</p>
+      ${tagLine ? `<p class="muted">${escapeHtml(tagLine)}</p>` : ''}
       <ul>${analysis.notes.map((note) => `<li>${escapeHtml(note)}</li>`).join('')}</ul>
     </div>`;
   }).join('');

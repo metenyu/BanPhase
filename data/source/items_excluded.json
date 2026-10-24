@@ -1,0 +1,145 @@
+{
+  "note": "items.json dışında tutulan kayıtlar: availability=Removed veya fiyatı yok/0 (kit öğesi, alt efekt)",
+  "count": 21,
+  "items": [
+    {
+      "id": "bloodlust-axe",
+      "name": "Bloodlust Axe",
+      "type": "Attack",
+      "reason": "availability=Removed (Fandom)"
+    },
+    {
+      "id": "scarlet-phantom",
+      "name": "Scarlet Phantom",
+      "type": "Attack",
+      "reason": "availability=Removed (Fandom)"
+    },
+    {
+      "id": "calamity-reaper",
+      "name": "Calamity Reaper",
+      "type": "Magic",
+      "reason": "availability=Removed (Fandom)"
+    },
+    {
+      "id": "flower-of-hope",
+      "name": "Flower of Hope",
+      "type": "Magic",
+      "availability": "Floryn's allies",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "lantern-of-hope",
+      "name": "Lantern of Hope",
+      "type": "Magic",
+      "availability": "Floryn",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "necklace-of-durance",
+      "name": "Necklace of Durance",
+      "type": "Magic",
+      "reason": "availability=Removed (Fandom)"
+    },
+    {
+      "id": "shadow-twinblades",
+      "name": "Shadow Twinblades",
+      "type": "Magic",
+      "reason": "availability=Removed (Fandom)"
+    },
+    {
+      "id": "bud-of-hope",
+      "name": "Bud of Hope",
+      "type": "Magic",
+      "reason": "availability=Removed (Fandom)"
+    },
+    {
+      "id": "shimmering-lantern",
+      "name": "Shimmering Lantern",
+      "type": "Magic",
+      "reason": "availability=Removed (Fandom)"
+    },
+    {
+      "id": "twilight-armor",
+      "name": "Twilight Armor",
+      "type": "Defense",
+      "reason": "availability=Removed (Fandom)"
+    },
+    {
+      "id": "allow-throw",
+      "name": "Allow Throw",
+      "type": "Movement",
+      "availability": "Jawhead's allies",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "broken-heart",
+      "name": "Broken Heart",
+      "type": "Movement",
+      "availability": "Carmilla",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "resonating-heart",
+      "name": "Resonating Heart",
+      "type": "Movement",
+      "availability": "Carmilla",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "throw-forbidden",
+      "name": "Throw Forbidden",
+      "type": "Movement",
+      "availability": "Jawhead's allies",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "bloody-retribution",
+      "name": "Bloody Retribution",
+      "type": "Jungling",
+      "availability": "Heroes who equipped Retribution",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "flame-retribution",
+      "name": "Flame Retribution",
+      "type": "Jungling",
+      "availability": "Heroes who equipped Retribution",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "ice-retribution",
+      "name": "Ice Retribution",
+      "type": "Jungling",
+      "availability": "Heroes who equipped Retribution",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "active-conceal",
+      "name": "Active - Conceal",
+      "type": "Roaming",
+      "availability": "All heroes without equipped Retribution",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "passive-dire-hit",
+      "name": "Passive - Dire Hit",
+      "type": "Roaming",
+      "availability": "All heroes without equipped Retribution",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "passive-encourage",
+      "name": "Passive - Encourage",
+      "type": "Roaming",
+      "availability": "All heroes without equipped Retribution",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    },
+    {
+      "id": "passive-favor",
+      "name": "Passive - Favor",
+      "type": "Roaming",
+      "availability": "All heroes without equipped Retribution",
+      "reason": "fiyat yok veya 0; kişiye/kahramana özel kit öğesi veya alt efekt olabilir, mağaza eşyası olarak doğrulanamadı"
+    }
+  ]
+}

@@ -38,6 +38,15 @@ const raw = JSON.parse(await readFile(SOURCE, 'utf8'));
 const rows = raw.heroes ?? [];
 const problems = [];
 
+// Opsiyonel: Cue'nun kahraman etiketleri (varsa birleştir)
+let tagMap = new Map();
+try {
+  const tagData = JSON.parse(await readFile('data/source/hero_tags.json', 'utf8'));
+  tagMap = new Map((tagData.heroes ?? []).map((tag) => [tag.heroId, tag]));
+} catch {
+  tagMap = new Map();
+}
+
 if (rows.length !== 133) problems.push(`beklenen 133 kayıt, gelen ${rows.length}`);
 
 const seenIds = new Set();
@@ -63,12 +72,22 @@ const heroes = rows.map((row) => {
 
   if (!roles.length) problems.push(`${row.name}: rol yok`);
 
+  const tag = tagMap.get(id) ?? null;
+
   return {
     id,
     name: row.name,
     roles: ROLE_ORDER.filter((role) => roles.includes(role)),
     primaryRole: ROLE_TR[row.role1] ?? null,
     roneId: row.rone_hero_id,
+    tags: tag ? {
+      lanes: tag.lanes ?? [],
+      style: tag.style ?? [],
+      damage: tag.damage ?? null,
+      powerSpike: tag.power_spike ?? null,
+      engage: tag.engage ?? null,
+      confidence: tag.confidence ?? null,
+    } : null,
   };
 });
 

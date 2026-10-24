@@ -34,7 +34,19 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 1
+      "roneId": 1,
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "balmond",
@@ -43,7 +55,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 2
+      "roneId": 2,
+      "tags": null
     },
     {
       "id": "saber",
@@ -52,7 +65,21 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 3
+      "roneId": 3,
+      "tags": {
+        "lanes": [
+          "jungle",
+          "roam"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "alice",
@@ -62,7 +89,8 @@
         "Büyücü"
       ],
       "primaryRole": "Tank",
-      "roneId": 4
+      "roneId": 4,
+      "tags": null
     },
     {
       "id": "nana",
@@ -71,7 +99,20 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 5
+      "roneId": 5,
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "poke",
+          "pickoff"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "tigreal",
@@ -80,7 +121,19 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 6
+      "roneId": 6,
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "alucard",
@@ -90,7 +143,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 7
+      "roneId": 7,
+      "tags": null
     },
     {
       "id": "karina",
@@ -99,7 +153,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 8
+      "roneId": 8,
+      "tags": null
     },
     {
       "id": "akai",
@@ -108,7 +163,8 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 9
+      "roneId": 9,
+      "tags": null
     },
     {
       "id": "franco",
@@ -117,7 +173,8 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 10
+      "roneId": 10,
+      "tags": null
     },
     {
       "id": "bane",
@@ -127,7 +184,8 @@
         "Büyücü"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 11
+      "roneId": 11,
+      "tags": null
     },
     {
       "id": "bruno",
@@ -136,7 +194,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 12
+      "roneId": 12,
+      "tags": null
     },
     {
       "id": "clint",
@@ -145,7 +204,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 13
+      "roneId": 13,
+      "tags": null
     },
     {
       "id": "rafaela",
@@ -154,7 +214,19 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 14
+      "roneId": 14,
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "sustain"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "eudora",
@@ -163,7 +235,20 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 15
+      "roneId": 15,
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "zilong",
@@ -173,7 +258,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 16
+      "roneId": 16,
+      "tags": null
     },
     {
       "id": "fanny",
@@ -182,7 +268,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 17
+      "roneId": 17,
+      "tags": null
     },
     {
       "id": "layla",
@@ -191,7 +278,19 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 18
+      "roneId": 18,
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "minotaur",
@@ -201,7 +300,19 @@
         "Destek"
       ],
       "primaryRole": "Tank",
-      "roneId": 19
+      "roneId": 19,
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "lolita",
@@ -211,7 +322,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 20
+      "roneId": 20,
+      "tags": null
     },
     {
       "id": "hayabusa",
@@ -220,7 +332,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 21
+      "roneId": 21,
+      "tags": null
     },
     {
       "id": "freya",
@@ -229,7 +342,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 22
+      "roneId": 22,
+      "tags": null
     },
     {
       "id": "gord",
@@ -238,7 +352,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 23
+      "roneId": 23,
+      "tags": null
     },
     {
       "id": "natalia",
@@ -247,7 +362,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 24
+      "roneId": 24,
+      "tags": null
     },
     {
       "id": "kagura",
@@ -256,7 +372,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 25
+      "roneId": 25,
+      "tags": null
     },
     {
       "id": "chou",
@@ -265,7 +382,21 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 26
+      "roneId": 26,
+      "tags": {
+        "lanes": [
+          "exp",
+          "roam"
+        ],
+        "style": [
+          "dive",
+          "engage"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "sun",
@@ -274,7 +405,20 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 27
+      "roneId": 27,
+      "tags": {
+        "lanes": [
+          "exp",
+          "jungle"
+        ],
+        "style": [
+          "split-push"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "alpha",
@@ -283,7 +427,20 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 28
+      "roneId": 28,
+      "tags": {
+        "lanes": [
+          "jungle",
+          "exp"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "ruby",
@@ -292,7 +449,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 29
+      "roneId": 29,
+      "tags": null
     },
     {
       "id": "yi-sun-shin",
@@ -302,7 +460,20 @@
         "Nişancı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 30
+      "roneId": 30,
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "pickoff",
+          "dive"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "moskov",
@@ -311,7 +482,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 31
+      "roneId": 31,
+      "tags": null
     },
     {
       "id": "johnson",
@@ -321,7 +493,8 @@
         "Destek"
       ],
       "primaryRole": "Tank",
-      "roneId": 32
+      "roneId": 32,
+      "tags": null
     },
     {
       "id": "cyclops",
@@ -330,7 +503,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 33
+      "roneId": 33,
+      "tags": null
     },
     {
       "id": "estes",
@@ -339,7 +513,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 34
+      "roneId": 34,
+      "tags": null
     },
     {
       "id": "hilda",
@@ -349,7 +524,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 35
+      "roneId": 35,
+      "tags": null
     },
     {
       "id": "aurora",
@@ -358,7 +534,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 36
+      "roneId": 36,
+      "tags": null
     },
     {
       "id": "lapu-lapu",
@@ -367,7 +544,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 37
+      "roneId": 37,
+      "tags": null
     },
     {
       "id": "vexana",
@@ -376,7 +554,20 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 38
+      "roneId": 38,
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "poke",
+          "engage"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "roger",
@@ -386,7 +577,8 @@
         "Nişancı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 39
+      "roneId": 39,
+      "tags": null
     },
     {
       "id": "karrie",
@@ -395,7 +587,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 40
+      "roneId": 40,
+      "tags": null
     },
     {
       "id": "gatotkaca",
@@ -405,7 +598,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Tank",
-      "roneId": 41
+      "roneId": 41,
+      "tags": null
     },
     {
       "id": "harley",
@@ -415,7 +609,8 @@
         "Büyücü"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 42
+      "roneId": 42,
+      "tags": null
     },
     {
       "id": "irithel",
@@ -424,7 +619,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 43
+      "roneId": 43,
+      "tags": null
     },
     {
       "id": "grock",
@@ -434,7 +630,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Tank",
-      "roneId": 44
+      "roneId": 44,
+      "tags": null
     },
     {
       "id": "argus",
@@ -443,7 +640,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 45
+      "roneId": 45,
+      "tags": null
     },
     {
       "id": "odette",
@@ -452,7 +650,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 46
+      "roneId": 46,
+      "tags": null
     },
     {
       "id": "lancelot",
@@ -461,7 +660,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 47
+      "roneId": 47,
+      "tags": null
     },
     {
       "id": "diggie",
@@ -470,7 +670,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 48
+      "roneId": 48,
+      "tags": null
     },
     {
       "id": "hylos",
@@ -479,7 +680,8 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 49
+      "roneId": 49,
+      "tags": null
     },
     {
       "id": "zhask",
@@ -488,7 +690,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 50
+      "roneId": 50,
+      "tags": null
     },
     {
       "id": "helcurt",
@@ -497,7 +700,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 51
+      "roneId": 51,
+      "tags": null
     },
     {
       "id": "pharsa",
@@ -506,7 +710,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 52
+      "roneId": 52,
+      "tags": null
     },
     {
       "id": "lesley",
@@ -516,7 +721,19 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 53
+      "roneId": 53,
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "jawhead",
@@ -525,7 +742,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 54
+      "roneId": 54,
+      "tags": null
     },
     {
       "id": "angela",
@@ -534,7 +752,17 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 55
+      "roneId": 55,
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "medium"
+      }
     },
     {
       "id": "gusion",
@@ -543,7 +771,20 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 56
+      "roneId": 56,
+      "tags": {
+        "lanes": [
+          "jungle",
+          "mid"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "valir",
@@ -552,7 +793,17 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 57
+      "roneId": 57,
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "medium"
+      }
     },
     {
       "id": "martis",
@@ -561,7 +812,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 58
+      "roneId": 58,
+      "tags": null
     },
     {
       "id": "uranus",
@@ -570,7 +822,8 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 59
+      "roneId": 59,
+      "tags": null
     },
     {
       "id": "hanabi",
@@ -579,7 +832,19 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 60
+      "roneId": 60,
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "change",
@@ -588,7 +853,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 61
+      "roneId": 61,
+      "tags": null
     },
     {
       "id": "kaja",
@@ -597,7 +863,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 62
+      "roneId": 62,
+      "tags": null
     },
     {
       "id": "selena",
@@ -607,7 +874,21 @@
         "Büyücü"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 63
+      "roneId": 63,
+      "tags": {
+        "lanes": [
+          "mid",
+          "roam"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "aldous",
@@ -616,7 +897,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 64
+      "roneId": 64,
+      "tags": null
     },
     {
       "id": "claude",
@@ -625,7 +907,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 65
+      "roneId": 65,
+      "tags": null
     },
     {
       "id": "vale",
@@ -634,7 +917,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 66
+      "roneId": 66,
+      "tags": null
     },
     {
       "id": "leomord",
@@ -643,7 +927,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 67
+      "roneId": 67,
+      "tags": null
     },
     {
       "id": "lunox",
@@ -652,7 +937,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 68
+      "roneId": 68,
+      "tags": null
     },
     {
       "id": "hanzo",
@@ -661,7 +947,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 69
+      "roneId": 69,
+      "tags": null
     },
     {
       "id": "belerick",
@@ -670,7 +957,20 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 70
+      "roneId": 70,
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage",
+          "sustain"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "kimmy",
@@ -680,7 +980,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 71
+      "roneId": 71,
+      "tags": null
     },
     {
       "id": "thamuz",
@@ -689,7 +990,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 72
+      "roneId": 72,
+      "tags": null
     },
     {
       "id": "harith",
@@ -698,7 +1000,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 73
+      "roneId": 73,
+      "tags": null
     },
     {
       "id": "minsitthar",
@@ -707,7 +1010,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 74
+      "roneId": 74,
+      "tags": null
     },
     {
       "id": "kadita",
@@ -717,7 +1021,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 75
+      "roneId": 75,
+      "tags": null
     },
     {
       "id": "faramis",
@@ -727,7 +1032,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 76
+      "roneId": 76,
+      "tags": null
     },
     {
       "id": "badang",
@@ -736,7 +1042,21 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 77
+      "roneId": 77,
+      "tags": {
+        "lanes": [
+          "roam",
+          "exp"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "khufra",
@@ -745,7 +1065,8 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 78
+      "roneId": 78,
+      "tags": null
     },
     {
       "id": "granger",
@@ -754,7 +1075,19 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 79
+      "roneId": 79,
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "guinevere",
@@ -763,7 +1096,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 80
+      "roneId": 80,
+      "tags": null
     },
     {
       "id": "esmeralda",
@@ -773,7 +1107,8 @@
         "Büyücü"
       ],
       "primaryRole": "Tank",
-      "roneId": 81
+      "roneId": 81,
+      "tags": null
     },
     {
       "id": "terizla",
@@ -783,7 +1118,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 82
+      "roneId": 82,
+      "tags": null
     },
     {
       "id": "x-borg",
@@ -792,7 +1128,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 83
+      "roneId": 83,
+      "tags": null
     },
     {
       "id": "ling",
@@ -801,7 +1138,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 84
+      "roneId": 84,
+      "tags": null
     },
     {
       "id": "dyrroth",
@@ -810,7 +1148,21 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 85
+      "roneId": 85,
+      "tags": {
+        "lanes": [
+          "exp",
+          "jungle"
+        ],
+        "style": [
+          "engage",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "lylia",
@@ -819,7 +1171,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 86
+      "roneId": 86,
+      "tags": null
     },
     {
       "id": "baxia",
@@ -828,7 +1181,8 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 87
+      "roneId": 87,
+      "tags": null
     },
     {
       "id": "masha",
@@ -838,7 +1192,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 88
+      "roneId": 88,
+      "tags": null
     },
     {
       "id": "wanwan",
@@ -847,7 +1202,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 89
+      "roneId": 89,
+      "tags": null
     },
     {
       "id": "silvanna",
@@ -856,7 +1212,19 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 90
+      "roneId": 90,
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "high",
+        "confidence": "high"
+      }
     },
     {
       "id": "cecilion",
@@ -865,7 +1233,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 91
+      "roneId": 91,
+      "tags": null
     },
     {
       "id": "carmilla",
@@ -875,7 +1244,19 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 92
+      "roneId": 92,
+      "tags": {
+        "lanes": [
+          "roam"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "atlas",
@@ -884,7 +1265,8 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 93
+      "roneId": 93,
+      "tags": null
     },
     {
       "id": "popol-and-kupa",
@@ -893,7 +1275,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 94
+      "roneId": 94,
+      "tags": null
     },
     {
       "id": "yu-zhong",
@@ -902,7 +1285,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 95
+      "roneId": 95,
+      "tags": null
     },
     {
       "id": "luo-yi",
@@ -911,7 +1295,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 96
+      "roneId": 96,
+      "tags": null
     },
     {
       "id": "benedetta",
@@ -921,7 +1306,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 97
+      "roneId": 97,
+      "tags": null
     },
     {
       "id": "khaleed",
@@ -930,7 +1316,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 98
+      "roneId": 98,
+      "tags": null
     },
     {
       "id": "barats",
@@ -940,7 +1327,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Tank",
-      "roneId": 99
+      "roneId": 99,
+      "tags": null
     },
     {
       "id": "brody",
@@ -949,7 +1337,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 100
+      "roneId": 100,
+      "tags": null
     },
     {
       "id": "yve",
@@ -958,7 +1347,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 101
+      "roneId": 101,
+      "tags": null
     },
     {
       "id": "mathilda",
@@ -968,7 +1358,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 102
+      "roneId": 102,
+      "tags": null
     },
     {
       "id": "paquito",
@@ -978,7 +1369,19 @@
         "Suikastçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 103
+      "roneId": 103,
+      "tags": {
+        "lanes": [
+          "exp"
+        ],
+        "style": [
+          "dive"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "gloo",
@@ -987,7 +1390,8 @@
         "Tank"
       ],
       "primaryRole": "Tank",
-      "roneId": 104
+      "roneId": 104,
+      "tags": null
     },
     {
       "id": "beatrix",
@@ -996,7 +1400,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 105
+      "roneId": 105,
+      "tags": null
     },
     {
       "id": "phoveus",
@@ -1005,7 +1410,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 106
+      "roneId": 106,
+      "tags": null
     },
     {
       "id": "natan",
@@ -1014,7 +1420,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 107
+      "roneId": 107,
+      "tags": null
     },
     {
       "id": "aulus",
@@ -1023,7 +1430,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 108
+      "roneId": 108,
+      "tags": null
     },
     {
       "id": "aamon",
@@ -1032,7 +1440,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 109
+      "roneId": 109,
+      "tags": null
     },
     {
       "id": "valentina",
@@ -1041,7 +1450,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 110
+      "roneId": 110,
+      "tags": null
     },
     {
       "id": "edith",
@@ -1051,7 +1461,8 @@
         "Nişancı"
       ],
       "primaryRole": "Tank",
-      "roneId": 111
+      "roneId": 111,
+      "tags": null
     },
     {
       "id": "floryn",
@@ -1060,7 +1471,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 112
+      "roneId": 112,
+      "tags": null
     },
     {
       "id": "yin",
@@ -1070,7 +1482,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 113
+      "roneId": 113,
+      "tags": null
     },
     {
       "id": "melissa",
@@ -1079,7 +1492,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 114
+      "roneId": 114,
+      "tags": null
     },
     {
       "id": "xavier",
@@ -1088,7 +1502,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 115
+      "roneId": 115,
+      "tags": null
     },
     {
       "id": "julian",
@@ -1098,7 +1513,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 116
+      "roneId": 116,
+      "tags": null
     },
     {
       "id": "fredrinn",
@@ -1108,7 +1524,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 117
+      "roneId": 117,
+      "tags": null
     },
     {
       "id": "joy",
@@ -1117,7 +1534,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 118
+      "roneId": 118,
+      "tags": null
     },
     {
       "id": "novaria",
@@ -1126,7 +1544,20 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 119
+      "roneId": 119,
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "pickoff",
+          "poke"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "arlott",
@@ -1136,7 +1567,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 120
+      "roneId": 120,
+      "tags": null
     },
     {
       "id": "ixia",
@@ -1145,7 +1577,8 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 121
+      "roneId": 121,
+      "tags": null
     },
     {
       "id": "nolan",
@@ -1154,7 +1587,20 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 122
+      "roneId": 122,
+      "tags": {
+        "lanes": [
+          "jungle"
+        ],
+        "style": [
+          "dive",
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "cici",
@@ -1163,7 +1609,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 123
+      "roneId": 123,
+      "tags": null
     },
     {
       "id": "chip",
@@ -1173,7 +1620,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 124
+      "roneId": 124,
+      "tags": null
     },
     {
       "id": "zhuxin",
@@ -1182,7 +1630,8 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 125
+      "roneId": 125,
+      "tags": null
     },
     {
       "id": "suyou",
@@ -1192,7 +1641,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 126
+      "roneId": 126,
+      "tags": null
     },
     {
       "id": "lukas",
@@ -1201,7 +1651,8 @@
         "Savaşçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 127
+      "roneId": 127,
+      "tags": null
     },
     {
       "id": "kalea",
@@ -1211,7 +1662,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 128
+      "roneId": 128,
+      "tags": null
     },
     {
       "id": "zetian",
@@ -1220,7 +1672,19 @@
         "Büyücü"
       ],
       "primaryRole": "Büyücü",
-      "roneId": 129
+      "roneId": 129,
+      "tags": {
+        "lanes": [
+          "mid"
+        ],
+        "style": [
+          "engage"
+        ],
+        "damage": "magic",
+        "powerSpike": null,
+        "engage": "medium",
+        "confidence": "high"
+      }
     },
     {
       "id": "obsidia",
@@ -1229,7 +1693,19 @@
         "Nişancı"
       ],
       "primaryRole": "Nişancı",
-      "roneId": 130
+      "roneId": 130,
+      "tags": {
+        "lanes": [
+          "gold"
+        ],
+        "style": [
+          "pickoff"
+        ],
+        "damage": "physical",
+        "powerSpike": null,
+        "engage": "low",
+        "confidence": "high"
+      }
     },
     {
       "id": "sora",
@@ -1239,7 +1715,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Savaşçı",
-      "roneId": 131
+      "roneId": 131,
+      "tags": null
     },
     {
       "id": "marcel",
@@ -1248,7 +1725,8 @@
         "Destek"
       ],
       "primaryRole": "Destek",
-      "roneId": 132
+      "roneId": 132,
+      "tags": null
     },
     {
       "id": "hirara",
@@ -1257,7 +1735,8 @@
         "Suikastçı"
       ],
       "primaryRole": "Suikastçı",
-      "roneId": 133
+      "roneId": 133,
+      "tags": null
     }
   ]
 }

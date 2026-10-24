@@ -81,3 +81,23 @@ Kurallar:
 - Liquipedia'ya istek atma (onay yok).
 - Rone istatistik/build verisini yayımlama.
 - Comp/istatistik verisi üretme — o bizim işimiz, veri kaynağı belli değil.
+
+---
+
+## 4. İkinci tur — gelen veride düzeltme istekleri (24.10.2026)
+
+`items.json` (92 eşya) ve `hero_tags.json` (30 kahraman) alındı, işe yarıyor. Düzeltilecekler:
+
+1. **`power_spike` 30/30 kayıtta `null`.** Alan tamamen boş; ya doldur (early/mid/late)
+   ya da şemadan çıkarıp haber ver. Şu an kullanılmıyor.
+2. **`style` içinde `pickoff` fazla kullanılmış.** `miya` ve `hanabi` (marksman, gold lane)
+   `pickoff` etiketi almış; bunlar takım savaşı/menzilli hasar profiline daha yakın.
+   `style` etiketlerini kahramanın kitine göre yeniden gözden geçir; emin olmadığında
+   `confidence: low` yaz.
+3. **Kapsam 30/133.** Kalan 103 kahramanın etiketlerini aynı şemayla tamamla.
+   Öncelik: sık oynananlar (bu 30'un dışında kalan popülerler).
+4. **`items.json` içinde 92 kaydın 34'ünde `passive` yok.** Bunlar gerçekten pasifi
+   olmayan eşyalar mı (ör. saf stat eşyası), yoksa çıkarımda mı atlandı? Liste hâlinde
+   hangisi hangi sebeple boş, yaz.
+5. **`items_excluded.json` iyi olmuş.** Aynı mantıkla: çıkarılan 21 kaydın
+   "Removed" olanları doğru; "kişiye özel kit öğesi" olanlar da doğru ayrım.

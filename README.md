@@ -22,8 +22,9 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 - **Ranked sırası**: 5+5 ban aynı anda, sonra `seçim M,K,K,M,M,K,K,M,M,K`
 - Ranked'da herhangi bir boş ban slotu seçilip doldurulabiliyor; geri alınca slot boşalıp yeniden aktif oluyor
 - 20 hamlede tahta doluyor, özet diyaloğu ban + seçim satırlarını gösteriyor
-- **Kompozisyon analizi** takım bazında: "Mavi: Tank 2 · Savaşçı 1 · Suikastçı 1 · Destek 1 /
-  Nişancı yok" — iki takımın seçimleri karışmıyor
+- **Comp analizi** takım bazında: "Mavi: Tank 2 · Savaşçı 1 · Suikastçı 1 · Destek 1 /
+  Nişancı yok" + etiketli kadroda "Etiket 5/5 · engage 2 · fiziksel 3 / büyü 2 · koridor: …".
+  Etiketi olmayan takım için "analiz yalnızca rol bazlı" uyarısı çıkar; iki takım karışmaz
 - Draft kaydı iki takımın compunu birlikte saklıyor, yenilemede duruyor, silinebiliyor
 - Formattaki kullanılmış kahramanlar listede kilitleniyor (20/133)
 - konsol hatası ya da yakalanmamış istisna yok
@@ -40,7 +41,8 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 - 30 saniyelik sıra süresi (turnuvada; ranked ban fazında sayaç yok)
 - 133 kahraman içinde arama + rol filtresi (Türkçe karakter duyarsız)
 - Geri al, tahtayı sıfırla, özeti panoya kopyala
-- **Draft sonrası kompozisyon analizi:** her takım için ana rol dağılımı + eksik rol uyarıları
+- **Draft sonrası kompozisyon analizi:** takım bazında ana rol dağılımı, eksik rol uyarıları
+  ve etiketli kahramanlarda engage/hasar/koridor özeti
 - **Kayıtlı draftlar:** iki takımın compunu birlikte kaydet, galeride tut (cihazda)
 - PWA: çevrimdışı açılır, ana ekrana eklenebilir
 
@@ -111,9 +113,9 @@ artırın**, aksi hâlde dönen ziyaretçi eski dosyayı önbellekten alır.
 
 ## Bilinen sınırlar
 
-- **Comp analizi şimdilik yalnızca rol bazlı.** Koridor (gold/exp/mid/jungle/roam),
-  oyun stili (engage/poke/split), hasar tipi ve güç eğrisi etiketleri yok — bunlar
-  `docs/CUE-GOREVLERI.md` ile Cue'dan isteniyor.
+- **Comp analizi kısmen etiketli.** Koridor/stil/hasar etiketleri 133 kahramanın
+  yalnızca **30'unda** var (`data/source/hero_tags.json`); kalanı gelince analiz tamamlanır.
+  `power_spike` alanı kaynakta boş geldi (kullanılmıyor).
 - "A comp'u B comp'u yener" iddiası **yok**; bunun için turnuva maç verisi gerekiyor
   (Liquipedia onayı).
 

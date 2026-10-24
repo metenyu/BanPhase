@@ -1,0 +1,1137 @@
+{
+  "generated_at_utc": "2026-10-24T16:03:43Z",
+  "sources": [
+    {
+      "name": "Fandom MLBB Wiki - Module:Equipment/data (eşya verisi)",
+      "url": "https://mobile-legends.fandom.com/wiki/Module:Equipment/data",
+      "license": "CC BY-SA 3.0",
+      "license_note": "Kullanıcı CC BY-SA 3.0 olarak belirtti; wiki siteinfo rightsinfo \"CC-BY-SA\" (sürüm belirtmiyor) döndürdü, https://www.fandom.com/licensing",
+      "revision_timestamp_utc": "2026-09-24T11:19:54Z",
+      "access": "MediaWiki API (action=query, prop=revisions) ile 2026-10-24T15:56:11Z; ham kopya: data/source/raw/Module_Equipment_data.wiki.txt"
+    }
+  ],
+  "count": 92,
+  "items": [
+    {
+      "id": "berserkers-fury",
+      "name": "Berserker's Fury",
+      "category": "attack",
+      "price": 2390,
+      "stats": {
+        "physical_attack": 60,
+        "crit_chance_pct": 25,
+        "crit_damage_pct": 30
+      },
+      "passive": "Doom: When Basic Attacks Crit, they deal extra True Damage equal to 12% of the damage before reduction.",
+      "confidence": "high"
+    },
+    {
+      "id": "blade-of-despair",
+      "name": "Blade of Despair",
+      "category": "attack",
+      "price": 3010,
+      "stats": {
+        "physical_attack": 160,
+        "movement_speed_pct": 5
+      },
+      "passive": "Despair: Dealing damage to non-Minion enemies below 50% HP increases Physical Attack by 25% for 2 seconds (takes effect before the damage is dealt).",
+      "confidence": "high"
+    },
+    {
+      "id": "blade-of-the-heptaseas",
+      "name": "Blade of the Heptaseas",
+      "category": "attack",
+      "price": 1950,
+      "stats": {
+        "physical_attack": 70,
+        "hp": 250,
+        "physical_penetration": 15
+      },
+      "passive": "Ambush: If no damage is taken or dealt within 5 seconds (excluding from Minions or Creeps), the next Basic Attack will deal an additional 160 (+40% Total Physical Attack) Physical Damage and slow the target by 40% for 1.5 seconds.",
+      "confidence": "high"
+    },
+    {
+      "id": "corrosion-scythe",
+      "name": "Corrosion Scythe",
+      "category": "attack",
+      "price": 2050,
+      "stats": {
+        "physical_attack": 30,
+        "attack_speed_pct": 30,
+        "movement_speed_pct": 5
+      },
+      "passive": "Corrosive: Basic Attacks gain 80 extra Physical Damage and slow the target by 8% (halved for ranged Basic Attacks) for 1.5 seconds. Stacks up to 5 times.@ Impulse: Basic Attacks grant 6% extra Attack Speed for 3 seconds, capped at 5 stacks.",
+      "confidence": "high"
+    },
+    {
+      "id": "demon-hunter-sword",
+      "name": "Demon Hunter Sword",
+      "category": "attack",
+      "price": 2180,
+      "stats": {
+        "physical_attack": 35,
+        "attack_speed_pct": 20
+      },
+      "passive": "Engulf: Basic Attacks deal 8% of the target's current HP as extra Physical Damage (capped at 60 against minions).@ Devour: Each Basic Attack recovers 10(+4*Hero Level) HP. This effect is halved against minions.",
+      "confidence": "high"
+    },
+    {
+      "id": "endless-battle",
+      "name": "Endless Battle",
+      "category": "attack",
+      "price": 2330,
+      "stats": {
+        "physical_attack": 60,
+        "hp": 250,
+        "cooldown_reduction_pct": 10,
+        "movement_speed_pct": 5,
+        "mana_regen": 5
+      },
+      "passive": "Divine Justice: After casting a skill, the next Basic Attack within 3 seconds deals (60% Total Physical Attack) extra True Damage and recovers 80 (+40% of Total Physical Attack) HP (1.5 seconds cooldown).",
+      "confidence": "high"
+    },
+    {
+      "id": "golden-staff",
+      "name": "Golden Staff",
+      "category": "attack",
+      "price": 2000,
+      "stats": {
+        "physical_attack": 55,
+        "attack_speed_pct": 15
+      },
+      "passive": "Swift: Every 1% extra Crit Chance gained is converted into 1% extra Attack Speed.@ Endless Strike: After every 2 non-Crit Basic Attacks, the Attack Speed of the next Basic Attack is increased by 80% (and Attack Speed cap is increased to 500%) and triggers Attack Effects an additional 2 time(s).",
+      "confidence": "high"
+    },
+    {
+      "id": "great-dragon-spear",
+      "name": "Great Dragon Spear",
+      "category": "attack",
+      "price": 2140,
+      "stats": {
+        "physical_attack": 70,
+        "cooldown_reduction_pct": 10,
+        "crit_chance_pct": 20
+      },
+      "passive": "Supreme Warrior: After casting an Ultimate, increase Movement Speed by 30% for 7.5 seconds. This effect has a 15 seconds cooldown.",
+      "confidence": "high"
+    },
+    {
+      "id": "haas-claws",
+      "name": "Haas' Claws",
+      "category": "attack",
+      "price": 2020,
+      "stats": {
+        "physical_attack": 40,
+        "attack_speed_pct": 15,
+        "crit_chance_pct": 20,
+        "lifesteal_pct": 20
+      },
+      "passive": "Frenzy: Critical strikes grant 20% extra Attack Speed for 2 seconds.",
+      "confidence": "high"
+    },
+    {
+      "id": "hunter-strike",
+      "name": "Hunter Strike",
+      "category": "attack",
+      "price": 2010,
+      "stats": {
+        "physical_attack": 80,
+        "cooldown_reduction_pct": 10,
+        "physical_penetration": 15
+      },
+      "passive": "Retribution: Dealing damage to the same enemy hero or creep 5 times in a row grants 50% extra Movement Speed that decays over 3 seconds (8 seconds cooldown).",
+      "confidence": "high"
+    },
+    {
+      "id": "malefic-gun",
+      "name": "Malefic Gun",
+      "category": "attack",
+      "price": 2120,
+      "stats": {
+        "physical_attack": 40,
+        "attack_speed_pct": 20
+      },
+      "passive": "Armor Buster: Increase Physical Penetration by 30%.@ Malefic Energy: Increases Basic Attack range by 12%. When hitting a target, gains 10% Movement Speed for 0.5 seconds.",
+      "confidence": "high"
+    },
+    {
+      "id": "malefic-roar",
+      "name": "Malefic Roar",
+      "category": "attack",
+      "price": 2060,
+      "stats": {
+        "physical_attack": 60
+      },
+      "passive": "Armor Buster: Increase Physical Penetration by 30%.@ Breaker: When attacking an enemy, gains 0.1% extra Physical Penetration for each point of the enemy's Physical Defense, capped at 30%.",
+      "confidence": "high"
+    },
+    {
+      "id": "rose-gold-meteor",
+      "name": "Rose Gold Meteor",
+      "category": "attack",
+      "price": 2030,
+      "stats": {
+        "physical_attack": 30,
+        "attack_speed_pct": 20,
+        "lifesteal_pct": 10
+      },
+      "passive": "Dragon Scale: Every 4 extra Physical Attack increases Hybrid Defense by 1, up to 50 (effect is halved if Main Role is not Fighter).@ Lifeline: When taking damage that reduces HP below 30%, gains a (120*Hero Level) shield (increases with level) and 50% Movement Speed that rapidly decays over 3 seconds. This effect has a 60 seconds cooldown.",
+      "confidence": "high"
+    },
+    {
+      "id": "sea-halberd",
+      "name": "Sea Halberd",
+      "category": "attack",
+      "price": 2050,
+      "stats": {
+        "physical_attack": 80,
+        "attack_speed_pct": 20
+      },
+      "passive": "Lifebane: Dealing damage to a target will reduce the Shield and HP Regen effects on them to 60% of normal for 3 seconds.@ Punish: Increase damage by 8% against enemy heroes with higher extra HP.",
+      "confidence": "high"
+    },
+    {
+      "id": "war-axe",
+      "name": "War Axe",
+      "category": "attack",
+      "price": 2100,
+      "stats": {
+        "physical_attack": 35,
+        "hp": 400,
+        "cooldown_reduction_pct": 10,
+        "hybrid_lifesteal_pct": 8
+      },
+      "passive": "Fighting Spirit: Attacks grants 12 extra Physical Attack per second for 4 seconds, up to 6 stacks. Deals 10% extra True Damage based on the damage dealt (no damage reduction counted) at full stacks. (Marksmen, Mages, and Supports only receive 50% of these stacked effects.)",
+      "confidence": "high"
+    },
+    {
+      "id": "wind-of-nature",
+      "name": "Wind of Nature",
+      "category": "attack",
+      "price": 1910,
+      "stats": {
+        "physical_attack": 30,
+        "attack_speed_pct": 20,
+        "lifesteal_pct": 10
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "windtalker",
+      "name": "Windtalker",
+      "category": "attack",
+      "price": 1880,
+      "stats": {
+        "attack_speed_pct": 35,
+        "crit_chance_pct": 20,
+        "movement_speed": 20
+      },
+      "passive": "Typhoon: Every 5–2 seconds (reduced by 0.2 seconds for each Basic Attack), the next Basic Attack will hit up to 3 enemy units for 150–362 Magic Damage. (This attack can Crit and the damage increases to 200% against Minions.)",
+      "confidence": "high"
+    },
+    {
+      "id": "fury-hammer",
+      "name": "Fury Hammer",
+      "category": "attack",
+      "price": 830,
+      "stats": {
+        "physical_attack": 35,
+        "physical_penetration": 12
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "legion-sword",
+      "name": "Legion Sword",
+      "category": "attack",
+      "price": 910,
+      "stats": {
+        "physical_attack": 60
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "magic-blade",
+      "name": "Magic Blade",
+      "category": "attack",
+      "price": 1050,
+      "stats": {
+        "physical_attack": 35,
+        "lifesteal_pct": 10
+      },
+      "passive": "Lifeline: When taking damage that reduces HP below 30%, gains a (+60*Hero Level) shield (increases with level) and 50% Movement Speed that rapidly decays over 3 seconds. This effect has a 60 seconds cooldown.",
+      "confidence": "high"
+    },
+    {
+      "id": "ogre-tomahawk",
+      "name": "Ogre Tomahawk",
+      "category": "attack",
+      "price": 650,
+      "stats": {
+        "physical_attack": 25,
+        "hp": 230
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "regular-spear",
+      "name": "Regular Spear",
+      "category": "attack",
+      "price": 600,
+      "stats": {
+        "physical_attack": 20,
+        "attack_speed_pct": 10
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "rogue-meteor",
+      "name": "Rogue Meteor",
+      "category": "attack",
+      "price": 900,
+      "stats": {
+        "attack_speed_pct": 15,
+        "crit_chance_pct": 10
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "swift-crossbow",
+      "name": "Swift Crossbow",
+      "category": "attack",
+      "price": 1000,
+      "stats": {
+        "attack_speed_pct": 20
+      },
+      "passive": "Crossbow: Each Basic Attack deals 40 extra Adaptive Damage.@ Impulse: Basic Attacks grant 3% extra Attack Speed for 3 seconds, capped at 5 stacks.",
+      "confidence": "high"
+    },
+    {
+      "id": "dagger",
+      "name": "Dagger",
+      "category": "attack",
+      "price": 250,
+      "stats": {
+        "physical_attack": 15
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "iron-hunting-bow",
+      "name": "Iron Hunting Bow",
+      "category": "attack",
+      "price": 450,
+      "stats": {
+        "physical_attack": 10,
+        "cooldown_reduction_pct": 5
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "javelin",
+      "name": "Javelin",
+      "category": "attack",
+      "price": 320,
+      "stats": {
+        "crit_chance_pct": 8
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "knife",
+      "name": "Knife",
+      "category": "attack",
+      "price": 280,
+      "stats": {
+        "attack_speed_pct": 10
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "power-potion",
+      "name": "Power Potion",
+      "category": "attack",
+      "price": 1500,
+      "stats": null,
+      "passive": "Increase Power: Automatically used after purchasing, giving 30 Physical Attack and 15% of Lifesteal for 120s. Can only have one potion effect at a time.",
+      "confidence": "medium"
+    },
+    {
+      "id": "vampire-mallet",
+      "name": "Vampire Mallet",
+      "category": "attack",
+      "price": 400,
+      "stats": {
+        "physical_attack": 8,
+        "lifesteal_pct": 8
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "blood-wings",
+      "name": "Blood Wings",
+      "category": "magic",
+      "price": 2100,
+      "stats": {
+        "magic_power": 90
+      },
+      "passive": "Guard: Gains a 800 (+100% Magic Power) Shield that will regenerate 20 seconds after being damaged. The Shield also grants 30 Movement Speed while it lasts and 150 Movement Speed for 1 second after it breaks.",
+      "confidence": "high"
+    },
+    {
+      "id": "clock-of-destiny",
+      "name": "Clock of Destiny",
+      "category": "magic",
+      "price": 2030,
+      "stats": {
+        "magic_power": 45,
+        "hp": 400,
+        "mana": 400,
+        "cooldown_reduction_pct": 10
+      },
+      "passive": "Destiny: Gains 4.5(+0.5*Hero Level) Hybrid Defense for 5 seconds when dealing Magic Damage to enemy heroes, stacking up to 6 times (can gain 1 stack every 0.4 seconds).@ Gift: When HP drops below 50%, recovers 15% of HP over the next 3 seconds. When Mana drops below 50%, restores 15% of Mana over the next 3 seconds. Cooldown: 60 seconds.",
+      "confidence": "high"
+    },
+    {
+      "id": "concentrated-energy",
+      "name": "Concentrated Energy",
+      "category": "magic",
+      "price": 2020,
+      "stats": {
+        "magic_power": 75,
+        "hp": 400,
+        "hybrid_lifesteal_pct": 20
+      },
+      "passive": "Recharge: Increases Magic Power by 5 after dealing Magic Damage (this effect stacks up to 6 times and can only gain 1 stack every 0.4 seconds). When reaching full stacks, increases Magic Damage by 12% for 5 seconds.",
+      "confidence": "high"
+    },
+    {
+      "id": "divine-glaive",
+      "name": "Divine Glaive",
+      "category": "magic",
+      "price": 1970,
+      "stats": {
+        "magic_power": 65,
+        "magic_penetration_pct": 40
+      },
+      "passive": "Spellbreaker: When attacking an enemy, gains 0.1% extra Magic Penetration for each point of the enemy's Magic Defense, capped at 20%.",
+      "confidence": "high"
+    },
+    {
+      "id": "enchanted-talisman",
+      "name": "Enchanted Talisman",
+      "category": "magic",
+      "price": 2070,
+      "stats": {
+        "magic_power": 70,
+        "hp": 300,
+        "cooldown_reduction_pct": 15
+      },
+      "passive": "Mana Spring: Regenerates 15% of Max Mana every 10 seconds.@ Magic Mastery: Max Cooldown Reduction is increased by 5%.",
+      "confidence": "high"
+    },
+    {
+      "id": "feather-of-heaven",
+      "name": "Feather of Heaven",
+      "category": "magic",
+      "price": 2030,
+      "stats": {
+        "magic_power": 60,
+        "attack_speed_pct": 20,
+        "lifesteal_pct": 10,
+        "cooldown_reduction_pct": 5
+      },
+      "passive": "Affliction: Each Basic Attack deals extra 50 (+30% Total Magic Power) Magic Damage.@ Impulse: Basic Attacks grant 6% extra Attack Speed for 3 seconds, capped at 5 stacks.",
+      "confidence": "high"
+    },
+    {
+      "id": "flask-of-the-oasis",
+      "name": "Flask of the Oasis",
+      "category": "magic",
+      "price": 1850,
+      "stats": {
+        "magic_power": 60,
+        "hp": 300,
+        "cooldown_reduction_pct": 10,
+        "healing_effect_pct": 12
+      },
+      "passive": "Blessing: When casting a healing or shield skill, if the target's HP is below 35%, or falls below 35% within 3 seconds, they will get a (100*Hero Level) shield that lasts 3 seconds. When this effect triggers, it also reduces the cooldown of the caster's skills by 2 seconds. (This effect can only trigger once every 60 seconds on the same target, and will not trigger on self-only healing and shield skills.)",
+      "confidence": "high"
+    },
+    {
+      "id": "genius-wand",
+      "name": "Genius Wand",
+      "category": "magic",
+      "price": 2000,
+      "stats": {
+        "magic_power": 75,
+        "movement_speed_pct": 5,
+        "magic_penetration": 10
+      },
+      "passive": "Magic: Dealing Magic Damage to enemy heroes will reduce their Magic Defense by 2.5+(0.5*Hero Level) for 2 seconds. Stacks up to 3 times.",
+      "confidence": "high"
+    },
+    {
+      "id": "glowing-wand",
+      "name": "Glowing Wand",
+      "category": "magic",
+      "price": 2150,
+      "stats": {
+        "magic_power": 60,
+        "hp": 300,
+        "movement_speed_pct": 5
+      },
+      "passive": "Scorch: Dealing Magic Damage burns the targets for 3 seconds, also dealing extra Magic Damage equal to 1% of the target's Max HP per second.@ Lifebane: Dealing damage to the target will reduce the Shield and HP Regen effects on them to 60% of normal for 3 seconds.",
+      "confidence": "high"
+    },
+    {
+      "id": "holy-crystal",
+      "name": "Holy Crystal",
+      "category": "magic",
+      "price": 3000,
+      "stats": {
+        "magic_power": 165
+      },
+      "passive": "Mystery: Gains 21%-35% extra Magic Power (scales with level).",
+      "confidence": "high"
+    },
+    {
+      "id": "ice-queen-wand",
+      "name": "Ice Queen Wand",
+      "category": "magic",
+      "price": 2040,
+      "stats": {
+        "magic_power": 60,
+        "spell_vamp_pct": 10,
+        "hp": 300,
+        "movement_speed_pct": 7
+      },
+      "passive": "Ice Bound: When a skill deals damage to an enemy hero, it will also slow them by 10% for 2 seconds (stacks up to 3 times). This effect has a 0.4 seconds cooldown.",
+      "confidence": "high"
+    },
+    {
+      "id": "lightning-truncheon",
+      "name": "Lightning Truncheon",
+      "category": "magic",
+      "price": 2250,
+      "stats": {
+        "magic_power": 75,
+        "mana": 400,
+        "cooldown_reduction_pct": 10
+      },
+      "passive": "Resonate: Every 6 seconds, the next skill echoes, dealing 255 (+85% Magic Power) extra Magic Damage to all enemies in range.",
+      "confidence": "high"
+    },
+    {
+      "id": "starlium-scythe",
+      "name": "Starlium Scythe",
+      "category": "magic",
+      "price": 2120,
+      "stats": {
+        "magic_power": 75,
+        "cooldown_reduction_pct": 10,
+        "hybrid_lifesteal_pct": 8,
+        "mana_regen": 6
+      },
+      "passive": "Crisis: After casting a skill, the next Basic Attack within 3 seconds deals 90 (+60% Total Magic Power) extra True Damage and reduces the target's Movement Speed by 15% for 1.5 seconds (1.5 seconds cooldown).",
+      "confidence": "high"
+    },
+    {
+      "id": "wishing-lantern",
+      "name": "Wishing Lantern",
+      "category": "magic",
+      "price": 2250,
+      "stats": {
+        "magic_power": 75,
+        "mana": 400,
+        "cooldown_reduction_pct": 10
+      },
+      "passive": "Butterfly Goddess: For every 900 Magic Damage dealt to an enemy hero (calculated before Damage Reduction), a Butterfly Goddess is summoned to attack the enemy hero, dealing Magic Damage equal to 8% of their Current HP.",
+      "confidence": "high"
+    },
+    {
+      "id": "azure-blade",
+      "name": "Azure Blade",
+      "category": "magic",
+      "price": 600,
+      "stats": {
+        "mana_regen": 5,
+        "cooldown_reduction_pct": 5
+      },
+      "passive": "Judgement: After casting a skill, the next Basic Attack within 3 seconds deals 50 extra True Damage (1.5 seconds cooldown).",
+      "confidence": "high"
+    },
+    {
+      "id": "elegant-gem",
+      "name": "Elegant Gem",
+      "category": "magic",
+      "price": 700,
+      "stats": {
+        "hp": 300,
+        "mana": 380
+      },
+      "passive": "Gift: When HP drops below 50%, recovers 15% of HP over the next 3 seconds. When Mana drops below 50%, restores 15% of Mana over the next 3 seconds. Cooldown: 60 seconds.",
+      "confidence": "high"
+    },
+    {
+      "id": "exotic-veil",
+      "name": "Exotic Veil",
+      "category": "magic",
+      "price": 600,
+      "stats": {
+        "magic_power": 30,
+        "movement_speed_pct": 5
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "magic-wand",
+      "name": "Magic Wand",
+      "category": "magic",
+      "price": 820,
+      "stats": {
+        "magic_power": 45
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "mystic-container",
+      "name": "Mystic Container",
+      "category": "magic",
+      "price": 500,
+      "stats": {
+        "magic_power": 15,
+        "spell_vamp_pct": 8
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "tome-of-evil",
+      "name": "Tome of Evil",
+      "category": "magic",
+      "price": 950,
+      "stats": {
+        "magic_power": 30,
+        "mana_regen": 2,
+        "cooldown_reduction_pct": 10
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "book-of-sages",
+      "name": "Book of Sages",
+      "category": "magic",
+      "price": 450,
+      "stats": {
+        "magic_power": 8,
+        "cooldown_reduction_pct": 5
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "magic-necklace",
+      "name": "Magic Necklace",
+      "category": "magic",
+      "price": 120,
+      "stats": {
+        "mana_regen": 2
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "magic-potion",
+      "name": "Magic Potion",
+      "category": "magic",
+      "price": 1500,
+      "stats": null,
+      "passive": "Increase Power: Automatically used after purchasing, increases Magic Power by 30 and Cooldown Reduction by 10% for 120s. Can only have one potion effect at a time.",
+      "confidence": "medium"
+    },
+    {
+      "id": "mystery-codex",
+      "name": "Mystery Codex",
+      "category": "magic",
+      "price": 300,
+      "stats": {
+        "magic_power": 15
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "power-crystal",
+      "name": "Power Crystal",
+      "category": "magic",
+      "price": 220,
+      "stats": {
+        "mana": 280
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "antique-cuirass",
+      "name": "Antique Cuirass",
+      "category": "defense",
+      "price": 2170,
+      "stats": {
+        "hp": 920,
+        "physical_defense": 40,
+        "hp_regen": 4
+      },
+      "passive": "Deter: When hit by a skill, reduces the attacker's Physical Damage by 6% for 2 seconds (this effect stacks up to 3 times).",
+      "confidence": "high"
+    },
+    {
+      "id": "blade-armor",
+      "name": "Blade Armor",
+      "category": "defense",
+      "price": 1910,
+      "stats": {
+        "physical_defense": 80,
+        "crit_damage_reduction_pct": 20
+      },
+      "passive": "Bladed Armor: When struck by a Basic Attack, deals Physical Damage equal to 30 (+2% Total Physical Defense)% of the incoming damage (calculated before Damage Reduction) to the attacker and slows them by 15% for 1 second.",
+      "confidence": "high"
+    },
+    {
+      "id": "brute-force-breastplate",
+      "name": "Brute Force Breastplate",
+      "category": "defense",
+      "price": 2070,
+      "stats": {
+        "hp": 800,
+        "physical_defense": 20,
+        "cooldown_reduction_pct": 10
+      },
+      "passive": "Brute Force: Each second after dealing damage, gain 8 extra Adaptive Attack and 2% extra Movement Speed for 4 seconds, up to 6 stacks. Gain 25% extra Control Duration Reduction at full stacks.",
+      "confidence": "high"
+    },
+    {
+      "id": "chastise-pauldron",
+      "name": "Chastise Pauldron",
+      "category": "defense",
+      "price": 2100,
+      "stats": {
+        "hp": 900,
+        "physical_defense": 40
+      },
+      "passive": "Chastise: Taking damage will reduce the Attack Speed and Attack Speed cap of the attacker to 75% of normal for 2 seconds.@ Redemption: When incoming damage reduces HP below 30%, recover 20% Max HP over the next 2 seconds. This effect has a 60 seconds cooldown.",
+      "confidence": "high"
+    },
+    {
+      "id": "cursed-helmet",
+      "name": "Cursed Helmet",
+      "category": "defense",
+      "price": 1910,
+      "stats": {
+        "hp": 1200,
+        "magic_defense": 20
+      },
+      "passive": "Burning Soul: Deals (1.2% Total HP) Magic Damage to nearby enemies per second. This damage is increased by 125(+15*Hero Level)% against creeps and minions.@ Curse: Dealing damage with Burning Soul will reduce the target's Hybrid Defense by 3 for 3 seconds. Stacks up to 3 times.",
+      "confidence": "high"
+    },
+    {
+      "id": "dominance-ice",
+      "name": "Dominance Ice",
+      "category": "defense",
+      "price": 2010,
+      "stats": {
+        "physical_defense": 40,
+        "magic_defense": 40,
+        "movement_speed_pct": 5
+      },
+      "passive": "Fortress Shield: For each enemy hero within 5 units, Hybrid Defense is increased by 8, up to 40.@ Lifebane: Reduces Shield and HP Regen effects of nearby enemies within 5 units to 60% of normal for 1 second.",
+      "confidence": "high"
+    },
+    {
+      "id": "guardian-helmet",
+      "name": "Guardian Helmet",
+      "category": "defense",
+      "price": 2500,
+      "stats": {
+        "hp": 1800,
+        "hp_regen": 20
+      },
+      "passive": "Recovery: After 5 seconds out of combat, recover (2.5% Total HP) HP per second.@ Defender: Upon taking more than 500 damage in a single instance, recover 30 (+0.3% Total HP)% HP from the excess damage beyond that amount.",
+      "confidence": "high"
+    },
+    {
+      "id": "immortality",
+      "name": "Immortality",
+      "category": "defense",
+      "price": 2120,
+      "stats": {
+        "hp": 850,
+        "physical_defense": 15
+      },
+      "passive": "Immortal: Resurrect 2.5 seconds upon death and gets 16% Max HP and a shield that can absorb 150(+70*Hero Level）damage. Shield lasts 3 seconds. This effect has a 210 seconds cooldown.",
+      "confidence": "high"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "category": "defense",
+      "price": 1860,
+      "stats": {
+        "hp": 850,
+        "physical_defense": 20,
+        "magic_defense": 20,
+        "cooldown_reduction_pct": 10
+      },
+      "passive": "Bless: Received Shield and HP Regen effects are increased by 25%.",
+      "confidence": "high"
+    },
+    {
+      "id": "queens-wings",
+      "name": "Queen's Wings",
+      "category": "defense",
+      "price": 2250,
+      "stats": {
+        "hp": 750,
+        "adaptive_attack": 30,
+        "cooldown_reduction_pct": 10,
+        "spell_vamp_pct": 10
+      },
+      "passive": "Demonize: When HP drops below 40%, gains 30% Damage Reduction for 3 seconds and reduces skill cooldowns by 2 seconds. This effect has a 60 seconds cooldown.@ Defiance: For every 1% HP lost, damage is increased by 0.25%, up to 15%.",
+      "confidence": "high"
+    },
+    {
+      "id": "radiant-armor",
+      "name": "Radiant Armor",
+      "category": "defense",
+      "price": 1880,
+      "stats": {
+        "hp": 950,
+        "magic_defense": 40,
+        "hp_regen": 12
+      },
+      "passive": "Holy Blessing: Taking Magic Damage grants 5(+1*Hero Level) Magic Defense for 5 seconds, up to 6 stacks (can only gain 1 stack(s) every 0.4 seconds).",
+      "confidence": "high"
+    },
+    {
+      "id": "thunder-belt",
+      "name": "Thunder Belt",
+      "category": "defense",
+      "price": 1820,
+      "stats": {
+        "hp": 600,
+        "physical_defense": 15,
+        "magic_defense": 15,
+        "movement_speed": 20
+      },
+      "passive": "Thunderbolt: Every 4 seconds, the next Basic Attack deals 50 (+100% Extra Physical Defense) (+100% Extra Magic Defense) extra True Damage to the target and enemies around them, and briefly slows them by 99%. Hybrid Defense permanently increases by 1 each time the attack hits an enemy hero. (This effect is reduced to 50% for Marksmen, Mages, and Assassins)",
+      "confidence": "high"
+    },
+    {
+      "id": "valkyries-shield",
+      "name": "Valkyrie's Shield",
+      "category": "defense",
+      "price": 2150,
+      "stats": {
+        "hp": 900,
+        "magic_defense": 48,
+        "hp_regen": 2
+      },
+      "passive": "Shield: Upon taking Magic Damage from enemy hero skills or Basic Attacks, reduces Magic Damage taken by 25% for 3 seconds (including the damage that triggers the effect)s. Regains this effect 5 seconds after leaving combat.",
+      "confidence": "high"
+    },
+    {
+      "id": "ares-belt",
+      "name": "Ares Belt",
+      "category": "defense",
+      "price": 700,
+      "stats": {
+        "hp": 600
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "black-ice-shield",
+      "name": "Black Ice Shield",
+      "category": "defense",
+      "price": 780,
+      "stats": {
+        "physical_defense": 20,
+        "magic_defense": 20
+      },
+      "passive": "Fortress Shield: For each enemy hero within 3.55 units, Hybrid Defense is increased by 4, up to 20.",
+      "confidence": "high"
+    },
+    {
+      "id": "dreadnaught-armor",
+      "name": "Dreadnaught Armor",
+      "category": "defense",
+      "price": 730,
+      "stats": {
+        "physical_defense": 30
+      },
+      "passive": "Deter: When hit by a skill, reduces the attacker's Physical Damage by 4% for 2 seconds (this effect stacks up to 3 times).",
+      "confidence": "high"
+    },
+    {
+      "id": "molten-essence",
+      "name": "Molten Essence",
+      "category": "defense",
+      "price": 800,
+      "stats": {
+        "hp": 540
+      },
+      "passive": "Burning Soul: Deals (0.6% Total HP) Magic Damage to nearby enemies per second. This damage is increased by 125(+15*Hero Level)% against creeps and minions.",
+      "confidence": "high"
+    },
+    {
+      "id": "silence-robe",
+      "name": "Silence Robe",
+      "category": "defense",
+      "price": 1020,
+      "stats": {
+        "hp": 540,
+        "magic_defense": 23
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "steel-legplates",
+      "name": "Steel Legplates",
+      "category": "defense",
+      "price": 630,
+      "stats": {
+        "physical_defense": 35
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "healing-necklace",
+      "name": "Healing Necklace",
+      "category": "defense",
+      "price": 140,
+      "stats": {
+        "hp_regen": 4
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "heros-ring",
+      "name": "Hero's Ring",
+      "category": "defense",
+      "price": 450,
+      "stats": {
+        "hp": 150,
+        "cooldown_reduction_pct": 5
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "leather-jerkin",
+      "name": "Leather Jerkin",
+      "category": "defense",
+      "price": 220,
+      "stats": {
+        "physical_defense": 14
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "magic-resist-cloak",
+      "name": "Magic Resist Cloak",
+      "category": "defense",
+      "price": 220,
+      "stats": {
+        "magic_defense": 14
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "rock-potion",
+      "name": "Rock Potion",
+      "category": "defense",
+      "price": 1500,
+      "stats": null,
+      "passive": "Increase Power: Upon purchase, grants 500 Max HP and 5% Damage Reduction for 120 seconds. Can only have one potion effect at a time.",
+      "confidence": "medium"
+    },
+    {
+      "id": "vitality-crystal",
+      "name": "Vitality Crystal",
+      "category": "defense",
+      "price": 300,
+      "stats": {
+        "hp": 230
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "fleeting-time",
+      "name": "Fleeting Time",
+      "category": "other",
+      "price": 2050,
+      "stats": {
+        "adaptive_attack": 30,
+        "hp": 600,
+        "cooldown_reduction_pct": 15
+      },
+      "passive": "Timestream: Hero kills or assists reduce the Ultimate's current cooldown by 30%.",
+      "confidence": "high"
+    },
+    {
+      "id": "sky-piercer",
+      "name": "Sky Piercer",
+      "category": "other",
+      "price": 1500,
+      "stats": {
+        "adaptive_attack": 60,
+        "movement_speed": 15
+      },
+      "passive": "Lethality: After dealing damage to an enemy hero, executes the hero if their HP is lower than 4%. Gains 10 stack(s) of Lethality for each kill and loses 30% current stack(s) for each death. Each stack of Lethality increases the HP threshold of the execute effect by 0.1%, stacking up 80 times.",
+      "confidence": "high"
+    },
+    {
+      "id": "winter-crown",
+      "name": "Winter Crown",
+      "category": "other",
+      "price": 1910,
+      "stats": {
+        "adaptive_attack": 45,
+        "hp": 400,
+        "cooldown_reduction_pct": 5
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "expert-gloves",
+      "name": "Expert Gloves",
+      "category": "other",
+      "price": 500,
+      "stats": {
+        "adaptive_attack": 30
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "arcane-boots",
+      "name": "Arcane Boots",
+      "category": "movement",
+      "price": 720,
+      "stats": {
+        "movement_speed": 40,
+        "magic_power": 15,
+        "magic_penetration": 10
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "demon-shoes",
+      "name": "Demon Shoes",
+      "category": "movement",
+      "price": 720,
+      "stats": {
+        "movement_speed": 40,
+        "mana_regen": 10
+      },
+      "passive": "Mysticism: Getting a kill or assist on an enemy Minion will restore 4% Mana. (An assist occurs when a Minion dies within 2 seconds after taking damage from the hero.)",
+      "confidence": "high"
+    },
+    {
+      "id": "magic-shoes",
+      "name": "Magic Shoes",
+      "category": "movement",
+      "price": 720,
+      "stats": {
+        "movement_speed": 40,
+        "cooldown_reduction_pct": 10,
+        "hp": 150
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "rapid-boots",
+      "name": "Rapid Boots",
+      "category": "movement",
+      "price": 720,
+      "stats": {
+        "movement_speed": 55,
+        "slow_reduction_pct": 35,
+        "hp_regen": 12
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "swift-boots",
+      "name": "Swift Boots",
+      "category": "movement",
+      "price": 720,
+      "stats": {
+        "movement_speed": 40,
+        "attack_speed_pct": 15
+      },
+      "passive": null,
+      "confidence": "high"
+    },
+    {
+      "id": "tough-boots",
+      "name": "Tough Boots",
+      "category": "movement",
+      "price": 720,
+      "stats": {
+        "movement_speed": 40,
+        "magic_defense": 18
+      },
+      "passive": "Fortitude: CC and Slow Duration reduced by 25%.",
+      "confidence": "high"
+    },
+    {
+      "id": "warrior-boots",
+      "name": "Warrior Boots",
+      "category": "movement",
+      "price": 720,
+      "stats": {
+        "movement_speed": 40,
+        "physical_defense": 18
+      },
+      "passive": "Valor: Gains 4 extra Physical Defense for 3 seconds when taking Physical Damage, up to 20.",
+      "confidence": "high"
+    },
+    {
+      "id": "boots",
+      "name": "Boots",
+      "category": "movement",
+      "price": 250,
+      "stats": {
+        "movement_speed": 20
+      },
+      "passive": null,
+      "confidence": "high"
+    }
+  ]
+}

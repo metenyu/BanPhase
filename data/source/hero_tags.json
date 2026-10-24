@@ -1,0 +1,465 @@
+{
+  "generated_at_utc": "2026-10-24T16:03:32Z",
+  "scope": "İlk 30 kahraman (Rone oynanma oranı sıralamasına göre, iç sıralama). Kalan 103 kahraman ayrı teslim.",
+  "sources": [
+    {
+      "name": "Fandom MLBB Wiki - Module:Hero/data (rol, şerit, hasar türü, uzmanlık, kontrol derecesi)",
+      "url": "https://mobile-legends.fandom.com/wiki/Module:Hero/data",
+      "license": "CC BY-SA 3.0 (wiki siteinfo: CC-BY-SA)",
+      "revision_timestamp_utc": "2026-10-14T11:21:56Z",
+      "access": "MediaWiki API ile 2026-10-24T16:03:32Z; yerel kopya: fandom_hero_data.lua"
+    },
+    {
+      "name": "Fandom MLBB Wiki - kahraman sayfaları (yetenek efekt etiketleri)",
+      "url": "https://mobile-legends.fandom.com/wiki/<Kahraman_Adı>",
+      "license": "CC BY-SA 3.0 (wiki siteinfo: CC-BY-SA)",
+      "access": "MediaWiki API (action=parse, prop=wikitext) ile 2026-10-24T15:58:48Z; ham kopya: data/source/raw/hero/top30_wikitext.json"
+    }
+  ],
+  "mapping_notes": {
+    "style": "Chase->dive; Burst,Finisher->pickoff; Crowd Control,Control,Charge,Initiator->engage; Poke->poke; Regen->sustain; Push->split-push. Damage/Support/Guard uzmanlıkları stil olarak kullanılmadı.",
+    "engage": "Uzmanlıkta Initiator veya Charge varsa high; Crowd Control veya Control varsa medium; diğerleri low. Kaynak yalnızca uzmanlık etiketi olduğu için vekil ölçüt; control_effect derecesi evidence içinde ayrıca verilmiştir.",
+    "power_spike": "Kaynak bu alanı sağlamıyor; tümü null bırakıldı.",
+    "lanes": "lane1/lane2 Fandom değerleri (Gold Lane->gold, EXP Lane->exp, Mid Lane->mid, Jungle->jungle, Roaming->roam).",
+    "confidence": "high: stil, hasar türü, şerit ve kontrol derecesi mevcut; medium: eksik alan var."
+  },
+  "count": 30,
+  "heroes": [
+    {
+      "heroId": "hanabi",
+      "lanes": [
+        "gold"
+      ],
+      "style": [
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Marksman, specialty=Finisher/Damage, dmg_type=Physical, control_effect=8; kit efekt etiketleri: Buff, Shield, AOE, CC"
+    },
+    {
+      "heroId": "miya",
+      "lanes": [
+        "gold"
+      ],
+      "style": [
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Marksman, specialty=Finisher/Damage, dmg_type=Physical, control_effect=4; kit efekt etiketleri: Buff, AOE, CC, Conceal, Remove CC"
+    },
+    {
+      "heroId": "obsidia",
+      "lanes": [
+        "gold"
+      ],
+      "style": [
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Marksman, specialty=Finisher/Damage, dmg_type=Physical, control_effect=1; kit efekt etiketleri: Buff, Damage, AOE, Speed Up, CC, Mobility"
+    },
+    {
+      "heroId": "tigreal",
+      "lanes": [
+        "roam"
+      ],
+      "style": [
+        "engage"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "medium",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Tank, specialty=Crowd Control, dmg_type=Physical, control_effect=10; kit efekt etiketleri: Buff, AOE, Slow, Charge, CC"
+    },
+    {
+      "heroId": "nana",
+      "lanes": [
+        "mid"
+      ],
+      "style": [
+        "poke",
+        "pickoff"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Mage, specialty=Poke/Burst, dmg_type=Magic, control_effect=10; kit efekt etiketleri: Death Immune, AOE, CC, Debuff, Burst"
+    },
+    {
+      "heroId": "eudora",
+      "lanes": [
+        "mid"
+      ],
+      "style": [
+        "engage",
+        "pickoff"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "medium",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Mage, specialty=Control/Burst, dmg_type=Magic, control_effect=8; kit efekt etiketleri: Buff, AOE, CC, Damage, Burst"
+    },
+    {
+      "heroId": "lesley",
+      "lanes": [
+        "gold"
+      ],
+      "style": [
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Marksman, specialty=Finisher/Burst, dmg_type=Physical, control_effect=2; kit efekt etiketleri: BUFF, Conceal, CC, Blink, Burst"
+    },
+    {
+      "heroId": "dyrroth",
+      "lanes": [
+        "exp",
+        "jungle"
+      ],
+      "style": [
+        "engage",
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "high",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Fighter, specialty=Charge/Burst, dmg_type=Physical, control_effect=2; kit efekt etiketleri: BUFF, HEAL, AoE, Slowed, Blink, Damage, Burst"
+    },
+    {
+      "heroId": "belerick",
+      "lanes": [
+        "roam"
+      ],
+      "style": [
+        "engage",
+        "sustain"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "medium",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Tank, specialty=Crowd Control/Regen, dmg_type=Magic, control_effect=10; kit efekt etiketleri: BUFF, CC, AoE, Speed Up, HEAL"
+    },
+    {
+      "heroId": "angela",
+      "lanes": [
+        "roam"
+      ],
+      "style": [],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "medium",
+      "evidence": "Module:Hero/data: role1=Support, specialty=Guard/Support, dmg_type=Magic, control_effect=5; kit efekt etiketleri: Speed Up, HEAL, AOE, Slow, CC, Attach, Shield"
+    },
+    {
+      "heroId": "sun",
+      "lanes": [
+        "exp",
+        "jungle"
+      ],
+      "style": [
+        "split-push"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Fighter, specialty=Push/Damage, dmg_type=Phyiscal, control_effect=1; kit efekt etiketleri: Debuff, Heal, Summon, AOE, Mobility, Burst"
+    },
+    {
+      "heroId": "zetian",
+      "lanes": [
+        "mid"
+      ],
+      "style": [
+        "engage"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "medium",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Mage, specialty=Damage/Crowd Control, dmg_type=Magic, control_effect=5; kit efekt etiketleri: Shield, CC, Damage, Speed Up, Slow, Debuff"
+    },
+    {
+      "heroId": "selena",
+      "lanes": [
+        "mid",
+        "roam"
+      ],
+      "style": [
+        "engage",
+        "pickoff"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "high",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Assassin, specialty=Initiator/Finisher, dmg_type=Magic, control_effect=10; kit efekt etiketleri: BUFF, Summon, Slowed, Burst, Shield, CC, Speed Up, Blink, Morph"
+    },
+    {
+      "heroId": "vexana",
+      "lanes": [
+        "mid"
+      ],
+      "style": [
+        "poke",
+        "engage"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "medium",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Mage, specialty=Poke/Control, dmg_type=Magic, control_effect=5; kit efekt etiketleri: Damage, CC, AoE, AOE, Summon"
+    },
+    {
+      "heroId": "nolan",
+      "lanes": [
+        "jungle"
+      ],
+      "style": [
+        "dive",
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Assassin, specialty=Chase/Burst, dmg_type=Physical, control_effect=2; kit efekt etiketleri: Damage, AOE, Blink, Burst"
+    },
+    {
+      "heroId": "layla",
+      "lanes": [
+        "gold"
+      ],
+      "style": [
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Marksman, specialty=Finisher/Damage, dmg_type=Physical, control_effect=1; kit efekt etiketleri: Buff, Burst, AoE, Slowed"
+    },
+    {
+      "heroId": "paquito",
+      "lanes": [
+        "exp"
+      ],
+      "style": [
+        "dive"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Fighter, specialty=Chase/Damage, dmg_type=Physical, control_effect=4; kit efekt etiketleri: BUFF, Damage, AoE, Shield, Burst, Blink, CC"
+    },
+    {
+      "heroId": "granger",
+      "lanes": [
+        "gold"
+      ],
+      "style": [
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Marksman, specialty=Burst/Finisher, dmg_type=Physical, control_effect=1; kit efekt etiketleri: Damage, Buff, Burst, Mobility, Slow"
+    },
+    {
+      "heroId": "badang",
+      "lanes": [
+        "roam",
+        "exp"
+      ],
+      "style": [
+        "engage",
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "high",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Fighter, specialty=Charge/Burst, dmg_type=Physical, control_effect=5; kit efekt etiketleri: CC, Damage, AoE, Slow, Blink, Burst"
+    },
+    {
+      "heroId": "alpha",
+      "lanes": [
+        "jungle",
+        "exp"
+      ],
+      "style": [
+        "engage"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "high",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Fighter, specialty=Charge/Damage, dmg_type=Physical, control_effect=7; kit efekt etiketleri: Damage, Slow, AoE, HEAL, Blink, CC"
+    },
+    {
+      "heroId": "gusion",
+      "lanes": [
+        "jungle",
+        "mid"
+      ],
+      "style": [
+        "pickoff"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Assassin, specialty=Burst/Magic Damage, dmg_type=Magic, control_effect=1; kit efekt etiketleri: BUFF, HEAL, Damage, Blink, AoE, Slowed"
+    },
+    {
+      "heroId": "novaria",
+      "lanes": [
+        "mid"
+      ],
+      "style": [
+        "pickoff",
+        "poke"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Mage, specialty=Burst/Poke, dmg_type=Magic, control_effect=3; kit efekt etiketleri: Buff, Slow, AoE, Burst, BUFF"
+    },
+    {
+      "heroId": "carmilla",
+      "lanes": [
+        "roam"
+      ],
+      "style": [
+        "engage"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "medium",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Support, specialty=Crowd Control/Damage, dmg_type=Magic, control_effect=8; kit efekt etiketleri: Buff, Debuff, Damage, Heal, Speed Up, CC, Blink, Slow"
+    },
+    {
+      "heroId": "valir",
+      "lanes": [
+        "mid"
+      ],
+      "style": [],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "medium",
+      "evidence": "Module:Hero/data: role1=Mage, specialty=Damage/Guard, dmg_type=Magic, control_effect=7; kit efekt etiketleri: CC, Damage, AoE, Slow, Remove CC, BUFF"
+    },
+    {
+      "heroId": "yi-sun-shin",
+      "lanes": [
+        "jungle"
+      ],
+      "style": [
+        "pickoff",
+        "dive"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Assassin, specialty=Finisher/Chase, dmg_type=Physical, control_effect=2; kit efekt etiketleri: Buff, Mobility, AOE, AoE, Burst, CC"
+    },
+    {
+      "heroId": "chou",
+      "lanes": [
+        "exp",
+        "roam"
+      ],
+      "style": [
+        "dive",
+        "engage"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "medium",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Fighter, specialty=Chase/Control, dmg_type=Physical, control_effect=8; kit efekt etiketleri: Buff, AOE, Mobility, CC, Burst"
+    },
+    {
+      "heroId": "silvanna",
+      "lanes": [
+        "exp"
+      ],
+      "style": [
+        "engage"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "high",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Fighter, specialty=Initiator/Magic Damage, dmg_type=Magic, control_effect=7; kit efekt etiketleri: BUFF, Debuff, Mobility, CC, AoE, Shield"
+    },
+    {
+      "heroId": "saber",
+      "lanes": [
+        "jungle",
+        "roam"
+      ],
+      "style": [
+        "engage",
+        "pickoff"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "high",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Assassin, specialty=Charge/Finisher, dmg_type=Physical, control_effect=6; kit efekt etiketleri: Debuff, AOE, Buff, Blink, Burst, CC"
+    },
+    {
+      "heroId": "minotaur",
+      "lanes": [
+        "roam"
+      ],
+      "style": [
+        "engage"
+      ],
+      "damage": "physical",
+      "power_spike": null,
+      "engage": "medium",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Tank, specialty=Crowd Control, dmg_type=Physical, control_effect=8; kit efekt etiketleri: Buff, CC, Slow, Heal"
+    },
+    {
+      "heroId": "rafaela",
+      "lanes": [
+        "roam"
+      ],
+      "style": [
+        "sustain"
+      ],
+      "damage": "magic",
+      "power_spike": null,
+      "engage": "low",
+      "confidence": "high",
+      "evidence": "Module:Hero/data: role1=Support, specialty=Regen/Guard, dmg_type=Magic, control_effect=7; kit efekt etiketleri: Buff, AOE, Slow, Heal, Speed Up, CC"
+    }
+  ]
+}
