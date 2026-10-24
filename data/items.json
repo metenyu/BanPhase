@@ -15,25 +15,40 @@
     "other"
   ],
   "counts": {
-    "other": 9,
-    "magic": 11,
+    "magic": 12,
     "kutsama": 7,
     "attack": 15,
     "defense": 14,
+    "other": 8,
     "movement": 7
   },
   "items": [
     {
       "id": "adalet-kilici",
       "nameTr": "Adalet Kılıcı",
-      "category": "other",
-      "stats": [],
-      "passiveTr": "Eşsiz özellik: +40% Büyü Nüfuzu Eşsiz Pasif - Büyü Bozucu: Rakibin sahip olduğu her Büyü Direnci, o rakibe saldırırken sahip olunan Büyü Nüfuzunu 0.1% arttırır. Bu etki 20% ile sınırlıdır.",
+      "englishName": "Divine Glaive",
+      "category": "magic",
+      "stats": [
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 60,
+          "percent": false
+        },
+        {
+          "key": "magic_penetration",
+          "labelTr": "Büyü Nüfuzu",
+          "value": 40,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Büyü Bozucu: Rakip kahramanlara Büyü Hasarı verirken, rakibin her 1 Büyü Direnci için 0.1% Büyü Nüfuzu kazanılır; bu etki 20% ile sınırlıdır.",
       "evidence": "2 ekran görüntüsü"
     },
     {
       "id": "akilli-asa",
       "nameTr": "Akıllı Asa",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -55,6 +70,7 @@
     {
       "id": "ekipman-kutsamasi-alev-pencesi",
       "nameTr": "Alev Pençesi",
+      "englishName": null,
       "category": "kutsama",
       "stats": [],
       "passiveTr": "toplamda 5 orman Ona la",
@@ -63,6 +79,7 @@
     {
       "id": "altin-asa",
       "nameTr": "Altın Asa",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -84,6 +101,7 @@
     {
       "id": "antik-zirh",
       "nameTr": "Antik Zırh",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -111,6 +129,7 @@
     {
       "id": "atlantis-kargisi",
       "nameTr": "Atlantis Kargısı",
+      "englishName": null,
       "category": "other",
       "stats": [
         {
@@ -126,6 +145,7 @@
     {
       "id": "avci-darbesi",
       "nameTr": "Avcı Darbesi",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -147,6 +167,7 @@
     {
       "id": "ayaz",
       "nameTr": "Ayaz",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -174,6 +195,7 @@
     {
       "id": "azapdar-omuzlugu",
       "nameTr": "Azapdar Omuzluğu",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -195,6 +217,7 @@
     {
       "id": "bitmeyen-savas",
       "nameTr": "Bitmeyen Savaş",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -234,6 +257,7 @@
     {
       "id": "bozulma-tirpani",
       "nameTr": "Bozulma Tırpanı",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -261,6 +285,7 @@
     {
       "id": "buz-kralicesinin-degnegi",
       "nameTr": "Buz Kraliçesinin Değneği",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -282,6 +307,7 @@
     {
       "id": "ekipman-kutsamasi-buz-pencesi",
       "nameTr": "Buz Pençesi",
+      "englishName": null,
       "category": "kutsama",
       "stats": [],
       "passiveTr": "toplamda 5 orman Ona la",
@@ -290,6 +316,7 @@
     {
       "id": "buyulu-tilsim",
       "nameTr": "Büyülü Tılsım",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -333,6 +360,7 @@
     {
       "id": "cennet-tuyu",
       "nameTr": "Cennet Tüyü",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -360,6 +388,7 @@
     {
       "id": "ekipman-kutsamasi-pasif-cesaretlendir",
       "nameTr": "Cesaretlendir",
+      "englishName": null,
       "category": "kutsama",
       "stats": [],
       "passiveTr": "Ona la",
@@ -368,6 +397,7 @@
     {
       "id": "ekipman-kutsamasi-pasif-dehset-darbesi",
       "nameTr": "Dehşet Darbesi",
+      "englishName": null,
       "category": "kutsama",
       "stats": [],
       "passiveTr": "Ona la",
@@ -376,6 +406,7 @@
     {
       "id": "dikenli-gulle",
       "nameTr": "Dikenli Gülle",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -391,6 +422,7 @@
     {
       "id": "dilek-feneri",
       "nameTr": "Dilek Feneri",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -418,6 +450,7 @@
     {
       "id": "direnc-botu",
       "nameTr": "Direnç Botu",
+      "englishName": null,
       "category": "movement",
       "stats": [
         {
@@ -439,6 +472,7 @@
     {
       "id": "doga-ruzg-ri",
       "nameTr": "Doğa Rüzgârı",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -460,6 +494,7 @@
     {
       "id": "efsunlu-bot",
       "nameTr": "Efsunlu Bot",
+      "englishName": null,
       "category": "movement",
       "stats": [
         {
@@ -487,6 +522,7 @@
     {
       "id": "f-ni-zaman",
       "nameTr": "Fâni Zaman",
+      "englishName": null,
       "category": "other",
       "stats": [
         {
@@ -508,6 +544,7 @@
     {
       "id": "firtina",
       "nameTr": "Fırtına",
+      "englishName": null,
       "category": "other",
       "stats": [
         {
@@ -535,6 +572,7 @@
     {
       "id": "gardiyan-migferi",
       "nameTr": "Gardiyan Miğferi",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -556,6 +594,7 @@
     {
       "id": "ekipman-kutsamasi-aktif-gizle",
       "nameTr": "Gizle",
+      "englishName": null,
       "category": "kutsama",
       "stats": [],
       "passiveTr": "Ona la",
@@ -564,6 +603,7 @@
     {
       "id": "gok-gurultusu-kemeri",
       "nameTr": "Gök Gürültüsü Kemeri",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -597,6 +637,7 @@
     {
       "id": "gok-kiran",
       "nameTr": "Gök Kıran",
+      "englishName": null,
       "category": "other",
       "stats": [
         {
@@ -618,6 +659,7 @@
     {
       "id": "haasin-penceleri",
       "nameTr": "Haas'ın Pençeleri",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -645,6 +687,7 @@
     {
       "id": "hiz-botu",
       "nameTr": "Hız Botu",
+      "englishName": null,
       "category": "movement",
       "stats": [
         {
@@ -666,6 +709,7 @@
     {
       "id": "iblis-botu",
       "nameTr": "iblis Botu",
+      "englishName": null,
       "category": "movement",
       "stats": [
         {
@@ -687,6 +731,7 @@
     {
       "id": "ekipman-kutsamasi-pasif-iyilik",
       "nameTr": "İyilik",
+      "englishName": null,
       "category": "kutsama",
       "stats": [],
       "passiveTr": "Ona la",
@@ -695,6 +740,7 @@
     {
       "id": "kader-saati",
       "nameTr": "Kader Saati",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -722,6 +768,7 @@
     {
       "id": "k-hin",
       "nameTr": "Kâhin",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -755,6 +802,7 @@
     {
       "id": "kalp-rezonansi",
       "nameTr": "Kalp Rezonansı",
+      "englishName": null,
       "category": "other",
       "stats": [],
       "passiveTr": "Eşsiz Pasif - Sıfırla: Takımdaki Cecilion, bu ekipmanın kullanıcısı üzerinde Ay Işığında Kanlı Dans kullanabilir.",
@@ -763,6 +811,7 @@
     {
       "id": "kan-kanatlari",
       "nameTr": "Kan Kanatları",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -778,6 +827,7 @@
     {
       "id": "ekipman-kutsamasi-kanli-pence",
       "nameTr": "Kanlı Pençe",
+      "englishName": null,
       "category": "kutsama",
       "stats": [],
       "passiveTr": "toplamda 5 orman Ona la",
@@ -786,6 +836,7 @@
     {
       "id": "kaotik-silah",
       "nameTr": "Kaotik Silah",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -801,6 +852,7 @@
     {
       "id": "kirik-kalp",
       "nameTr": "Kırık Kalp",
+      "englishName": null,
       "category": "other",
       "stats": [],
       "passiveTr": "Eşsiz Pasif - Kırık Kalp: Takımındaki Cecilion'un senin üzerinde Ay Işığında Kanlı Dans kullanmasını engeller.",
@@ -809,6 +861,7 @@
     {
       "id": "kis-taci",
       "nameTr": "Kış Tacı",
+      "englishName": null,
       "category": "other",
       "stats": [
         {
@@ -830,6 +883,7 @@
     {
       "id": "kiyamet-kanatlari",
       "nameTr": "Kıyamet Kanatları",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -857,6 +911,7 @@
     {
       "id": "kinci-balta",
       "nameTr": "Kinci Balta",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -878,6 +933,7 @@
     {
       "id": "konsantre-enerji",
       "nameTr": "Konsantre Enerji",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -899,6 +955,7 @@
     {
       "id": "korkunc-silah",
       "nameTr": "Korkunç Silah",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -914,6 +971,7 @@
     {
       "id": "kutsal-kristal",
       "nameTr": "Kutsal Kristal",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -929,6 +987,7 @@
     {
       "id": "lanetli-migfer",
       "nameTr": "Lanetli Miğfer",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -950,6 +1009,7 @@
     {
       "id": "midasin-kilici",
       "nameTr": "Midas'ın Kılıcı",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -971,6 +1031,7 @@
     {
       "id": "olumsuzluk",
       "nameTr": "Ölümsüzlük",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -992,6 +1053,7 @@
     {
       "id": "parlak-zirh",
       "nameTr": "Parlak Zırh",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -1019,6 +1081,7 @@
     {
       "id": "parlayan-asa",
       "nameTr": "Parlayan Asa",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -1040,6 +1103,7 @@
     {
       "id": "savasci-botu",
       "nameTr": "Savaşçı Botu",
+      "englishName": null,
       "category": "movement",
       "stats": [
         {
@@ -1061,6 +1125,7 @@
     {
       "id": "sihirli-bot",
       "nameTr": "Sihirli Bot",
+      "englishName": null,
       "category": "movement",
       "stats": [
         {
@@ -1082,6 +1147,7 @@
     {
       "id": "starlium-tirpani",
       "nameTr": "Starlium Tırpanı",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -1109,6 +1175,7 @@
     {
       "id": "surat-botu",
       "nameTr": "Sürat Botu",
+      "englishName": null,
       "category": "movement",
       "stats": [
         {
@@ -1130,6 +1197,7 @@
     {
       "id": "ulu-ejder-mizragi",
       "nameTr": "Ulu Ejder Mızrağı",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -1157,6 +1225,7 @@
     {
       "id": "umutsuzluk-kilici",
       "nameTr": "Umutsuzluk Kılıcı",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -1178,6 +1247,7 @@
     {
       "id": "vaha-matarasi",
       "nameTr": "Vaha Matarası",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {
@@ -1205,6 +1275,7 @@
     {
       "id": "vahsi-guc-zirhi",
       "nameTr": "Vahşi Güç Zırhı",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -1232,6 +1303,7 @@
     {
       "id": "vahsi-savascinin-ofkesi",
       "nameTr": "Vahşi Savaşçının Ofkesi",
+      "englishName": null,
       "category": "other",
       "stats": [
         {
@@ -1247,6 +1319,7 @@
     {
       "id": "valkurun-kalkani",
       "nameTr": "Valkür'ün Kalkanı",
+      "englishName": null,
       "category": "defense",
       "stats": [
         {
@@ -1268,6 +1341,7 @@
     {
       "id": "yedi-denizin-kilici",
       "nameTr": "Yedi Deniz'in Kılıcı",
+      "englishName": null,
       "category": "attack",
       "stats": [
         {
@@ -1289,6 +1363,7 @@
     {
       "id": "yildirim-copu",
       "nameTr": "Yıldırım Copu",
+      "englishName": null,
       "category": "magic",
       "stats": [
         {

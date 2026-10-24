@@ -61,7 +61,8 @@ function categoryOf(name, stats) {
 const items = [];
 for (const item of raw.items) {
   if (JUNK.test(item.nameTr)) continue;
-  const stats = parseStats(item.statsText);
+  const fix = fixes.items?.[item.id];
+  const stats = fix?.stats ?? parseStats(item.statsText);
   let passive = (item.passiveTr ?? '')
     .replace(/\b(\d{1,3})96\b/g, (full, n) => (Number(n) <= 100 ? `${n}%` : full))
     .replace(/\s+/g, ' ')
@@ -76,14 +77,14 @@ for (const item of raw.items) {
     nameTr = nameTr.charAt(0).toLocaleUpperCase('tr') + nameTr.slice(1);
   }
 
-  const fix = fixes.items?.[item.id];
   if (fix?.passiveTr) passive = fix.passiveTr;
   if (fix?.nameTr) nameTr = fix.nameTr;
 
   items.push({
     id: item.id,
     nameTr,
-    category: categoryOf(item.nameTr, stats),
+    englishName: fix?.englishName ?? null,
+    category: BLESSING.test(item.nameTr) ? 'kutsama' : categoryOf(nameTr, stats),
     stats,
     passiveTr: passive.length > 5 ? passive : null,
     evidence: item.imageCount ? `${item.imageCount} ekran görüntüsü` : null,
