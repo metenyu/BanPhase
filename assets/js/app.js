@@ -36,6 +36,7 @@ const state = {
   comps: [],
   items: [],
   itemQuery: '',
+  builds: [],
   finished: false,
   timer: { remaining: CONFIG.banSeconds, running: false, deadline: 0, handle: 0, armed: false },
 };
@@ -823,6 +824,43 @@ function renderItems() {
   }).join('');
 }
 
+/* ---------- build'ler ---------- */
+
+const ROLE_TR = {
+  tank: 'Tank', fighter: 'Savaşçı', assassin: 'Suikastçı', mage: 'Büyücü',
+  marksman: 'Nişancı', support: 'Destek',
+};
+
+function itemById(id) {
+  return state.items.find((item) => item.id === id) ?? null;
+}
+
+function renderBuilds() {
+  if (!els.buildList) return;
+  els.buildsCount.textContent = state.builds.length ? `${state.builds.length}` : '';
+  els.buildsEmpty.hidden = state.builds.length > 0;
+
+  els.buildList.innerHTML = state.builds.map((build) => {
+    const hero = state.heroById.get(build.heroId);
+    const name = hero ? hero.name : build.heroId;
+    const role = ROLE_TR[String(build.role ?? '').toLowerCase()] ?? build.role ?? '';
+    const items = (build.items ?? []).map((id) => {
+      const item = itemById(id);
+      const label = item ? item.nameTr : id;
+      return `<button class="build-item" type="button" data-item-id="${escapeHtml(id)}">${escapeHtml(label)}</button>`;
+    }).join('');
+
+    return `<article class="build-card">
+      <div class="build-head">
+        <span class="build-hero">${escapeHtml(name)}</span>
+        <span class="build-role">${escapeHtml(role)}</span>
+      </div>
+      <div class="build-items">${items || '<span class="muted">eşya yok</span>'}</div>
+      ${build.note ? `<p class="build-note">${escapeHtml(build.note)}</p>` : ''}
+    </article>`;
+  }).join('');
+}
+
 /* ---------- bildirim ---------- */
 
 function toast(message) {
@@ -880,6 +918,19 @@ function bindEvents() {
     renderItems();
   });
 
+  els.buildList?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-item-id]');
+    if (!button) return;
+    const item = itemById(button.dataset.itemId);
+    if (!item) return;
+    const block = document.getElementById('items');
+    if (block) block.open = true;
+    state.itemQuery = item.nameTr;
+    if (els.itemSearch) els.itemSearch.value = item.nameTr;
+    renderItems();
+    block?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
   els.roles.addEventListener('click', (event) => {
     const button = event.target.closest('[data-role]');
     if (!button) return;
@@ -931,7 +982,8 @@ function cacheElements() {
     'summary', 'summary-body', 'btn-copy', 'btn-close', 'toast', 'data-badge',
     'format-toggle', 'firstpick-toggle', 'settings-hint',
     'btn-save-comp', 'comp-list', 'comps-count', 'comps-empty',
-    'item-search', 'item-list', 'item-count', 'items-empty'];
+    'item-search', 'item-list', 'item-count', 'items-empty',
+    'build-list', 'builds-count', 'builds-empty'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
@@ -968,6 +1020,16 @@ async function boot() {
     state.items = [];
   }
 
+  try {
+    const response = await fetch('./data/builds.json', { cache: 'no-cache' });
+    if (response.ok) {
+      const data = await response.json();
+      state.builds = Array.isArray(data.builds) ? data.builds : [];
+    }
+  } catch {
+    state.builds = [];
+  }
+
   const saved = restore();
   state.format = saved ? saved.format : 'tournament';
   state.firstPick = saved ? saved.firstPick : 'blue';
@@ -982,6 +1044,7 @@ async function boot() {
   renderRoles();
   renderComps();
   renderItems();
+  renderBuilds();
   renderTimer();
   render();
 

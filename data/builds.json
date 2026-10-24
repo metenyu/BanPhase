@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "kind": "builds",
+  "updatedAt": "2026-10-25",
+  "count": 1,
+  "note": "Build'ler kullanıcı tarafından girilir. Eşya id'leri data/items.json ile eşleşmeli.",
+  "builds": [
+    {
+      "heroId": "claude",
+      "role": "marksman",
+      "items": [
+        "direnc-botu",
+        "altin-asa",
+        "bozulma-tirpani",
+        "kis-taci",
+        "kaotik-silah",
+        "canavar-avcisi-kilici"
+      ],
+      "note": "Bot tercihi rakibe göre değişir; varsayılan büyü direnci botu. Kış Tacı savunma için, Kaotik Silah menzil için.",
+      "source": "kullanıcı"
+    }
+  ]
+}

@@ -92,6 +92,27 @@ for (const item of raw.items) {
 
 items.sort((a, b) => a.nameTr.localeCompare(b.nameTr, 'tr'));
 
+// Elle eklenen eşyalar (OCR'da bulunmayanlar)
+let manual = { items: [] };
+try {
+  manual = JSON.parse(await readFile('data/source/items-manual.json', 'utf8'));
+} catch {
+  manual = { items: [] };
+}
+for (const extra of manual.items ?? []) {
+  if (items.some((item) => item.id === extra.id)) continue;
+  items.push({
+    id: extra.id,
+    nameTr: extra.nameTr,
+    category: extra.category ?? 'other',
+    stats: extra.stats ?? [],
+    passiveTr: extra.passiveTr ?? null,
+    englishName: extra.englishName ?? null,
+    evidence: extra.source ?? 'elle eklendi',
+  });
+}
+items.sort((a, b) => a.nameTr.localeCompare(b.nameTr, 'tr'));
+
 const byCat = {};
 for (const item of items) byCat[item.category] = (byCat[item.category] ?? 0) + 1;
 

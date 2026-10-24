@@ -693,6 +693,59 @@ button { font: inherit; color: inherit; }
   line-height: 1.35;
 }
 
+/* ---------- build'ler ---------- */
+
+.builds {
+  margin-top: 26px;
+  scroll-margin-top: 130px;
+}
+
+.build-list {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.build-card {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.build-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.build-hero { font-size: .92rem; font-weight: 700; }
+
+.build-role {
+  font-size: .62rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.build-items { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+
+.build-item {
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: .68rem;
+  cursor: pointer;
+}
+
+.build-item:hover { border-color: var(--blue); }
+
+.build-note { font-size: .72rem; color: var(--muted); }
+
 /* ---------- comp'lar ---------- */
 
 .comps { margin-top: 26px; }

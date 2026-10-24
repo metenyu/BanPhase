@@ -2,7 +2,7 @@
   "schema": 1,
   "kind": "items",
   "generatedAt": "2026-10-24",
-  "count": 62,
+  "count": 63,
   "source": "Oyun içi eşya ekran görüntüleri (kullanıcı), OCR + elle düzeltmeler",
   "licenseNote": "Eşya adları ve açıklamaları Moonton'a aittir; yalnızca atıflı, ticari olmayan kullanım.",
   "note": "Her eşyanın pasifi olmak zorunda değil (ör. botlar). Pasif yoksa null.",
@@ -18,7 +18,7 @@
     "other": 9,
     "magic": 11,
     "kutsama": 7,
-    "attack": 14,
+    "attack": 15,
     "defense": 14,
     "movement": 7
   },
@@ -307,6 +307,28 @@
       ],
       "passiveTr": "Eşsiz Pasif - Mana Baharı: Her 10 saniyede bir Maksimum Mananın 15% kadarını yeniler. Eşsiz Pasif - Büyü Ustalığı: Maksimum Bekleme Süresi Düşürme limitini 5% arttırır.",
       "evidence": "2 ekran görüntüsü"
+    },
+    {
+      "id": "canavar-avcisi-kilici",
+      "nameTr": "Canavar Avcısı Kılıcı",
+      "category": "attack",
+      "stats": [
+        {
+          "key": "physical_attack",
+          "labelTr": "Fiziksel Saldırı",
+          "value": 35,
+          "percent": false
+        },
+        {
+          "key": "attack_speed",
+          "labelTr": "Saldırı Hızı",
+          "value": 20,
+          "percent": true
+        }
+      ],
+      "passiveTr": "Eşsiz Pasif - Yutma: Temel Saldırılar hedefin mevcut Canının %8'i kadar ekstra Fiziksel Hasar verir (minyonlara karşı 60 ile sınırlıdır). Eşsiz Pasif - Yutkunma: Her Temel Saldırı 10(+4*Kahraman Seviyesi) Can yeniler; bu etki minyonlara karşı yarıya iner.",
+      "englishName": "Demon Hunter Sword",
+      "evidence": "kullanıcı + Fandom (İngilizce metin)"
     },
     {
       "id": "cennet-tuyu",

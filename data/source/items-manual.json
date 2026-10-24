@@ -1,0 +1,18 @@
+{
+  "note": "OCR'da bulunmayan, kullanıcı tarafından eklenen eşyalar. build-items.mjs bunları kataloğa ekler.",
+  "updatedAt": "2026-10-25",
+  "items": [
+    {
+      "id": "canavar-avcisi-kilici",
+      "nameTr": "Canavar Avcısı Kılıcı",
+      "englishName": "Demon Hunter Sword",
+      "category": "attack",
+      "stats": [
+        { "key": "physical_attack", "labelTr": "Fiziksel Saldırı", "value": 35, "percent": false },
+        { "key": "attack_speed", "labelTr": "Saldırı Hızı", "value": 20, "percent": true }
+      ],
+      "passiveTr": "Eşsiz Pasif - Yutma: Temel Saldırılar hedefin mevcut Canının %8'i kadar ekstra Fiziksel Hasar verir (minyonlara karşı 60 ile sınırlıdır). Eşsiz Pasif - Yutkunma: Her Temel Saldırı 10(+4*Kahraman Seviyesi) Can yeniler; bu etki minyonlara karşı yarıya iner.",
+      "source": "kullanıcı + Fandom (İngilizce metin)"
+    }
+  ]
+}

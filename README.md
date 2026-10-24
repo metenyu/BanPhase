@@ -44,8 +44,10 @@ Edge headless + CDP ile gerçek tarayıcıda koşuldu:
 - **Draft sonrası kompozisyon analizi:** takım bazında ana rol dağılımı, eksik rol uyarıları
   ve etiketli kahramanlarda engage/hasar/koridor özeti
 - **Kayıtlı draftlar:** iki takımın compunu birlikte kaydet, galeride tut (cihazda)
-- **Eşyalar:** 62 eşya (7'si Pençe Kutsaması), Türkçe ad + stat + pasif, arama ile
+- **Eşyalar:** 63 eşya (7'si Pençe Kutsaması), Türkçe ad + stat + pasif, arama ile
   filtrelenir (oyun içi ekran görüntülerinden OCR ile çıkarıldı)
+- **Build'ler:** kahraman + koridor + eşya dizisi; eşya adına dokununca eşya detayı açılır
+  (`data/builds.json`)
 - PWA: çevrimdışı açılır, ana ekrana eklenebilir
 
 ## Çalıştırma
