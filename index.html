@@ -6,8 +6,8 @@
   <title>BanPhase — Master the Draft</title>
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#070b14">
-  <meta name="build" content="2026-10-25.3">
+  <meta name="theme-color" content="#090c13">
+  <meta name="build" content="2026-10-25.4">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
@@ -19,12 +19,12 @@
   <header class="topbar">
     <div class="wrap topbar-inner">
       <div class="brand">
-        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M16 2.5 27.5 7v9.2c0 6.3-4.6 11.1-11.5 13.3C9.1 27.3 4.5 22.5 4.5 16.2V7L16 2.5Z"
-                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M11 11h7.2a3.4 3.4 0 0 1 0 6.8H11V11Zm0 6.8h7.6a3.4 3.4 0 0 1 0 6.8H11v-6.8Z"
-                fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M6 26 26 6" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M13 4H7a3 3 0 0 0-3 3v6m23-9h6a3 3 0 0 1 3 3v6M36 27v6a3 3 0 0 1-3 3h-6M13 36H7a3 3 0 0 1-3-3v-6"
+                fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M14 11h8a4.5 4.5 0 0 1 0 9h-8v-9Zm0 9h9a4.5 4.5 0 0 1 0 9h-9v-9Z"
+                fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="m10 30 20-20" stroke="#a18bff" stroke-width="2" stroke-linecap="round"/>
         </svg>
         <div class="brand-text">
           <h1>BanPhase</h1>
@@ -49,10 +49,12 @@
 
   <main class="wrap">
     <section class="intro">
-      <p class="eyebrow">MOBA draft aracı</p>
-      <h2 class="intro-title">Ban ve pick'ini planla, kompozisyonunu gör.</h2>
-      <p class="intro-sub">Turnuva ve Ranked formatı, 133 kahraman, Türkçe eşya kataloğu ve
-        kompozisyon analizi. Ücretsiz, reklamsız, hesap yok.</p>
+      <div class="intro-copy">
+        <p class="eyebrow">MOBA draft aracı</p>
+        <h2 class="intro-title">Ban ve pick'ini planla, kompozisyonunu gör.</h2>
+        <p class="intro-sub">Turnuva ve Ranked formatı, 133 kahraman, Türkçe eşya kataloğu ve
+          kompozisyon analizi. Ücretsiz, reklamsız, hesap yok.</p>
+      </div>
       <ul class="intro-stats">
         <li><strong>133</strong><span>kahraman</span></li>
         <li><strong id="intro-items">63</strong><span>eşya</span></li>
@@ -75,6 +77,16 @@
       <div class="turnbar-info">
         <p class="turn-team" id="turn-team">Mavi Takım</p>
         <p class="turn-slot" id="turn-slot">1. ban</p>
+      </div>
+      <div class="turnbar-progress">
+        <div class="progress-meta">
+          <span>Draft ilerlemesi</span>
+          <span id="draft-progress-label">0 / 20 hamle</span>
+        </div>
+        <div class="progress-track" id="draft-progress" role="progressbar" aria-label="Draft ilerlemesi"
+             aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" aria-valuetext="0 / 20 hamle">
+          <span class="progress-fill" id="progress-fill"></span>
+        </div>
       </div>
       <div class="timer" id="timer" role="timer" aria-live="off">30</div>
       <div class="turnbar-actions">
@@ -105,8 +117,11 @@
     <section class="heroes" id="heroes">
       <div class="heroes-head">
         <h2>Kahramanlar <span class="muted" id="hero-count"></span></h2>
-        <input id="search" type="search" placeholder="Ara: Fanny, tank, destek…"
-               autocomplete="off" spellcheck="false" aria-label="Kahraman ara">
+        <div class="search-control">
+          <input id="search" type="search" placeholder="Ara: Fanny, tank, destek…"
+                 autocomplete="off" spellcheck="false" aria-label="Kahraman ara" aria-keyshortcuts="/">
+          <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+        </div>
       </div>
       <div class="roles" id="roles" role="group" aria-label="Rol filtresi"></div>
       <div class="grid" id="hero-grid"></div>

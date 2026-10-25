@@ -305,6 +305,17 @@ function renderTurn() {
     els.turnSlot.textContent = `${slot.teamIndex + 1}. ${TYPE_LABEL[slot.type]} · ${state.cursor + 1}/${state.slots.length}${nextText}`;
   }
 
+  const progressMax = state.slots.length;
+  const progressValue = state.slots.filter((item) => item.heroId || item.skipped).length;
+  const progressText = `${progressValue} / ${progressMax} hamle`;
+  if (els.draftProgress) {
+    els.draftProgress.setAttribute('aria-valuemax', String(progressMax));
+    els.draftProgress.setAttribute('aria-valuenow', String(progressValue));
+    els.draftProgress.setAttribute('aria-valuetext', state.finished ? 'Draft tamamlandı' : progressText);
+  }
+  if (els.draftProgressLabel) els.draftProgressLabel.textContent = state.finished ? 'Tamamlandı' : progressText;
+  if (els.progressFill) els.progressFill.style.width = `${progressMax ? (progressValue / progressMax) * 100 : 0}%`;
+
   els.formatToggle?.querySelectorAll('[data-format]').forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.format === state.format));
   });
@@ -341,9 +352,14 @@ function slotMarkup(slot) {
 
   const tone = hero ? hue(hero.id) : 'transparent';
   const face = hero ? initials(hero.name) : (slot.heroId ? '?' : '—');
-  return `<li class="${classes.join(' ')}" data-index="${slot.index}"${isActive ? ' aria-current="true"' : ''} style="--tone:${tone}">
-    <span class="slot-no">${slot.teamIndex + 1}</span>
-    <span class="slot-face">${face}</span>
+  const canSelect = isFreePhase() && slot.type === 'ban' && !slot.heroId;
+  const label = `${TEAM_LABEL[slot.team]}, ${slot.teamIndex + 1}. ${slot.type === 'ban' ? 'ban' : 'seçim'}, ${hero?.name ?? (slot.skipped ? 'atlandı' : 'boş')}`;
+  return `<li class="slot-cell">
+    <button class="${classes.join(' ')}" type="button" data-index="${slot.index}"
+      aria-label="${escapeHtml(label)}"${isActive ? ' aria-current="step"' : ''}${canSelect ? '' : ' disabled'} style="--tone:${tone}">
+      <span class="slot-no">${slot.teamIndex + 1}</span>
+      <span class="slot-face">${face}</span>
+    </button>
   </li>`;
 }
 
@@ -408,10 +424,10 @@ function renderHeroes() {
     const stateText = usage === 'ban' ? ', banlandı' : (usage === 'pick' ? ', seçildi' : '');
     return `<button class="${classes.join(' ')}" type="button"
       data-hero-id="${hero.id}" ${usage ? 'disabled' : ''}
-      aria-label="${hero.name}, ${roleText}${stateText}">
-      <span class="hero-art" style="--tone:${hue(hero.id)}">${initials(hero.name)}</span>
-      <span class="hero-name">${hero.name}</span>
-      <span class="hero-role">${roleText}</span>
+      aria-label="${escapeHtml(hero.name)}, ${escapeHtml(roleText)}${stateText}">
+      <span class="hero-art" style="--tone:${hue(hero.id)}"><span class="hero-initials">${escapeHtml(initials(hero.name))}</span></span>
+      <span class="hero-name">${escapeHtml(hero.name)}</span>
+      <span class="hero-role">${escapeHtml(roleText)}</span>
     </button>`;
   }).join('');
 }
@@ -958,7 +974,11 @@ function bindEvents() {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === '/' && document.activeElement !== els.search) {
+    const target = event.target;
+    const isTyping = target instanceof HTMLElement
+      && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName));
+    if (event.key === '/' && !event.altKey && !event.ctrlKey && !event.metaKey
+      && !isTyping && document.activeElement !== els.search) {
       event.preventDefault();
       els.search.focus();
     }
@@ -985,7 +1005,8 @@ function cacheElements() {
     'format-toggle', 'firstpick-toggle', 'settings-hint',
     'btn-save-comp', 'comp-list', 'comps-count', 'comps-empty',
     'item-search', 'item-list', 'item-count', 'items-empty',
-    'build-list', 'builds-count', 'builds-empty', 'intro-items', 'intro-builds'];
+    'build-list', 'builds-count', 'builds-empty', 'intro-items', 'intro-builds',
+    'draft-progress', 'draft-progress-label', 'progress-fill'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
