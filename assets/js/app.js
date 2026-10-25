@@ -37,6 +37,7 @@ const state = {
   items: [],
   itemQuery: '',
   builds: [],
+  buildQuery: '',
   finished: false,
   timer: { remaining: CONFIG.banSeconds, running: false, deadline: 0, handle: 0, armed: false },
 };
@@ -879,11 +880,29 @@ function itemById(id) {
 
 function renderBuilds() {
   if (!els.buildList) return;
-  els.buildsCount.textContent = state.builds.length ? `${state.builds.length}` : '';
+  const query = fold(state.buildQuery.trim());
+  const builds = state.builds.filter((build) => {
+    if (!query) return true;
+    const hero = state.heroById.get(build.heroId);
+    const role = String(build.role ?? '');
+    const roleLabel = ROLE_TR[role.toLowerCase()] ?? role;
+    const itemNames = (build.items ?? []).map((id) => itemById(id)?.nameTr ?? id);
+    const searchable = [hero?.name, build.heroId, role, roleLabel, build.lane, build.note, ...itemNames]
+      .filter(Boolean).join(' ');
+    return fold(searchable).includes(query);
+  });
+  els.buildsCount.textContent = state.buildQuery.trim()
+    ? `${builds.length}/${state.builds.length}`
+    : state.builds.length ? `${state.builds.length}` : '';
   if (els.introBuilds) els.introBuilds.textContent = String(state.builds.length);
-  els.buildsEmpty.hidden = state.builds.length > 0;
+  els.buildsEmpty.hidden = builds.length > 0;
+  if (!builds.length) {
+    els.buildsEmpty.textContent = state.builds.length
+      ? 'Bu aramaya uyan build yok.'
+      : 'Henüz kaynak bilgisi bulunan build eklenmedi; öneri uydurulmuyor.';
+  }
 
-  els.buildList.innerHTML = state.builds.map((build) => {
+  els.buildList.innerHTML = builds.map((build) => {
     const hero = state.heroById.get(build.heroId);
     const name = hero ? hero.name : build.heroId;
     const role = ROLE_TR[String(build.role ?? '').toLowerCase()] ?? build.role ?? '';
@@ -961,6 +980,11 @@ function bindEvents() {
     renderItems();
   });
 
+  els.buildSearch?.addEventListener('input', (event) => {
+    state.buildQuery = event.target.value;
+    renderBuilds();
+  });
+
   els.buildList?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-item-id]');
     if (!button) return;
@@ -1030,7 +1054,7 @@ function cacheElements() {
     'format-toggle', 'firstpick-toggle', 'settings-hint',
     'btn-save-comp', 'comp-list', 'comps-count', 'comps-empty',
     'item-search', 'item-list', 'item-count', 'items-empty',
-    'build-list', 'builds-count', 'builds-empty', 'intro-items', 'intro-builds',
+    'build-search', 'build-list', 'builds-count', 'builds-empty', 'intro-items', 'intro-builds',
     'draft-progress', 'draft-progress-label', 'progress-fill'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }

@@ -226,6 +226,8 @@ input::placeholder { color: #66758b; }
 .comps { margin-top: 35px; }
 .comps-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 18px; margin-bottom: 13px; }
 .builds .comps-head { margin-bottom: 13px; }
+#build-search { width: min(100%, 430px); margin: 0 0 12px; }
+.catalog-note { margin: -5px 0 13px; color: var(--muted); font-size: .72rem; line-height: 1.5; }
 .build-item { padding: 4px 8px; border: 1px solid var(--line); border-radius: 7px; background: #111a26; color: #dce5f2; font-size: .66rem; cursor: pointer; transition: border-color .15s, background .15s; }
 .build-item:hover { border-color: rgba(85, 214, 223, .4); background: #1a2934; }
 .build-items { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }

@@ -25,17 +25,19 @@ resetTimer = () => {};
 stopTimer = () => {};
 showSummary = () => {};
 closeSummary = () => {};
-globalThis.api = { state, sequence, buildSlots, placeHero, skipSlot, undo, resetDraft, setFormat, setFirstPick, visibleHeroes, renderHeroes, renderItems, save, restore, compAnalysis, saveComp, loadComps, stubCompRender: () => { renderComps = () => {}; }, els };
+globalThis.api = { state, sequence, buildSlots, placeHero, skipSlot, undo, resetDraft, setFormat, setFirstPick, visibleHeroes, renderHeroes, renderItems, renderBuilds, save, restore, compAnalysis, saveComp, loadComps, stubCompRender: () => { renderComps = () => {}; }, els };
 `, sandbox);
 const { api } = sandbox;
 const heroesData = JSON.parse(readFileSync(resolve(root, 'data/heroes.json'), 'utf8'));
 const itemsData = JSON.parse(readFileSync(resolve(root, 'data/items.json'), 'utf8'));
+const buildsData = JSON.parse(readFileSync(resolve(root, 'data/builds.json'), 'utf8'));
 const { state } = api;
 state.heroes = heroesData.heroes;
 state.heroById = new Map(state.heroes.map((hero) => [hero.id, hero]));
 state.roles = heroesData.roles;
 state.dataLoaded = true;
 state.items = itemsData.items;
+state.builds = buildsData.builds;
 
 for (const team of ['blue', 'red']) {
   state.format = 'tournament';
@@ -75,6 +77,8 @@ state.slots[10].heroId = state.heroes[10].id;
 state.cursor = 11;
 api.save();
 assert.equal(api.restore().slots[10].heroId, state.heroes[10].id, 'draft survives localStorage restore');
+storage.set('banphase.draft.v2', JSON.stringify({ v: 2, format: 'ranked', slots: [{ heroId: 'unknown-hero' }] }));
+assert.equal(api.restore(), null, 'malformed/stale draft record is rejected without throwing');
 api.resetDraft();
 assert.equal(state.slots.every((slot) => !slot.heroId && !slot.skipped), true, 'reset clears draft');
 
@@ -109,4 +113,26 @@ state.itemQuery = 'eşleşmeyen arama';
 api.renderItems();
 assert.equal(api.els.itemsEmpty.hidden, false, 'item search empty state');
 
-console.log('App behavior passed: tournament/ranked turns, both first picks, ban/pick, skip, undo, reset, hero search/role filter, item search/uncertain state, localStorage restore.');
+Object.assign(api.els, {
+  buildList: { innerHTML: '' }, buildsCount: { textContent: '' },
+  buildsEmpty: { hidden: true, textContent: '' }, introBuilds: { textContent: '' },
+});
+state.buildQuery = 'claude';
+api.renderBuilds();
+assert.match(api.els.buildList.innerHTML, /Claude/, 'build search matches hero name');
+assert.match(api.els.buildList.innerHTML, /data-item-id="direnc-botu"/, 'build items link to item details');
+state.buildQuery = 'nişancı';
+api.renderBuilds();
+assert.match(api.els.buildList.innerHTML, /Claude/, 'build search matches translated role');
+state.buildQuery = 'eşleşmeyen';
+api.renderBuilds();
+assert.equal(api.els.buildsEmpty.hidden, false, 'build search empty state');
+state.builds = [];
+state.buildQuery = '';
+api.renderBuilds();
+assert.match(api.els.buildsEmpty.textContent, /kaynak bilgisi/, 'missing builds are described without inventing a recommendation');
+
+const missingStyles = heroesData.heroes.filter((hero) => !hero.tags?.style?.length).map((hero) => hero.name).sort();
+assert.deepEqual(missingStyles, ['Angela', 'Baxia', 'Kimmy', 'Valir', 'Xavier'], 'incomplete style tags are documented, not inferred');
+
+console.log('App behavior passed: tournament/ranked turns, both first picks, ban/pick, skip, undo, reset, hero search/role filter, item search/uncertain state, build search/item links/empty state, malformed localStorage recovery.');

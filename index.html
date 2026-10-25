@@ -7,7 +7,7 @@
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#090c13">
-  <meta name="build" content="2026-10-25.6">
+  <meta name="build" content="2026-10-25.7">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
@@ -129,6 +129,7 @@
         </div>
       </div>
       <div class="roles" id="roles" role="group" aria-label="Rol filtresi"></div>
+      <p class="catalog-note">Katalog kimlik ve rol bilgisi sunar; yetenek açıklamaları ve lisansı doğrulanmış portreler mevcut veri paketinde yoktur.</p>
       <div class="grid" id="hero-grid"></div>
       <p class="empty" id="empty" hidden>Bu filtreye uyan kahraman yok.</p>
     </section>
@@ -146,8 +147,10 @@
         <h2>Build'ler <span class="muted" id="builds-count"></span></h2>
         <p class="muted">Kahraman + koridor + eşya dizisi. Eşya adına dokununca detayı açılır.</p>
       </div>
+      <input id="build-search" type="search" placeholder="Build ara: kahraman, rol veya eşya…"
+             autocomplete="off" spellcheck="false" aria-label="Build ara">
       <div class="build-list" id="build-list"></div>
-      <p class="empty" id="builds-empty" hidden>Henüz build yok.</p>
+      <p class="empty" id="builds-empty" hidden></p>
     </section>
 
     <section class="comps" id="comps">

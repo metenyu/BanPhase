@@ -31,6 +31,17 @@ check(heroes.length > 0 && heroesData.count === heroes.length, 'heroes.json coun
 check(unique(heroes, 'id').size === heroes.length, 'heroes.json has duplicate or missing IDs');
 check(unique(heroes, 'name').size === heroes.length, 'heroes.json has duplicate or missing names');
 check(heroes.every((hero) => hero.id && hero.name && Array.isArray(hero.roles) && hero.roles.length), 'hero record is missing identity or roles');
+const styles = new Set(['dive', 'engage', 'pickoff', 'poke', 'split-push', 'sustain']);
+const lanes = new Set(['exp', 'jungle', 'mid', 'gold', 'roam']);
+const missingStyleHeroes = heroes.filter((hero) => !Array.isArray(hero.tags?.style) || hero.tags.style.length === 0).map((hero) => hero.name).sort();
+check(JSON.stringify(missingStyleHeroes) === JSON.stringify(['Angela', 'Baxia', 'Kimmy', 'Valir', 'Xavier']), `hero style-tag coverage changed unexpectedly: ${missingStyleHeroes.join(', ')}`);
+for (const hero of heroes) {
+  check(hero.tags && Array.isArray(hero.tags.lanes) && hero.tags.lanes.every((lane) => lanes.has(lane)), `hero ${hero.id} has invalid lane tags`);
+  check(Array.isArray(hero.tags?.style) && hero.tags.style.every((style) => styles.has(style)), `hero ${hero.id} has invalid style tags`);
+  check(['physical', 'magic', 'mixed'].includes(hero.tags?.damage), `hero ${hero.id} has invalid damage tag`);
+  check(['low', 'medium', 'high'].includes(hero.tags?.engage), `hero ${hero.id} has invalid engage tag`);
+  check(['low', 'medium', 'high'].includes(hero.tags?.confidence), `hero ${hero.id} has invalid tag confidence`);
+}
 check(items.length > 0 && itemsData.count === items.length, 'items.json count/catalog mismatch');
 check(unique(items, 'id').size === items.length, 'items.json has duplicate or missing IDs');
 check(items.length === 63, `expected 63 item records, found ${items.length}`);
@@ -85,6 +96,9 @@ check(css.includes('@media (max-width:720px)') && css.includes('@media (max-widt
 check(css.includes('prefers-reduced-motion'), 'reduced-motion support is missing');
 
 const sw = readFileSync(resolve(root, 'sw.js'), 'utf8');
+check(/const VERSION = 'banphase-v\d+'/.test(sw), 'service worker cache version is missing');
+check(sw.includes('self.skipWaiting()') && sw.includes('self.clients.claim()'), 'service worker update activation is incomplete');
+check(sw.includes("request.mode === 'navigate'") && sw.includes("url.pathname.endsWith('.json')"), 'service worker navigation/JSON network-first behavior is missing');
 for (const [, asset] of sw.matchAll(/^\s+'(\.\/[^']+)'\s*,?$/gm)) {
   check(existsSync(resolve(root, asset.slice(2))), `service worker asset missing: ${asset}`);
 }
@@ -103,5 +117,5 @@ if (failures.length) {
   console.error(`BanPhase validation failed (${failures.length}):\n- ${failures.join('\n- ')}`);
   process.exitCode = 1;
 } else {
-  console.log(`BanPhase validation passed: ${heroes.length} heroes, ${items.length} items (${items.filter((item) => item.dataQuality?.status === 'partial').length} explicitly partial), ${builds.length} builds; JSON, item quality, references, responsive markers, local assets and JavaScript syntax are valid.`);
+  console.log(`BanPhase validation passed: ${heroes.length} heroes (${missingStyleHeroes.length} missing style tags), ${items.length} items (${items.filter((item) => item.dataQuality?.status === 'partial').length} explicitly partial), ${builds.length} builds; JSON, item quality, references, responsive markers, PWA update markers, local assets and JavaScript syntax are valid.`);
 }
