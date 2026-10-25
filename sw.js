@@ -1,12 +1,13 @@
 /* BanPhase service worker — kabuk önbelleği.
    Şablon dosyalar önce önbellekten, JSON verisi önce ağdan (çevrimdışıysa önbellek). */
 
-const VERSION = 'banphase-v23';
+const VERSION = 'banphase-v24';
 const SHELL = [
   './',
   './index.html',
   './assets/css/style.css',
   './assets/js/app.js',
+  './assets/images/arena-hero.webp',
   './manifest.webmanifest',
   './icons/icon.svg',
   './icons/icon-192.png',
