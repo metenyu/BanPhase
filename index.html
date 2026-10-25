@@ -7,7 +7,7 @@
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#070611">
-  <meta name="build" content="2026-10-25.9">
+  <meta name="build" content="2026-10-25.10">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
@@ -31,20 +31,20 @@
           <p class="tagline">Master the Draft.</p>
         </div>
       </div>
+      <nav class="site-nav" aria-label="Bölümler">
+        <div class="nav-inner">
+          <a href="#draft">Draft</a>
+          <a href="#heroes">Kahramanlar</a>
+          <a href="#items">Eşyalar</a>
+          <a href="#builds">Build'ler</a>
+          <a href="#comps">Kayıtlı</a>
+        </div>
+      </nav>
       <div class="topbar-actions">
         <span class="chip" id="data-badge" hidden title="Veri kaynağı durumu">veri</span>
         <button class="btn btn-ghost" id="btn-reset" type="button">Sıfırla</button>
       </div>
     </div>
-    <nav class="site-nav" aria-label="Bölümler">
-      <div class="wrap nav-inner">
-        <a href="#draft">Draft</a>
-        <a href="#heroes">Kahramanlar</a>
-        <a href="#items">Eşyalar</a>
-        <a href="#builds">Build'ler</a>
-        <a href="#comps">Kayıtlı</a>
-      </div>
-    </nav>
   </header>
 
   <main class="wrap">
@@ -73,34 +73,10 @@
       <span class="settings-hint" id="settings-hint"></span>
     </div>
 
-    <section class="turnbar" aria-live="polite">
-      <div class="turnbar-info">
-        <p class="turn-team" id="turn-team">Mavi Takım</p>
-        <p class="turn-slot" id="turn-slot">1. ban</p>
-      </div>
-      <div class="turnbar-progress">
-        <div class="progress-meta">
-          <span>Draft ilerlemesi</span>
-          <span id="draft-progress-label">0 / 20 hamle</span>
-        </div>
-        <div class="progress-track" id="draft-progress" role="progressbar" aria-label="Draft ilerlemesi"
-             aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" aria-valuetext="0 / 20 hamle">
-          <span class="progress-fill" id="progress-fill"></span>
-        </div>
-      </div>
-      <div class="timer" id="timer" role="timer" aria-live="off">30</div>
-      <div class="turnbar-actions">
-        <button class="btn btn-solid" id="btn-timer" type="button">Başlat</button>
-        <button class="btn btn-ghost" id="btn-undo" type="button">Geri al</button>
-        <button class="btn btn-ghost" id="btn-skip" type="button">Atla</button>
-        <button class="btn btn-solid" id="btn-summary" type="button" hidden>Özet</button>
-      </div>
-    </section>
-
     <section class="draft" id="draft" aria-labelledby="draft-title">
       <div class="arena-heading">
-        <div><p class="section-kicker">LIVE ARENA · 01</p><h2 id="draft-title">Pick &amp; Ban Arenası</h2></div>
-        <span class="arena-live"><span aria-hidden="true"></span> TASLAK AÇIK</span>
+        <div><p class="section-kicker">BANPHASE · COMPETITIVE DRAFT</p><h2 id="draft-title">Pick <span>&amp;</span> Ban Arenası</h2></div>
+        <span class="arena-live"><span aria-hidden="true"></span> ARENA CANLI</span>
       </div>
       <article class="team team-blue" data-team="blue">
         <header class="team-head">
@@ -109,6 +85,30 @@
         </header>
         <div class="slot-rows" id="slots-blue" aria-label="Mavi takım banları ve seçimleri"></div>
       </article>
+      <section class="turnbar" aria-live="polite">
+        <div class="turnbar-title"><span class="turnbar-orbit" aria-hidden="true"></span><span>ŞİMDİKİ HAMLE</span></div>
+        <div class="turnbar-info">
+          <p class="turn-team" id="turn-team">Mavi Takım</p>
+          <p class="turn-slot" id="turn-slot">1. ban</p>
+        </div>
+        <div class="timer" id="timer" role="timer" aria-live="off">30</div>
+        <div class="turnbar-progress">
+          <div class="progress-meta">
+            <span>Draft ilerlemesi</span>
+            <span id="draft-progress-label">0 / 20 hamle</span>
+          </div>
+          <div class="progress-track" id="draft-progress" role="progressbar" aria-label="Draft ilerlemesi"
+               aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" aria-valuetext="0 / 20 hamle">
+            <span class="progress-fill" id="progress-fill"></span>
+          </div>
+        </div>
+        <div class="turnbar-actions">
+          <button class="btn btn-solid" id="btn-timer" type="button">Başlat</button>
+          <button class="btn btn-ghost" id="btn-undo" type="button">Geri al</button>
+          <button class="btn btn-ghost" id="btn-skip" type="button">Atla</button>
+          <button class="btn btn-solid" id="btn-summary" type="button" hidden>Özet</button>
+        </div>
+      </section>
       <article class="team team-red" data-team="red">
         <header class="team-head">
           <h2>Kırmızı Takım</h2>
@@ -118,11 +118,7 @@
       </article>
     </section>
 
-    <section class="live-analysis" aria-labelledby="analysis-title">
-      <div class="section-heading"><div><p class="section-kicker">TEAM INTEL · 02</p><h2 id="analysis-title">Takım kompozisyonu</h2></div><p class="muted">Rol ve mevcut etiket verilerinden canlı özet</p></div>
-      <div class="analysis-grid" id="live-analysis"></div>
-    </section>
-
+    <div class="roster-layout">
     <section class="heroes" id="heroes" aria-labelledby="heroes-title">
       <div class="heroes-head">
         <div><p class="section-kicker">ROSTER · 01</p><h2 id="heroes-title">Kahraman seçimi <span class="muted" id="hero-count"></span></h2></div>
@@ -137,6 +133,11 @@
       <div class="grid" id="hero-grid"></div>
       <p class="empty" id="empty" hidden>Bu filtreye uyan kahraman yok.</p>
     </section>
+    <aside class="live-analysis" aria-labelledby="analysis-title">
+      <div class="section-heading"><div><p class="section-kicker">TEAM INTEL · LIVE</p><h2 id="analysis-title">Takım analizi</h2></div><p class="muted">Seçili kahramanlardan</p></div>
+      <div class="analysis-grid" id="live-analysis"></div>
+    </aside>
+    </div>
 
     <details class="items-block" id="items">
       <summary>Eşyalar <span class="muted" id="item-count"></span></summary>
