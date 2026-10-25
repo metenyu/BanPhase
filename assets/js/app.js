@@ -382,7 +382,9 @@ function slotMarkup(slot) {
     <button class="${classes.join(' ')}" type="button" data-index="${slot.index}"
       aria-label="${escapeHtml(label)}"${isActive ? ' aria-current="step"' : ''}${canSelect ? '' : ' disabled'} style="--tone:${tone}">
       <span class="slot-no">${slot.teamIndex + 1}</span>
-      <span class="slot-face">${face}</span>
+      <span class="slot-face">${hero
+        ? `<span class="slot-initials">${escapeHtml(face)}</span><span class="slot-name">${escapeHtml(hero.name)}</span>`
+        : `<span class="slot-initials">${escapeHtml(face)}</span>`}</span>
     </button>
   </li>`;
 }
@@ -447,7 +449,7 @@ function renderHeroes() {
     const roleText = hero.roles.join(' · ');
     const stateText = usage === 'ban' ? ', banlandı' : (usage === 'pick' ? ', seçildi' : '');
     return `<button class="${classes.join(' ')}" type="button"
-      data-hero-id="${hero.id}" ${usage ? 'disabled' : ''}
+      data-hero-id="${hero.id}" data-primary-role="${escapeHtml(hero.primaryRole ?? hero.roles[0] ?? '')}" ${usage ? 'disabled' : ''}
       aria-label="${escapeHtml(hero.name)}, ${escapeHtml(roleText)}${stateText}">
       <span class="hero-art" style="--tone:${hue(hero.id)}"><span class="hero-initials">${escapeHtml(initials(hero.name))}</span></span>
       <span class="hero-name">${escapeHtml(hero.name)}</span>

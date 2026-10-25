@@ -8,8 +8,8 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#080b12",
-  "theme_color": "#080b12",
+  "background_color": "#070611",
+  "theme_color": "#070611",
   "categories": ["games", "sports", "utilities"],
   "icons": [
     {
