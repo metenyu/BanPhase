@@ -10,11 +10,135 @@
       "nameTr": "Adalet Kılıcı",
       "englishName": "Divine Glaive",
       "stats": [
-        { "key": "magic_power", "labelTr": "Büyü Gücü", "value": 60, "percent": false },
-        { "key": "magic_penetration", "labelTr": "Büyü Nüfuzu", "value": 40, "percent": true }
+        {
+          "key": "magic_power",
+          "labelTr": "Büyü Gücü",
+          "value": 60,
+          "percent": false
+        },
+        {
+          "key": "magic_penetration",
+          "labelTr": "Büyü Nüfuzu",
+          "value": 40,
+          "percent": true
+        }
       ],
       "passiveTr": "Eşsiz Pasif - Büyü Bozucu: Rakip kahramanlara Büyü Hasarı verirken, rakibin her 1 Büyü Direnci için 0.1% Büyü Nüfuzu kazanılır; bu etki 20% ile sınırlıdır.",
       "source": "mlbbhub.com/items/divine-glaive (25.10.2026)"
+    },
+    "ekipman-kutsamasi-alev-pencesi": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "Kaynak ekran görüntüsündeki OCR açıklamayı güvenilir biçimde okuyamamış; tahmini metin yayımlanmıyor."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "ekipman-kutsamasi-buz-pencesi": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "Kaynak ekran görüntüsündeki OCR açıklamayı güvenilir biçimde okuyamamış; tahmini metin yayımlanmıyor."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "ekipman-kutsamasi-pasif-cesaretlendir": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "Kaynak ekran görüntüsündeki OCR açıklamayı güvenilir biçimde okuyamamış; tahmini metin yayımlanmıyor."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "ekipman-kutsamasi-pasif-dehset-darbesi": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "Kaynak ekran görüntüsündeki OCR açıklamayı güvenilir biçimde okuyamamış; tahmini metin yayımlanmıyor."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "ekipman-kutsamasi-aktif-gizle": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "Kaynak ekran görüntüsündeki OCR açıklamayı güvenilir biçimde okuyamamış; tahmini metin yayımlanmıyor."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "ekipman-kutsamasi-pasif-iyilik": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "Kaynak ekran görüntüsündeki OCR açıklamayı güvenilir biçimde okuyamamış; tahmini metin yayımlanmıyor."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "ekipman-kutsamasi-kanli-pence": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "Kaynak ekran görüntüsündeki OCR açıklamayı güvenilir biçimde okuyamamış; tahmini metin yayımlanmıyor."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "ayaz": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "OCR iki pasif açıklamasını birleştirip bozmuş; doğrulanmış Türkçe tam metin bulunamadı."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "dilek-feneri": {
+      "passiveTr": null,
+      "dataQuality": {
+        "status": "partial",
+        "unverifiedFields": [
+          "passiveTr"
+        ],
+        "note": "OCR hasar eşiğini ve cümle sonunu bozmuş; tahmini değer yayımlanmıyor."
+      },
+      "source": "OCR kaynağı yetersiz"
+    },
+    "buz-kralicesinin-degnegi": {
+      "passiveTr": "Eşsiz Pasif - Buz Bağı: Bir rakip kahramana becerilerle vurmak onu 2 saniyeliğine 10% yavaşlatır (3 yükle sınırlıdır). Bu etkinin 0.4 saniye bekleme süresi vardır.",
+      "source": "Mobile Legends: Bang Bang Wiki (İngilizce oyun metni; Türkçe çeviri)"
+    },
+    "ulu-ejder-mizragi": {
+      "passiveTr": "Eşsiz Pasif - Yüce Savaşçı: Ulti kullanmak 7.5 saniyeliğine 30% Hareket Hızı kazandırır. Bu etkinin 15 saniye bekleme süresi vardır.",
+      "source": "OCR düzeltmesi: 309% → 30%"
+    },
+    "yedi-denizin-kilici": {
+      "passiveTr": "Eşsiz özellik: +15 Fiziksel Zırh Delme Eşsiz Pasif - Pusu: 5 saniye boyunca hasar alınmazsa veya verilmezse (minyonlar veya orman canavarları hariç) bir sonraki Temel Saldırı gelişerek ek 160 (+40% Toplam Fiziksel Saldırı) Fiziksel Hasar verir ve hedefi 1.5 saniyeliğine 40% yavaşlatır.",
+      "source": "OCR düzeltmesi: 409% → 40%"
+    },
+    "yildirim-copu": {
+      "passiveTr": "Eşsiz Pasif - Yankı: Her 6 saniyede bir yapılan beceri kullanımı yankılanarak menzildeki tüm rakiplere ekstra 255 (+85% Toplam Büyü Gücü) Büyü Hasarı verir."
     }
   }
 }

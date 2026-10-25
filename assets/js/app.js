@@ -859,7 +859,9 @@ function renderItems() {
         <span class="item-cat">${CAT_TR[item.category] ?? ''}</span>
       </div>
       <div class="item-stats">${stats || '<span class="item-stat">stat yok</span>'}</div>
-      <p class="item-passive">${item.passiveTr ? escapeHtml(item.passiveTr) : '<span class="muted">Pasif yok — yalnızca stat verir.</span>'}</p>
+      <p class="item-passive">${item.passiveTr ? escapeHtml(item.passiveTr) : item.dataQuality?.status === 'partial'
+        ? `<span class="data-note" title="${escapeHtml(item.dataQuality.note ?? 'Kaynak metin doğrulanamadı.')}">Açıklama doğrulanamadı</span>`
+        : '<span class="muted">Pasif yok — yalnızca stat verir.</span>'}</p>
     </article>`;
   }).join('');
 }

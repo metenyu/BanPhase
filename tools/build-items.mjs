@@ -31,7 +31,7 @@ const STAT_KEYS = {
   'Mana': 'mana',
   'Mana Yenileme': 'mana_regen',
   'Bekleme Süresi Azaltma': 'cooldown_reduction',
-  'BS Düşürme': 'physical_penetration',
+  'BS Düşürme': 'cooldown_reduction',
   'Uyarlanabilir Saldırı': 'adaptive_attack',
 };
 
@@ -43,7 +43,12 @@ function parseStats(lines) {
     const labelTr = m[3].trim();
     const key = STAT_KEYS[labelTr];
     if (!key) continue;
-    out.push({ key, labelTr, value: Number(m[1]), percent: m[2] === '%' });
+    out.push({
+      key,
+      labelTr: key === 'cooldown_reduction' ? 'Bekleme Süresi Azaltma' : labelTr,
+      value: Number(m[1]) === 100 && key === 'cooldown_reduction' ? 10 : Number(m[1]),
+      percent: m[2] === '%',
+    });
   }
   return out;
 }
@@ -77,7 +82,7 @@ for (const item of raw.items) {
     nameTr = nameTr.charAt(0).toLocaleUpperCase('tr') + nameTr.slice(1);
   }
 
-  if (fix?.passiveTr) passive = fix.passiveTr;
+  if (Object.hasOwn(fix ?? {}, 'passiveTr')) passive = fix.passiveTr ?? '';
   if (fix?.nameTr) nameTr = fix.nameTr;
 
   items.push({
@@ -87,6 +92,7 @@ for (const item of raw.items) {
     category: BLESSING.test(item.nameTr) ? 'kutsama' : categoryOf(nameTr, stats),
     stats,
     passiveTr: passive.length > 5 ? passive : null,
+    ...(fix?.dataQuality ? { dataQuality: fix.dataQuality } : {}),
     evidence: item.imageCount ? `${item.imageCount} ekran görüntüsü` : null,
   });
 }

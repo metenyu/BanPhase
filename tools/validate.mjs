@@ -32,7 +32,28 @@ check(unique(heroes, 'name').size === heroes.length, 'heroes.json has duplicate 
 check(heroes.every((hero) => hero.id && hero.name && Array.isArray(hero.roles) && hero.roles.length), 'hero record is missing identity or roles');
 check(items.length > 0 && itemsData.count === items.length, 'items.json count/catalog mismatch');
 check(unique(items, 'id').size === items.length, 'items.json has duplicate or missing IDs');
-check(items.every((item) => item.id && item.nameTr), 'item record is missing identity');
+check(items.length === 63, `expected 63 item records, found ${items.length}`);
+const itemKeys = new Set(['id', 'nameTr', 'englishName', 'category', 'stats', 'passiveTr', 'evidence', 'dataQuality']);
+const statKeys = new Set(['key', 'labelTr', 'value', 'percent']);
+const suspiciousText = /Ona la|txxer|\b9W\b|başna|tuunca|verın|verır|409%|309%|\bBS Düşürme\b|\bI saniye\b/i;
+for (const [index, item] of items.entries()) {
+  check(item.id && item.nameTr?.trim(), `item ${index + 1} is missing identity`);
+  for (const key of Object.keys(item)) check(itemKeys.has(key), `item ${item.id} has unexpected field: ${key}`);
+  check(['attack', 'magic', 'defense', 'movement', 'kutsama', 'other'].includes(item.category), `item ${item.id} has invalid category`);
+  check(Array.isArray(item.stats), `item ${item.id} is missing stats array`);
+  for (const stat of item.stats ?? []) {
+    for (const key of Object.keys(stat)) check(statKeys.has(key), `item ${item.id} stat has unexpected field: ${key}`);
+    check(stat.key && stat.labelTr?.trim() && Number.isFinite(stat.value), `item ${item.id} has incomplete stat`);
+    check(stat.key !== 'physical_penetration' || /Zırh Delme/.test(stat.labelTr), `item ${item.id} has mislabeled physical penetration`);
+    check(!suspiciousText.test(stat.labelTr ?? ''), `item ${item.id} has corrupted stat label`);
+  }
+  check(item.passiveTr === null || (typeof item.passiveTr === 'string' && item.passiveTr.trim().length > 5), `item ${item.id} has incomplete passive text`);
+  check(!(item.passiveTr && suspiciousText.test(item.passiveTr)), `item ${item.id} has corrupted passive text`);
+  if (item.dataQuality) {
+    check(item.dataQuality.status === 'partial' && Array.isArray(item.dataQuality.unverifiedFields) && item.dataQuality.note?.trim(), `item ${item.id} has invalid data quality marker`);
+  }
+}
+check(itemsData.counts && Object.values(itemsData.counts).reduce((sum, count) => sum + count, 0) === items.length, 'items.json category totals mismatch');
 check(buildsData.count === builds.length, 'builds.json count mismatch');
 
 const heroIds = new Set(heroes.map((hero) => hero.id));
@@ -63,16 +84,19 @@ for (const [, asset] of sw.matchAll(/^\s+'(\.\/[^']+)'\s*,?$/gm)) {
   check(existsSync(resolve(root, asset.slice(2))), `service worker asset missing: ${asset}`);
 }
 
-for (const path of ['assets/js/app.js', 'sw.js', 'tools/preview.mjs', 'tools/preview-server.mjs']) {
+for (const path of ['assets/js/app.js', 'sw.js', 'tools/preview.mjs', 'tools/preview-server.mjs', 'tools/test-app.mjs']) {
   const file = resolve(root, path);
   if (!existsSync(file)) continue;
   const result = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
   check(result.status === 0, `${path} syntax error: ${(result.stderr || result.stdout).trim()}`);
 }
 
+const behavior = spawnSync(process.execPath, [resolve(root, 'tools/test-app.mjs')], { encoding: 'utf8' });
+check(behavior.status === 0, `application behavior tests failed: ${(behavior.stderr || behavior.stdout).trim()}`);
+
 if (failures.length) {
   console.error(`BanPhase validation failed (${failures.length}):\n- ${failures.join('\n- ')}`);
   process.exitCode = 1;
 } else {
-  console.log(`BanPhase validation passed: ${heroes.length} heroes, ${items.length} items, ${builds.length} builds; JSON, references, responsive markers, local assets and JavaScript syntax are valid.`);
+  console.log(`BanPhase validation passed: ${heroes.length} heroes, ${items.length} items (${items.filter((item) => item.dataQuality?.status === 'partial').length} explicitly partial), ${builds.length} builds; JSON, item quality, references, responsive markers, local assets and JavaScript syntax are valid.`);
 }
