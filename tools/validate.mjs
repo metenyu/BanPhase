@@ -21,6 +21,7 @@ function json(path) {
 const heroesData = json('data/heroes.json');
 const itemsData = json('data/items.json');
 const buildsData = json('data/builds.json');
+const itemAudit = readFileSync(resolve(root, 'docs/ESYA-DOGRULAMA-RAPORU.md'), 'utf8');
 const heroes = Array.isArray(heroesData.heroes) ? heroesData.heroes : [];
 const items = Array.isArray(itemsData.items) ? itemsData.items : [];
 const builds = Array.isArray(buildsData.builds) ? buildsData.builds : [];
@@ -54,6 +55,10 @@ for (const [index, item] of items.entries()) {
   }
 }
 check(itemsData.counts && Object.values(itemsData.counts).reduce((sum, count) => sum + count, 0) === items.length, 'items.json category totals mismatch');
+const auditRows = itemAudit.split(/\r?\n/).filter((line) => line.startsWith('| ') && !/^\|\s*(?:Eşya\s*\||[-| ]+$)/.test(line));
+const auditNames = auditRows.map((line) => line.split('|')[1]?.trim());
+check(auditNames.length === items.length, `item audit report must contain ${items.length} item rows; found ${auditNames.length}`);
+check(new Set(auditNames).size === auditNames.length && items.every((item) => auditNames.includes(item.nameTr)), 'item audit report is missing or duplicates item names');
 check(buildsData.count === builds.length, 'builds.json count mismatch');
 
 const heroIds = new Set(heroes.map((hero) => hero.id));
