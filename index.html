@@ -7,7 +7,7 @@
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#090c13">
-  <meta name="build" content="2026-10-25.4">
+  <meta name="build" content="2026-10-25.5">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
@@ -48,10 +48,10 @@
   </header>
 
   <main class="wrap">
-    <section class="intro">
+    <section class="intro" aria-labelledby="intro-title">
       <div class="intro-copy">
-        <p class="eyebrow">MOBA draft aracı</p>
-        <h2 class="intro-title">Ban ve pick'ini planla, kompozisyonunu gör.</h2>
+        <p class="eyebrow"><span class="status-orbit" aria-hidden="true"></span> BANPHASE · DRAFT ROOM</p>
+        <h2 class="intro-title" id="intro-title">Draft masasında<br><span>kontrol sende.</span></h2>
         <p class="intro-sub">Turnuva ve Ranked formatı, 133 kahraman, Türkçe eşya kataloğu ve
           kompozisyon analizi. Ücretsiz, reklamsız, hesap yok.</p>
       </div>
@@ -114,9 +114,14 @@
       </article>
     </section>
 
-    <section class="heroes" id="heroes">
+    <section class="live-analysis" aria-labelledby="analysis-title">
+      <div class="section-heading"><div><p class="section-kicker">TEAM INTEL · 02</p><h2 id="analysis-title">Takım kompozisyonu</h2></div><p class="muted">Rol ve mevcut etiket verilerinden canlı özet</p></div>
+      <div class="analysis-grid" id="live-analysis"></div>
+    </section>
+
+    <section class="heroes" id="heroes" aria-labelledby="heroes-title">
       <div class="heroes-head">
-        <h2>Kahramanlar <span class="muted" id="hero-count"></span></h2>
+        <div><p class="section-kicker">ROSTER · 01</p><h2 id="heroes-title">Kahraman seçimi <span class="muted" id="hero-count"></span></h2></div>
         <div class="search-control">
           <input id="search" type="search" placeholder="Ara: Fanny, tank, destek…"
                  autocomplete="off" spellcheck="false" aria-label="Kahraman ara" aria-keyshortcuts="/">

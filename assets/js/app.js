@@ -281,7 +281,30 @@ function save() {
 function render() {
   renderTurn();
   renderBoard();
+  renderLiveAnalysis();
   renderHeroes();
+}
+
+function renderLiveAnalysis() {
+  const host = document.getElementById('live-analysis');
+  if (!host) return;
+  host.innerHTML = ['blue', 'red'].map((team) => {
+    const picks = state.slots.filter((slot) => slot.team === team && slot.type === 'pick' && slot.heroId)
+      .map((slot) => slot.heroId);
+    const analysis = compAnalysis(picks);
+    const roles = COMP_ROLES.map((role) =>
+      `<span class="analysis-role${analysis.counts[role] ? ' has-role' : ''}">${escapeHtml(role)}<b>${analysis.counts[role] ?? 0}</b></span>`
+    ).join('');
+    const tags = analysis.tagInfo.tagged
+      ? `<p class="analysis-data">Etiketli ${analysis.tagInfo.tagged}/${picks.length} · Engage ${analysis.tagInfo.engage} · Fiziksel ${analysis.tagInfo.physical} · Büyü ${analysis.tagInfo.magic}</p>`
+      : `<p class="analysis-data">${picks.length ? 'Etiket verisi yok; rol özeti gösteriliyor.' : 'Seçimler geldikçe rol dağılımı burada görünür.'}</p>`;
+    return `<article class="analysis-card ${team}">
+      <header><span class="team-dot ${team}" aria-hidden="true"></span><h3>${TEAM_LABEL[team]}</h3><span class="analysis-total">${picks.length}/5</span></header>
+      <div class="analysis-roles" aria-label="${TEAM_LABEL[team]} rol sayıları">${roles}</div>
+      ${tags}
+      ${analysis.tagInfo.tagged < picks.length && picks.length ? '<p class="analysis-caveat">Etiketler kısmi · analiz tahmin içerir</p>' : ''}
+    </article>`;
+  }).join('');
 }
 
 function renderTurn() {
