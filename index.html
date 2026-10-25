@@ -7,7 +7,7 @@
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#070611">
-  <meta name="build" content="2026-10-25.10">
+  <meta name="build" content="2026-10-25.12">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
@@ -34,13 +34,24 @@
       <nav class="site-nav" aria-label="Bölümler">
         <div class="nav-inner">
           <a href="#draft">Draft</a>
-          <a href="#heroes">Kahramanlar</a>
+          <a href="#analysis-panel">Analiz</a>
           <a href="#items">Eşyalar</a>
           <a href="#builds">Build'ler</a>
           <a href="#comps">Kayıtlı</a>
         </div>
       </nav>
       <div class="topbar-actions">
+        <div class="settings-row">
+          <div class="segmented" id="format-toggle" role="group" aria-label="Draft formatı">
+            <button class="seg" type="button" data-format="tournament" aria-pressed="true">Turnuva</button>
+            <button class="seg" type="button" data-format="ranked" aria-pressed="false">Ranked</button>
+          </div>
+          <div class="segmented" id="firstpick-toggle" role="group" aria-label="İlk seçim hakkı">
+            <button class="seg" type="button" data-firstpick="blue" aria-pressed="true">İlk: Mavi</button>
+            <button class="seg" type="button" data-firstpick="red" aria-pressed="false">İlk: Kırmızı</button>
+          </div>
+          <span class="settings-hint" id="settings-hint"></span>
+        </div>
         <span class="chip" id="data-badge" hidden title="Veri kaynağı durumu">veri</span>
         <button class="btn btn-ghost" id="btn-reset" type="button">Sıfırla</button>
       </div>
@@ -61,22 +72,11 @@
         <li><strong id="intro-builds">1</strong><span>build</span></li>
       </ul>
     </section>
-    <div class="settings-row">
-      <div class="segmented" id="format-toggle" role="group" aria-label="Draft formatı">
-        <button class="seg" type="button" data-format="tournament" aria-pressed="true">Turnuva</button>
-        <button class="seg" type="button" data-format="ranked" aria-pressed="false">Ranked</button>
-      </div>
-      <div class="segmented" id="firstpick-toggle" role="group" aria-label="İlk seçim hakkı">
-        <button class="seg" type="button" data-firstpick="blue" aria-pressed="true">İlk: Mavi</button>
-        <button class="seg" type="button" data-firstpick="red" aria-pressed="false">İlk: Kırmızı</button>
-      </div>
-      <span class="settings-hint" id="settings-hint"></span>
-    </div>
-
     <section class="draft" id="draft" aria-labelledby="draft-title">
-      <div class="arena-heading">
-        <div><p class="section-kicker">BANPHASE · COMPETITIVE DRAFT</p><h2 id="draft-title">Pick <span>&amp;</span> Ban Arenası</h2></div>
-        <span class="arena-live"><span aria-hidden="true"></span> ARENA CANLI</span>
+      <div class="arena-art" aria-hidden="true">
+        <span class="arena-arc arc-one"></span><span class="arena-arc arc-two"></span>
+        <span class="arena-core"></span><span class="arena-spark spark-one"></span>
+        <span class="arena-spark spark-two"></span><span class="arena-spark spark-three"></span>
       </div>
       <article class="team team-blue" data-team="blue">
         <header class="team-head">
@@ -85,6 +85,11 @@
         </header>
         <div class="slot-rows" id="slots-blue" aria-label="Mavi takım banları ve seçimleri"></div>
       </article>
+      <div class="arena-center">
+        <div class="arena-heading">
+          <div><p class="section-kicker">BANPHASE · COMPETITIVE DRAFT</p><h2 id="draft-title">Draft <span>Aşaması</span></h2><p class="arena-subtitle">Takımını seç, stratejini kur.</p></div>
+          <span class="arena-live"><span aria-hidden="true"></span> CANLI ARENA</span>
+        </div>
       <section class="turnbar" aria-live="polite">
         <div class="turnbar-title"><span class="turnbar-orbit" aria-hidden="true"></span><span>ŞİMDİKİ HAMLE</span></div>
         <div class="turnbar-info">
@@ -109,6 +114,7 @@
           <button class="btn btn-solid" id="btn-summary" type="button" hidden>Özet</button>
         </div>
       </section>
+      </div>
       <article class="team team-red" data-team="red">
         <header class="team-head">
           <h2>Kırmızı Takım</h2>
@@ -128,12 +134,18 @@
           <kbd class="search-shortcut" aria-hidden="true">/</kbd>
         </div>
       </div>
-      <div class="roles" id="roles" role="group" aria-label="Rol filtresi"></div>
-      <p class="catalog-note">Katalog kimlik ve rol bilgisi sunar; yetenek açıklamaları ve lisansı doğrulanmış portreler mevcut veri paketinde yoktur.</p>
-      <div class="grid" id="hero-grid"></div>
-      <p class="empty" id="empty" hidden>Bu filtreye uyan kahraman yok.</p>
+      <div class="catalog-layout">
+        <aside class="role-sidebar" aria-label="Rol kategorileri">
+          <div class="roles" id="roles" role="group" aria-label="Rol filtresi"></div>
+        </aside>
+        <div class="hero-catalog">
+          <p class="catalog-note">Kahraman kimliği ve rol bilgileri. Portre lisansı bulunmayanlar için yer tutucu kullanılır.</p>
+          <div class="grid" id="hero-grid"></div>
+          <p class="empty" id="empty" hidden>Bu filtreye uyan kahraman yok.</p>
+        </div>
+      </div>
     </section>
-    <aside class="live-analysis" aria-labelledby="analysis-title">
+    <aside class="live-analysis" id="analysis-panel" aria-labelledby="analysis-title">
       <div class="section-heading"><div><p class="section-kicker">TEAM INTEL · LIVE</p><h2 id="analysis-title">Takım analizi</h2></div><p class="muted">Seçili kahramanlardan</p></div>
       <div class="analysis-grid" id="live-analysis"></div>
     </aside>
@@ -201,6 +213,12 @@
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="status-dock" aria-label="Uygulama durumu">
+    <span class="status-brand"><span class="status-orbit" aria-hidden="true"></span> BanPhase</span>
+    <span class="connection-indicator"><i id="connection-dot" aria-hidden="true"></i><span id="connection-status">Bağlantı kontrol ediliyor</span></span>
+    <a href="#draft">Draft'a dön <span aria-hidden="true">↑</span></a>
+  </div>
 
   <noscript>
     <p class="wrap">BanPhase'i kullanmak için tarayıcında JavaScript'i açman gerekiyor.</p>

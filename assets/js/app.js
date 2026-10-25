@@ -379,12 +379,14 @@ function slotMarkup(slot) {
   const canSelect = isFreePhase() && slot.type === 'ban' && !slot.heroId;
   const label = `${TEAM_LABEL[slot.team]}, ${slot.teamIndex + 1}. ${slot.type === 'ban' ? 'ban' : 'seçim'}, ${hero?.name ?? (slot.skipped ? 'atlandı' : 'boş')}`;
   return `<li class="slot-cell">
-    <button class="${classes.join(' ')}" type="button" data-index="${slot.index}"
+    <button class="${classes.join(' ')}" type="button" data-index="${slot.index}" data-kind="${slot.type}"
       aria-label="${escapeHtml(label)}"${isActive ? ' aria-current="step"' : ''}${canSelect ? '' : ' disabled'} style="--tone:${tone}">
       <span class="slot-no">${slot.teamIndex + 1}</span>
       <span class="slot-face">${hero
         ? `<span class="slot-initials">${escapeHtml(face)}</span><span class="slot-name">${escapeHtml(hero.name)}</span>`
-        : `<span class="slot-initials">${escapeHtml(face)}</span>`}</span>
+        : slot.type === 'pick'
+          ? `<span class="slot-initials">${escapeHtml(face)}</span><span class="slot-name">Oyuncu ${slot.teamIndex + 1}</span>`
+          : `<span class="slot-initials">${escapeHtml(face)}</span>`}</span>
     </button>
   </li>`;
 }
@@ -1049,6 +1051,15 @@ function registerServiceWorker() {
   else window.addEventListener('load', start, { once: true });
 }
 
+function renderConnectionStatus() {
+  const label = document.getElementById('connection-status');
+  const dot = document.getElementById('connection-dot');
+  if (!label) return;
+  const online = navigator.onLine;
+  label.textContent = online ? 'Çevrimiçi' : 'Çevrim dışı';
+  dot?.classList.toggle('is-offline', !online);
+}
+
 function cacheElements() {
   const ids = ['turn-team', 'turn-slot', 'timer', 'btn-timer', 'btn-undo', 'btn-skip',
     'btn-summary', 'btn-reset', 'search', 'roles', 'hero-grid', 'hero-count', 'empty',
@@ -1064,6 +1075,9 @@ function cacheElements() {
 async function boot() {
   cacheElements();
   bindEvents();
+  renderConnectionStatus();
+  window.addEventListener('online', renderConnectionStatus);
+  window.addEventListener('offline', renderConnectionStatus);
   registerServiceWorker();
 
   try {
