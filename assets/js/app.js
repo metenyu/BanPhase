@@ -303,21 +303,19 @@ function renderLiveAnalysis() {
   if (!host) return;
   const sim = window.BanPhaseSimulation;
   if (sim) {
-    host.innerHTML = ['blue', 'red'].map((team) => {
+    const teams = Object.fromEntries(['blue', 'red'].map((team) => {
       const picks = state.slots.filter((slot) => slot.team === team && slot.type === 'pick' && slot.heroId).map((slot) => slot.heroId);
       const result = sim.analyzeTeam(picks, state.tagByHeroId, sim.SIM_CONFIG);
-      const laneText = result.missingLanes.length
-        ? `Eksik: ${result.missingLanes.map((lane) => sim.SIM_CONFIG.laneLabels[lane]).join(', ')}`
-        : 'Beş koridorun tamamı kapsanıyor';
-      const row = (label, value, detail) => `<div class="sim-analysis-row"><span class="sim-analysis-icon" aria-hidden="true">●</span><span class="sim-analysis-copy"><b>${label}</b><small>${escapeHtml(detail)}</small></span><strong>${escapeHtml(value)}</strong></div>`;
-      return `<article class="analysis-card ${team} sim-analysis-card">
-        <header><span class="team-dot ${team}" aria-hidden="true"></span><h3>${TEAM_LABEL[team]}</h3><span class="analysis-total">${picks.length}/5</span></header>
-        ${row('Lane kapsamı', result.laneStatus, laneText)}
-        ${row('Hasar dengesi', result.damageStatus, `Fiziksel ${result.physical} · Büyü ${result.magic}`)}
-        ${row('Etiket Uyumu', result.engageStatus, `Takım tipi · yüksek ${result.high} · orta ${result.medium} engage`)}
-        <div class="sim-score"><span>Genel skor</span><strong>${result.score}<small>/100</small></strong></div>
-      </article>`;
-    }).join('') + '<p class="sim-analysis-note">Kural tabanlı analiz, meta verisi değil.</p>';
+      const roles = new Set(picks.map((id) => state.heroById.get(id)?.primaryRole).filter(Boolean));
+      return [team, { picks, result, roles: roles.size, hasTags: picks.some((id) => state.tagByHeroId.has(id)) }];
+    }));
+    const value = (team, renderValue) => teams[team].picks.length ? renderValue(teams[team]) : '—';
+    const rows = [
+      ['Takım Dengesi', (data) => `${data.result.score}/100`],
+      ['Rol Dağılımı', (data) => `${data.roles} farklı rol`],
+      ['Etiket Uyumu', (data) => data.hasTags ? data.result.engageStatus : '—'],
+    ];
+    host.innerHTML = `<div class="analysis-label-row"><span></span><b>MAVİ</b><b>KIRMIZI</b></div>${rows.map(([label, renderValue]) => `<div class="analysis-line"><span class="analysis-check" aria-label="Hesaplandı">✓</span><strong>${label}</strong><span>${escapeHtml(value('blue', renderValue))}</span><span>${escapeHtml(value('red', renderValue))}</span></div>`).join('')}<div class="analysis-sparkline" aria-label="Geçmiş analiz verisi yok"><svg viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><path d="M1 18H99"/></svg><small>Geçmiş analiz verisi yok</small></div><p class="sim-analysis-note">Kural tabanlı analiz, meta verisi değil.</p>`;
     return;
   }
   host.innerHTML = ['blue', 'red'].map((team) => {
@@ -414,7 +412,7 @@ function slotMarkup(slot) {
   const canSelect = isFreePhase() && slot.type === 'ban' && !slot.heroId;
   const label = `${TEAM_LABEL[slot.team]}, ${slot.teamIndex + 1}. ${slot.type === 'ban' ? 'ban' : 'seçim'}, ${hero?.name ?? (slot.skipped ? 'atlandı' : 'boş')}`;
   return `<li class="slot-cell">
-    <button class="${classes.join(' ')}" type="button" data-index="${slot.index}" data-kind="${slot.type}"
+    <button class="${classes.join(' ')}" type="button" data-index="${slot.index}" data-kind="${slot.type}" data-team="${slot.team}"
       aria-label="${escapeHtml(label)}"${isActive ? ' aria-current="step"' : ''}${canSelect ? '' : ' disabled'} style="--tone:${tone}">
       <span class="slot-no">${slot.teamIndex + 1}</span>
       <span class="slot-face">${hero
@@ -432,23 +430,31 @@ function renderBoard() {
     if (!host) continue;
 
     const teamSlots = state.slots.filter((slot) => slot.team === team);
-    host.innerHTML = ['ban', 'pick'].map((type) => {
-      const group = teamSlots.filter((slot) => slot.type === type);
-      if (!group.length) return '';
-      const label = type === 'ban' ? 'Ban' : 'Seçim';
-      return `<div class="slot-row">
-        <span class="row-label">${label}</span>
-        <ul class="slots" style="--cols:${group.length}">${group.map(slotMarkup).join('')}</ul>
-      </div>`;
-    }).join('');
+    const picks = teamSlots.filter((slot) => slot.type === 'pick');
+    host.innerHTML = `<div class="player-list">${picks.map((slot) => {
+      const hero = slot.heroId ? state.heroById.get(slot.heroId) : null;
+      const name = hero?.name ?? `Oyuncu ${slot.teamIndex + 1}`;
+      const avatar = hero ? escapeHtml(initials(hero.name)) : '';
+      return `<div class="player-row${hero ? ' has-hero' : ''}" data-player-slot="${slot.index}"><span class="player-avatar" style="--tone:${hero ? hue(hero.id) : 'hsl(222 50% 17%)'}">${avatar}</span><span class="player-name" title="${escapeHtml(name)}">${escapeHtml(name)}</span></div>`;
+    }).join('')}</div>`;
 
     const bans = teamSlots.filter((s) => s.type === 'ban');
-    const picks = teamSlots.filter((s) => s.type === 'pick');
     const chip = document.querySelector(`[data-count="${team}"]`);
     if (chip) {
       chip.textContent = `${bans.filter((s) => s.heroId).length}/${bans.length} ban · ${picks.filter((s) => s.heroId).length}/${picks.length} seçim`;
     }
   }
+  renderPhaseStrip();
+}
+
+function renderPhaseStrip() {
+  const write = (id, slots) => {
+    const host = document.getElementById(id);
+    if (host) host.innerHTML = `<ul class="phase-slot-list">${slots.map(slotMarkup).join('')}</ul>`;
+  };
+  write('phase-bans-blue', state.slots.filter((slot) => slot.team === 'blue' && slot.type === 'ban'));
+  write('phase-picks', state.slots.filter((slot) => slot.type === 'pick'));
+  write('phase-bans-red', state.slots.filter((slot) => slot.team === 'red' && slot.type === 'ban'));
 }
 
 function visibleHeroes() {
@@ -497,11 +503,15 @@ function renderHeroes() {
 
 function renderRoles() {
   const roles = ['all', ...state.roles];
+  const icons = { all: '▦', Tank: '⬡', 'Savaşçı': '⚔', 'Suikastçı': '✦', 'Büyücü': '✧', 'Nişancı': '➶', 'Destek': '✚' };
   els.roles.innerHTML = roles.map((role) => {
     const label = role === 'all' ? 'Tümü' : role;
-    return `<button class="role" type="button" data-role="${role}"
-      aria-pressed="${state.role === role}">${label}</button>`;
+    return `<button class="role" type="button" data-role="${escapeHtml(role)}" aria-pressed="${state.role === role}"><span aria-hidden="true">${icons[role] ?? '◈'}</span>${escapeHtml(label)}${role === state.role ? '<b aria-hidden="true">›</b>' : ''}</button>`;
   }).join('');
+  if (els.roleSelect) {
+    els.roleSelect.innerHTML = `<option value="all">Tüm Roller</option>${state.roles.map((role) => `<option value="${escapeHtml(role)}">${escapeHtml(role)}</option>`).join('')}`;
+    els.roleSelect.value = state.role;
+  }
 }
 
 function renderTimer() {
@@ -1118,6 +1128,12 @@ function bindEvents() {
     renderHeroes();
   });
 
+  els.roleSelect?.addEventListener('change', (event) => {
+    state.role = event.target.value;
+    renderRoles();
+    renderHeroes();
+  });
+
   els.heroGrid.addEventListener('click', (event) => {
     const button = event.target.closest('[data-hero-id]');
     if (button) placeHero(button.dataset.heroId);
@@ -1131,6 +1147,17 @@ function bindEvents() {
     const slot = state.slots[idx];
     if (!slot || slot.type !== 'ban' || slot.heroId) return;
     state.freeSlot = idx;
+    render();
+  });
+
+  document.querySelector('.phase-strip')?.addEventListener('click', (event) => {
+    if (!isFreePhase()) return;
+    const element = event.target.closest('.slot');
+    if (!element) return;
+    const index = Number(element.dataset.index);
+    const slot = state.slots[index];
+    if (!slot || slot.type !== 'ban' || slot.heroId) return;
+    state.freeSlot = index;
     render();
   });
 
@@ -1164,7 +1191,7 @@ function renderConnectionStatus() {
   const dot = document.getElementById('connection-dot');
   if (!label) return;
   const online = navigator.onLine;
-  label.textContent = online ? 'Çevrimiçi' : 'Çevrim dışı';
+  label.textContent = online ? 'Çevrimiçi' : 'Çevrimdışı';
   dot?.classList.toggle('is-offline', !online);
 }
 
@@ -1177,6 +1204,7 @@ function cacheElements() {
     'item-search', 'item-list', 'item-count', 'items-empty',
     'build-search', 'build-list', 'builds-count', 'builds-empty', 'intro-items', 'intro-builds',
     'draft-progress', 'draft-progress-label', 'progress-fill', 'battle-dialog', 'battle-title', 'battle-body', 'battle-actions'];
+  ids.push('role-select');
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
