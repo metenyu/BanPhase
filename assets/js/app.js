@@ -26,6 +26,8 @@ const state = {
   heroById: new Map(),
   roles: [],
   dataLoaded: false,
+  tagByHeroId: new Map(),
+  simulation: null,
   slots: [],
   format: 'tournament',
   firstPick: 'blue',
@@ -44,6 +46,7 @@ const state = {
 
 const els = {};
 let toastTimer = 0;
+let battleTimer = 0;
 
 /* ---------- yardımcılar ---------- */
 
@@ -253,7 +256,15 @@ function restore() {
 
     const cursor = Math.min(Math.max(Number(data.cursor) || 0, 0), slots.length);
     const finished = Boolean(data.finished);
-    return { slots, cursor, finished, format, firstPick, freeSlot: null };
+    const battle = data.simulation?.result;
+    const validBattle = battle && ['blue', 'red', 'draw'].includes(battle.winner)
+      && Array.isArray(battle.lanes) && battle.lanes.length === 5
+      && battle.laneWins && ['blue', 'red', 'draw'].every((team) => Number.isInteger(battle.laneWins[team]))
+      && typeof battle.series === 'string' && battle.teamScore
+      && ['blue', 'red'].every((team) => Number.isFinite(battle.teamScore[team]));
+    const simulation = data.finished && validBattle
+      && ['animating', 'result'].includes(data.simulation.status) ? data.simulation : null;
+    return { slots, cursor, finished, format, firstPick, freeSlot: null, simulation };
   } catch {
     return null;
   }
@@ -271,6 +282,7 @@ function save() {
       })),
       cursor: state.cursor,
       finished: state.finished,
+      simulation: state.simulation,
     }));
   } catch {
     /* gizli mod / kota dolu */
@@ -289,6 +301,25 @@ function render() {
 function renderLiveAnalysis() {
   const host = document.getElementById('live-analysis');
   if (!host) return;
+  const sim = window.BanPhaseSimulation;
+  if (sim) {
+    host.innerHTML = ['blue', 'red'].map((team) => {
+      const picks = state.slots.filter((slot) => slot.team === team && slot.type === 'pick' && slot.heroId).map((slot) => slot.heroId);
+      const result = sim.analyzeTeam(picks, state.tagByHeroId, sim.SIM_CONFIG);
+      const laneText = result.missingLanes.length
+        ? `Eksik: ${result.missingLanes.map((lane) => sim.SIM_CONFIG.laneLabels[lane]).join(', ')}`
+        : 'Beş koridorun tamamı kapsanıyor';
+      const row = (label, value, detail) => `<div class="sim-analysis-row"><span class="sim-analysis-icon" aria-hidden="true">●</span><span class="sim-analysis-copy"><b>${label}</b><small>${escapeHtml(detail)}</small></span><strong>${escapeHtml(value)}</strong></div>`;
+      return `<article class="analysis-card ${team} sim-analysis-card">
+        <header><span class="team-dot ${team}" aria-hidden="true"></span><h3>${TEAM_LABEL[team]}</h3><span class="analysis-total">${picks.length}/5</span></header>
+        ${row('Lane kapsamı', result.laneStatus, laneText)}
+        ${row('Hasar dengesi', result.damageStatus, `Fiziksel ${result.physical} · Büyü ${result.magic}`)}
+        ${row('Etiket Uyumu', result.engageStatus, `Takım tipi · yüksek ${result.high} · orta ${result.medium} engage`)}
+        <div class="sim-score"><span>Genel skor</span><strong>${result.score}<small>/100</small></strong></div>
+      </article>`;
+    }).join('') + '<p class="sim-analysis-note">Kural tabanlı analiz, meta verisi değil.</p>';
+    return;
+  }
   host.innerHTML = ['blue', 'red'].map((team) => {
     const picks = state.slots.filter((slot) => slot.team === team && slot.type === 'pick' && slot.heroId)
       .map((slot) => slot.heroId);
@@ -355,6 +386,10 @@ function renderTurn() {
   els.btnSkip.disabled = done;
   els.btnUndo.disabled = !hasHistory();
   els.btnSummary.hidden = !done;
+  const draftControlsLocked = state.simulation?.status === 'animating';
+  els.btnUndo.disabled = draftControlsLocked || !hasHistory();
+  els.btnReset.disabled = draftControlsLocked;
+  els.btnSummary.disabled = draftControlsLocked;
 
   document.querySelectorAll('.team').forEach((card) => {
     const team = card.dataset.team;
@@ -608,6 +643,8 @@ function undo() {
   if (idx < 0) return toast('Geri alınacak hamle yok.');
 
   const slot = state.slots[idx];
+  window.clearTimeout?.(battleTimer);
+  state.simulation = null;
   slot.heroId = null;
   slot.skipped = false;
   state.finished = false;
@@ -622,6 +659,7 @@ function undo() {
 
   state.timer.armed = false;
   closeSummary();
+  closeBattle();
   resetTimer(false);
   save();
   render();
@@ -632,9 +670,60 @@ function finishDraft() {
   state.finished = true;
   state.timer.armed = false;
   stopTimer();
+  const sim = window.BanPhaseSimulation;
+  if (sim) {
+    const teamPicks = (team) => state.slots.filter((slot) => slot.team === team && slot.type === 'pick' && slot.heroId).map((slot) => slot.heroId);
+    const result = sim.simulateBattle(teamPicks('blue'), teamPicks('red'), state.tagByHeroId, sim.SIM_CONFIG);
+    const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    state.simulation = { status: reducedMotion ? 'result' : 'animating', startedAt: Date.now(), result };
+  }
   save();
   render();
-  showSummary();
+  if (state.simulation) {
+    renderBattle();
+    if (state.simulation.status === 'animating') {
+      battleTimer = window.setTimeout(showBattleResult, window.BanPhaseSimulation.SIM_CONFIG.battleMs);
+    }
+  } else showSummary();
+}
+
+function showBattleResult() {
+  window.clearTimeout?.(battleTimer);
+  if (!state.simulation) return;
+  state.simulation.status = 'result';
+  save();
+  renderBattle();
+}
+
+function renderBattle() {
+  if (!els.battleDialog || !state.simulation) return;
+  const { status, result } = state.simulation;
+  const teamNames = (team) => state.slots.filter((slot) => slot.team === team && slot.type === 'pick' && slot.heroId)
+    .map((slot) => state.heroById.get(slot.heroId)?.name ?? slot.heroId);
+  if (status === 'animating') {
+    els.battleTitle.textContent = 'Draft savaşı başlıyor';
+    els.battleBody.innerHTML = `<div class="battle-clash" aria-label="Simülasyon animasyonu"><div class="battle-roster blue">${teamNames('blue').map((name) => `<span>${escapeHtml(name)}</span>`).join('')}</div><span class="battle-vs" aria-hidden="true">VS</span><div class="battle-roster red">${teamNames('red').map((name) => `<span>${escapeHtml(name)}</span>`).join('')}</div></div><p class="battle-copy">Takım kompozisyonları karşı karşıya geliyor…</p>`;
+    els.battleActions.innerHTML = '<button class="btn btn-solid" id="btn-battle-skip" type="button">Atla</button>';
+  } else {
+    const winnerLabel = result.winner === 'draw' ? 'Berabere' : `${TEAM_LABEL[result.winner]} Kazandı`;
+    const laneLines = result.lanes.map((lane) => {
+      const blueName = lane.blueHeroId ? state.heroById.get(lane.blueHeroId)?.name ?? lane.blueHeroId : '—';
+      const redName = lane.redHeroId ? state.heroById.get(lane.redHeroId)?.name ?? lane.redHeroId : '—';
+      const laneWinner = lane.winner === 'draw' ? 'Berabere' : TEAM_LABEL[lane.winner];
+      const flexible = lane.blueFlexible || lane.redFlexible ? ' · Esnek eşleşme' : '';
+      return `<li><span>${escapeHtml(lane.label)}</span><span>${escapeHtml(blueName)} <i>vs</i> ${escapeHtml(redName)}</span><strong>${escapeHtml(laneWinner)}${flexible}</strong></li>`;
+    }).join('');
+    const mvp = result.mvp ? `<section class="battle-mvp"><span>MVP</span><strong>${escapeHtml(state.heroById.get(result.mvp.heroId)?.name ?? result.mvp.heroId)}</strong><p>${escapeHtml(result.mvp.reason)}</p></section>` : '<section class="battle-mvp"><strong>MVP yok</strong><p>Simülasyon berabere bitti.</p></section>';
+    els.battleTitle.textContent = winnerLabel;
+    els.battleBody.innerHTML = `<p class="battle-series">Seri skoru <strong>${result.series}</strong> <span>· ${result.laneWins.draw} berabere koridor</span></p><ul class="battle-lanes">${laneLines}</ul>${mvp}<p class="battle-disclaimer">Bu bir kural tabanlı simülasyondur, gerçek maç sonucunu tahmin etmez.</p>`;
+    els.battleActions.innerHTML = '<button class="btn btn-ghost" id="btn-battle-new" type="button">Yeni draft</button><button class="btn btn-solid" id="btn-battle-close" type="button">Kapat</button>';
+  }
+  if (!els.battleDialog.open && typeof els.battleDialog.showModal === 'function') els.battleDialog.showModal();
+  (status === 'animating' ? document.getElementById('btn-battle-skip') : document.getElementById('btn-battle-new'))?.focus();
+}
+
+function closeBattle() {
+  if (els.battleDialog?.open) els.battleDialog.close();
 }
 
 function resetDraft() {
@@ -643,9 +732,12 @@ function resetDraft() {
   state.cursor = 0;
   state.freeSlot = null;
   state.finished = false;
+  state.simulation = null;
+  window.clearTimeout?.(battleTimer);
   state.timer.armed = false;
   resetTimer(false);
   closeSummary();
+  closeBattle();
   save();
   render();
   toast('Tahta sıfırlandı.');
@@ -659,9 +751,12 @@ function setFormat(format) {
   state.cursor = 0;
   state.freeSlot = null;
   state.finished = false;
+  state.simulation = null;
+  window.clearTimeout?.(battleTimer);
   state.timer.armed = false;
   resetTimer(false);
   closeSummary();
+  closeBattle();
   save();
   render();
   toast(`${CONFIG.formats[format].label}: ${CONFIG.formats[format].hint}`);
@@ -675,9 +770,12 @@ function setFirstPick(team) {
   state.cursor = 0;
   state.freeSlot = null;
   state.finished = false;
+  state.simulation = null;
+  window.clearTimeout?.(battleTimer);
   state.timer.armed = false;
   resetTimer(false);
   closeSummary();
+  closeBattle();
   save();
   render();
   toast(`İlk seçim: ${TEAM_LABEL[team]}.`);
@@ -958,6 +1056,16 @@ function bindEvents() {
   els.btnCopy.addEventListener('click', copySummary);
   els.btnClose.addEventListener('click', closeSummary);
   els.btnSaveComp.addEventListener('click', saveComp);
+  els.battleActions.addEventListener('click', (event) => {
+    if (event.target.closest('#btn-battle-skip')) showBattleResult();
+    if (event.target.closest('#btn-battle-close')) closeBattle();
+    if (event.target.closest('#btn-battle-new')) resetDraft();
+  });
+  els.battleDialog.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    if (state.simulation?.status === 'animating') showBattleResult();
+    else closeBattle();
+  });
 
   els.compList.addEventListener('click', (event) => {
     const button = event.target.closest('[data-del]');
@@ -1068,7 +1176,7 @@ function cacheElements() {
     'btn-save-comp', 'comp-list', 'comps-count', 'comps-empty',
     'item-search', 'item-list', 'item-count', 'items-empty',
     'build-search', 'build-list', 'builds-count', 'builds-empty', 'intro-items', 'intro-builds',
-    'draft-progress', 'draft-progress-label', 'progress-fill'];
+    'draft-progress', 'draft-progress-label', 'progress-fill', 'battle-dialog', 'battle-title', 'battle-body', 'battle-actions'];
   for (const id of ids) els[id.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = document.getElementById(id);
 }
 
@@ -1099,6 +1207,16 @@ async function boot() {
   }
 
   try {
+    const response = await fetch('./data/source/hero_tags.json', { cache: 'no-cache' });
+    if (response.ok) {
+      const data = await response.json();
+      const knownIds = new Set(state.heroes.map((hero) => hero.id));
+      state.tagByHeroId = new Map((Array.isArray(data.heroes) ? data.heroes : [])
+        .filter((tag) => tag && knownIds.has(tag.heroId)).map((tag) => [tag.heroId, tag]));
+    }
+  } catch { state.tagByHeroId = new Map(); }
+
+  try {
     const response = await fetch('./data/items.json', { cache: 'no-cache' });
     if (response.ok) {
       const data = await response.json();
@@ -1124,6 +1242,7 @@ async function boot() {
   state.slots = saved ? saved.slots : buildSlots(state.format, state.firstPick);
   state.cursor = saved ? saved.cursor : 0;
   state.finished = saved ? saved.finished : false;
+  state.simulation = saved?.simulation ?? null;
   state.freeSlot = null;
 
   if (!saved && state.format === 'ranked') state.freeSlot = 0;
@@ -1136,7 +1255,15 @@ async function boot() {
   renderTimer();
   render();
 
-  if (state.finished) showSummary();
+  if (state.finished && !state.simulation && window.BanPhaseSimulation) {
+    const picks = (team) => state.slots.filter((slot) => slot.team === team && slot.type === 'pick' && slot.heroId).map((slot) => slot.heroId);
+    state.simulation = { status: 'result', startedAt: Date.now(), result: window.BanPhaseSimulation.simulateBattle(picks('blue'), picks('red'), state.tagByHeroId) };
+    save();
+  }
+  if (state.finished) {
+    if (state.simulation?.status === 'animating') state.simulation.status = 'result';
+    renderBattle();
+  }
 }
 
 boot().catch((error) => {

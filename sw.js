@@ -1,12 +1,13 @@
 /* BanPhase service worker — kabuk önbelleği.
    Şablon dosyalar önce önbellekten, JSON verisi önce ağdan (çevrimdışıysa önbellek). */
 
-const VERSION = 'banphase-v24';
+const VERSION = 'banphase-v25';
 const SHELL = [
   './',
   './index.html',
   './assets/css/style.css',
   './assets/js/app.js',
+  './assets/js/simulation.js',
   './assets/images/arena-hero.webp',
   './manifest.webmanifest',
   './icons/icon.svg',
@@ -15,6 +16,7 @@ const SHELL = [
   './data/heroes.json',
   './data/items.json',
   './data/builds.json',
+  './data/source/hero_tags.json',
 ];
 
 self.addEventListener('install', (event) => {

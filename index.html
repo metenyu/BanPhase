@@ -7,11 +7,12 @@
   <meta name="description" content="Ücretsiz, reklamsız, mobil öncelikli ban aşaması yardımcısı. V1 Türkçe.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#070611">
-  <meta name="build" content="2026-10-25.13">
+  <meta name="build" content="2026-10-26.1">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/simulation.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#heroes">Kahraman listesine geç</a>
@@ -211,6 +212,12 @@
       <button class="btn btn-solid" id="btn-copy" type="button">Metni kopyala</button>
       <button class="btn btn-ghost" id="btn-close" type="button">Kapat</button>
     </div>
+  </dialog>
+
+  <dialog class="sheet battle-sheet" id="battle-dialog" role="dialog" aria-modal="true" aria-labelledby="battle-title">
+    <h2 id="battle-title">Draft simülasyonu</h2>
+    <div id="battle-body" aria-live="polite"></div>
+    <div class="sheet-actions" id="battle-actions"></div>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
