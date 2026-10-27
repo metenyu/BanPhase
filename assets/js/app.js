@@ -39,6 +39,9 @@ const state = {
   items: [],
   itemQuery: '',
   builds: [],
+  community: { icons: [], ceplinEquipment: [], ceplinBuilds: [], kaggleInsights: [] },
+  communityIconByHeroId: new Map(),
+  communityKaggleByHeroId: new Map(),
   buildQuery: '',
   finished: false,
   timer: { remaining: CONFIG.banSeconds, running: false, deadline: 0, handle: 0, armed: false },
@@ -315,7 +318,14 @@ function renderLiveAnalysis() {
       ['Rol Dağılımı', (data) => `${data.roles} farklı rol`],
       ['Etiket Uyumu', (data) => data.hasTags ? data.result.engageStatus : '—'],
     ];
-    host.innerHTML = `<div class="analysis-label-row"><span></span><b>MAVİ</b><b>KIRMIZI</b></div>${rows.map(([label, renderValue]) => `<div class="analysis-line"><span class="analysis-check" aria-label="Hesaplandı">✓</span><strong>${label}</strong><span>${escapeHtml(value('blue', renderValue))}</span><span>${escapeHtml(value('red', renderValue))}</span></div>`).join('')}<div class="analysis-sparkline" aria-label="Geçmiş analiz verisi yok"><svg viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><path d="M1 18H99"/></svg><small>Geçmiş analiz verisi yok</small></div><p class="sim-analysis-note">Kural tabanlı analiz, meta verisi değil.</p>`;
+    const communityRows = ['blue', 'red'].map((team) => {
+      const insights = teams[team].picks.map((id) => state.communityKaggleByHeroId.get(id)).filter(Boolean);
+      const counters = [...new Set(insights.flatMap((item) => item.counters))].slice(0, 4);
+      const synergies = [...new Set(insights.flatMap((item) => item.synergies))].slice(0, 4);
+      const lanesAndRoles = [...new Set(insights.flatMap((item) => [item.lane, item.role]).filter(Boolean))].join(' · ') || 'veri yok';
+      return `<p class="community-insight"><b>${TEAM_LABEL[team]} · Kaggle:</b> ${insights.length ? `Koridor/rol: ${escapeHtml(lanesAndRoles)} · Counter: ${escapeHtml(counters.join(', ') || 'veri yok')} · Synergy: ${escapeHtml(synergies.join(', ') || 'veri yok')}` : 'veri yok'}</p>`;
+    }).join('');
+    host.innerHTML = `<div class="analysis-label-row"><span></span><b>MAVİ</b><b>KIRMIZI</b></div>${rows.map(([label, renderValue]) => `<div class="analysis-line"><span class="analysis-check" aria-label="Hesaplandı">✓</span><strong>${label}</strong><span>${escapeHtml(value('blue', renderValue))}</span><span>${escapeHtml(value('red', renderValue))}</span></div>`).join('')}<div class="analysis-sparkline" aria-label="Geçmiş analiz verisi yok"><svg viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><path d="M1 18H99"/></svg><small>Geçmiş analiz verisi yok</small></div><p class="sim-analysis-note">Kural tabanlı analiz, meta verisi değil.</p><div class="community-insights"><b>Ceplin/Kaggle kaynaklı topluluk verisi, doğrulanmamış</b>${communityRows}<small>Kaynak: Kaggle hero dataset (MIT işaretli, resmî olmayan; snapshot 2).</small></div>`;
     return;
   }
   host.innerHTML = ['blue', 'red'].map((team) => {
@@ -409,6 +419,7 @@ function slotMarkup(slot) {
 
   const tone = hero ? hue(hero.id) : 'transparent';
   const face = hero ? initials(hero.name) : (slot.heroId ? '?' : '—');
+  const icon = hero ? state.communityIconByHeroId.get(hero.id) : null;
   const canSelect = isFreePhase() && slot.type === 'ban' && !slot.heroId;
   const label = `${TEAM_LABEL[slot.team]}, ${slot.teamIndex + 1}. ${slot.type === 'ban' ? 'ban' : 'seçim'}, ${hero?.name ?? (slot.skipped ? 'atlandı' : 'boş')}`;
   return `<li class="slot-cell">
@@ -416,7 +427,7 @@ function slotMarkup(slot) {
       aria-label="${escapeHtml(label)}"${isActive ? ' aria-current="step"' : ''}${canSelect ? '' : ' disabled'} style="--tone:${tone}">
       <span class="slot-no">${slot.teamIndex + 1}</span>
       <span class="slot-face">${hero
-        ? `<span class="slot-initials">${escapeHtml(face)}</span><span class="slot-name">${escapeHtml(hero.name)}</span>`
+        ? `<span class="slot-initials">${icon ? `<img class="slot-hero-icon" src="${escapeHtml(icon)}" alt="" loading="lazy" onerror="this.remove()">` : ''}<span>${escapeHtml(face)}</span></span><span class="slot-name">${escapeHtml(hero.name)}</span>`
         : slot.type === 'pick'
           ? `<span class="slot-initials">${escapeHtml(face)}</span><span class="slot-name">Oyuncu ${slot.teamIndex + 1}</span>`
           : `<span class="slot-initials">${escapeHtml(face)}</span>`}</span>
@@ -435,7 +446,8 @@ function renderBoard() {
       const hero = slot.heroId ? state.heroById.get(slot.heroId) : null;
       const name = hero?.name ?? `Oyuncu ${slot.teamIndex + 1}`;
       const avatar = hero ? escapeHtml(initials(hero.name)) : '';
-      return `<div class="player-row${hero ? ' has-hero' : ''}" data-player-slot="${slot.index}"><span class="player-avatar" style="--tone:${hero ? hue(hero.id) : 'hsl(222 50% 17%)'}">${avatar}</span><span class="player-name" title="${escapeHtml(name)}">${escapeHtml(name)}</span></div>`;
+      const icon = hero ? state.communityIconByHeroId.get(hero.id) : null;
+      return `<div class="player-row${hero ? ' has-hero' : ''}" data-player-slot="${slot.index}"><span class="player-avatar" style="--tone:${hero ? hue(hero.id) : 'hsl(222 50% 17%)'}">${icon ? `<img src="${escapeHtml(icon)}" alt="" loading="lazy" onerror="this.remove()">` : ''}${avatar}</span><span class="player-name" title="${escapeHtml(name)}">${escapeHtml(name)}</span></div>`;
     }).join('')}</div>`;
 
     const bans = teamSlots.filter((s) => s.type === 'ban');
@@ -494,7 +506,7 @@ function renderHeroes() {
     return `<button class="${classes.join(' ')}" type="button"
       data-hero-id="${hero.id}" data-primary-role="${escapeHtml(hero.primaryRole ?? hero.roles[0] ?? '')}" ${usage ? 'disabled' : ''}
       aria-label="${escapeHtml(hero.name)}, ${escapeHtml(roleText)}${stateText}">
-      <span class="hero-art" style="--tone:${hue(hero.id)}"><span class="hero-initials">${escapeHtml(initials(hero.name))}</span></span>
+      <span class="hero-art" style="--tone:${hue(hero.id)}">${state.communityIconByHeroId.has(hero.id) ? `<img src="${escapeHtml(state.communityIconByHeroId.get(hero.id))}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : ''}<span class="hero-initials">${escapeHtml(initials(hero.name))}</span></span>
       <span class="hero-name">${escapeHtml(hero.name)}</span>
       <span class="hero-role">${escapeHtml(roleText)}</span>
     </button>`;
@@ -977,6 +989,8 @@ function renderItems() {
         : '<span class="muted">Pasif yok — yalnızca stat verir.</span>'}</p>
     </article>`;
   }).join('');
+  const communityHost = typeof document === 'undefined' ? null : document.getElementById('community-item-list');
+  if (communityHost) communityHost.innerHTML = state.community.ceplinEquipment.filter((item) => !q || fold(item.name).includes(q)).map((item) => `<article class="community-item">${item.icon ? `<img src="${escapeHtml(item.icon)}" alt="" loading="lazy" onerror="this.remove()">` : '<span class="community-item-fallback">◇</span>'}<span>${escapeHtml(item.name)}</span><small>${Number.isFinite(item.price) ? `${item.price} altın · ` : ''}Ceplin · doğrulanmamış</small></article>`).join('');
 }
 
 /* ---------- build'ler ---------- */
@@ -1033,6 +1047,12 @@ function renderBuilds() {
       ${build.note ? `<p class="build-note">${escapeHtml(build.note)}</p>` : ''}
     </article>`;
   }).join('');
+  const communityHost = typeof document === 'undefined' ? null : document.getElementById('community-build-list');
+  if (communityHost) {
+    const q = fold(state.buildQuery.trim());
+    const catalog = state.community.ceplinBuilds.filter((build) => !q || fold([build.heroName, build.role, ...build.items].join(' ')).includes(q));
+    communityHost.innerHTML = catalog.map((build) => `<article class="build-card community-build"><div class="build-head"><span class="build-hero">${escapeHtml(build.heroName)}</span><span class="build-role">${escapeHtml(build.role)}</span></div><p class="build-note">${escapeHtml(build.speciality.join(' · '))} · Savaş büyüsü: ${escapeHtml(build.spell)}</p><div class="build-items">${build.items.map((name) => `<span class="build-item community-build-item">${escapeHtml(name)}</span>`).join('')}</div><small>Ceplin · doğrulanmamış topluluk build'i</small></article>`).join('');
+  }
 }
 
 /* ---------- bildirim ---------- */
@@ -1263,6 +1283,15 @@ async function boot() {
   } catch {
     state.builds = [];
   }
+
+  try {
+    const response = await fetch('./data/source/community-integration.json', { cache: 'no-cache' });
+    if (response.ok) {
+      state.community = await response.json();
+      state.communityIconByHeroId = new Map(state.community.icons.map((icon) => [icon.heroId, icon.path]));
+      state.communityKaggleByHeroId = new Map(state.community.kaggleInsights.map((insight) => [insight.heroId, insight]));
+    }
+  } catch { /* Kaynak paketi yoksa mevcut uygulama yer tutucularla çalışır. */ }
 
   const saved = restore();
   state.format = saved ? saved.format : 'tournament';

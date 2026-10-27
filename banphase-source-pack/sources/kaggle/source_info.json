@@ -1,0 +1,18 @@
+{
+  "dataset_url": "https://www.kaggle.com/datasets/bipinvthapa/mobile-legends-bang-bang-hero-dataset-enhanced",
+  "api_download_url": "https://www.kaggle.com/api/v1/datasets/download/bipinvthapa/mobile-legends-bang-bang-hero-dataset-enhanced",
+  "accessed_at": "2026-10-27T04:43:48+03:00",
+  "owner": "Bipin V. Thapa",
+  "kaggle_current_version": 2,
+  "kaggle_license": "MIT",
+  "last_updated": "2026-07-29T15:48:39.51Z",
+  "file": "hero_data.csv",
+  "csv_rows_excluding_header": 133,
+  "csv_columns": ["", "id", "name", "portrait", "laning", "class", "skills", "speciality", "counters", "synergies"],
+  "original_project_named_by_dataset": "https://github.com/p3hndrx/MLBB-API",
+  "notes": [
+    "Dataset description says this is an unofficial derivative intended for educational, research and machine-learning purposes and recommends crediting both the Kaggle dataset and original MLBB-API project.",
+    "Complex CSV columns contain nested serialized values; do not treat them as JSON or parse with eval().",
+    "Portrait values are URLs; those image files were not downloaded."
+  ]
+}

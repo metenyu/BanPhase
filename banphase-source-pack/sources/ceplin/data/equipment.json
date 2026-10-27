@@ -1,0 +1,656 @@
+[
+    {
+        "id_equip": 1,
+        "name-equipment": "Berserker's Fury",
+        "prize-gold": 2390,
+        "logo-equipment": "berserkers_fury.png"
+    },
+    {
+        "id_equip": 2,
+        "name-equipment": "Blade of Despair",
+        "prize-gold": 3010,
+        "logo-equipment": "blade_of_despair.png"
+    },
+    {
+        "id_equip": 3,
+        "name-equipment": "Blade of the Heptaseas",
+        "prize-gold": 1950,
+        "logo-equipment": "blade_of_the_heptaseas.png"
+    },
+    {
+        "id_equip": 4,
+        "name-equipment": "Corrosion Scythe",
+        "prize-gold": 2050,
+        "logo-equipment": "corrosion_scythe.png"
+    },
+    {
+        "id_equip": 5,
+        "name-equipment": "Demon Hunter Sword",
+        "prize-gold": 2180,
+        "logo-equipment": "demon_hunter_sword.png"
+    },
+    {
+        "id_equip": 6,
+        "name-equipment": "Endless Battle",
+        "prize-gold": 2330,
+        "logo-equipment": "endless_battle.png"
+    },
+    {
+        "id_equip": 7,
+        "name-equipment": "Fleeting Time",
+        "prize-gold": 2050,
+        "logo-equipment": "fleeting_time.png"
+    },
+    {
+        "id_equip": 8,
+        "name-equipment": "Golden Staff",
+        "prize-gold": 2000,
+        "logo-equipment": "golden_staff.png"
+    },
+    {
+        "id_equip": 9,
+        "name-equipment": "Great Dragon Spear",
+        "prize-gold": 2140,
+        "logo-equipment": "great_dragon_spear.png"
+    },
+    {
+        "id_equip": 10,
+        "name-equipment": "Haas's Claws",
+        "prize-gold": 2020,
+        "logo-equipment": "haass_claws.png"
+    },
+    {
+        "id_equip": 11,
+        "name-equipment": "Hunter Strike",
+        "prize-gold": 2010,
+        "logo-equipment": "hunter_strike.png"
+    },
+    {
+        "id_equip": 12,
+        "name-equipment": "Malefic Gun",
+        "prize-gold": 2120,
+        "logo-equipment": "malefic_gun.png"
+    },
+    {
+        "id_equip": 13,
+        "name-equipment": "Malefic Roar",
+        "prize-gold": 2060,
+        "logo-equipment": "malefic_roar.png"
+    },
+    {
+        "id_equip": 14,
+        "name-equipment": "Rose Gold Meteor",
+        "prize-gold": 1820,
+        "logo-equipment": "rose_gold_meteor.png"
+    },
+    {
+        "id_equip": 15,
+        "name-equipment": "Sea Halberd",
+        "prize-gold": 2050,
+        "logo-equipment": "sea_halberd.png"
+    },
+    {
+        "id_equip": 16,
+        "name-equipment": "Sky Piercer",
+        "prize-gold": 1500,
+        "logo-equipment": "sky_piercer.png"
+    },
+    {
+        "id_equip": 17,
+        "name-equipment": "War Axe",
+        "prize-gold": 2100,
+        "logo-equipment": "war_axe.png"
+    },
+    {
+        "id_equip": 18,
+        "name-equipment": "Wind of Nature",
+        "prize-gold": 1910,
+        "logo-equipment": "wind_of_nature.png"
+    },
+    {
+        "id_equip": 19,
+        "name-equipment": "Windtalker",
+        "prize-gold": 1880,
+        "logo-equipment": "windtalker.png"
+    },
+    {
+        "id_equip": 20,
+        "name-equipment": "Winter Crown",
+        "prize-gold": 1910,
+        "logo-equipment": "winter_crown.png"
+    },
+    {
+        "id_equip": 21,
+        "name-equipment": "Fury Hammer",
+        "prize-gold": 830,
+        "logo-equipment": "fury_hammer.png"
+    },
+    {
+        "id_equip": 22,
+        "name-equipment": "Legion Sword",
+        "prize-gold": 910,
+        "logo-equipment": "legion_sword.png"
+    },
+    {
+        "id_equip": 23,
+        "name-equipment": "Magic Blade",
+        "prize-gold": 1050,
+        "logo-equipment": "magic_blade.png"
+    },
+    {
+        "id_equip": 24,
+        "name-equipment": "Ogre Tomahawk",
+        "prize-gold": 650,
+        "logo-equipment": "ogre_tomahawk.png"
+    },
+    {
+        "id_equip": 25,
+        "name-equipment": "Regular Spear",
+        "prize-gold": 600,
+        "logo-equipment": "regular_spear.png"
+    },
+    {
+        "id_equip": 26,
+        "name-equipment": "Rogue Meteor",
+        "prize-gold": 900,
+        "logo-equipment": "rogue_meteor.png"
+    },
+    {
+        "id_equip": 27,
+        "name-equipment": "Swift Crossbow",
+        "prize-gold": 1000,
+        "logo-equipment": "swift_crossbow.png"
+    },
+    {
+        "id_equip": 28,
+        "name-equipment": "Dagger",
+        "prize-gold": 250,
+        "logo-equipment": "dagger.png"
+    },
+    {
+        "id_equip": 29,
+        "name-equipment": "Expert Gloves",
+        "prize-gold": 500,
+        "logo-equipment": "expert_gloves.png"
+    },
+    {
+        "id_equip": 30,
+        "name-equipment": "Iron Hunting Bow",
+        "prize-gold": 450,
+        "logo-equipment": "iron_hunting_bow.png"
+    },
+    {
+        "id_equip": 31,
+        "name-equipment": "Javelin",
+        "prize-gold": 320,
+        "logo-equipment": "javelin.png"
+    },
+    {
+        "id_equip": 32,
+        "name-equipment": "Knife",
+        "prize-gold": 280,
+        "logo-equipment": "knife.png"
+    },
+    {
+        "id_equip": 33,
+        "name-equipment": "Vampire Mallet",
+        "prize-gold": 400,
+        "logo-equipment": "vampire_mallet.png"
+    },
+    {
+        "id_equip": 34,
+        "name-equipment": "Power Potion",
+        "prize-gold": 1500,
+        "logo-equipment": "power_potion.png"
+    },
+    {
+        "id_equip": 35,
+        "name-equipment": "Blood Wings",
+        "prize-gold": 2100,
+        "logo-equipment": "blood_wings.png"
+    },
+    {
+        "id_equip": 36,
+        "name-equipment": "Clock of Destiny",
+        "prize-gold": 2030,
+        "logo-equipment": "clock_of_destiny.png"
+    },
+    {
+        "id_equip": 37,
+        "name-equipment": "Concentrated Energy",
+        "prize-gold": 2020,
+        "logo-equipment": "concentrated_energy.png"
+    },
+    {
+        "id_equip": 38,
+        "name-equipment": "Divine Glaive",
+        "prize-gold": 1970,
+        "logo-equipment": "divine_glaive.png"
+    },
+    {
+        "id_equip": 39,
+        "name-equipment": "Enchanted Talisman",
+        "prize-gold": 1870,
+        "logo-equipment": "enchanted_talisman.png"
+    },
+    {
+        "id_equip": 40,
+        "name-equipment": "Feather of Heaven",
+        "prize-gold": 2030,
+        "logo-equipment": "feather_of_heaven.png"
+    },
+    {
+        "id_equip": 41,
+        "name-equipment": "Flask of the Oasis",
+        "prize-gold": 1850,
+        "logo-equipment": "flask_of_the_oasis.png"
+    },
+    {
+        "id_equip": 42,
+        "name-equipment": "Fleeting Time",
+        "prize-gold": 2050,
+        "logo-equipment": "fleeting_time.png"
+    },
+    {
+        "id_equip": 43,
+        "name-equipment": "Genius Wand",
+        "prize-gold": 2000,
+        "logo-equipment": "genius_wand.png"
+    },
+    {
+        "id_equip": 44,
+        "name-equipment": "Glowing Wand",
+        "prize-gold": 2150,
+        "logo-equipment": "glowing_wand.png"
+    },
+    {
+        "id_equip": 45,
+        "name-equipment": "Holy Crystal",
+        "prize-gold": 3000,
+        "logo-equipment": "holy_crystal.png"
+    },
+    {
+        "id_equip": 46,
+        "name-equipment": "Ice Queen Wand",
+        "prize-gold": 2040,
+        "logo-equipment": "ice_queen_wand.png"
+    },
+    {
+        "id_equip": 47,
+        "name-equipment": "Lightning Truncheon",
+        "prize-gold": 2250,
+        "logo-equipment": "lightning_truncheon.png"
+    },
+    {
+        "id_equip": 48,
+        "name-equipment": "Sky Piercer",
+        "prize-gold": 1500,
+        "logo-equipment": "sky_piercer.png"
+    },
+    {
+        "id_equip": 49,
+        "name-equipment": "Starlium Scythe",
+        "prize-gold": 2220,
+        "logo-equipment": "starlium_scythe.png"
+    },
+    {
+        "id_equip": 50,
+        "name-equipment": "Winter Crown",
+        "prize-gold": 1910,
+        "logo-equipment": "winter_crown.png"
+    },
+    {
+        "id_equip": 51,
+        "name-equipment": "Wishing Lantern",
+        "prize-gold": 2250,
+        "logo-equipment": "wishing_lantern.png"
+    },
+    {
+        "id_equip": 52,
+        "name-equipment": "Azure Blade",
+        "prize-gold": 600,
+        "logo-equipment": "azure_blade.png"
+    },
+    {
+        "id_equip": 53,
+        "name-equipment": "Elegant Gem",
+        "prize-gold": 700,
+        "logo-equipment": "elegant_gem.png"
+    },
+    {
+        "id_equip": 54,
+        "name-equipment": "Exotic Veil",
+        "prize-gold": 600,
+        "logo-equipment": "exotic_veil.png"
+    },
+    {
+        "id_equip": 55,
+        "name-equipment": "Mystic Container",
+        "prize-gold": 500,
+        "logo-equipment": "mystic_container.png"
+    },
+    {
+        "id_equip": 56,
+        "name-equipment": "Tome of Evil",
+        "prize-gold": 950,
+        "logo-equipment": "tome_of_evil.png"
+    },
+    {
+        "id_equip": 57,
+        "name-equipment": "Book of Sages",
+        "prize-gold": 450,
+        "logo-equipment": "book_of_sages.png"
+    },
+    {
+        "id_equip": 58,
+        "name-equipment": "Expert Gloves",
+        "prize-gold": 500,
+        "logo-equipment": "expert_gloves.png"
+    },
+    {
+        "id_equip": 59,
+        "name-equipment": "Magic Necklace",
+        "prize-gold": 120,
+        "logo-equipment": "magic_necklace.png"
+    },
+    {
+        "id_equip": 60,
+        "name-equipment": "Magic Wand",
+        "prize-gold": 820,
+        "logo-equipment": "magic_wand.png"
+    },
+    {
+        "id_equip": 61,
+        "name-equipment": "Mystery Codex",
+        "prize-gold": 300,
+        "logo-equipment": "mystery_codex.png"
+    },
+    {
+        "id_equip": 62,
+        "name-equipment": "Power Crystal",
+        "prize-gold": 220,
+        "logo-equipment": "power_crystal.png"
+    },
+    {
+        "id_equip": 63,
+        "name-equipment": "Flower of Hope",
+        "prize-gold": 0,
+        "logo-equipment": "flower_of_hope.png"
+    },
+    {
+        "id_equip": 64,
+        "name-equipment": "Lantern of Hope",
+        "prize-gold": 0,
+        "logo-equipment": "lantern_of_hope.png"
+    },
+    {
+        "id_equip": 65,
+        "name-equipment": "Magic Potion",
+        "prize-gold": 1500,
+        "logo-equipment": "magic_potion.png"
+    },
+    {
+        "id_equip": 66,
+        "name-equipment": "Antique Cuirass",
+        "prize-gold": 2170,
+        "logo-equipment": "antique_cuirass.png"
+    },
+    {
+        "id_equip": 67,
+        "name-equipment": "Athena's Shield",
+        "prize-gold": 2150,
+        "logo-equipment": "athenas_shield.png"
+    },
+    {
+        "id_equip": 68,
+        "name-equipment": "Blade Armor",
+        "prize-gold": 1910,
+        "logo-equipment": "blade_armor.png"
+    },
+    {
+        "id_equip": 69,
+        "name-equipment": "Brute Force Breastplate",
+        "prize-gold": 1870,
+        "logo-equipment": "brute_force_breastplate.png"
+    },
+    {
+        "id_equip": 70,
+        "name-equipment": "Chastise Pauldron",
+        "prize-gold": 2100,
+        "logo-equipment": "chastise_pauldron.png"
+    },
+    {
+        "id_equip": 71,
+        "name-equipment": "Cursed Helmet",
+        "prize-gold": 1910,
+        "logo-equipment": "cursed_helmet.png"
+    },
+    {
+        "id_equip": 72,
+        "name-equipment": "Dominance Ice",
+        "prize-gold": 2010,
+        "logo-equipment": "dominance_ice.png"
+    },
+    {
+        "id_equip": 73,
+        "name-equipment": "Fleeting Time",
+        "prize-gold": 2050,
+        "logo-equipment": "fleeting_time.png"
+    },
+    {
+        "id_equip": 74,
+        "name-equipment": "Guardian Helmet",
+        "prize-gold": 2200,
+        "logo-equipment": "guardian_helmet.png"
+    },
+    {
+        "id_equip": 75,
+        "name-equipment": "Immortality",
+        "prize-gold": 2120,
+        "logo-equipment": "immortality.png"
+    },
+    {
+        "id_equip": 76,
+        "name-equipment": "Oracle",
+        "prize-gold": 1860,
+        "logo-equipment": "oracle.png"
+    },
+    {
+        "id_equip": 77,
+        "name-equipment": "Queen's Wings",
+        "prize-gold": 2250,
+        "logo-equipment": "queens_wings.png"
+    },
+    {
+        "id_equip": 78,
+        "name-equipment": "Radiant Armor",
+        "prize-gold": 1880,
+        "logo-equipment": "radiant_armor.png"
+    },
+    {
+        "id_equip": 79,
+        "name-equipment": "Thunder Belt",
+        "prize-gold": 1820,
+        "logo-equipment": "thunder_belt.png"
+    },
+    {
+        "id_equip": 80,
+        "name-equipment": "Ares Belt",
+        "prize-gold": 900,
+        "logo-equipment": "ares_belt.png"
+    },
+    {
+        "id_equip": 81,
+        "name-equipment": "Black Ice Shield",
+        "prize-gold": 880,
+        "logo-equipment": "black_ice_shield.png"
+    },
+    {
+        "id_equip": 82,
+        "name-equipment": "Dreadnaught Armor",
+        "prize-gold": 730,
+        "logo-equipment": "dreadnaught_armor.png"
+    },
+    {
+        "id_equip": 83,
+        "name-equipment": "Molten Essence",
+        "prize-gold": 800,
+        "logo-equipment": "molten_essence.png"
+    },
+    {
+        "id_equip": 84,
+        "name-equipment": "Silence Robe",
+        "prize-gold": 1020,
+        "logo-equipment": "silence_robe.png"
+    },
+    {
+        "id_equip": 85,
+        "name-equipment": "Steel Legplates",
+        "prize-gold": 630,
+        "logo-equipment": "steel_legplates.png"
+    },
+    {
+        "id_equip": 86,
+        "name-equipment": "Healing Necklace",
+        "prize-gold": 140,
+        "logo-equipment": "healing_necklace.png"
+    },
+    {
+        "id_equip": 87,
+        "name-equipment": "Hero's Ring",
+        "prize-gold": 450,
+        "logo-equipment": "heros_ring.png"
+    },
+    {
+        "id_equip": 88,
+        "name-equipment": "Leather Jerkin",
+        "prize-gold": 220,
+        "logo-equipment": "leather_jerkin.png"
+    },
+    {
+        "id_equip": 89,
+        "name-equipment": "Magic Resist Cloak",
+        "prize-gold": 220,
+        "logo-equipment": "magic_resist_cloak.png"
+    },
+    {
+        "id_equip": 90,
+        "name-equipment": "Vitality Crystal",
+        "prize-gold": 300,
+        "logo-equipment": "vitality_crystal.png"
+    },
+    {
+        "id_equip": 91,
+        "name-equipment": "Rock Potion",
+        "prize-gold": 1500,
+        "logo-equipment": "rock_potion.png"
+    },
+    {
+        "id_equip": 92,
+        "name-equipment": "Arcane Boots",
+        "prize-gold": 690,
+        "logo-equipment": "arcane_boots.png"
+    },
+    {
+        "id_equip": 93,
+        "name-equipment": "Demon Boots",
+        "prize-gold": 720,
+        "logo-equipment": "demon_boots.png"
+    },
+    {
+        "id_equip": 94,
+        "name-equipment": "Magic Boots",
+        "prize-gold": 710,
+        "logo-equipment": "magic_boots.png"
+    },
+    {
+        "id_equip": 95,
+        "name-equipment": "Rapid Boots",
+        "prize-gold": 750,
+        "logo-equipment": "rapid_boots.png"
+    },
+    {
+        "id_equip": 96,
+        "name-equipment": "Swift Boots",
+        "prize-gold": 710,
+        "logo-equipment": "swift_boots.png"
+    },
+    {
+        "id_equip": 97,
+        "name-equipment": "Tough Boots",
+        "prize-gold": 700,
+        "logo-equipment": "tough_boots.png"
+    },
+    {
+        "id_equip": 98,
+        "name-equipment": "Warrior Boots",
+        "prize-gold": 720,
+        "logo-equipment": "warrior_boots.png"
+    },
+    {
+        "id_equip": 99,
+        "name-equipment": "Boots",
+        "prize-gold": 250,
+        "logo-equipment": "boots.png"
+    },
+    {
+        "id_equip": 100,
+        "name-equipment": "Allow Throw",
+        "prize-gold": 0,
+        "logo-equipment": "allow_throw.png"
+    },
+    {
+        "id_equip": 101,
+        "name-equipment": "Broken Heart",
+        "prize-gold": 0,
+        "logo-equipment": "broken_heart.png"
+    },
+    {
+        "id_equip": 102,
+        "name-equipment": "Throw Forbidden",
+        "prize-gold": 0,
+        "logo-equipment": "throw_forbidden.png"
+    },
+    {
+        "id_equip": 103,
+        "name-equipment": "Bloody Retribution",
+        "prize-gold": 0,
+        "logo-equipment": "bloody_retribution.png"
+    },
+    {
+        "id_equip": 104,
+        "name-equipment": "Flame Retribution",
+        "prize-gold": 0,
+        "logo-equipment": "flame_retribution.png"
+    },
+    {
+        "id_equip": 105,
+        "name-equipment": "Ice Retribution",
+        "prize-gold": 0,
+        "logo-equipment": "ice_retribution.png"
+    },
+    {
+        "id_equip": 106,
+        "name-equipment": "Conceal",
+        "prize-gold": 0,
+        "logo-equipment": "conceal.png"
+    },
+    {
+        "id_equip": 107,
+        "name-equipment": "Dire Hit",
+        "prize-gold": 0,
+        "logo-equipment": "dire_hit.png"
+    },
+    {
+        "id_equip": 108,
+        "name-equipment": "Encourage",
+        "prize-gold": 0,
+        "logo-equipment": "encourage.png"
+    },
+    {
+        "id_equip": 109,
+        "name-equipment": "Favor",
+        "prize-gold": 0,
+        "logo-equipment": "favor.png"
+    }
+]

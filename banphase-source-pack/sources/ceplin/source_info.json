@@ -1,0 +1,24 @@
+{
+  "source_url": "https://github.com/Ceplin03/database-mlbb.Mobile-Legends-Bang-Bang",
+  "accessed_at": "2026-10-27T04:43:23+03:00",
+  "commit": "29f98d037a70a0ce03908562c5be9cab333eedff",
+  "repository_readme_license_claim": "MIT",
+  "license_file_present_in_snapshot": false,
+  "included": {
+    "root_json_files": 11,
+    "hero_icons_png": 133,
+    "equipment_icons_png": 104,
+    "tournament_logos_png": 243
+  },
+  "excluded": {
+    "images_flag_png": 46,
+    "images_folder_files": 2042,
+    "images_folder_bytes": 206594595,
+    "reason": "Flags excluded by user request; general player/person images not relevant to current BanPhase hero-pick task."
+  },
+  "notes": [
+    "All 133 Ceplin hero names match the BanPhase roster after normalized-name comparison.",
+    "All 133 image references in Ceplin hero.json resolve to packaged files.",
+    "No claim that included artwork is official MLBB artwork or separately license-cleared."
+  ]
+}
